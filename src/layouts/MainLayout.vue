@@ -18,7 +18,7 @@
       <BackgroundImages />
 
       <!-- Main content -->
-      <router-view :key="route.name" />
+      <router-view :key="route.fullPath" />
     </q-page-container>
 
     <!-- Add Footer here -->
@@ -57,16 +57,16 @@ const toolbarTitle = 'Vision 2 Virtual';
 const tagline = 'Bringing Your Vision to Life';
 
 // Use route for navigation logic
-const route = useRoute();
+const route = useRoute(); // Call the useRoute function
 
 // Watch for route changes and update store
 watch(
   () => route.name,
   (newRouteName) => {
-    if (typeof newRouteName === 'string') {
-      useSalesStrategyMessages().setCurrentLevel(newRouteName);
+    if (newRouteName) {
+      useSalesStrategyMessages().setCurrentLevel(newRouteName.toString());
     } else {
-      console.warn(`Invalid route name type: ${typeof newRouteName}`);
+      console.warn('Invalid route name:', newRouteName);
     }
   }
 );

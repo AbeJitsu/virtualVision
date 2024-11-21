@@ -52,6 +52,23 @@
 </template>
 
 <script setup lang="ts">
+import { watch } from 'vue';
+import { useRoute, RouteRecordName } from 'vue-router'; // Import RouteRecordName for proper typing
+
+const route = useRoute(); // Access the current route instance
+
+// Watch for changes in route.name and explicitly type newRouteName
+watch(
+  () => route.name, // Reactive source
+  (newRouteName: RouteRecordName | null | undefined) => {
+    if (newRouteName) {
+      console.log('Route name changed:', newRouteName.toString()); // Log valid route names
+    } else {
+      console.warn('Route name is invalid:', newRouteName); // Warn if route name is null or undefined
+    }
+  }
+);
+
 const props = defineProps({
   toolbarTitle: {
     type: String,
@@ -71,8 +88,9 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['toggleLeftDrawer']);
+const emit = defineEmits(['toggleLeftDrawer']); // Define the toggleLeftDrawer event
 
+// Function to toggle the left drawer menu
 function toggleLeftDrawer() {
   emit('toggleLeftDrawer');
 }
