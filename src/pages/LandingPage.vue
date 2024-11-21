@@ -3,52 +3,52 @@
     <div class="content-container">
       <!-- Tagline for the page or section -->
       <div class="tagline">
-        <h2>{{ currentMessage.tagline }}</h2>
+        <h2>{{ messages.tagline }}</h2>
       </div>
 
       <!-- Tone message choices in a 2x2 grid layout -->
       <div class="tone-message-grid">
         <div class="tone-supportive tone-message-box">
-          <p>{{ currentMessage.supportiveIntro }}</p>
-          <p>{{ currentMessage.supportiveMain }}</p>
+          <p>{{ messages.supportiveIntro }}</p>
+          <p>{{ messages.supportiveMain }}</p>
         </div>
         <div class="tone-dominant tone-message-box">
-          <p>{{ currentMessage.dominantSupportiveIntro }}</p>
-          <p>{{ currentMessage.dominantMain }}</p>
+          <p>{{ messages.dominantSupportiveIntro }}</p>
+          <p>{{ messages.dominantMain }}</p>
         </div>
         <div class="tone-influential tone-message-box">
-          <p>{{ currentMessage.influentialSupportiveIntro }}</p>
-          <p>{{ currentMessage.influentialMain }}</p>
+          <p>{{ messages.influentialSupportiveIntro }}</p>
+          <p>{{ messages.influentialMain }}</p>
         </div>
         <div class="tone-conscientious tone-message-box">
-          <p>{{ currentMessage.conscientiousSupportiveIntro }}</p>
-          <p>{{ currentMessage.conscientiousMain }}</p>
+          <p>{{ messages.conscientiousSupportiveIntro }}</p>
+          <p>{{ messages.conscientiousMain }}</p>
         </div>
       </div>
 
       <!-- Supportive wrap-up and binary choice prompt below -->
       <div class="supportive-wrapup">
         <p class="supportive-wrapup-intro">
-          {{ currentMessage.supportiveWrapUpIntro }}
+          {{ messages.supportiveWrapUpIntro }}
         </p>
         <p class="supportive-wrapup-main">
-          {{ currentMessage.supportiveWrapUpMain }}
+          {{ messages.supportiveWrapUpMain }}
         </p>
       </div>
 
       <div class="binary-choice">
         <div class="choice-prompts">
-          <p>{{ currentMessage.promptInfluential }}</p>
-          <p>{{ currentMessage.promptSupportive }}</p>
+          <p>{{ messages.promptInfluential }}</p>
+          <p>{{ messages.promptSupportive }}</p>
         </div>
         <div class="action-buttons">
           <q-btn
-            :label="currentMessage.binaryChoiceReadySupportiveInfluential"
+            :label="messages.binaryChoiceReadySupportiveInfluential"
             @click="navigateToPage('talkToDeveloper')"
             class="choice-btn q-mb-md enhanced-btn"
           />
           <q-btn
-            :label="currentMessage.binaryChoiceExploreSupportiveConscientious"
+            :label="messages.binaryChoiceExploreSupportiveConscientious"
             @click="navigateToPage('focusedStrategySessions')"
             class="choice-btn q-mb-md enhanced-btn"
           />
@@ -59,22 +59,18 @@
 </template>
 
 <script setup lang="ts">
-  import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
-  import { computed } from 'vue';
+  import { LandingPage } from '../stores/messages/LandingPage'; // Correct relative path
   import { useRouter } from 'vue-router';
 
-  // Fetch messages and functions from the store
-  const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-  setCurrentLevel('LandingPage'); // Ensure the correct level is set
-  const currentMessage = computed(() => getCurrentMessages); // Access the getter as a property
-  const router = useRouter(); // Access Vue router for page navigation
+  const messages = LandingPage; // Directly use the imported messages
 
-  // Function to handle binary navigation based on the visitor’s choice
+  const router = useRouter();
+
   function navigateToPage(choice: string) {
     if (choice === 'talkToDeveloper') {
-      router.push('/talk-to-developer'); // Navigate to the Talk to a Developer page
+      router.push('/talk-to-developer');
     } else if (choice === 'focusedStrategySessions') {
-      router.push('/focused-strategy-sessions'); // Navigate to the Focused Strategy Sessions page
+      router.push('/focused-strategy-sessions');
     }
   }
 </script>
