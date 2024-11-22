@@ -1,5 +1,8 @@
 <template>
-  <q-header class="custom-header glossy" elevated>
+  <q-header
+    class="custom-header glossy"
+    elevated
+  >
     <q-toolbar>
       <!-- Menu Button -->
       <q-btn
@@ -12,10 +15,10 @@
         @click="toggleLeftDrawer"
       />
 
-      <!-- Title (Vision2Virtual links to About Us) -->
+      <!-- Title (Vision2Virtual links to Landing Page) -->
       <q-toolbar-title class="toolbar-title">
         <router-link
-          to="/about-us"
+          to="/"
           class="home-link"
           active-class="active-link"
         >
@@ -45,6 +48,13 @@
         />
       </div>
 
+      <q-btn
+        flat
+        label="Sign In"
+        :to="{ name: 'auth-page' }"
+        class="nav-text"
+      />
+
       <!-- Tagline -->
       <div class="tagline">{{ tagline }}</div>
     </q-toolbar>
@@ -52,48 +62,48 @@
 </template>
 
 <script setup lang="ts">
-import { watch } from 'vue';
-import { useRoute, RouteRecordName } from 'vue-router'; // Import RouteRecordName for proper typing
+  import { watch } from 'vue';
+  import { useRoute, RouteRecordName } from 'vue-router'; // Import RouteRecordName for proper typing
 
-const route = useRoute(); // Access the current route instance
+  const route = useRoute(); // Access the current route instance
 
-// Watch for changes in route.name and explicitly type newRouteName
-watch(
-  () => route.name, // Reactive source
-  (newRouteName: RouteRecordName | null | undefined) => {
-    if (newRouteName) {
-      console.log('Route name changed:', newRouteName.toString()); // Log valid route names
-    } else {
-      console.warn('Route name is invalid:', newRouteName); // Warn if route name is null or undefined
+  // Watch for changes in route.name and explicitly type newRouteName
+  watch(
+    () => route.name, // Reactive source
+    (newRouteName: RouteRecordName | null | undefined) => {
+      if (newRouteName) {
+        console.log('Route name changed:', newRouteName.toString()); // Log valid route names
+      } else {
+        console.warn('Route name is invalid:', newRouteName); // Warn if route name is null or undefined
+      }
     }
+  );
+
+  const props = defineProps({
+    toolbarTitle: {
+      type: String,
+      required: true,
+    },
+    tagline: {
+      type: String,
+      required: true,
+    },
+    visionPlanningLabel: {
+      type: String,
+      default: 'Talk to a Developer',
+    },
+    fullVisionLabel: {
+      type: String,
+      default: 'Focused Strategy Sessions',
+    },
+  });
+
+  const emit = defineEmits(['toggleLeftDrawer']); // Define the toggleLeftDrawer event
+
+  // Function to toggle the left drawer menu
+  function toggleLeftDrawer() {
+    emit('toggleLeftDrawer');
   }
-);
-
-const props = defineProps({
-  toolbarTitle: {
-    type: String,
-    required: true,
-  },
-  tagline: {
-    type: String,
-    required: true,
-  },
-  visionPlanningLabel: {
-    type: String,
-    default: 'Talk to a Developer',
-  },
-  fullVisionLabel: {
-    type: String,
-    default: 'Focused Strategy Sessions',
-  },
-});
-
-const emit = defineEmits(['toggleLeftDrawer']); // Define the toggleLeftDrawer event
-
-// Function to toggle the left drawer menu
-function toggleLeftDrawer() {
-  emit('toggleLeftDrawer');
-}
 </script>
 
 <style scoped lang="scss">

@@ -30,6 +30,11 @@ const routes: RouteRecordRaw[] = [
         name: 'complete-website-build',
         component: () => import('pages/CompleteWebsiteBuild.vue'),
       },
+      {
+        path: '/auth',
+        name: 'auth-page',
+        component: () => import('pages/AuthPage.vue'),
+      },
     ],
   },
   {
