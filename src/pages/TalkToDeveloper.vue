@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex-column">
     <div class="content-container">
-      <div class="tagline">
-        <h2>{{ messages.tagline }}</h2>
+      <div class="dominantInfluentialTagline">
+        <h2>{{ messages.dominantInfluentialTagline }}</h2>
       </div>
 
       <div class="tone-message-grid">
@@ -76,7 +76,7 @@ console.log('Direct TalkToDeveloper messages:', JSON.stringify(messages));
     margin: 0 auto;
   }
 
-  .tagline {
+  .dominantInfluentialTagline {
     text-align: center;
     margin-bottom: 0rem;
     z-index: 1;

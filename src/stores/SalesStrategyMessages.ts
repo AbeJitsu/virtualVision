@@ -3,7 +3,7 @@ import { TalkToDeveloper } from './messages/TalkToDeveloper'; // Import Talk to 
 
 // Define the structure for individual message sets
 export interface Message {
-  tagline: string;
+  dominantInfluentialTagline: string;
   supportiveIntro: string;
   supportiveMain: string;
   dominantSupportiveIntro: string;

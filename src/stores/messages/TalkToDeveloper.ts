@@ -1,5 +1,5 @@
 export const TalkToDeveloper = {
-  tagline: 'Expert Guidance for Your Unique Business Needs',
+  dominantInfluentialTagline: 'Expert Guidance for Your Unique Business Needs',
 
   supportiveIntro:
     'Working with a knowledgeable partner can make all the difference in achieving your goals.',

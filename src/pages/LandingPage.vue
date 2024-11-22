@@ -2,8 +2,8 @@
   <q-page class="flex-column">
     <div class="content-container">
       <!-- Tagline for the page or section -->
-      <div class="tagline">
-        <h2>{{ messages.tagline }}</h2>
+      <div class="dominantInfluentialTagline">
+        <h2>{{ messages.dominantInfluentialTagline }}</h2>
       </div>
 
       <!-- Tone message choices in a 2x2 grid layout -->
@@ -89,7 +89,7 @@
     margin: 0 auto;
   }
 
-  .tagline {
+  .dominantInfluentialTagline {
     text-align: center;
     margin-bottom: 0rem;
     z-index: 1;
