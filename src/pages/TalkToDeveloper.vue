@@ -56,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { TalkToDeveloper } from '../stores/messages/TalkToDeveloper';
+import { TalkToDeveloper } from '../data/messages/TalkToDeveloper';
 
 // Directly use the imported messages
 const messages = TalkToDeveloper;

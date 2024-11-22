@@ -1,5 +1,5 @@
-import { LandingPage } from './messages/LandingPage'; // Import Landing Page messages
-import { TalkToDeveloper } from './messages/TalkToDeveloper'; // Import Talk to Developer messages
+import { LandingPage } from '../data/messages/LandingPage'; // Import Landing Page messages
+import { TalkToDeveloper } from '../data/messages/TalkToDeveloper'; // Import Talk to Developer messages
 
 // Define the structure for individual message sets
 export interface Message {

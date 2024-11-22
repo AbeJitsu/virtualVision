@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-  import { LandingPage } from '../stores/messages/LandingPage'; // Correct relative path
+  import { LandingPage } from '../data/messages/LandingPage'; // Correct relative path
   import { useRouter } from 'vue-router';
 
   const messages = LandingPage; // Directly use the imported messages
