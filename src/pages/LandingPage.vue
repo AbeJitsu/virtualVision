@@ -63,6 +63,7 @@
   import { useRouter } from 'vue-router';
 
   const messages = LandingPage; // Directly use the imported messages
+  console.log('LandingPage messages:', messages); // Debug log to verify messages
 
   const router = useRouter();
 
@@ -201,3 +202,5 @@
     }
   }
 </style>
+
+<!-- src/pages/LandingPage.vue -->

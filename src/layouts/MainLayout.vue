@@ -33,7 +33,7 @@ import NavBar from './NavBar.vue';
 import LeftDrawer from '../layouts/LeftDrawer.vue';
 import Footer from '../layouts/Footer.vue';
 import BackgroundImages from '../components/BackgroundImages.vue';
-import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages'; // Import the store
+import { Messages } from '../stores/SalesStrategyMessages'; // Import the messages object directly
 
 defineOptions({
   name: 'MainLayout',
@@ -59,16 +59,19 @@ const tagline = 'Bringing Your Vision to Life';
 // Use route for navigation logic
 const route = useRoute(); // Call the useRoute function
 
-// Watch for route changes and update store
+// Dynamically determine messages based on the route name
+const currentMessages = ref(Messages['LandingPage']); // Default to Landing Page messages
 watch(
   () => route.name,
   (newRouteName) => {
-    if (newRouteName) {
-      useSalesStrategyMessages().setCurrentLevel(newRouteName.toString());
+    if (newRouteName && Messages[newRouteName]) {
+      currentMessages.value = Messages[newRouteName]; // Update messages dynamically
+      console.log('Current messages updated to:', currentMessages.value);
     } else {
-      console.warn('Invalid route name:', newRouteName);
+      console.warn('Invalid route name or no messages found:', newRouteName);
     }
-  }
+  },
+  { immediate: true } // Run immediately on mount
 );
 </script>
 

@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia';
 import { LandingPage } from './messages/LandingPage'; // Import Landing Page messages
 import { TalkToDeveloper } from './messages/TalkToDeveloper'; // Import Talk to Developer messages
 
@@ -21,41 +20,11 @@ export interface Message {
   binaryChoiceExploreSupportiveConscientious: string;
 }
 
-// Define the structure for the collection of messages
-interface Messages {
-  [key: string]: Message;
-}
+// Refactor: Remove the Pinia store entirely
+// Export individual messages as named exports
+export const Messages = {
+  LandingPage,
+  TalkToDeveloper,
+};
 
-export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
-  state: () => ({
-    messages: {
-      LandingPage: LandingPage, // Ensure key matches usage in other files
-      talkToDeveloper: TalkToDeveloper,
-    } as Messages, // Enforce type safety
-    currentLevel: 'LandingPage', // Default to Landing Page
-  }),
-  actions: {
-    // Update the current set of messages
-    setMessages(newMessages: Messages) {
-      this.messages = newMessages;
-    },
-    // Update the current level (e.g., LandingPage, talkToDeveloper)
-    setCurrentLevel(level: string) {
-      console.log('setCurrentLevel called with level:', level); // Log the passed level
-      if (this.messages[level]) {
-        this.currentLevel = level; // Only set if the level exists
-        console.log('Updated currentLevel to:', this.currentLevel); // Confirm update
-      } else {
-        console.warn(`Invalid level: ${level}`); // Debugging message for invalid levels
-      }
-    },
-  },
-  getters: {
-    // Dynamically retrieve the current set of messages based on state
-    getCurrentMessages: (state): Message => {
-      return state.messages[state.currentLevel] || {}; // Fallback for invalid levels
-    },
-  },
-});
-
-// src / stores / SalesStrategyMessages.ts;
+export default Messages;
