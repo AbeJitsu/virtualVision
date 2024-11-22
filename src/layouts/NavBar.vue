@@ -37,7 +37,7 @@
         <q-btn
           flat
           :label="fullVisionLabel"
-          :to="{ name: 'focused-strategy-sessions' }"
+          to="/focused-strategy-sessions"
           class="nav-text"
         />
         <q-btn
