@@ -59,12 +59,18 @@ const tagline = 'Bringing Your Vision to Life';
 // Use route for navigation logic
 const route = useRoute(); // Call the useRoute function
 
+// Type guard to validate route names
+function isValidRouteName(routeName: string | undefined): routeName is keyof typeof Messages {
+  return routeName !== undefined && routeName in Messages;
+}
+
 // Dynamically determine messages based on the route name
 const currentMessages = ref(Messages['LandingPage']); // Default to Landing Page messages
 watch(
   () => route.name,
   (newRouteName) => {
-    if (newRouteName && Messages[newRouteName]) {
+    // Ensure newRouteName is a string before proceeding
+    if (typeof newRouteName === 'string' && newRouteName && isValidRouteName(newRouteName)) {
       currentMessages.value = Messages[newRouteName]; // Update messages dynamically
       console.log('Current messages updated to:', currentMessages.value);
     } else {
