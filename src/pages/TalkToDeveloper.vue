@@ -56,11 +56,13 @@
 </template>
 
 <script setup lang="ts">
-  import { useSalesStrategyMessages } from '../stores/SalesStrategyMessages';
+import { TalkToDeveloper } from '../stores/messages/TalkToDeveloper';
 
-  const { getCurrentMessages, setCurrentLevel } = useSalesStrategyMessages();
-  setCurrentLevel('talkToDeveloper');
-  const messages = getCurrentMessages;
+// Directly use the imported messages
+const messages = TalkToDeveloper;
+
+// Add a console log to verify the data
+console.log('Direct TalkToDeveloper messages:', JSON.stringify(messages));
 </script>
 
 <style scoped lang="scss">

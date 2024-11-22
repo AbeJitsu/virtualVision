@@ -41,10 +41,12 @@ export const useSalesStrategyMessages = defineStore('salesStrategyMessages', {
     },
     // Update the current level (e.g., LandingPage, talkToDeveloper)
     setCurrentLevel(level: string) {
+      console.log('setCurrentLevel called with level:', level); // Log the passed level
       if (this.messages[level]) {
         this.currentLevel = level; // Only set if the level exists
+        console.log('Updated currentLevel to:', this.currentLevel); // Confirm update
       } else {
-        console.warn(`Invalid level: ${level}`); // Debugging message
+        console.warn(`Invalid level: ${level}`); // Debugging message for invalid levels
       }
     },
   },

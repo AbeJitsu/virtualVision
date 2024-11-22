@@ -75,3 +75,5 @@ watch(
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 </style>
+
+<!-- src/layouts/MainLayout.vue -->
