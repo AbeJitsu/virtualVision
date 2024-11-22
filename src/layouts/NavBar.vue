@@ -48,43 +48,97 @@
         />
       </div>
 
-      <q-btn
+      <!-- Dropdown with Login -->
+      <q-btn-dropdown
         flat
-        label="Sign In"
-        :to="{ name: 'auth-page' }"
-        class="nav-text"
-      />
+        split
+        icon="account_circle"
+        label="Login"
+        class="login-dropdown"
+        no-caps
+        @click="navigateToAuth"
+      >
+        <q-list>
+          <q-item
+            clickable
+            v-close-popup
+            @click="navigateTo('profile')"
+          >
+            <q-item-section avatar>
+              <q-avatar
+                icon="person"
+                color="primary"
+                text-color="white"
+              />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Profile</q-item-label>
+            </q-item-section>
+          </q-item>
 
-      <!-- Tagline -->
-      <div class="tagline">{{ tagline }}</div>
+          <q-item
+            clickable
+            v-close-popup
+            @click="navigateTo('settings')"
+          >
+            <q-item-section avatar>
+              <q-avatar
+                icon="settings"
+                color="secondary"
+                text-color="white"
+              />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Settings</q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item
+            clickable
+            v-close-popup
+            @click="handleLogout"
+          >
+            <q-item-section avatar>
+              <q-avatar
+                icon="logout"
+                color="negative"
+                text-color="white"
+              />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Logout</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </q-btn-dropdown>
     </q-toolbar>
   </q-header>
 </template>
 
 <script setup lang="ts">
-  import { watch } from 'vue';
-  import { useRoute, RouteRecordName } from 'vue-router'; // Import RouteRecordName for proper typing
+  import { ref } from 'vue';
+  import { useRouter } from 'vue-router';
 
-  const route = useRoute(); // Access the current route instance
+  const router = useRouter();
 
-  // Watch for changes in route.name and explicitly type newRouteName
-  watch(
-    () => route.name, // Reactive source
-    (newRouteName: RouteRecordName | null | undefined) => {
-      if (newRouteName) {
-        console.log('Route name changed:', newRouteName.toString()); // Log valid route names
-      } else {
-        console.warn('Route name is invalid:', newRouteName); // Warn if route name is null or undefined
-      }
-    }
-  );
+  // Function to handle navigation
+  function navigateTo(page: string) {
+    router.push({ name: page });
+  }
+
+  // Function to handle navigation to auth
+  function navigateToAuth() {
+    router.push({ name: 'auth-page' });
+  }
+
+  // Function to handle logout
+  function handleLogout() {
+    console.log('Logging out...');
+    // Add logout logic here
+  }
 
   const props = defineProps({
     toolbarTitle: {
-      type: String,
-      required: true,
-    },
-    tagline: {
       type: String,
       required: true,
     },
@@ -98,7 +152,7 @@
     },
   });
 
-  const emit = defineEmits(['toggleLeftDrawer']); // Define the toggleLeftDrawer event
+  const emit = defineEmits(['toggleLeftDrawer']);
 
   // Function to toggle the left drawer menu
   function toggleLeftDrawer() {
@@ -111,13 +165,13 @@
 
   .custom-header {
     display: flex;
-    align-items: center; /* Vertically aligns items */
-    justify-content: space-between; /* Balances left, center, and right zones */
-    height: 4rem; /* Fixed header height */
-    z-index: 10; /* Keeps header above other content */
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    z-index: 10;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0.98;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+    transition: background-color 0.3s ease-in-out;
     padding: 1rem 1rem;
     white-space: nowrap;
   }
@@ -126,29 +180,29 @@
     margin-right: 1rem;
 
     @media (min-width: 768px) {
-      margin-right: 2rem; /* Add more space for larger screens */
+      margin-right: 2rem;
     }
   }
 
   .toolbar-title {
-    display: inline-flex; /* Shrink-wraps the title content */
-    justify-content: flex-start; /* Aligns title to the left */
-    align-items: center; /* Vertically centers the text */
-    flex: none; /* Prevents title from taking extra space */
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: none;
     font-size: 1.75rem;
     font-weight: 600;
     color: $textWhite;
-    padding: 0; /* No extra padding */
-    margin: 0; /* No extra margin */
+    padding: 0;
+    margin: 0;
   }
 
   .nav-links {
     display: flex;
-    justify-content: center; /* Centers navigation links */
-    align-items: center; /* Vertically aligns navigation links */
-    gap: 1rem; /* Adds space between links */
-    flex: 1; /* Dynamically adjusts to available space */
-    padding: 0; /* No extra padding */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    padding: 0;
   }
 
   .nav-text {
@@ -157,10 +211,8 @@
     font-weight: 600;
   }
 
-  .tagline {
+  .login-dropdown {
     color: $textWhite;
-    font-size: 1.2em;
-    font-weight: 700;
-    white-space: nowrap;
+    font-weight: 600;
   }
 </style>
