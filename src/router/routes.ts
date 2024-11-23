@@ -31,6 +31,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/CompleteWebsiteBuild.vue'),
       },
       {
+        path: 'privacy-policy',
+        name: 'privacy-policy',
+        component: () => import('pages/PrivacyPolicy.vue'), // Added Privacy Policy route
+      },
+      {
         path: '/auth',
         name: 'auth-page',
         component: () => import('pages/AuthPage.vue'),
