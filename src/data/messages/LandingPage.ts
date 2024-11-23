@@ -5,37 +5,35 @@ export const LandingPage: Message = {
     'All Your Business Needs, United in One Powerful Website',
 
   supportiveIntro:
-    'We know how overwhelming it feels to juggle tools for scheduling, payments, and customer management.',
+    'We understand how overwhelming it feels to manage scheduling, payments, and tools all at once.', // Revised to feel more empathetic and relatable.
   supportiveMain:
-    'Let’s simplify everything into one platform, helping you focus on growing your business and achieving your goals.',
+    'Imagine uniting everything into one platform so you can focus on growing your business.', // Streamlined for clarity and emotional connection.
 
   dominantSupportiveIntro:
-    'Your business deserves more than a good-looking website—it needs a professional tool for growth.',
+    'Your business deserves more than a website—it needs a system for growth.', // Simplified for directness and focus.
   dominantMain:
-    'Imagine a hub that sells and schedules effectively while positioning you as a leader in your field.',
+    'Picture a single hub that supports sales, scheduling, and positions you as a leader.', // Refined to highlight benefits concisely.
 
   influentialSupportiveIntro:
-    'Your customers want more than information—they want an engaging experience that keeps them coming back.',
+    'Your customers want more than information—they want experiences that keep them coming back.', // Polished for better flow.
   influentialMain:
-    'Let’s create a site that inspires action, builds trust, and ensures confidence in every visitor.',
+    'Let’s build a site that inspires action, builds trust, and ensures confidence in every visitor.', // Retained original for impact.
 
   conscientiousSupportiveIntro:
-    'Building a connected platform isn’t just convenient—it’s a smarter way to grow.',
+    'A connected platform isn’t just a convenience—it’s the foundation of smart growth.', // Adjusted for precision.
   conscientiousMain:
-    'We’ll design tools that support your goals, keep processes running smoothly, and ensure long-term success.',
+    'We’ll create tools that align with your goals, optimize workflows, and ensure lasting success.', // Enhanced for clarity and professionalism.
 
   supportiveWrapUpIntro:
     'Your business deserves simplicity and growth in one package.',
   supportiveWrapUpMain:
-    'Let’s build a site that inspires connection, streamlines your tools, and drives action.',
+    'Let’s build a site that connects people, streamlines processes, and drives results.', // Adjusted to emphasize outcomes.
 
-  promptInfluential: 'Curious to see what’s possible?',
-  promptSupportive: 'Let’s take the first step together.',
+  promptInfluential: 'Curious to explore what’s possible?', // Slight tweak for a conversational tone.
+  promptSupportive: 'Let’s take the first step together.', // Retained as it fits the supportive tone perfectly.
 
   binaryChoiceReadySupportiveInfluential:
-    'Sounds interesting. How would we start?',
+    'This feels right. How do I get started?', // 8 words, supportive and action-oriented.
   binaryChoiceExploreSupportiveConscientious:
-    'Help me understand what I might be missing.',
+    'I’d like to understand this a bit better.', // 8 words, supportive and inquisitive.
 };
-
-// src / data / messages / LandingPage.ts;
