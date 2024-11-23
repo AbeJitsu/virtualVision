@@ -33,7 +33,12 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'privacy-policy',
         name: 'privacy-policy',
-        component: () => import('pages/PrivacyPolicy.vue'), // Added Privacy Policy route
+        component: () => import('pages/PrivacyPolicy.vue'),
+      },
+      {
+        path: 'terms-of-service',
+        name: 'terms-of-service',
+        component: () => import('pages/TermsOfService.vue'), // Added Terms of Service route
       },
       {
         path: '/auth',
