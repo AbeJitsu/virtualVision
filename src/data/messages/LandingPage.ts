@@ -38,4 +38,4 @@ export const LandingPage: Message = {
     'Help me understand what I might be missing.',
 };
 
-// src / stores / messages / LandingPage.ts;
+// src / data / messages / LandingPage.ts;
