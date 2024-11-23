@@ -33,7 +33,7 @@ export const LandingPage: Message = {
   promptSupportive: 'Let’s take the first step together.', // Retained as it fits the supportive tone perfectly.
 
   binaryChoiceReadySupportiveInfluential:
-    'This feels right. How do I get started?', // 8 words, supportive and action-oriented.
+    'This feels right. How would I get started?', // 8 words, supportive and action-oriented.
   binaryChoiceExploreSupportiveConscientious:
     'I’d like to understand this a bit better.', // 8 words, supportive and inquisitive.
 };
