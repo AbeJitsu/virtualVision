@@ -4,8 +4,8 @@
     elevated
   >
     <q-toolbar>
-      <!-- Menu Button -->
-      <q-btn
+
+      <!-- <q-btn
         flat
         dense
         round
@@ -13,7 +13,7 @@
         aria-label="Menu"
         class="menu-button"
         @click="toggleLeftDrawer"
-      />
+      /> -->
 
       <!-- Title (Vision2Virtual links to Landing Page) -->
       <q-toolbar-title class="toolbar-title">
