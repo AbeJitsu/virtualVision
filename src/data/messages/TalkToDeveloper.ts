@@ -1,3 +1,5 @@
+// src/stores/messages/TalkToDeveloper.ts
+
 export const TalkToDeveloper = {
   // Validation Guidelines:
   // 1. Tagline:
@@ -28,34 +30,34 @@ export const TalkToDeveloper = {
   //    - Right Button: Dominant and Conscientious (providing clarity or details).
 
   dominantInfluentialTagline:
-    'Leverage Expertise to Transform Your Vision Into Results', // 8 words
+    'Start Your Journey with Tailored Expertise and Insight', // 8 words
 
   supportiveIntro:
-    'Imagine working with a professional who brings decades of experience to understanding your vision.', // 15 words
+    'Imagine a live, interactive call focused entirely on understanding and advancing your goals.', // 15 words
   supportiveMain:
-    'This session connects you with a developer and designer who truly knows how to deliver results.', // 16 words
+    'This one-hour video call connects you with a developer who listens, strategizes, and builds for results.', // 17 words
 
   dominantSupportiveIntro:
-    'Over 20 years of high-level customer service and technical expertise—tailored to your needs.', // 16 words
+    'With decades of high-level customer service experience, I bring clarity and focus to refining your vision.', // 17 words
   dominantMain:
-    'Let’s clarify your goals and create actionable solutions that align with your vision and success.', // 16 words
+    'Let’s identify your goals, create actionable steps, and position your project for success.', // 15 words
 
   influentialSupportiveIntro:
-    'Your project deserves the insight of someone who listens, refines, and implements effectively.', // 14 words
+    'Your vision deserves focused attention and actionable insight to turn ideas into results.', // 13 words
   influentialMain:
-    'Together, we’ll create a roadmap to move your business forward with confidence and clarity.', // 14 words
+    'Together, we’ll outline a clear path to ensure your project moves forward with confidence.', // 14 words
 
   conscientiousSupportiveIntro:
-    'Combining technical expertise and customer focus ensures a seamless and efficient experience.', // 13 words
+    'An organized approach ensures every aspect of your project is thoughtfully addressed.', // 12 words
   conscientiousMain:
-    'With every detail considered, you’ll leave the session with clarity and actionable next steps.', // 15 words
+    'Within 24 hours, you’ll receive a detailed summary with actionable next steps.', // 13 words
 
   supportiveWrapUpIntro:
-    'Focused attention from an expert is rare and invaluable.', // 7 words
+    'Focused, tailored attention like this is rare and invaluable.', // 8 words
   supportiveWrapUpMain:
-    'For just $49, you’ll gain valuable insights and a personalized project summary.', // 14 words
+    'For $49, gain professional insight and a personalized session summary within 24 hours.', // 14 words
 
-  promptInfluential: 'Ready to collaborate with an expert?', // 5 words
+  promptInfluential: 'Ready to start planning together?', // 5 words
   promptSupportive: 'Let’s schedule your first session today.', // 6 words
 
   binaryChoiceReadySupportiveInfluential:
