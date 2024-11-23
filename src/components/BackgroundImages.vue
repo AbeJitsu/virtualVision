@@ -30,7 +30,7 @@
 
   /* Automatic scrolling animation */
   background-image: url('/src/assets/influential_bottom_left.webp');
-  animation: scrollBackground 60s ease-in-out infinite;
+  animation: scrollBackground 70s ease-in-out infinite;
 }
 
 /* Extended Keyframes for smooth background scroll */
