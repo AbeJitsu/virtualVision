@@ -45,6 +45,11 @@ const routes: RouteRecordRaw[] = [
         name: 'auth-page',
         component: () => import('pages/AuthPage.vue'),
       },
+      {
+        path: 'contact',
+        name: 'contact-us',
+        component: () => import('pages/ContactUs.vue'),
+      },
     ],
   },
   {
