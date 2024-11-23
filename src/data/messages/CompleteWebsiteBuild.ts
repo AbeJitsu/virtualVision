@@ -17,7 +17,7 @@
 //    - Min: 49 chars (98% of the shortest sentence)
 //    - Max: 51 chars (102% of the longest sentence)
 
-import { Message } from '../../stores/SalesStrategyMessages';
+import { Message } from './SalesStrategyMessages';
 
 export const CompleteWebsiteBuild: Message = {
   dominantInfluentialTagline:

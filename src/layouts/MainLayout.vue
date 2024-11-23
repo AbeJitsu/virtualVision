@@ -33,7 +33,7 @@
   import LeftDrawer from '../layouts/LeftDrawer.vue';
   import Footer from '../layouts/Footer.vue';
   import BackgroundImages from '../components/BackgroundImages.vue';
-  import { Messages } from '../stores/SalesStrategyMessages'; // Import the messages object directly
+  import { Messages } from '../data/messages/SalesStrategyMessages'; // Import the messages object directly
 
   defineOptions({
     name: 'MainLayout',

@@ -28,7 +28,7 @@
 //    - Left Button: Supportive and Influential (encouraging action)
 //    - Right Button: Dominant and Conscientious (providing clarity or details)
 
-import { Message } from '../../stores/SalesStrategyMessages';
+import { Message } from './SalesStrategyMessages';
 
 export const ContactUs: Message = {
   dominantInfluentialTagline:

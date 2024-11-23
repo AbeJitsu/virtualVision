@@ -1,4 +1,4 @@
-import { Message } from '../../stores/SalesStrategyMessages';
+import { Message } from './SalesStrategyMessages';
 
 export const LandingPage: Message = {
   dominantInfluentialTagline:
