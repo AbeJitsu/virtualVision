@@ -55,7 +55,7 @@ export const TalkToDeveloper = {
   supportiveWrapUpIntro:
     'Focused, tailored attention like this is rare and invaluable.', // 8 words
   supportiveWrapUpMain:
-    'For $49, gain professional insight and a personalized session summary within 24 hours.', // 14 words
+    'For $49, gain professional insight and a personalized session summary, within 24 hours.', // 14 words
 
   promptInfluential: 'Ready to start planning together?', // 5 words
   promptSupportive: 'Let’s schedule your first session today.', // 6 words
