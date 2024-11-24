@@ -2,39 +2,40 @@ import { Message } from './SalesStrategyMessages';
 
 export const LandingPage: Message = {
   dominantInfluentialTagline:
-    'Start Small, Grow Big With a Custom Website Solution', // 8 words
+    'Turn Small Ideas Into Big Results With Custom Solutions', // 8 words
 
   supportiveIntro:
-    'Building a website can feel overwhelming, especially with so many moving parts.', // 14 words
+    'Starting a website can feel daunting, but it doesn’t have to be.', // 13 words
   supportiveMain:
-    'We simplify the process with a flexible system that grows with your needs and vision.', // 15 words
+    'We make it easy by building a platform that grows with your vision.', // 13 words
 
   dominantSupportiveIntro:
-    'Every great project starts with a single, clear step forward.', // 12 words
+    'Every great project begins with a clear, actionable first step.', // 11 words
   dominantMain:
-    'Our three-step process helps you start small and build toward a complete, scalable solution.', // 15 words
+    'Our three-step process turns small beginnings into big results, guiding you to success.', // 14 words
 
   influentialSupportiveIntro:
-    'Your success deserves more than just talk—it needs clear planning and expert execution.', // 14 words
+    'Your success deserves thoughtful planning and expert guidance to bring your vision to life.', // 14 words
   influentialMain:
-    'We’re here to build trust and confidence, ensuring every decision moves your vision forward.', // 14 words
+    'We’re here to inspire confidence, ensuring every step moves your goals closer to reality.', // 14 words
 
   conscientiousSupportiveIntro:
-    'Each phase builds on the last, ensuring progress is never lost.', // 11 words
+    'Each phase builds seamlessly, ensuring clarity and progress every step of the way.', // 13 words
   conscientiousMain:
-    'From your first session to a complete website, every phase aligns with your unique goals.', // 15 words
+    'From your first session to a complete website, every phase reflects your vision and goals.', // 15 words
 
   supportiveWrapUpIntro:
-    'Transform your ideas with clarity, focus, and action.', // 7 words
+    'Transform your ideas with focus, clarity, and action.', // 7 words
   supportiveWrapUpMain:
-    'Every milestone builds momentum and carries your progress forward.',
-  promptInfluential: 'Curious to see how this works?', // 6 words
+    'Every milestone builds momentum, bringing your vision closer to reality.', // 11 words
+
+  promptInfluential: 'Curious to see how it works?', // 6 words
   promptSupportive: 'Let’s take your first step today.', // 6 words
 
   binaryChoiceReadySupportiveInfluential:
     'I’m curious about how to get started.', // 8 words
   binaryChoiceExploreSupportiveConscientious:
-    'What happens if I want more details?', // 8 words
+    'How is this better than doing it myself?', // 8 words
 };
 
 export default LandingPage;
