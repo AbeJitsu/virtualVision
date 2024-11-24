@@ -36,7 +36,7 @@ export const FocusedStrategySessions: Message = {
   binaryChoiceReadySupportiveInfluential:
     'I’m ready to book my first session now.', // 8 words
   binaryChoiceExploreSupportiveConscientious:
-    'What happens if I’m unsure about continuing?', // 8 words
+    'What if I want to see the full solution?', // 8 words
 };
 
 export default FocusedStrategySessions;
