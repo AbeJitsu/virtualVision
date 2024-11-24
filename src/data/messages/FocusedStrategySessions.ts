@@ -1,70 +1,43 @@
-// Validation Guidelines:
-// 1. Tagline:
-//    - Min: 8 words
-//    - Max: 10 words
-//    - **Must include collaboration and problem-solving, starting dominant and ending influential**
-// 2. Tone-Driven Messaging (Supportive/Dominant/Influential/Conscientious Intros and Mains):
-//    - Min: 15 words
-//    - Max: 18 words
-// 3. Supportive Wrap-Up Intro:
-//    - Min: 7 words
-//    - Max: 9 words
-// 4. Supportive-Influential Wrap-Up Main:
-//    - Min: 12 words
-//    - Max: 14 words
-// 5. Prompts:
-//    - Prompt Influential:
-//       - Min: 4 words
-//       - Max: 5 words
-//    - Prompt Supportive:
-//       - Min: 5 words
-//       - Max: 6 words
-// 6. Binary Choice Buttons:
-//    - Min: 7 words
-//    - Max: 8 words
-//    - **Must be written in the user's inner voice**
-//    - Left Button: Supportive and Influential (encouraging action)
-//    - Right Button: Dominant and Conscientious (providing clarity or details)
-
 // src/data/messages/FocusedStrategySessions.ts
 
 import { Message } from './SalesStrategyMessages';
 
-
 export const FocusedStrategySessions: Message = {
   dominantInfluentialTagline:
-    'Turn Planning into Actionable Results with Expert Guidance', // 55 chars (within limits)
+    'Build Clarity and Momentum Through Strategic Collaboration', // 8 words
 
   supportiveIntro:
-    'Success begins with understanding your unique challenges and goals to create tailored solutions.', // 114 chars (within limits)
+    'Start with a $49 Talk to a Developer session—a live, one-hour call with a relatable developer and designer.', // 18 words
   supportiveMain:
-    'Together, we’ll refine your vision and craft a clear strategy to turn it into a meaningful reality.', // 122 chars (within limits)
+    'This session provides an actionable plan and a clear starting point to refine your ideas and goals.', // 16 words
 
   dominantSupportiveIntro:
-    'Your strategy deserves an actionable path to effective implementation and measurable success.', // 115 chars (within limits)
+    'The Focused Strategy Sessions offer four additional live sessions for $499, building on your initial consultation.', // 17 words
   dominantMain:
-    'Focused sessions provide proven steps to achieve your goals while ensuring long-term sustainability.', // 123 chars (within limits)
+    'With each session, your vision becomes sharper, your goals clearer, and your path forward well-defined.', // 15 words
 
   influentialSupportiveIntro:
-    'Your ideas should inspire trust, build confidence, and encourage decisive action from your audience.', // 122 chars (within limits)
+    'Focused collaboration helps refine your ideas, creating actionable strategies that inspire trust and confidence.', // 15 words
   influentialMain:
-    'We’ll develop strategies to captivate and engage your audience, fostering loyalty and meaningful connections.', // 118 chars (within limits)
+    'By the fifth session, you’ll have a comprehensive roadmap tailored to your unique needs and objectives.', // 14 words
 
   conscientiousSupportiveIntro:
-    'Attention to detail ensures every aspect of your plan aligns with your long-term vision and goals.', // 115 chars (within limits)
+    'Every session ensures your ideas align with your goals and prepares you for long-term success.', // 14 words
   conscientiousMain:
-    'We’ll design processes that address every detail, creating a solid foundation for sustainable success.', // 118 chars (within limits)
+    'You’ll leave each session with actionable insights, creating clarity and measurable progress at every step.', // 14 words
 
   supportiveWrapUpIntro:
-    'Strategic planning is the foundation for meaningful growth.', // 53 chars (within limits)
+    'Start small, build trust, and see results step by step.', // 8 words
   supportiveWrapUpMain:
-    'Let’s transform your ideas into a powerful, comprehensive growth and achievement.', // 116 chars (within limits)
+    'After your first session, you decide if four more sessions feel right.', // 12 words
 
-  promptInfluential: 'Are you ready to explore what we can together?', // 47 chars (within limits)
-  promptSupportive: 'Let’s take the first step toward clarity and progress.', // 46 chars (within limits)
+  promptInfluential: 'Ready to see your ideas come to life?', // 5 words
+  promptSupportive: 'Let’s take your vision further together.', // 6 words
 
   binaryChoiceReadySupportiveInfluential:
-    'This sounds exactly like what I need! Let’s begin.', // 50 chars (within limits)
+    'I’m ready to book my first session now.', // 8 words
   binaryChoiceExploreSupportiveConscientious:
-    'I’d like to understand more about details first.', // 50 chars (within limits)
+    'What if I’m not sure this is for me?', // 8 words
 };
+
+export default FocusedStrategySessions;
