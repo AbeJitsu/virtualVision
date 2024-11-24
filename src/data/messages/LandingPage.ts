@@ -17,17 +17,17 @@ export const LandingPage: Message = {
   influentialSupportiveIntro:
     'Your success deserves more than just talk—it needs clear planning and expert execution.', // 14 words
   influentialMain:
-    'We’re here to build trust and momentum, ensuring every decision moves your vision forward.', // 14 words
+    'We’re here to build trust and confidence, ensuring every decision moves your vision forward.', // 14 words
 
   conscientiousSupportiveIntro:
-    'Every step builds on the last, ensuring progress is never lost.', // 11 words
+    'Each phase builds on the last, ensuring progress is never lost.', // 11 words
   conscientiousMain:
     'From your first session to a complete website, every phase aligns with your unique goals.', // 15 words
 
-  supportiveWrapUpIntro: 'Transform your ideas with clarity, momentum, and action.', // 7 words
+  supportiveWrapUpIntro:
+    'Transform your ideas with clarity, focus, and action.', // 7 words
   supportiveWrapUpMain:
-    'Each step builds trust and carries your progress forward.',
-
+    'Every milestone builds momentum and carries your progress forward.',
   promptInfluential: 'Curious to see how this works?', // 6 words
   promptSupportive: 'Let’s take your first step today.', // 6 words
 
