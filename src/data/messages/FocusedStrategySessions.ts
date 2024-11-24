@@ -7,7 +7,7 @@ export const FocusedStrategySessions: Message = {
     'Build Clarity and Momentum Through Strategic Collaboration', // 8 words
 
   supportiveIntro:
-    'Start with a $49 Talk to a Developer session—a live, one-hour call with a relatable developer and designer.', // 18 words
+    'Start with a $49 Talk to a Developer session; a live, one-hour call with a pro that listens and understands.', // 18 words
   supportiveMain:
     'This session provides an actionable plan and a clear starting point to refine your ideas and goals.', // 16 words
 

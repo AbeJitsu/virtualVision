@@ -42,14 +42,16 @@
           <p>{{ currentMessage.promptSupportive }}</p>
         </div>
         <div class="action-buttons">
+          <!-- Left button navigates to booking page -->
           <q-btn
             :label="currentMessage.binaryChoiceReadySupportiveInfluential"
             to="/book"
             class="choice-btn q-mb-md enhanced-btn"
           />
+          <!-- Right button navigates to Complete Website Build page -->
           <q-btn
             :label="currentMessage.binaryChoiceExploreSupportiveConscientious"
-            to="/landing-page"
+            to="/complete-website-build"
             class="choice-btn q-mb-md enhanced-btn"
           />
         </div>
