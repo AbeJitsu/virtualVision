@@ -1,57 +1,43 @@
 // src/data/messages/CompleteWebsiteBuild.ts
-// Validation Guidelines:
-// 1. Tone-Driven Messaging (Supportive Intro to Conscientious Main):
-//    - Min: 87 chars (98% of the shortest sentence)
-//    - Max: 123 chars (102% of the longest sentence)
-// 2. Supportive Wrap-Ups:
-//    - Wrap-Up Intro:
-//      - Min: 52 chars (98% of the shortest sentence)
-//      - Max: 54 chars (102% of the longest sentence)
-//    - Wrap-Up Main:
-//      - Min: 116 chars (98% of the shortest sentence)
-//      - Max: 123 chars (102% of the longest sentence)
-// 3. Prompts:
-//    - Min: 43 chars (98% of the shortest sentence)
-//    - Max: 48 chars (102% of the longest sentence)
-// 4. Binary Choice Buttons:
-//    - Min: 49 chars (98% of the shortest sentence)
-//    - Max: 51 chars (102% of the longest sentence)
 
 import { Message } from './SalesStrategyMessages';
 
 export const CompleteWebsiteBuild: Message = {
   dominantInfluentialTagline:
-    'Discover how a custom-built website scales your vision.', // 54 chars (within limits)
+    'Bring Your Vision to Life With Expert Development', // 8 words
 
   supportiveIntro:
-    'Every business deserves a website tailored to its unique needs and goals.', // 98 chars (within limits)
+    'This optional final step refines your strategy into a fully functional website tailored to your goals.', // 14 words
   supportiveMain:
-    'We’ll craft a platform that reflects your vision and drives meaningful results.', // 100 chars (within limits)
+    'With a solid foundation in place, we refine and execute your vision into a polished product.', // 14 words
 
   dominantSupportiveIntro:
-    'Your business needs a platform designed to meet its goals and adapt to growth.', // 94 chars (within limits)
+    'This package provides 16 additional live, scheduled sessions with your developer to bring your site to life.', // 15 words
   dominantMain:
-    'Our custom builds ensure scalability, efficiency, and measurable success.', // 91 chars (within limits)
+    'In addition to live sessions, you’ll get 32 hours of custom development time to perfect your site.', // 15 words
 
   influentialSupportiveIntro:
-    'Your site should not only work well but leave a lasting impression on users.', // 91 chars (within limits)
+    'By this step, you’ll have completed 21 live sessions and 32 development hours to bring your vision to life.', // 15 words
   influentialMain:
-    'Together, we’ll create a site that inspires trust, fosters loyalty, and drives engagement.', // 98 chars (within limits)
+    'This $4,499 package includes everything needed to refine, launch, and perfect your website.', // 13 words
 
   conscientiousSupportiveIntro:
-    'Attention to detail ensures every element supports your long-term goals.', // 90 chars (within limits)
+    'Progress is tracked and refined with care, ensuring your site aligns with every detail of your vision.', // 14 words
   conscientiousMain:
-    'We’ll build processes that ensure reliability, scalability, and long-term success.', // 95 chars (within limits)
+    'Most sites will be live by session 10, with remaining 11 sessions used to refine and enhance it at your pace.', // 15 words
 
-  supportiveWrapUpIntro: 'A website is an investment in your future success.', // 51 chars (within limits)
+  supportiveWrapUpIntro:
+    'Start small, gain clarity, and build your vision confidently.', // 7 words
   supportiveWrapUpMain:
-    'Let’s craft a site that reflects your goals and equips you for growth.', // 87 chars (within limits)
+    'It all begins with a $49 session. You don’t have to decide on the next steps now.', // 14 words
 
-  promptInfluential: 'Excited to see what we can build together?', // 43 chars (within limits)
-  promptSupportive: 'Let’s start creating the perfect platform for your needs.', // 47 chars (within limits)
+  promptInfluential: 'Curious about how we make it happen?', // 6 words
+  promptSupportive: 'Let’s discuss how to bring your vision to life.', // 7 words
 
   binaryChoiceReadySupportiveInfluential:
-    'This feels perfect. How do we get started today?', // 49 chars (within limits)
+    'Start with a $49 session and decide the rest later.', // 10 words
   binaryChoiceExploreSupportiveConscientious:
-    'Can you explain the process? I’d like details.', // 49 chars (within limits)
+    'How does this compare to hiring a traditional agency?', // 9 words
 };
+
+export default CompleteWebsiteBuild;
