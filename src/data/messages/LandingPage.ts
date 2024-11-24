@@ -2,7 +2,7 @@ import { Message } from './SalesStrategyMessages';
 
 export const LandingPage: Message = {
   dominantInfluentialTagline:
-    'Start Small, Grow Big With Tailored Website Solutions', // 8 words
+    'Start Small, Grow Big With a Custom Website Solution', // 8 words
 
   supportiveIntro:
     'Building a website can feel overwhelming, especially with so many moving parts.', // 14 words

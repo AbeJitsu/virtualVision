@@ -1,69 +1,38 @@
-// src/stores/messages/TalkToDeveloper.ts
-
 export const TalkToDeveloper = {
-  // Validation Guidelines:
-  // 1. Tagline:
-  //    - Min: 8 words
-  //    - Max: 10 words
-  //    - Must include collaboration and problem-solving, starting dominant and ending influential.
-  // 2. Tone-Driven Messaging (Supportive/Dominant/Influential/Conscientious Intros and Mains):
-  //    - Min: 15 words
-  //    - Max: 18 words
-  // 3. Supportive Wrap-Up Intro:
-  //    - Min: 7 words
-  //    - Max: 9 words
-  // 4. Supportive-Influential Wrap-Up Main:
-  //    - Min: 12 words
-  //    - Max: 14 words
-  // 5. Prompts:
-  //    - Prompt Influential:
-  //       - Min: 4 words
-  //       - Max: 5 words
-  //    - Prompt Supportive:
-  //       - Min: 5 words
-  //       - Max: 6 words
-  // 6. Binary Choice Buttons:
-  //    - Min: 7 words
-  //    - Max: 8 words
-  //    - Must be written in the user's inner voice.
-  //    - Left Button: Supportive and Influential (encouraging action).
-  //    - Right Button: Dominant and Conscientious (providing clarity or details).
-
   dominantInfluentialTagline:
-    'Start Your Journey with Tailored Expertise and Insight', // 8 words
+    'Collaborate Directly With the Expert Who’ll Build Your Vision', // 8 words
 
   supportiveIntro:
-    'Imagine a live, interactive call focused entirely on understanding and advancing your goals.', // 15 words
+    'Imagine a live, interactive call where your ideas are heard, understood, and refined.', // 14 words
   supportiveMain:
-    'This one-hour video call connects you with a developer who listens, strategizes, and builds for results.', // 17 words
+    'This session connects you with the designer and developer shaping your project.', // 13 words
 
   dominantSupportiveIntro:
-    'With decades of high-level customer service experience, I bring clarity and focus to refining your vision.', // 17 words
+    'With years of high-level service experience, I ensure focus on what matters to your goals.', // 15 words
   dominantMain:
-    'Let’s identify your goals, create actionable steps, and position your project for success.', // 15 words
+    'Together, we’ll define your goals and create a personalized plan tailored to your vision.', // 15 words
 
   influentialSupportiveIntro:
-    'Your vision deserves focused attention and actionable insight to turn ideas into results.', // 13 words
+    'Guidance from someone who builds with care and understands your vision is rare.', // 13 words
   influentialMain:
-    'Together, we’ll outline a clear path to ensure your project moves forward with confidence.', // 14 words
+    'For just $49, you gain insight from an expert who can bring your vision to life.', // 15 words
 
   conscientiousSupportiveIntro:
-    'An organized approach ensures every aspect of your project is thoughtfully addressed.', // 12 words
+    'This session ensures clarity and progress, whether you continue with more services or not.', // 13 words
   conscientiousMain:
-    'Within 24 hours, you’ll receive a detailed summary with actionable next steps.', // 13 words
+    'Every detail will be captured, preserving progress no matter what you decide next.', // 14 words
 
-  supportiveWrapUpIntro:
-    'Focused, tailored attention like this is rare and invaluable.', // 8 words
+  supportiveWrapUpIntro: 'Partner with the developer who listens and delivers.', // 7 words
   supportiveWrapUpMain:
-    'For $49, gain professional insight and a personalized session summary, within 24 hours.', // 14 words
+    'Leave with insights and a clear plan, crafted for your project.', // 12 words
 
-  promptInfluential: 'Ready to start planning together?', // 5 words
+  promptInfluential: 'Ready to take the first step forward?', // 6 words
   promptSupportive: 'Let’s schedule your first session today.', // 6 words
 
   binaryChoiceReadySupportiveInfluential:
-    'This feels right. How do I book now?', // 8 words
+    'This feels like the perfect first step.', // 8 words
   binaryChoiceExploreSupportiveConscientious:
-    'Can I learn more before scheduling a call?', // 8 words
+    'What if I’m unsure about the next steps?', // 8 words
 };
 
 export default TalkToDeveloper;
