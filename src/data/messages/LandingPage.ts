@@ -25,7 +25,7 @@ export const LandingPage: Message = {
     'From your first session to a complete website, every phase reflects your vision and goals.', // 15 words
 
   supportiveWrapUpIntro:
-    'Transform your ideas with focus, clarity, and action.', // 7 words
+    'Bring your ideas to life with precision and decisive action.', // 8 words
   supportiveWrapUpMain:
     'Every milestone builds momentum, bringing your vision closer to reality.', // 11 words
 
