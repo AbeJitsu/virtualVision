@@ -1,23 +1,29 @@
 <template>
-  <q-page class="window-height window-width row justify-center items-center">
-    <div class="column q-pa-lg">
-      <div class="row">
-        <q-card square class="shadow-24" style="width:300px;height:485px;">
+  <q-page
+    class="window-height window-width row justify-center items-center auth-page"
+  >
+    <div class="column q-pa-lg content-container">
+      <div class="row justify-center">
+        <q-card
+          square
+          class="shadow-24 auth-card"
+        >
           <!-- Header Section -->
-          <q-card-section class="bg-deep-purple-7">
+          <q-card-section class="card-header">
             <h4 class="text-h5 text-white q-my-md">Sign In</h4>
           </q-card-section>
 
           <!-- Form Section -->
           <q-card-section>
-            <q-form class="q-px-sm q-pt-xl">
+            <q-form class="form-container">
               <q-input
                 v-model="email"
                 type="email"
                 label="Email"
                 square
                 clearable
-                :rules="[val => !!val || 'Email is required']"
+                :rules="[(val) => !!val || 'Email is required']"
+                class="form-input"
               >
                 <template v-slot:prepend>
                   <q-icon name="email" />
@@ -30,7 +36,8 @@
                 label="Password"
                 square
                 clearable
-                :rules="[val => !!val || 'Password is required']"
+                :rules="[(val) => !!val || 'Password is required']"
+                class="form-input"
               >
                 <template v-slot:prepend>
                   <q-icon name="lock" />
@@ -41,22 +48,35 @@
 
           <!-- Social Media Buttons -->
           <q-card-section>
-            <div class="text-center q-pa-md q-gutter-md">
-              <q-btn round color="red-8" @click="handleGoogleSignIn">
-                <q-icon name="fab fa-google" size="1.2rem" />
-              </q-btn>
+            <div class="button-container">
+              <GoogleSignInButton />
             </div>
           </q-card-section>
 
           <!-- Actions Section -->
-          <q-card-actions class="q-px-lg">
-            <q-btn unelevated size="lg" color="purple-4" class="full-width text-white" label="Sign In" />
+          <q-card-actions class="actions-section justify-center">
+            <q-btn
+              unelevated
+              size="lg"
+              class="action-btn"
+              label="Sign In"
+            />
           </q-card-actions>
 
           <!-- Footer Section -->
-          <q-card-section class="text-center q-pa-sm">
-            <p class="text-grey-6 clickable" @click="handleForgotPassword">Forgot your password?</p>
-            <p class="text-grey-6 clickable" @click="toggleRegistration">Don't have an account? Register</p>
+          <q-card-section class="footer-section">
+            <p
+              class="clickable"
+              @click="handleForgotPassword"
+            >
+              Forgot your password?
+            </p>
+            <p
+              class="clickable"
+              @click="toggleRegistration"
+            >
+              Don't have an account? Register
+            </p>
           </q-card-section>
         </q-card>
       </div>
@@ -66,6 +86,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import GoogleSignInButton from 'src/components/GoogleSignInButton.vue';
 
 const email = ref('');
 const password = ref('');
@@ -84,13 +105,74 @@ function toggleRegistration() {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '/src/css/app.scss';
+@import '/src/css/shared-styles.scss';
+
+/* Page styling */
+.auth-page {
+  background-color: #f8f9fa;
+}
+
+/* Card styling */
+.auth-card {
+  width: 55%;
+  height: 70%;
+  padding: 2rem 2rem;
+}
+
+/* Header styling */
+.card-header {
+  background-color: $blueMid;
+}
+
+/* Form styling */
+.form-container {
+  padding: 1rem 1rem;
+}
+
+.form-input {
+  margin-bottom: 1.5rem;
+}
+
+/* Social buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Action buttons */
+.actions-section {
+  padding: 1rem;
+  text-align: center;
+}
+
+.action-btn {
+  margin-top: 1rem;
+  transition: background-color 0.3s ease-in-out;
+  background-color: $blueMid;
+  color: white;
+  padding: 1rem 2rem;
+
+  &:hover {
+    background-color: $blueDark;
+  }
+}
+
+/* Footer clickable text */
+.footer-section {
+  text-align: center;
+  padding: 1rem;
+}
+
 .clickable {
   cursor: pointer;
-  text-decoration: underline;
-  color: #673ab7;
-}
-.clickable:hover {
-  color: #512da8;
+  color: $grayDark;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 </style>

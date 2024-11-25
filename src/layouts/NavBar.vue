@@ -4,7 +4,6 @@
     elevated
   >
     <q-toolbar>
-
       <!-- <q-btn
         flat
         dense
@@ -46,18 +45,32 @@
           :to="{ name: 'complete-website-build' }"
           class="nav-text"
         />
+        <q-btn
+          flat
+          label="Book Now"
+          :to="{ path: '/book' }"
+          class="nav-text"
+        />
       </div>
 
       <!-- Dropdown with Login -->
       <q-btn-dropdown
         flat
         split
-        icon="account_circle"
-        label="Login"
         class="login-dropdown"
         no-caps
         @click="navigateToAuth"
       >
+        <!-- Custom Label with Spacing -->
+        <template #label>
+          <div class="login-label">
+            <q-icon name="account_circle" />
+            <span class="login-text">Login</span>
+            <span class="icon-wrapper">
+            </span>
+          </div>
+        </template>
+
         <q-list>
           <q-item
             clickable
@@ -214,5 +227,22 @@
   .login-dropdown {
     color: $textWhite;
     font-weight: 600;
+    font-size: 11.5em;
   }
+
+  .login-dropdown .login-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Adjust the gap as needed */
+}
+
+.login-dropdown .login-text {
+  font-size: 1.1rem; /* Adjust the font size if necessary */
+  font-weight: 500;
+}
+
+.login-dropdown .icon-wrapper {
+  display: flex;
+  align-items: center;
+}
 </style>

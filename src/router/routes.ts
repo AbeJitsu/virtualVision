@@ -31,6 +31,16 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/CompleteWebsiteBuild.vue'),
       },
       {
+        path: 'book',
+        name: 'book-now',
+        component: () => import('pages/BookNow.vue'),
+      },
+      {
+        path: 'diy-comparison',
+        name: 'diy-comparison',
+        component: () => import('pages/DIYComparison.vue'),
+      },
+      {
         path: 'privacy-policy',
         name: 'privacy-policy',
         component: () => import('pages/PrivacyPolicy.vue'),
