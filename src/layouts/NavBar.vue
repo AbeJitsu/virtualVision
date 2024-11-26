@@ -246,3 +246,6 @@
   align-items: center;
 }
 </style>
+
+
+<!-- src/layouts/NavBar.vue -->

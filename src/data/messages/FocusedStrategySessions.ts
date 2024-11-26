@@ -17,7 +17,7 @@ export const FocusedStrategySessions: Message = {
     'Each session refines your ideas, clarifies your goals, and moves your vision closer to reality.', // 14 words
 
   influentialSupportiveIntro:
-    'Collaboration with an expert transforms ideas into strategies that inspire confidence, clarity, and measurable progress.', // 14 words
+    'Collaboration with an expert transforms ideas into strategies that inspire confidence, clarity, and progress.', // 14 words
   influentialMain:
     'This $449 package is optional and includes four additional sessions after your $49 Talk to a Developer session.', // 15 words
 

@@ -92,8 +92,7 @@ function submitBooking() {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f8f9fa;
+  margin-top: 4em;
 
   .container {
     max-width: 600px;
@@ -101,3 +100,5 @@ function submitBooking() {
   }
 }
 </style>
+
+<!-- src/pages/BookNow.vue -->

@@ -111,13 +111,13 @@ function toggleRegistration() {
 
 /* Page styling */
 .auth-page {
-  background-color: #f8f9fa;
+  // background-color: #f8f9fa;
 }
 
 /* Card styling */
 .auth-card {
-  width: 55%;
-  height: 70%;
+  width: 50%;
+  height: 66%;
   padding: 2rem 2rem;
 }
 
