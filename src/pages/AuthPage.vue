@@ -9,7 +9,7 @@
           class="shadow-24 auth-card"
         >
           <!-- Header Section -->
-          <q-card-section class="card-header">
+          <q-card-section class="card-header glossy">
             <h4 class="text-h5 text-white q-my-md">Sign In</h4>
           </q-card-section>
 
@@ -58,7 +58,7 @@
             <q-btn
               unelevated
               size="lg"
-              class="action-btn"
+              class="action-btn glossy"
               label="Sign In"
             />
           </q-card-actions>
