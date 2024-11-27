@@ -3,8 +3,7 @@
 import { Message } from './SalesStrategyMessages';
 
 export const CompleteWebsiteBuild: Message = {
-  dominantInfluentialTagline:
-    'Bring Your Vision to Life With Expert Development', // 8 words
+  dominantTagline: 'Bring Your Vision to Life With Expert Development', // 8 words
 
   supportiveIntro:
     'This optional final step transforms your strategy into a fully functional website.', // 12 words

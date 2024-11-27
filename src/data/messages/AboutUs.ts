@@ -20,8 +20,7 @@ export const AboutUs: Message = {
   //    - Min: 49 chars (98% of the shortest sentence)
   //    - Max: 51 chars (102% of the longest sentence)
 
-  dominantInfluentialTagline:
-    'Empower Your Digital Journey with Strategic Solutions', // 52 chars (within limits)
+  dominantTagline: 'Empower Your Digital Journey with Strategic Solutions', // 52 chars (within limits)
 
   supportiveIntro:
     'Every journey begins with shared values, clear goals, and a vision for meaningful impact.', // 112 chars (within limits)

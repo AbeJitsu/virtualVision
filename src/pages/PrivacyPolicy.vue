@@ -2,8 +2,8 @@
   <q-page class="flex-column">
     <div class="content-container">
       <!-- Header for Privacy Policy -->
-      <div class="dominantInfluentialTagline">
-        <h2>{{ messages.dominantInfluentialTagline }}</h2>
+      <div class="dominantTagline">
+        <div>{{ messages.dominantTagline }}</div>
       </div>
 
       <!-- Privacy-focused tone-driven messaging -->

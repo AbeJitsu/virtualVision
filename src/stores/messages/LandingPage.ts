@@ -1,8 +1,7 @@
 import { Message } from '../../data/messages/SalesStrategyMessages';
 
 export const LandingPage: Message = {
-  dominantInfluentialTagline:
-    'All Your Business Needs, United in One Powerful Website',
+  dominantTagline: 'All Your Business Needs, United in One Powerful Website',
 
   supportiveIntro:
     'We know how overwhelming it feels to juggle tools for scheduling, payments, and customer management.',

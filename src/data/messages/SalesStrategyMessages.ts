@@ -3,21 +3,16 @@ import { TalkToDeveloper } from './TalkToDeveloper'; // Import Talk to Developer
 
 // Define the structure for individual message sets
 export interface Message {
-  dominantInfluentialTagline: string;
-  supportiveIntro: string;
-  supportiveMain: string;
-  dominantSupportiveIntro: string;
-  dominantMain: string;
-  influentialSupportiveIntro: string;
-  influentialMain: string;
-  conscientiousSupportiveIntro: string;
-  conscientiousMain: string;
-  supportiveWrapUpIntro: string;
-  supportiveWrapUpMain: string;
-  promptInfluential: string;
-  promptSupportive: string;
-  binaryChoiceReadySupportiveInfluential: string;
-  binaryChoiceExploreSupportiveConscientious: string;
+  dominantTagline: string;
+  influentialTagline: string;
+  supportiveStatement: string;
+  dominantStatement: string;
+  influentialStatement: string;
+  conscientiousStatement: string;
+  supportiveWrapUp: string;
+  influentialPrompt: string; // Changed from influential wrap-up to influential prompt
+  customerChoiceSupportiveInfluential: string; // One sentence in the customer's voice
+  customerObjectionDominantConscientious: string; // One sentence combining dominant and conscientious tones
 }
 
 // Refactor: Remove the Pinia store entirely

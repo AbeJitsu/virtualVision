@@ -2,8 +2,8 @@
   <q-page class="flex-column">
     <div class="content-container">
       <!-- Tagline for the page or section -->
-      <div class="dominantInfluentialTagline">
-        <h2>{{ currentMessage.dominantInfluentialTagline }}</h2>
+      <div class="dominantTagline">
+        <div>{{ currentMessage.dominantTagline }}</h2>
       </div>
 
       <!-- Tone message choices in a 2x2 grid layout -->

@@ -1,8 +1,7 @@
 import { Message } from './SalesStrategyMessages';
 
 export const TermsOfService: Message = {
-  dominantInfluentialTagline:
-    'Clear, Fair, and Transparent Terms for Your Confidence',
+  dominantTagline: 'Clear, Fair, and Transparent Terms for Your Confidence',
 
   supportiveIntro:
     'We aim to build a partnership based on understanding and mutual respect.',

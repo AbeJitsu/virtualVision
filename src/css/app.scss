@@ -8,7 +8,7 @@
 // Apply the font family to the entire site
 body {
   font-family: "STIX Two Text", serif;
-  font-weight: 465;
+  font-weight: 400;
 }
 
 // Example class for using different font weights
@@ -36,60 +36,7 @@ body {
 .choice-btn {
   margin-bottom: 0 !important; // Remove bottom margin for all choice-btn buttons
 }
-
-// Hero message container spacing
-.hero-message-container {
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-// Content container for centered content SDICS
-.content-container {
-  max-width: 50%;
-  margin: 6rem auto;
-  /* Ensure it's not hidden by the navbar */
-  text-align: left;
-}
-
-// Supportive wrap-up text styling (Generic style kept here if used in other places)
-.supportive-wrapup {
-  font-size: 1.1em;
-  text-align: center;
-  color: $blueVeryDark;
-  // padding: 1rem 4rem 0rem;
-
-}
-
-// Hero section styling for other parts of the site
-.hero-section {
-  max-width: 80%;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  color: #333;
-  line-height: 1.6;
-  max-width: 80%;
-  margin: 0 auto;
-}
-
-.cta-container {
-  margin-top: 22rem;
-}
-
-.cta-btn {
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-}
+  
 
 .journey-drawer-list {
   padding: 0.1em !important;

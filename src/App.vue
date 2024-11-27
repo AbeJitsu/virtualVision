@@ -9,12 +9,12 @@
 </script>
 
 <style>
-  /* * {
-    outline: 1px solid red !important;
+  * {
+    /* outline: 0.1px dashed red !important; */
   }
-  html,
+  /* html,
   body {
-    border: 5px solid blue !important;
+    border: 3px solid blue !important;
   } */
 
   html,

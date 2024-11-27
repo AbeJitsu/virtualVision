@@ -3,7 +3,7 @@
     <!-- NavBar for the header -->
     <NavBar
       :toolbarTitle="toolbarTitle"
-      :dominantInfluentialTagline="dominantInfluentialTagline"
+      :dominantTagline="dominantTagline"
       @toggleLeftDrawer="toggleLeftDrawer"
       class="no-padding no-margin"
     />
@@ -55,7 +55,7 @@
 
   // Toolbar title and tagline
   const toolbarTitle = 'Vision 2 Virtual';
-  const dominantInfluentialTagline = 'Bringing Your Vision to Life';
+  const dominantTagline = 'Bringing Your Vision to Life';
 
   // Use route for navigation logic
   const route = useRoute(); // Call the useRoute function

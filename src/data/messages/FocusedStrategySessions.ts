@@ -3,8 +3,7 @@
 import { Message } from './SalesStrategyMessages';
 
 export const FocusedStrategySessions: Message = {
-  dominantInfluentialTagline:
-    'Transform Ideas Into Results With Five Focused Sessions', // 8 words
+  dominantTagline: 'Transform Ideas Into Results With Five Focused Sessions', // 8 words
 
   supportiveIntro:
     'After your first session, you have the option to continue refining your vision with expert guidance.', // 15 words

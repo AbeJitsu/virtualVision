@@ -1,5 +1,5 @@
 export const TalkToDeveloper = {
-  dominantInfluentialTagline:
+  dominantTagline:
     'Collaborate Directly With the Expert Who’ll Build Your Vision', // 8 words
 
   supportiveIntro:

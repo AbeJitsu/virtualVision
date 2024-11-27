@@ -37,7 +37,7 @@ const onClick = () => {
   font-family: 'Roboto', arial, sans-serif;
   font-size: 14px;
   height: 40px;
-  letter-spacing: 0.25px;
+  letter-spacing: -0.1px;
   padding: 0 12px;
   text-align: center;
   transition: background-color 0.218s, border-color 0.218s, box-shadow 0.218s;

@@ -31,7 +31,7 @@
 import { Message } from './SalesStrategyMessages';
 
 export const ContactUs: Message = {
-  dominantInfluentialTagline:
+  dominantTagline:
     'Get expert support to address your unique needs confidently.', // 9 words
 
   supportiveIntro:

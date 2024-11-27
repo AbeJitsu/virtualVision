@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex-column">
     <div class="content-container">
-      <div class="dominantInfluentialTagline">
-        <h2>{{ messages.dominantInfluentialTagline }}</h2>
+      <div class="dominantTagline">
+        <div>{{ messages.dominantTagline }}</div>
       </div>
 
       <div class="tone-message-grid">

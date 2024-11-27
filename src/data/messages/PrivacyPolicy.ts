@@ -1,8 +1,7 @@
 import { Message } from './SalesStrategyMessages';
 
 export const PrivacyPolicy: Message = {
-  dominantInfluentialTagline:
-    'Your Privacy Matters: Transparent, Secure, Reliable',
+  dominantTagline: 'Your Privacy Matters: Transparent, Secure, Reliable',
 
   supportiveIntro:
     'We value the trust you place in us and take your privacy seriously.',
