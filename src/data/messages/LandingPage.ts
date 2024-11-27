@@ -1,26 +1,27 @@
 import { Message } from './SalesStrategyMessages';
 
 export const LandingPage: Message = {
-  dominantTagline: 'Turn Small Ideas Into Big Results With Custom Solutions', // 8 words
-  influentialTagline:
-    'Your vision deserves thoughtful planning and expert execution.', // New tagline
+  dominantTagline: 'Transform Your Vision Into a Website That Works for You.', // 9 words
+  influentialTagline: 'Your idea deserves to shine and we’ll bring it to life.', // 11 words
 
   supportiveStatement:
-    'Starting a website can feel daunting, but it doesn’t have to be.', // 13 words
+    'Starting a website shouldn’t be overwhelming—it should feel empowering.', // 10 words
   dominantStatement:
-    'Every great project begins with a clear, actionable first step.', // 11 words
+    'We simplify the process, turning your ideas into seamless, scalable solutions.', // 12 words
   influentialStatement:
-    'We’re here to inspire confidence, ensuring every step moves your goals closer to reality.', // 14 words
+    'With our expertise, you’ll see progress every day, step by step.', // 11 words
   conscientiousStatement:
-    'From your first session to a complete website, every phase reflects your vision and goals.', // 15 words
+    'From consultation to completion, we ensure every detail aligns with your vision.', // 12 words
 
   supportiveWrapUp:
-    'Every milestone builds momentum, bringing your vision closer to reality.', // 11 words
-  influentialPrompt: 'Curious to see how it works?', // 6 words
+    'This is your story, and we’re here to help you tell it online.', // 12 words
+  influentialPrompt:
+    'Are you ready to take the first step toward your dream website?', // 11 words
 
-  customerChoiceSupportiveInfluential: 'I’m curious about how to get started.', // 8 words
+  customerChoiceSupportiveInfluential:
+    'I’m ready to explore what’s possible for my idea.', // 9 words
   customerObjectionDominantConscientious:
-    'How is this better than doing it myself?', // 8 words
+    'How will this ensure a better outcome than other options?', // 10 words
 };
 
 export default LandingPage;

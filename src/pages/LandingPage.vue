@@ -2,9 +2,9 @@
   <q-page class="flex-column">
     <div class="content-container">
       <!-- Taglines -->
-      <div class="dominantTagline">
-        <div>{{ messages.dominantTagline }}</div>
-        <div>{{ messages.influentialTagline }}</div>
+      <div>
+        <div class="dominantTagline">{{ messages.dominantTagline }}</div>
+        <div class="influentialTagline">{{ messages.influentialTagline }}</div>
       </div>
       <div class="influentialTagline"></div>
 

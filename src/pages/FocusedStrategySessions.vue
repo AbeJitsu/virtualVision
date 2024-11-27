@@ -3,7 +3,7 @@
     <div class="content-container">
       <!-- Tagline for the page or section -->
       <div class="dominantTagline">
-        <div>{{ currentMessage.dominantTagline }}</h2>
+        <div>{{ currentMessage.dominantTagline }}</div>
       </div>
 
       <!-- Tone message choices in a 2x2 grid layout -->
