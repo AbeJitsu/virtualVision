@@ -1,28 +1,29 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <!-- Use NavBar for the Navigation Bar -->
+    <!-- NavBar for the header -->
     <NavBar
       :toolbarTitle="toolbarTitle"
       :dominantInfluentialTagline="dominantInfluentialTagline"
       @toggleLeftDrawer="toggleLeftDrawer"
+      class="no-padding no-margin"
     />
 
-    <!-- Use LeftDrawer for the Drawer Menu -->
+    <!-- LeftDrawer for the menu -->
     <LeftDrawer
       :drawerOpen="leftDrawerOpen"
       @update:drawerOpen="(value) => (leftDrawerOpen = value)"
     />
 
     <q-page-container>
-      <!-- Add BackgroundImages component -->
+      <!-- Background images for parallax -->
       <BackgroundImages />
 
-      <!-- Main content -->
+      <!-- Main content area -->
       <router-view :key="route.fullPath" />
     </q-page-container>
 
-    <!-- Add Footer here -->
-    <Footer />
+    <!-- Footer for the layout -->
+    <Footer class="no-padding no-margin" />
   </q-layout>
 </template>
 
@@ -89,6 +90,27 @@
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
+
+  .q-layout,
+  .q-header,
+  .q-footer {
+    width: 100vw; /* Force to fill the entire viewport width */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .q-page-container {
+    margin: 0 auto;
+    max-width: 100%; /* Prevent content from spilling over */
+    padding: 0;
+  }
+
+  .no-padding,
+  .no-margin {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 </style>
 
 <!-- src/layouts/MainLayout.vue -->

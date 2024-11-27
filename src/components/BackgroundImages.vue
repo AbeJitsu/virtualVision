@@ -15,17 +15,18 @@
   width: 100%;
   height: 100%;
   z-index: -1; /* Behind all content */
+  overflow: hidden;
 }
 
 .bg-image {
-  position: absolute; /* Ensure it fills the container */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Smooth parallax-like effect */
+  background-attachment: fixed;
   filter: grayscale(100%) brightness(100%) opacity(0.15);
 
   /* Automatic scrolling animation */
