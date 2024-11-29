@@ -41,6 +41,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/DIYComparison.vue'),
       },
       {
+        path: 'our-process', // Adding the Our Process page route
+        name: 'our-process',
+        component: () => import('pages/OurProcess.vue'),
+      },
+      {
         path: 'privacy-policy',
         name: 'privacy-policy',
         component: () => import('pages/PrivacyPolicy.vue'),
@@ -48,7 +53,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'terms-of-service',
         name: 'terms-of-service',
-        component: () => import('pages/TermsOfService.vue'), // Added Terms of Service route
+        component: () => import('pages/TermsOfService.vue'),
       },
       {
         path: '/auth',

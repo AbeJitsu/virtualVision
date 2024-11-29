@@ -2,14 +2,14 @@
   <MessagingPage
     :messages="messages"
     @left-button-click="goToTalkToDeveloper"
-    @right-button-click="goToOurProcess"
+    @right-button-click="goToDiscovery"
   />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import MessagingPage from '../components/MessagingPage.vue';
-import LandingPage from '../data/messages/LandingPage';
+import OurProcess from '../data/messages/OurProcess'; // Data for this page
 import { useRouter } from 'vue-router';
 
 export default defineComponent({
@@ -18,21 +18,27 @@ export default defineComponent({
   },
   data() {
     return {
-      messages: LandingPage, // Import the data file
+      messages: OurProcess, // Import message data for this page
     };
   },
   setup() {
     const router = useRouter();
 
+    // Left button navigates to "Talk to Developer"
     function goToTalkToDeveloper() {
       router.push('/talk-to-developer');
     }
 
-    function goToOurProcess() {
-      router.push('/our-process'); // Link to Our Process page
+    // Right button navigates to the "Discovery" page or next step in the process
+    function goToDiscovery() {
+      router.push('/discovery');
     }
 
-    return { goToTalkToDeveloper, goToOurProcess };
+    return { goToTalkToDeveloper, goToDiscovery };
   },
 });
 </script>
+
+<style scoped>
+  /* Add any unique styles for OurProcess.vue if necessary */
+</style>
