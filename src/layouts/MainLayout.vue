@@ -18,8 +18,10 @@
       <!-- Background images for parallax -->
       <BackgroundImages />
 
-      <!-- Main content area -->
-      <router-view :key="route.fullPath" />
+      <!-- Main content area with transition -->
+      <transition name="fade">
+        <router-view :key="route.fullPath" />
+      </transition>
     </q-page-container>
 
     <!-- Footer for the layout -->
@@ -110,6 +112,23 @@
   .no-margin {
     padding: 0 !important;
     margin: 0 !important;
+  }
+
+  /* Fade transition styles */
+  .fade-enter-active {
+    transition: opacity 0.35s ease-in; /* Slow fade-in */
+  }
+
+  .fade-leave-active {
+    transition: opacity 0.15s ease-out; /* Fast fade-out */
+  }
+
+  .fade-enter-from {
+    opacity: 0; /* Start invisible */
+  }
+
+  .fade-leave-to {
+    opacity: 0; /* End invisible */
   }
 </style>
 
