@@ -5,22 +5,22 @@ export const LandingPage: Message = {
   influentialTagline: 'Imagine a site tailored to grow with your vision.', // 10 words
 
   supportiveStatement:
-    'This isn’t a do-it-yourself builder, and you won’t need to learn complex tools. We guide you through the entire process to make it super simple.', // 24 words
+    'Building a website should feel easy, not daunting. We simplify the process so you can focus on what matters most.', // 19 words
   dominantStatement:
-    'You`ll work directly with a dedicated full-stack developer for a scalable, professional site. Your ideas will be transformed into seamless solution.', // 20 words
+    'Collaborate directly with a full-stack developer to create a polished, scalable website designed to support your unique needs.', // 17 words
   influentialStatement:
-    'You’ll see progress daily with 21 hours of collaboration and 42 hours of expert development. Together, we’ll bring your vision to life step by step.', // 23 words
+    'Transform your ideas into reality with 21 hours of collaboration and 42 hours of expert-led development, tailored to your vision.', // 19 words
   conscientiousStatement:
-    'You’ll own your site—no subscriptions, no compromises. We ensure every detail aligns with your goals and stands the test of time.', // 21 words
+    'You have full control. Allocate your hours flexibly, ensuring every feature aligns with your business’s long-term success.', // 16 words
 
   supportiveWrapUp:
-    'We handle the heavy lifting so you can focus on your business. Your success is always our priority, every step of the way.', // 22 words
+    'Let us handle the technical details while you focus on growing your business. Together, we’ll bring your vision to life.', // 20 words
   influentialPrompt:
-    'Ready for a website that works as hard as you? Let’s start building your future today.', // 16 words
+    'Isn’t it time your website reflected your ambitions? Let’s start creating something extraordinary today.', // 14 words
   customerChoiceSupportiveInfluential:
-    'I want a custom site without the hassle of figuring it out myself. This feels like the right approach.', // 20 words
+    'I’m ready to work together on my custom website. Let’s begin!', // 11 words
   customerObjectionDominantConscientious:
-    'How does this compare to platforms like Wix or Squarespace? I want to be sure this is the right investment.', // 19 words
+    'What makes this better than Wix or Squarespace? I need to make the right choice.', // 15 words
 };
 
 export default LandingPage;
