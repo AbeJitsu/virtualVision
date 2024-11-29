@@ -1,37 +1,29 @@
-export const TalkToDeveloper = {
+import { Message } from './SalesStrategyMessages';
+
+export const TalkToDeveloper: Message = {
   dominantTagline:
-    'Collaborate Directly With the Expert Who’ll Build Your Vision', // 8 words
+    'Collaborate directly with the expert who’ll build your vision.', // 9 words
+  influentialTagline:
+    'Imagine a session that refines your ideas with expert guidance.', // 10 words
 
-  supportiveIntro:
-    'Imagine a live, interactive call where your ideas are heard, understood, and refined.', // 14 words
-  supportiveMain:
-    'This session connects you with the designer and developer shaping your project.', // 13 words
+  supportiveStatement:
+    'Imagine a live, interactive call where your ideas are heard and refined. This session connects you directly with the designer shaping your goals.', // 27 words
+  dominantStatement:
+    'With years of experience, I ensure the focus stays on what matters most. Together, we’ll define your objectives and craft a tailored strategy.', // 26 words
+  influentialStatement:
+    'Guidance from someone who builds with care is rare. For just $49, gain insights and a personalized roadmap to achieve your vision.', // 24 words
+  conscientiousStatement:
+    'This session ensures clarity and progress, whether you continue with more services or not. Every detail is captured, preserving momentum for your next steps.', // 23 words
 
-  dominantSupportiveIntro:
-    'With years of high-level service experience, I ensure focus on what matters to your goals.', // 15 words
-  dominantMain:
-    'Together, we’ll define your goals and create a personalized plan tailored to your vision.', // 15 words
+  supportiveWrapUp:
+    'Partner with the developer who listens and delivers. Leave with a focused plan built to support your success.', // 19 words
+  influentialPrompt:
+    'Are you ready to take the first step forward and refine your vision today?', // 15 words
 
-  influentialSupportiveIntro:
-    'Guidance from someone who builds with care and understands your vision is rare.', // 13 words
-  influentialMain:
-    'For just $49, gain insights and a personalized plan crafted by an expert for your project.', // 15 words
-
-  conscientiousSupportiveIntro:
-    'This session ensures clarity and progress, whether you continue with more services or not.', // 13 words
-  conscientiousMain:
-    'Every detail will be captured, preserving progress no matter what you decide next.', // 14 words
-
-  supportiveWrapUpIntro: 'Partner with the developer who listens and delivers.', // 7 words
-  supportiveWrapUpMain:
-    'Leave with insights and a clear plan, crafted for your project.', // 12 words
-
-  promptInfluential: 'Ready to take the first step forward?', // 6 words
-  promptSupportive: 'Let’s schedule your first session today.', // 6 words
-
-  binaryChoiceReadySupportiveInfluential: 'What’s the next step after this?', // 8 words (leading to Focus Strategy Sessions)
-  binaryChoiceExploreSupportiveConscientious:
-    'Why should I avoid building on my own?', // 8 words (leading to DIY page)
+  customerChoiceSupportiveInfluential:
+    'Let’s schedule a session to start building your vision today.', // 10 words
+  customerObjectionDominantConscientious:
+    'Why invest in a session instead of starting on my own right away?', // 13 words
 };
 
 export default TalkToDeveloper;

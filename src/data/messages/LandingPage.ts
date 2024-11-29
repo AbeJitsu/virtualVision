@@ -18,9 +18,9 @@ export const LandingPage: Message = {
   influentialPrompt:
     'Isn’t it time your website reflected your ambitions? Let’s start creating something extraordinary today.', // 14 words
   customerChoiceSupportiveInfluential:
-    'I’m ready to work together on my custom website. Let’s begin!', // 11 words
+    'I’m ready to work together on my custom website. How does this work?', // 11 words
   customerObjectionDominantConscientious:
-    'What makes this better than Wix or Squarespace? I need to make the right choice.', // 15 words
+    'What makes this better than Wix or other do-it-yourself platforms?', // 15 words
 };
 
 export default LandingPage;

@@ -1,68 +1,38 @@
 <template>
-  <q-page class="flex-column">
-    <div class="content-container">
-      <div class="dominantTagline">
-        <div>{{ messages.dominantTagline }}</div>
-      </div>
-
-      <div class="tone-message-grid">
-        <div class="tone-supportive tone-message-box">
-          <p>{{ messages.supportiveIntro }}</p>
-          <p>{{ messages.supportiveMain }}</p>
-        </div>
-        <div class="tone-dominant tone-message-box">
-          <p>{{ messages.dominantSupportiveIntro }}</p>
-          <p>{{ messages.dominantMain }}</p>
-        </div>
-        <div class="tone-influential tone-message-box">
-          <p>{{ messages.influentialSupportiveIntro }}</p>
-          <p>{{ messages.influentialMain }}</p>
-        </div>
-        <div class="tone-conscientious tone-message-box">
-          <p>{{ messages.conscientiousSupportiveIntro }}</p>
-          <p>{{ messages.conscientiousMain }}</p>
-        </div>
-      </div>
-
-      <div class="supportive-wrapup">
-        <p class="supportive-wrapup-intro">
-          {{ messages.supportiveWrapUpIntro }}
-        </p>
-        <p class="supportive-wrapup-main">
-          {{ messages.supportiveWrapUpMain }}
-        </p>
-      </div>
-
-      <div class="binary-choice">
-        <div class="choice-prompts">
-          <p>{{ messages.promptInfluential }}</p>
-          <p>{{ messages.promptSupportive }}</p>
-        </div>
-        <div class="action-buttons">
-          <q-btn
-            :label="messages.binaryChoiceReadySupportiveInfluential"
-            to="/book"
-            class="choice-btn q-mb-md enhanced-btn"
-          />
-          <q-btn
-            :label="messages.binaryChoiceExploreSupportiveConscientious"
-            to="/focused-strategy-sessions"
-            class="choice-btn q-mb-md enhanced-btn"
-          />
-        </div>
-      </div>
-    </div>
-  </q-page>
+  <MessagingPage
+    :messages="messages"
+    @left-button-click="goToFocusedStrategySessions"
+    @right-button-click="goToObjectionPage"
+  />
 </template>
 
-<script setup lang="ts">
-  import { TalkToDeveloper } from '../data/messages/TalkToDeveloper';
+<script lang="ts">
+import { defineComponent } from 'vue';
+import MessagingPage from '../components/MessagingPage.vue'; // Import MessagingPage component
+import { TalkToDeveloper } from '../data/messages/TalkToDeveloper'; // Import TalkToDeveloper messages
+import { useRouter } from 'vue-router';
 
-  // Directly use the imported messages
-  const messages = TalkToDeveloper;
+export default defineComponent({
+  components: {
+    MessagingPage,
+  },
+  setup() {
+    const messages = TalkToDeveloper; // Load TalkToDeveloper messages
+    const router = useRouter();
 
-  // Add a console log to verify the data
-  console.log('Direct TalkToDeveloper messages:', JSON.stringify(messages));
+    // Navigation for left button
+    function goToFocusedStrategySessions() {
+      router.push('/focused-strategy-sessions');
+    }
+
+    // Navigation for right button
+    function goToObjectionPage() {
+      router.push('/why-strategy-before-building');
+    }
+
+    return { messages, goToFocusedStrategySessions, goToObjectionPage };
+  },
+});
 </script>
 
 <style scoped lang="scss">
