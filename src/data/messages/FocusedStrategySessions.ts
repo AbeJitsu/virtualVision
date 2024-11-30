@@ -17,14 +17,14 @@ export const FocusedStrategySessions: Message = {
     'Live collaboration and detailed documentation ensure insights are preserved. Over four business days, maintain momentum while progressing efficiently toward your goals.', // 169 characters
 
   supportiveWrapUp:
-    'Thoughtfully paced over four business days, these sessions provide clarity and confidence, culminating in a personalized roadmap for success.', // 19 words
+    'Thoughtfully paced over four business days, these sessions culminate in a personalized roadmap for success.', // 16 words
   influentialPrompt:
     'Ready to turn your vision into structured, actionable progress?', // 10 words
-
   customerChoiceSupportiveInfluential:
-    'Let’s explore how these sessions can elevate your project.', // 9 words
+    'How exactly do these focused strategy sessions fit into the bigger picture of successfully building and enhancing my website?', // 24 words
+
   customerObjectionDominantConscientious:
-    'Why invest in strategy when quick DIY options exist?', // 9 words
+    'Why invest in focused strategy sessions over quick do-it-yourself options? What specific advantages do they offer?', // 19 words
 };
 
 export default FocusedStrategySessions;
