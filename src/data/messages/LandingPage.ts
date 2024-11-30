@@ -18,9 +18,9 @@ export const LandingPage: Message = {
   influentialPrompt:
     'Isn’t it time your website reflected your ambitions? Let’s start creating something extraordinary today.', // 14 words
   customerChoiceSupportiveInfluential:
-    'I feel that clarifying my vision could make a big impact. How does this work??', // 11 words
+    'I feel that clarifying my vision could make a big impact. What steps can I take next to explore all the possibilities further?',
   customerObjectionDominantConscientious:
-    'What makes this better than Wix or other do-it-yourself sites? What results can I expect?', // 15 words
+    'What makes this better than Wix or other do-it-yourself sites? How will this tailored approach deliver real, measurable results?', // 19 words
 };
 
 export default LandingPage;

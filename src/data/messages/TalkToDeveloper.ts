@@ -19,7 +19,7 @@ export const TalkToDeveloper: Message = {
   supportiveWrapUp:
     'Partner with a developer who listens and delivers. Leave with a focused plan built to support your success and next steps.', // 20 words
   influentialPrompt:
-    'Are you ready to take the first step and refine your vision today? Let’s get started on creating something extraordinary.', // 18 words
+    'Are you ready to refine your vision today? Let’s get started on creating something extraordinary.', // 16 words
 
   customerChoiceSupportiveInfluential:
     'I see this is just the start. What other possibilities might there be with more collaboration, and how could that impact my vision?',
