@@ -3,22 +3,26 @@
     <div class="content-container">
       <!-- Taglines -->
       <div>
-        <div class="dominantTagline">{{ messages.dominantTagline }}</div>
-        <div class="influentialTagline">{{ messages.influentialTagline }}</div>
+        <div :class="['tagline', 'tagline--dominant']">
+          {{ messages.dominantTagline }}
+        </div>
+        <div :class="['tagline', 'tagline--influential']">
+          {{ messages.influentialTagline }}
+        </div>
       </div>
 
       <!-- Tone message grid layout -->
       <div class="tone-message-grid">
-        <div class="tone-supportive tone-message-box">
+        <div class="tone-message-box tone-message-box--supportive">
           <p>{{ messages.supportiveStatement }}</p>
         </div>
-        <div class="tone-dominant tone-message-box">
+        <div class="tone-message-box tone-message-box--dominant">
           <p>{{ messages.dominantStatement }}</p>
         </div>
-        <div class="tone-influential tone-message-box">
+        <div class="tone-message-box tone-message-box--influential">
           <p>{{ messages.influentialStatement }}</p>
         </div>
-        <div class="tone-conscientious tone-message-box">
+        <div class="tone-message-box tone-message-box--conscientious">
           <p>{{ messages.conscientiousStatement }}</p>
         </div>
       </div>
@@ -35,12 +39,12 @@
           <q-btn
             :label="messages.customerChoiceSupportiveInfluential"
             @click="handleLeftClick"
-            class="custom-border-btn"
+            class="custom-btn"
           />
           <q-btn
             :label="messages.customerObjectionDominantConscientious"
             @click="handleRightClick"
-            class="custom-border-btn"
+            class="custom-btn"
           />
         </div>
       </div>
@@ -108,6 +112,7 @@
   .content-container {
     letter-spacing: -0.75px;
   }
+
   .dominantTagline {
     font-size: xx-large;
     font-weight: 600;
@@ -131,21 +136,27 @@
     letter-spacing: -0.75px;
   }
 
-  .custom-border-btn {
-    border-width: 1px !important; /* Adjust as needed */
-    border-radius: 10px; /* Optional: Smooth the corners */
-    padding: 2rem 3rem; /* Adjust padding for consistent spacing */
-    width: 100%; /* Ensure the button spans the desired width */
-    text-align: center; /* Center-align the text */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    font-size: medium;
+  .supportive-wrapup {
+    text-align: center;
+    color: $grayVeryDark;
     font-weight: 600;
+    font-size: x-large;
+    margin: 2rem 7rem 1.5rem;
+    padding-top: 0.1rem;
+    letter-spacing: -0.5px;
   }
 
-  .custom-border-btn:hover {
-    border-color: #007bff; /* Add a hover effect if needed */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  .binary-choice {
+    text-align: center;
+    margin: 1em 3em 1em;
+
+    .choice-prompts {
+      display: flex;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: $grayVeryDark;
+      margin-top: -1rem;
+    }
   }
 </style>
-
-<!-- src/components/MessagingPage.vue -->

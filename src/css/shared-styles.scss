@@ -12,18 +12,15 @@
 .content-container {
   width: 100%;
   max-width: 1000px;
-  padding-top: calc(var(--navbar-height, 4rem) + 2rem);
-  /* Navbar height + spacing */
+  padding-top: calc(var(--navbar-height, 4rem) + 2rem); // Navbar height + spacing
   margin: 0 auto;
 }
 
-// Dominant Influential Tagline styling
-.dominantTagline {
+// Tagline Base Class with modifiers for dominant and influential
+.tagline {
   text-align: center;
-  font-size: xx-large;
   font-weight: 500;
   padding: 0rem;
-
 
   &::before {
     content: '';
@@ -35,25 +32,19 @@
     background-color: rgba($textWhite, 0.25);
     z-index: -1;
   }
-}
 
-.influentialTagline {
-  font-size: x-large;
-  text-align: center;
-  margin-top: 0em;
-  z-index: 1;
-  padding-top: 0rem;
-  font-weight: 500;
+  &--dominant {
+    font-size: xx-large;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $grayDark;
+    padding-top: 1rem;
+  }
 
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba($textWhite, 0.25);
-    z-index: -1;
+  &--influential {
+    font-size: x-large;
+    margin-bottom: 2.5rem;
+    color: $grayDark;
   }
 }
 
@@ -66,7 +57,7 @@ h2 {
 // SDICS Message Box Grid Layout
 .tone-message-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
   width: 100%;
   margin-bottom: 0rem auto;
@@ -74,75 +65,64 @@ h2 {
 }
 
 // SDICS Message Box Styles
-.tone-message-box,
-.tone-supportive,
-.tone-dominant,
-.tone-influential,
-.tone-conscientious {
+.tone-message-box {
   border-radius: 8px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 2rem 3rem 1rem 3rem;
   font-weight: 500;
   font-size: medium;
-}
 
-// Tone-Specific Styles
-.tone-supportive {
-  background-color: rgba($blueVeryLight, 0.6);
-  border: 1px solid $blueVeryLight;
-  color: $grayVeryDark;
+  &--supportive {
+    background-color: rgba($blueVeryLight, 0.6);
+    border: 1px solid $blueVeryLight;
+    color: $grayVeryDark;
 
-  &:hover {
-    background-color: rgba($blueVeryLight, 0.7);
+    &:hover {
+      background-color: rgba($blueVeryLight, 0.7);
+    }
   }
-}
 
-.tone-dominant {
-  background-color: rgba($orangeVeryLight, 0.49);
-  border: 1px solid $orangeVeryLight;
-  color: $grayVeryDark;
+  &--dominant {
+    background-color: rgba($orangeVeryLight, 0.49);
+    border: 1px solid $orangeVeryLight;
+    color: $grayVeryDark;
 
-  &:hover {
-    background-color: rgba($orangeVeryLight, 0.59);
+    &:hover {
+      background-color: rgba($orangeVeryLight, 0.59);
+    }
   }
-}
 
-.tone-influential {
-  background-color: rgba($yellowVeryLight, 0.4);
-  color: $grayVeryDark;
+  &--influential {
+    background-color: rgba($yellowVeryLight, 0.4);
+    color: $grayVeryDark;
 
-  &:hover {
-    background-color: rgba($yellowVeryLight, 0.5);
+    &:hover {
+      background-color: rgba($yellowVeryLight, 0.5);
+    }
   }
-}
 
-.tone-conscientious {
-  background-color: rgba($greenVeryLight, 0.35);
-  border: 2px solid $greenVeryLight;
-  color: $grayVeryDark;
-
-  &:hover {
+  &--conscientious {
     background-color: rgba($greenVeryLight, 0.35);
+    border: 2px solid $greenVeryLight;
+    color: $grayVeryDark;
+
+    &:hover {
+      background-color: rgba($greenVeryLight, 0.35);
+    }
   }
 }
 
 // Supportive Wrap-Up Styling
 .supportive-wrapup {
   text-align: center;
-  // font-size: large;
-  // margin-bottom: 0.5rem;
   color: $grayVeryDark;
   font-weight: 600;
-  padding-top: 0.5rem;
   font-size: x-large;
-  font-weight: 500;
-  color: $grayVeryDark;
-  margin: 3rem 7rem 2rem;
+  margin: 2rem 7rem 1.5rem;
   padding-top: 0.1rem;
   letter-spacing: -0.5px;
 }
-
 
 // Binary Choice Buttons
 .binary-choice {
@@ -159,35 +139,82 @@ h2 {
   }
 }
 
-// Shared Button Styles
-.action-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
 
-  .enhanced-btn {
-    width: 45%;
-    height: 6rem;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: $grayDark;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-    text-align: justify;
-    padding: 0.5rem 1rem 0.3rem;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.6);
-      box-shadow: 2px 4px 8px rgba($grayVeryDark, 0.5);
-      transition: all 0.3s ease-in-out;
-    }
-  }
-}
 
 // Focus Helper Override
 .q-btn:hover .q-focus-helper {
   background-color: transparent !important;
+}
+
+// Action Buttons Styling
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  /* Adjust this value for the desired spacing between buttons */
+  margin-top: 0rem;
+}
+
+// Shared Button Styles - Consolidated
+.custom-btn {
+  width: 45%;
+  /* Default width */
+  height: 6rem;
+  /* Default height */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Default background */
+  color: $grayDark;
+  /* Default text color */
+  font-size: 1.1rem;
+  /* Text size */
+  font-weight: 600;
+  /* Bold text */
+  border-radius: 8px;
+  /* Rounded corners */
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  transition: all 0.3s ease-in-out;
+  /* Smooth transitions */
+  text-align: justify;
+  /* Aligns text */
+  padding: 0.5rem 1.5rem 0.3rem;
+  /* Default padding */
+  line-height: 1.25;
+  /* Vertical spacing */
+  letter-spacing: -0.75px;
+  /* Character spacing */
+  text-transform: none;
+  /* Prevents uppercase transformation */
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Hover background color */
+    box-shadow: 2px 4px 8px rgba($grayVeryDark, 0.5);
+    /* Enhanced shadow on hover */
+  }
+}
+
+// Responsive Styling for Buttons
+@media (max-width: var(--q-size-sm)) {
+  .custom-btn {
+    width: 100%;
+    /* Full width for small screens */
+    height: 5rem;
+    /* Reduced height */
+    padding: 1rem 2rem;
+    /* Adjusted padding */
+  }
+}
+
+// Responsive Styling
+@media (max-width: var(--q-size-sm)) {
+  .custom-btn {
+    width: 100%;
+    height: 5rem;
+    padding: 1rem 2rem;
+  }
+
+  .action-buttons {
+    gap: 0.5rem;
+  }
 }
