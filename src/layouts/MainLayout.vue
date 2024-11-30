@@ -19,9 +19,11 @@
       <BackgroundImages />
 
       <!-- Main content area with transition -->
-      <transition name="fade">
-        <router-view :key="route.fullPath" />
-      </transition>
+      <router-view v-slot="{ Component }">
+        <transition name="fade">
+          <component :is="Component" :key="route.fullPath" />
+        </transition>
+      </router-view>
     </q-page-container>
 
     <!-- Footer for the layout -->

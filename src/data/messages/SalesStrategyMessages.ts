@@ -1,25 +1,35 @@
-import { LandingPage } from './LandingPage'; // Import Landing Page messages
-import { TalkToDeveloper } from './TalkToDeveloper'; // Import Talk to Developer messages
+import routes from '../../router/routes'; // Correct import path for routes
 
-// Define the structure for individual message sets
-export interface Message {
-  dominantTagline: string;
-  influentialTagline: string;
-  supportiveStatement: string;
-  dominantStatement: string;
-  influentialStatement: string;
-  conscientiousStatement: string;
-  supportiveWrapUp: string;
-  influentialPrompt: string; // Changed from influential wrap-up to influential prompt
-  customerChoiceSupportiveInfluential: string; // One sentence in the customer's voice
-  customerObjectionDominantConscientious: string; // One sentence combining dominant and conscientious tones
-}
-
-// Refactor: Remove the Pinia store entirely
-// Export individual messages as named exports
-export const Messages = {
-  LandingPage,
-  TalkToDeveloper,
+// Placeholder structure for missing entries
+const defaultMessage = {
+  dominantTagline: '',
+  influentialTagline: '',
+  supportiveStatement: '',
+  dominantStatement: '',
+  influentialStatement: '',
+  conscientiousStatement: '',
+  supportiveWrapUp: '',
+  influentialPrompt: '',
+  customerChoiceSupportiveInfluential: '',
+  customerObjectionDominantConscientious: '',
 };
 
+// Explicit type for Messages object
+interface MessagesType {
+  [key: string]: typeof defaultMessage;
+}
+
+// Dynamic Messages object based on routes
+export const Messages: MessagesType = routes.reduce(
+  (acc: MessagesType, route) => {
+    if (route.name && typeof route.name === 'string') {
+      acc[route.name] = acc[route.name] || defaultMessage; // Add route with placeholder if missing
+    }
+    return acc;
+  },
+  {} as MessagesType
+);
+
 export default Messages;
+
+// src / data / messages / SalesStrategyMessages.ts;

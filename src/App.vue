@@ -1,8 +1,10 @@
 <template>
   <!-- Add a global transition for all route changes -->
-  <transition name="fade">
-    <router-view />
-  </transition>
+  <router-view v-slot="{ Component }">
+    <transition name="fade">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script setup lang="ts">

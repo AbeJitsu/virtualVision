@@ -34,12 +34,12 @@
         <div class="action-buttons">
           <q-btn
             :label="messages.customerChoiceSupportiveInfluential"
-            @click="$emit('left-button-click')"
+            @click="handleLeftClick"
             class="custom-border-btn"
           />
           <q-btn
             :label="messages.customerObjectionDominantConscientious"
-            @click="$emit('right-button-click')"
+            @click="handleRightClick"
             class="custom-border-btn"
           />
         </div>
@@ -49,27 +49,56 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+  import { defineComponent, PropType } from 'vue';
+  import { useRoute, useRouter } from 'vue-router';
+  import { useTrackingStore } from '../stores/trackingStore';
 
-export default defineComponent({
-  props: {
-    messages: {
-      type: Object as PropType<{
-        dominantTagline: string;
-        influentialTagline: string;
-        supportiveStatement: string;
-        dominantStatement: string;
-        influentialStatement: string;
-        conscientiousStatement: string;
-        supportiveWrapUp: string;
-        influentialPrompt: string;
-        customerChoiceSupportiveInfluential: string;
-        customerObjectionDominantConscientious: string;
-      }>,
-      required: true,
+  export default defineComponent({
+    props: {
+      messages: {
+        type: Object as PropType<{
+          dominantTagline: string;
+          influentialTagline: string;
+          supportiveStatement: string;
+          dominantStatement: string;
+          influentialStatement: string;
+          conscientiousStatement: string;
+          supportiveWrapUp: string;
+          influentialPrompt: string;
+          customerChoiceSupportiveInfluential: string;
+          customerObjectionDominantConscientious: string;
+        }>,
+        required: true,
+      },
     },
-  },
-});
+    setup() {
+      const route = useRoute(); // Access current route
+      const router = useRouter(); // Access router instance
+      const trackingStore = useTrackingStore(); // Access Pinia store
+
+      function handleLeftClick() {
+        const currentPage = route.name as string;
+        console.log('Left Clicked:', { currentPage }); // Debug log
+        trackingStore.addVisitedPage(currentPage);
+        trackingStore.recordChoice(currentPage, 'left');
+        const nextPage = trackingStore.getNextPage(currentPage, 'left');
+        console.log('Next Page (Left):', nextPage); // Debug log
+        if (nextPage) router.push(nextPage);
+      }
+
+      function handleRightClick() {
+        const currentPage = route.name as string;
+        console.log('Right Clicked:', { currentPage }); // Debug log
+        trackingStore.addVisitedPage(currentPage);
+        trackingStore.recordChoice(currentPage, 'right');
+        const nextPage = trackingStore.getNextPage(currentPage, 'right');
+        console.log('Next Page (Right):', nextPage); // Debug log
+        if (nextPage) router.push(nextPage);
+      }
+
+      return { handleLeftClick, handleRightClick };
+    },
+  });
 </script>
 
 <style scoped lang="scss">
@@ -118,3 +147,5 @@ export default defineComponent({
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
   }
 </style>
+
+<!-- src/components/MessagingPage.vue -->

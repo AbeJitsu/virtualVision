@@ -75,3 +75,6 @@ const routes: RouteRecordRaw[] = [
 ];
 
 export default routes;
+
+
+// src / router / routes.ts;

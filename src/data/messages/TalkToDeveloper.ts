@@ -13,7 +13,7 @@ export const TalkToDeveloper: Message = {
   influentialStatement:
     'Guidance from someone who builds with care is rare. For just $49, gain insights and a personalized roadmap to achieve your vision.', // 24 words
   conscientiousStatement:
-    'This session ensures clarity and progress, whether you continue with more services or not. Every detail is captured, preserving momentum for your next steps.', // 23 words
+    'This session ensures clarity and progress, whether you continue with more services or not. Every detail is captured so your next steps are clear.', // 23 words
 
   supportiveWrapUp:
     'Partner with the developer who listens and delivers. Leave with a focused plan built to support your success.', // 19 words
