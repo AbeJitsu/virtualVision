@@ -23,13 +23,33 @@ export const useTrackingStore = defineStore('trackingStore', {
 
     // Get the next page dynamically based on history and choice
     getNextPage(currentPage: string, choice: 'left' | 'right'): string {
-      if (choice === 'left') {
-        return '/focused-strategy-sessions'; // Example: Path for a positive choice
+      const pageOptions = {
+        'landing-page': {
+          left: '/talk-to-developer',
+          right: '/our-process',
+        },
+        'talk-to-developer': {
+          left: '/focused-strategy-sessions',
+          right: '/why-strategy-before-building',
+        },
+        // Add mappings for other pages as needed
+      };
+
+      const nextPage = pageOptions[currentPage]?.[choice];
+
+      // Ensure the next page is unvisited
+      if (nextPage && !this.visitedPages.includes(nextPage)) {
+        return nextPage;
       }
-      if (choice === 'right') {
-        return '/objection-level-2'; // Example: Path for an objection
+
+      // Fallback: Find the first unvisited page from all options
+      for (const [page, choices] of Object.entries(pageOptions)) {
+        if (!this.visitedPages.includes(choices[choice])) {
+          return choices[choice];
+        }
       }
-      return '/'; // Default to home if no choice is made
+
+      return '/'; // Default fallback to home
     },
   },
 });
