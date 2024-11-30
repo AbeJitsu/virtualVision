@@ -1,36 +1,49 @@
 <template>
   <MessagingPage
     :messages="messages"
-    @left-button-click="goToCompleteWebsiteBuild"
-    @right-button-click="goToObjectionPage"
+    @left-button-click="handleLeftClick"
+    @right-button-click="handleRightClick"
   />
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import MessagingPage from '../components/MessagingPage.vue'; // Import MessagingPage component
-  import { FocusedStrategySessions } from '../data/messages/FocusedStrategySessions'; // Import messages for Focused Strategy Sessions
-  import { useRouter } from 'vue-router';
+  import MessagingPage from '../components/MessagingPage.vue';
+  import { FocusedStrategySessions } from '../data/messages/FocusedStrategySessions';
+  import { useRouter, useRoute } from 'vue-router';
+  import { useTrackingStore } from '../stores/trackingStore';
 
   export default defineComponent({
     components: {
       MessagingPage,
     },
     setup() {
-      const messages = FocusedStrategySessions; // Load Focused Strategy Sessions messages
+      const messages = FocusedStrategySessions;
       const router = useRouter();
+      const route = useRoute();
+      const trackingStore = useTrackingStore();
 
-      // Navigation for left button
-      function goToCompleteWebsiteBuild() {
-        router.push('/complete-website-build');
+      function handleLeftClick() {
+        const nextPage = trackingStore.getNextPage(
+          route.name as string,
+          'left'
+        );
+        if (nextPage) {
+          router.push(nextPage);
+        }
       }
 
-      // Navigation for right button
-      function goToObjectionPage() {
-        router.push('/diy-comparison');
+      function handleRightClick() {
+        const nextPage = trackingStore.getNextPage(
+          route.name as string,
+          'right'
+        );
+        if (nextPage) {
+          router.push(nextPage);
+        }
       }
 
-      return { messages, goToCompleteWebsiteBuild, goToObjectionPage };
+      return { messages, handleLeftClick, handleRightClick };
     },
   });
 </script>

@@ -1,5 +1,13 @@
 import { defineStore } from 'pinia';
 
+// Define a type for page options
+type PageOptions = {
+  [key: string]: {
+    left: string;
+    right: string;
+  };
+};
+
 export const useTrackingStore = defineStore('trackingStore', {
   state: () => ({
     visitedPages: [] as string[], // Tracks the order of visited pages
@@ -23,7 +31,8 @@ export const useTrackingStore = defineStore('trackingStore', {
 
     // Get the next page dynamically based on history and choice
     getNextPage(currentPage: string, choice: 'left' | 'right'): string {
-      const pageOptions = {
+      // Use the defined type for page options
+      const pageOptions: PageOptions = {
         'landing-page': {
           left: '/talk-to-developer',
           right: '/our-process',
@@ -31,6 +40,10 @@ export const useTrackingStore = defineStore('trackingStore', {
         'talk-to-developer': {
           left: '/focused-strategy-sessions',
           right: '/why-strategy-before-building',
+        },
+        'focused-strategy-sessions': {
+          left: '/complete-website-build',
+          right: '/diy-comparison',
         },
         // Add mappings for other pages as needed
       };

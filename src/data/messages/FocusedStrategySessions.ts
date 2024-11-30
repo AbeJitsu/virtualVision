@@ -24,7 +24,7 @@ export const FocusedStrategySessions: Message = {
     'How exactly do these focused strategy sessions fit into the bigger picture of successfully building and enhancing my website?', // 24 words
 
   customerObjectionDominantConscientious:
-    'Why invest in focused strategy sessions over quick do-it-yourself options? What specific advantages do they offer?', // 19 words
+    'Why invest in focused strategy sessions over quick do-it-yourself options? What specific advantages do they offer over figuring it out as you go?', // 19 words
 };
 
 export default FocusedStrategySessions;
