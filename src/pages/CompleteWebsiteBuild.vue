@@ -1,70 +1,41 @@
 <template>
-  <q-page class="flex-column">
-    <div class="content-container">
-      <!-- Tagline for the page or section -->
-      <div class="dominantTagline">
-        <div>{{ messages.dominantTagline }}</div>
-      </div>
-
-      <!-- Tone message choices in a 2x2 grid layout -->
-      <div class="tone-message-grid">
-        <div class="tone-supportive tone-message-box">
-          <p>{{ messages.supportiveIntro }}</p>
-          <p>{{ messages.supportiveMain }}</p>
-        </div>
-        <div class="tone-dominant tone-message-box">
-          <p>{{ messages.dominantSupportiveIntro }}</p>
-          <p>{{ messages.dominantMain }}</p>
-        </div>
-        <div class="tone-influential tone-message-box">
-          <p>{{ messages.influentialSupportiveIntro }}</p>
-          <p>{{ messages.influentialMain }}</p>
-        </div>
-        <div class="tone-conscientious tone-message-box">
-          <p>{{ messages.conscientiousSupportiveIntro }}</p>
-          <p>{{ messages.conscientiousMain }}</p>
-        </div>
-      </div>
-
-      <!-- Supportive wrap-up and binary choice prompt below -->
-      <div class="supportive-wrapup">
-        <p class="supportive-wrapup-intro">
-          {{ messages.supportiveWrapUpIntro }}
-        </p>
-        <p class="supportive-wrapup-main">
-          {{ messages.supportiveWrapUpMain }}
-        </p>
-      </div>
-
-      <div class="binary-choice">
-        <div class="choice-prompts">
-          <p>{{ messages.promptInfluential }}</p>
-          <p>{{ messages.promptSupportive }}</p>
-        </div>
-        <div class="action-buttons">
-          <q-btn
-            :label="messages.binaryChoiceReadySupportiveInfluential"
-            to="/book"
-            class="choice-btn q-mb-md enhanced-btn"
-          />
-          <q-btn
-            :label="messages.binaryChoiceExploreSupportiveConscientious"
-            to="/focused-strategy-sessions"
-            class="choice-btn q-mb-md enhanced-btn"
-          />
-        </div>
-      </div>
-    </div>
-  </q-page>
+  <MessagingPage
+    :messages="messages"
+    @left-button-click="goToFocusedStrategySessions"
+    @right-button-click="goToObjectionPage"
+  />
 </template>
 
-<script setup lang="ts">
-import { CompleteWebsiteBuild } from '../data/messages/CompleteWebsiteBuild';
-const messages = CompleteWebsiteBuild; // Directly use the imported messages
+<script lang="ts">
+import { defineComponent } from 'vue';
+import MessagingPage from '../components/MessagingPage.vue'; // Import MessagingPage component
+import { CompleteWebsiteBuild } from '../data/messages/CompleteWebsiteBuild'; // Import messages for Complete Website Build
+import { useRouter } from 'vue-router';
+
+export default defineComponent({
+  components: {
+    MessagingPage,
+  },
+  setup() {
+    const messages = CompleteWebsiteBuild; // Load Complete Website Build messages
+    const router = useRouter();
+
+    // Navigation for left button
+    function goToFocusedStrategySessions() {
+      router.push('/focused-strategy-sessions');
+    }
+
+    // Navigation for right button
+    function goToObjectionPage() {
+      router.push('/diy-comparison');
+    }
+
+    return { messages, goToFocusedStrategySessions, goToObjectionPage };
+  },
+});
 </script>
 
 <style scoped lang="scss">
-  @import '/src/css/app.scss';
-  @import '/src/css/shared-styles.scss';
-
+@import '/src/css/app.scss';
+@import '/src/css/shared-styles.scss';
 </style>
