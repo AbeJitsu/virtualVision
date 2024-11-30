@@ -3,27 +3,27 @@
 import { Message } from './SalesStrategyMessages';
 
 export const CompleteWebsiteBuild: Message = {
-  dominantTagline: 'Bring Your Vision to Life With Expert Development', // 8 words
-  influentialTagline: 'Complete your project with confidence and expertise.', // 8 words
+  dominantTagline: 'Turn Your Vision Into a Reality With Precision', // 8 words
+  influentialTagline: 'Achieve a tailored solution with expertise and care.', // 8 words
 
   supportiveStatement:
-    'This optional final step polishes your ideas into a professional website. Building on your five prior strategy sessions, it combines live collaboration and development hours for steady progress.', // 206 characters
+    'This optional phase refines your ideas into a unique digital platform. Building on prior sessions, it blends live guidance with flexible implementation for seamless progress.', // 198 characters
   dominantStatement:
-    'With tailored live sessions and scheduled development hours, this step refines every detail, crafting a website that meets your vision and achieves impactful results.', // 193 characters
+    'With live consultations and structured programming tasks, this part ensures every aspect aligns with your goals, delivering impactful and meaningful outcomes.', // 171 characters
   influentialStatement:
-    'This $4,499 package, includes 16 more live collaboration sessions and 42 development hours, elevates your strategy into a standout, sophisticated website that surpasses expectations.', // 20 words
+    'This $4,499 package includes 16 live interactive sessions, and 42 personalized development hours, empowering you to shape a high-performing online presence, that reflects your creativity.', // 25 words
   conscientiousStatement:
-    'Each session includes live collaboration and detailed documentation, ensuring steady progress toward your final vision. You assign development hours, as you see fit,  to get all the details right.', // 24 words
+    'Each interactive session preserves insights through detailed notes, ensuring smooth advancement toward a fully realized concept. Time allocations are fully adjustable to meet your priorities.', // 173 characters
 
   supportiveWrapUp:
-    'With expert support, this step culminates in a custom website that reflects your vision and goals.', // 17 words
+    'With expert assistance, this phase concludes with a platform that embodies your objectives and aspirations.', // 16 words
   influentialPrompt:
-    'Are you ready to take the final step in bringing your vision to life?', // 13 words
+    'Are you ready to take this decisive step toward making your ideas a reality?', // 12 words
 
   customerChoiceSupportiveInfluential:
-    'I’ll start with the $49 session now, with no obligations. I can decide on further steps whenever I’m ready, without any pressure.', // 22 words
+    'I’m ready to begin with the $49 consultation and explore future steps as I feel prepared.', // 17 words
   customerObjectionDominantConscientious:
-    'Is this custom development or just a website builder? Do I own the code? Must sessions and hours be used by a certain date?', // 22 words
+    'Is this a fully custom creation, or are templates involved? Do I own the result, and how flexible is the timeline?', // 22 words
 };
 
 export default CompleteWebsiteBuild;
