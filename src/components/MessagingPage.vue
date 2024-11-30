@@ -145,18 +145,4 @@
     padding-top: 0.1rem;
     letter-spacing: -0.5px;
   }
-
-  .binary-choice {
-    text-align: center;
-    margin: 1em 3em 1em;
-
-    .choice-prompts {
-      display: flex;
-      justify-content: center;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: $grayVeryDark;
-      margin-top: -1rem;
-    }
-  }
 </style>
