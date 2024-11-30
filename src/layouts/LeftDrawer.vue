@@ -54,4 +54,25 @@
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
+
+// ============================================================
+// Journey Drawer Styles
+// ============================================================
+.journey-drawer-list {
+  padding: 0.1em !important;
+  padding-top: 2em !important;
+  margin: 0 !important;
+}
+
+.journey-drawer-item {
+  padding: 0.5rem 3rem !important;
+}
+
+.journey-drawer-item-section {
+  max-width: 80% !important;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
 </style>

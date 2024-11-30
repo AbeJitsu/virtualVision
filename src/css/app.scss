@@ -1,17 +1,19 @@
-// Import your custom Quasar variables
-@import './quasar.variables.scss';
-@import './shared-styles.scss';
+// ============================================================
+// Imports
+// ============================================================
+@import './quasar.variables.scss'; // Quasar variables for colors and themes
+@import './shared-styles.scss'; // Shared hover effects and utilities
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap'); // Google Fonts
 
-// Import the STIX Two Text font from Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
-
-// Apply the font family to the entire site
+// ============================================================
+// Global Font Styles
+// ============================================================
 body {
   font-family: "STIX Two Text", serif;
   font-weight: 400;
 }
 
-// Example class for using different font weights
+// Font weight variations
 .stix-two-text-bold {
   font-weight: 700;
 }
@@ -20,57 +22,29 @@ body {
   font-style: italic;
 }
 
-// General page container
+// ============================================================
+// General Layout Styles
+// ============================================================
 .q-page-container {
   padding-top: 0 !important;
 }
 
-
-
-// Tone message boxes and choice buttons apply shared hover and tone styles
+// ============================================================
+// Tone Message Boxes and Buttons
+// ============================================================
 .tone-message-box,
 .choice-btn {
-  @extend .shared-hover;
+  @extend .shared-hover; // Reuse hover effects from shared-styles.scss
 }
 
 .choice-btn {
   margin-bottom: 0 !important; // Remove bottom margin for all choice-btn buttons
 }
-  
 
-.journey-drawer-list {
-  padding: 0.1em !important;
-  padding-top: 2em !important;
-  margin: 0 !important;
-}
-
-.journey-drawer-item {
-  padding: 0.5rem 3rem !important;
-}
-
-.journey-drawer-item-section {
-  max-width: 80% !important;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-
-
-
+// ============================================================
+// Links
+// ============================================================
 .home-link {
   color: $textWhite;
   text-decoration: none;
-}
-
-
-
-
-
-.about-us-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
 }

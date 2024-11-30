@@ -66,4 +66,18 @@
 <style scoped lang="scss">
   @import '/src/css/app.scss';
   @import '/src/css/shared-styles.scss';
+
+
+// ============================================================
+// About Us Page Styles
+// ============================================================
+.about-us-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
 </style>
