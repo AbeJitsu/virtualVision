@@ -9,7 +9,7 @@ export const TalkToDeveloper: Message = {
   supportiveStatement:
     'Imagine a live, interactive call where your ideas are heard and refined. This session connects you directly with the developer who will shape your goals and help bring your vision to life.', // 30 words
   dominantStatement:
-    'With years of experience, I ensure we focus on what matters most. Together, we’ll define your goals and create a strategy tailored to your needs, ensuring lasting success.', // 30 words
+    'With years of experience, we ensure we focus on what matters most. Together, we’ll define your goals and create a strategy tailored to your needs, ensuring lasting success.', // 30 words
   influentialStatement:
     'Guidance from someone who builds with care is rare. For just $49, gain insights and a personalized roadmap to help you achieve your vision with clarity and confidence.',
 
