@@ -5,13 +5,13 @@ export const LandingPage: Message = {
   influentialTagline: 'Imagine a site tailored to grow with your vision.', // 10 words
 
   supportiveStatement:
-    'Building a website should feel easy, not daunting. We simplify the process so you can focus on what matters most.', // 19 words
+    'Building a website should feel simple. Our step-by-step approach keeps your goals clear and actionable. Let us handle the tech so you can focus on what matters.', // 30 words
   dominantStatement:
-    'Collaborate directly with a full-stack developer to create a polished, scalable website designed to support your unique needs.', // 17 words
+    'Collaborate directly with a full-stack developer. Create a polished, scalable site tailored to your needs. Every decision is made to maximize results and efficiency.', // 30 words
   influentialStatement:
-    'Transform your ideas into reality with 21 hours of collaboration and 42 hours of expert-led development, tailored to your vision.', // 19 words
+    'Transform your ideas into reality with expert guidance and 21 hours of collaboration. Together, we’ll craft a site reflecting your ambitions. This is the website your business deserves.', // 31 words
   conscientiousStatement:
-    'You have full control. Allocate your hours flexibly, ensuring every feature aligns with your business’s long-term success.', // 16 words
+    'You have full control over priorities. Allocate hours to focus on features that matter most to your goals. Build a site that supports your long-term success with precision.', // 34 words
 
   supportiveWrapUp:
     'Let us handle the technical details while you focus on growing your business. Together, we’ll bring your vision to life.', // 20 words
