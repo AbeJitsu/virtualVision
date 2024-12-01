@@ -74,41 +74,41 @@ h2 {
   font-size: medium;
 
   &--supportive {
-    background-color: rgba($blueVeryLight, 0.6);
+    background-color: rgba($blueVeryLight, 0.7); // Increased from 0.6 to 0.8
     border: 1px solid $blueVeryLight;
     color: $grayVeryDark;
 
     &:hover {
-      background-color: rgba($blueVeryLight, 0.7);
+      background-color: rgba($blueVeryLight, 0.8); // Increased hover opacity
     }
   }
 
   &--dominant {
-    background-color: rgba($orangeVeryLight, 0.49);
+    background-color: rgba($orangeVeryLight, 0.59); // Adjusted opacity
     border: 1px solid $orangeVeryLight;
     color: $grayVeryDark;
 
     &:hover {
-      background-color: rgba($orangeVeryLight, 0.59);
+      background-color: rgba($orangeVeryLight, 0.69); // Adjusted hover opacity
     }
   }
 
   &--influential {
-    background-color: rgba($yellowVeryLight, 0.4);
+    background-color: rgba($yellowVeryLight, 0.5); // Adjusted opacity
     color: $grayVeryDark;
 
     &:hover {
-      background-color: rgba($yellowVeryLight, 0.5);
+      background-color: rgba($yellowVeryLight, 0.6); // Adjusted hover opacity
     }
   }
 
   &--conscientious {
-    background-color: rgba($greenVeryLight, 0.35);
+    background-color: rgba($greenVeryLight, 0.45); // Adjusted opacity
     border: 2px solid $greenVeryLight;
     color: $grayVeryDark;
 
     &:hover {
-      background-color: rgba($greenVeryLight, 0.35);
+      background-color: rgba($greenVeryLight, 0.55); // Adjusted hover opacity
     }
   }
 }
