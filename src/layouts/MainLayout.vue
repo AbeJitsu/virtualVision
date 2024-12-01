@@ -14,16 +14,18 @@
       @update:drawerOpen="(value) => (leftDrawerOpen = value)"
     />
 
-    <q-page-container>
-      <!-- Background images for parallax -->
-      <BackgroundImages />
+    <!-- Persistent background images -->
+    <BackgroundImages />
 
-      <!-- Main content area with transition -->
+    <q-page-container>
+      <!-- Main content area with corrected transition -->
       <router-view v-slot="{ Component }">
-        <component
-          :is="Component"
-          :key="route.fullPath"
-        />
+        <transition name="fade">
+          <component
+            :is="Component"
+            :key="route.fullPath"
+          />
+        </transition>
       </router-view>
     </q-page-container>
 
@@ -33,13 +35,12 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted, watch } from 'vue';
-  import { useRoute } from 'vue-router'; // Import useRoute
+  import { ref, watch, onMounted } from 'vue';
+  import { useRoute } from 'vue-router';
   import NavBar from './NavBar.vue';
   import LeftDrawer from '../layouts/LeftDrawer.vue';
   import Footer from '../layouts/Footer.vue';
   import BackgroundImages from '../components/BackgroundImages.vue';
-  import { Messages } from '../data/messages/SalesStrategyMessages'; // Import the messages object directly
 
   defineOptions({
     name: 'MainLayout',
@@ -48,12 +49,7 @@
   // State for controlling the left drawer
   const leftDrawerOpen = ref(false);
 
-  // Function to toggle the drawer
-  function toggleLeftDrawer() {
-    leftDrawerOpen.value = !leftDrawerOpen.value;
-  }
-
-  // Close the drawer on mount to ensure it's closed by default
+  // Ensure drawer starts closed
   onMounted(() => {
     leftDrawerOpen.value = false;
   });
@@ -62,35 +58,13 @@
   const toolbarTitle = 'Vision 2 Virtual';
   const dominantTagline = 'Bringing Your Vision to Life';
 
-  // Use route for navigation logic
-  const route = useRoute(); // Call the useRoute function
+  // Route management
+  const route = useRoute();
 
-  // Type guard to validate route names
-  function isValidRouteName(
-    routeName: string | undefined
-  ): routeName is keyof typeof Messages {
-    return routeName !== undefined && routeName in Messages;
+  // Function to toggle the drawer state
+  function toggleLeftDrawer() {
+    leftDrawerOpen.value = !leftDrawerOpen.value;
   }
-
-  // Dynamically determine messages based on the route name
-  const currentMessages = ref(Messages['LandingPage']); // Default to Landing Page messages
-  watch(
-    () => route.name,
-    (newRouteName) => {
-      // Ensure newRouteName is a string before proceeding
-      if (
-        typeof newRouteName === 'string' &&
-        newRouteName &&
-        isValidRouteName(newRouteName)
-      ) {
-        currentMessages.value = Messages[newRouteName]; // Update messages dynamically
-        console.log('Current messages updated to:', currentMessages.value);
-      } else {
-        console.warn('Invalid route name or no messages found:', newRouteName);
-      }
-    },
-    { immediate: true } // Run immediately on mount
-  );
 </script>
 
 <style scoped lang="scss">
@@ -99,7 +73,7 @@
   .q-layout,
   .q-header,
   .q-footer {
-    width: 100vw; /* Force to fill the entire viewport width */
+    width: 100vw;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -107,7 +81,7 @@
 
   .q-page-container {
     margin: 0 auto;
-    max-width: 100%; /* Prevent content from spilling over */
+    max-width: 100%;
     padding: 0;
   }
 
@@ -115,6 +89,23 @@
   .no-margin {
     padding: 0 !important;
     margin: 0 !important;
+  }
+
+  /* Fade transition styles */
+  .fade-enter-active {
+    transition: opacity 0.35s ease-in;
+  }
+
+  .fade-leave-active {
+    transition: opacity 0.35s ease-out;
+  }
+
+  .fade-enter-from {
+    opacity: 0;
+  }
+
+  .fade-leave-to {
+    opacity: 0;
   }
 </style>
 
