@@ -20,9 +20,10 @@
 
       <!-- Main content area with transition -->
       <router-view v-slot="{ Component }">
-        <transition name="fade">
-          <component :is="Component" :key="route.fullPath" />
-        </transition>
+        <component
+          :is="Component"
+          :key="route.fullPath"
+        />
       </router-view>
     </q-page-container>
 
@@ -114,23 +115,6 @@
   .no-margin {
     padding: 0 !important;
     margin: 0 !important;
-  }
-
-  /* Fade transition styles */
-  .fade-enter-active {
-    transition: opacity 0.35s ease-in; /* Slow fade-in */
-  }
-
-  .fade-leave-active {
-    transition: opacity 0.15s ease-out; /* Fast fade-out */
-  }
-
-  .fade-enter-from {
-    opacity: 0; /* Start invisible */
-  }
-
-  .fade-leave-to {
-    opacity: 0; /* End invisible */
   }
 </style>
 
