@@ -27,7 +27,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  filter: grayscale(100%) brightness(100%) opacity(0.15);
+  filter: grayscale(100%) brightness(100%) opacity(0.2);
 
   /* Automatic scrolling animation */
   background-image: url('/src/assets/influential_bottom_left.webp');
