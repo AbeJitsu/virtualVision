@@ -2,9 +2,9 @@ import { Message } from './SalesStrategyMessages';
 
 export const TalkToDeveloper: Message = {
   dominantTagline:
-    'Collaborate directly with the expert who’ll build your vision.', // 9 words
+    'Collaborate directly with the expert who’ll build your vision', // 9 words
   influentialTagline:
-    'Imagine a session that refines your ideas with expert guidance.', // 10 words
+    'Imagine a session that refines your ideas with expert guidance', // 10 words
 
   supportiveStatement:
     'Imagine a live, interactive call where your ideas are heard and refined. This session connects you directly with the developer who will shape your goals and help bring your vision to life.', // 30 words

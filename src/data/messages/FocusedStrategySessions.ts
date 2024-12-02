@@ -3,28 +3,29 @@
 import { Message } from './SalesStrategyMessages';
 
 export const FocusedStrategySessions: Message = {
-  dominantTagline: 'Transform Ideas Into Results With Five Focused Sessions', // 8 words
+  dominantTagline:
+    'Fast-track your vision with expert guidance over five focused sessions', // 8 words
   influentialTagline:
-    'Build momentum with personalized, guided strategy sessions.', // 8 words
+    'Transform your ideas into meaningful progress with expert guidance', // 8 words
 
   supportiveStatement:
-    'Schedule your Focused Strategy Sessions as early as the next business day after your Talk to a Developer session. These four sessions, one per business day, ensure thoughtful, steady progress.', // 192 characters
+    'Schedule your optional Focused Strategy Sessions, beginning the next day after your first session. These next four sessions, one per business day, build on your earlier progress and ensure clarity.', // 186 characters
   dominantStatement:
-    'Elevate your project with four focused sessions designed to sharpen your goals, prioritize actions, and craft a concrete, actionable plan that delivers measurable results.', // 190 characters
+    'Over five business days, these sessions focus on clarifying your vision. By the end, you’ll have a clear roadmap, free from technical distractions, to guide your next steps, independently or with us.', // 186 characters
   influentialStatement:
-    'For $449, these sessions build on your initial consultation, providing expert guidance to shape your ideas into a clear, achievable vision over a well-structured timeline.', // 190 characters
+    'For $449, these sessions build on your consultation, providing expert guidance to shape your ideas into a clear, actionable vision and remove uncertainty from your project.', // 189 characters
   conscientiousStatement:
-    'Live collaboration and detailed documentation ensure insights are preserved. Over four business days, maintain momentum while progressing efficiently toward your goals.', // 169 characters
+    'Live collaboration with an expert ensures insights and details are translated into practical steps. In just five days, you’ll build momentum with a customized plan and key milestones.', // 167 characters
 
   supportiveSummary:
-    'Thoughtfully paced over four business days, these sessions culminate in a personalized roadmap for success.', // 16 words
+    'Over five days, these thoughtfully paced sessions provide the clarity and direction to set your project on a successful path.', // 19 words
   influentialPrompt:
-    'Ready to turn your vision into structured, actionable progress?', // 10 words
+    'Ready to gain the clarity and confidence to take the next step?', // 11 words
   customerInnerVoiceSupportiveInfluentialChoice:
-    'How exactly do these focused strategy sessions fit into the bigger picture of successfully building and enhancing my website?', // 24 words
+    'How do these sessions set me up for success? What makes them critical for my complete website? It seems like it will align my priorities.', // 19 words
 
   customerInnerVoiceDominantConscientiousObjection:
-    'Why invest in focused strategy sessions over quick do-it-yourself options? What specific advantages do they offer over figuring it out as you go?', // 19 words
+    'Why spend five hours clarifying my vision when I could use that time building my site, even if it means less clarity?', // 19 words
 };
 
 export default FocusedStrategySessions;

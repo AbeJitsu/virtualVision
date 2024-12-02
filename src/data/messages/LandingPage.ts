@@ -1,8 +1,8 @@
 import { Message } from './SalesStrategyMessages';
 
 export const LandingPage: Message = {
-  dominantTagline: 'Your business deserves a website that drives success.', // 8 words
-  influentialTagline: 'Imagine a site tailored to grow with your vision.', // 10 words
+  dominantTagline: 'Your business deserves a website that drives success', // 8 words
+  influentialTagline: 'Imagine a site tailored to grow with your vision', // 10 words
 
   supportiveStatement:
     'Building a website should feel simple. Our step-by-step approach keeps your goals clear and actionable. Let us handle the tech so you can focus on what matters.', // 30 words
