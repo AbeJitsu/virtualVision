@@ -93,11 +93,11 @@
 
   /* Fade transition styles */
   .fade-enter-active {
-    transition: opacity 0.35s ease-in;
+    transition: opacity 0.75s ease-in;
   }
 
   .fade-leave-active {
-    transition: opacity 0.35s ease-out;
+    transition: opacity 0.25s ease-out;
   }
 
   .fade-enter-from {
