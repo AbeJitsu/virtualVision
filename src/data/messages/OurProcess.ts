@@ -1,27 +1,28 @@
-export const OurProcess = {
-  dominantTagline:
-    'The foundation of a successful website starts with a proven process.', // 11 words
+import { Message } from './SalesStrategyMessages';
+
+export const OurProcess: Message = {
+  dominantTagline: 'Transform your ideas into a polished, scalable website.', // 9 words
   influentialTagline:
-    'Transform your vision into a scalable reality with our expert guidance.', // 11 words
+    'Empower your vision with expert collaboration and tailored development.', // 9 words
 
   supportiveStatement:
-    'Building a website is more than design; it’s about functionality that aligns with your goals. While templates offer quick starts, we create tailored solutions to meet your unique needs.', // 28 words
+    'Our process is simple and flexible, designed to fit your schedule. With 21 one-hour live collaboration sessions, you’ll work at your own pace, progressing one step at a time.', // 27 words
   dominantStatement:
-    'Our process prioritizes growth and flexibility, things cookie-cutter platforms can’t deliver. We design features aligned to your business strategy and ensure full control over your website.', // 29 words
+    'This isn’t starting from scratch. We provide a fully functional website as your foundation, adding customizations that align with your vision. Every decision is built for growth.', // 27 words
   influentialStatement:
-    'Unlike generic website builders, we guide you through every step, keeping your vision front and center. With us, you’re not just building a website—you’re creating a scalable growth tool.', // 29 words
+    'Imagine 42 development hours where your ideas come to life alongside an experienced full-stack developer. Together, we’ll create a website that’s tailored and built to thrive.', // 27 words
   conscientiousStatement:
-    'Quick-start platforms may seem easy but limit customization and ownership. Our process ensures every detail is crafted for long-term success and tailored to your business.', // 29 words
+    'You’ll assign up to two development hours per day to focus on features that matter most. This ensures your site meets your goals with precision and care. Every step is thoughtfully crafted.', // 27 words
 
   supportiveSummary:
-    'Templates can only go so far. Our process ensures your website reflects your potential and grows alongside your vision.', // 22 words
+    'With flexibility and collaboration, our process ensures your website is more than just functional—it’s a platform for success.', // 20 words
   influentialPrompt:
-    'Ready to see how our proven process can create something extraordinary for your business?', // 13 words
+    'Ready to see how our proven process can bring your vision to life? Let’s create something extraordinary.', // 17 words
 
   customerInnerVoiceSupportiveInfluentialChoice:
-    'Let’s explore the process and get started today.', // 8 words
+    'I’m ready to explore how this flexible process can fit my schedule while delivering a website that reflects my goals.', // 20 words
   customerInnerVoiceDominantConscientiousObjection:
-    'Why choose strategy over a fast and simple DIY option?', // 8 words
+    'If I dedicated 21 hours to strategy and 42 hours to perfecting the technical details, my site could be amazing without you. Why expert help?', // 20 words
 };
 
 export default OurProcess;
