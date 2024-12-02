@@ -3,27 +3,28 @@
 import { Message } from './SalesStrategyMessages';
 
 export const CompleteWebsiteBuild: Message = {
-  dominantTagline: 'Turn Your Vision Into a Reality With Precision', // 8 words
-  influentialTagline: 'Achieve a tailored solution with expertise and care.', // 8 words
+  dominantTagline: 'Shape Your Vision Into a Powerful Digital Reality', // 8 words
+  influentialTagline:
+    'Create a platform that reflects your goals and creativity.', // 8 words
 
   supportiveStatement:
-    'This optional phase refines your ideas into a unique digital platform. Building on prior sessions, it blends live guidance with flexible implementation for seamless progress.', // 198 characters
+    'This optional phase turns your ideas into a unique, fully functional website. Building on prior sessions, it combines live collaboration with expert development to bring your vision to life.', // 190 characters
   dominantStatement:
-    'With live consultations and structured programming tasks, this part ensures every aspect aligns with your goals, delivering impactful and meaningful outcomes.', // 171 characters
+    'With 16 live sessions and 42 flexible development hours, every detail is tailored to your needs. This phase ensures your site aligns with your vision and stands out with precision.', // 186 characters
   influentialStatement:
-    'This $4,499 package includes 16 live interactive sessions, and 42 personalized development hours, empowering you to shape a high-performing online presence, that reflects your creativity.', // 25 words
+    'For $4,499, this comprehensive package empowers you to create a polished online presence that’s uniquely yours. Collaborate directly with a developer to make your website exceptional.', // 186 characters
   conscientiousStatement:
-    'Each interactive session preserves insights through detailed notes, ensuring smooth advancement toward a fully realized concept. Time allocations are fully adjustable to meet your priorities.', // 173 characters
+    'Detailed notes and flexible scheduling ensure every session builds on the last. Adjust priorities as needed to create a fully customized platform designed for your long-term success.', // 173 characters
 
   supportiveSummary:
-    'With expert assistance, this phase concludes with a platform that embodies your objectives, and aspirations.', // 16 words
+    'By the end of this phase, your fully realized platform will reflect your goals and aspirations, empowering you to grow with confidence.', // 21 words
   influentialPrompt:
-    'Are you ready to take this decisive step toward making your ideas a reality?', // 12 words
+    'Are you ready to turn your ideas into a powerful digital presence?', // 12 words
 
   customerInnerVoiceSupportiveInfluentialChoice:
-    'I feel ready to begin with the $49 consultation. I like that future steps are at my pace. I`m excited to work with confidence and clarity.', // 22 words
+    'How does this complete package bring everything together? What makes it the best way to create my website and achieve my vision?', // 19 words
   customerInnerVoiceDominantConscientiousObjection:
-    'Is this a fully custom creation, or are templates involved? Do I own the result, and how flexible is the timeline?', // 22 words
+    'Is this a fully custom build, or are templates used? Do I own the code and results, and how flexible is the timeline?', // 22 words
 };
 
 export default CompleteWebsiteBuild;
