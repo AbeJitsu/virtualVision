@@ -1,41 +1,52 @@
 <template>
   <MessagingPage
     :messages="messages"
-    @left-button-click="goToFocusedStrategySessions"
-    @right-button-click="goToObjectionPage"
+    @left-button-click="handleLeftClick"
+    @right-button-click="handleRightClick"
   />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import MessagingPage from '../components/MessagingPage.vue'; // Import MessagingPage component
-import { CompleteWebsiteBuild } from '../data/messages/CompleteWebsiteBuild'; // Import messages for Complete Website Build
-import { useRouter } from 'vue-router';
+  import { defineComponent } from 'vue';
+  import MessagingPage from '../components/MessagingPage.vue'; // Import MessagingPage component
+  import { CompleteWebsiteBuild } from '../data/messages/CompleteWebsiteBuild'; // Import messages for Complete Website Build
+  import { useRouter, useRoute } from 'vue-router';
+  import { useTrackingStore } from '../stores/trackingStore';
 
-export default defineComponent({
-  components: {
-    MessagingPage,
-  },
-  setup() {
-    const messages = CompleteWebsiteBuild; // Load Complete Website Build messages
-    const router = useRouter();
+  export default defineComponent({
+    components: {
+      MessagingPage,
+    },
+    setup() {
+      const router = useRouter();
+      const route = useRoute();
+      const trackingStore = useTrackingStore();
 
-    // Navigation for left button
-    function goToFocusedStrategySessions() {
-      router.push('/focused-strategy-sessions');
-    }
+      const messages = CompleteWebsiteBuild; // Load messages for Complete Website Build
+      const currentPage = route.name as string;
 
-    // Navigation for right button
-    function goToObjectionPage() {
-      router.push('/diy-comparison');
-    }
+      // Handle left button click
+      function handleLeftClick() {
+        trackingStore.addVisitedPage(currentPage); // Log the current page as visited
+        trackingStore.recordChoice(currentPage, 'left'); // Record left button choice
+        const nextPage = trackingStore.getNextPage(currentPage, 'left'); // Determine the next page dynamically
+        if (nextPage) router.push(nextPage); // Navigate to the next page
+      }
 
-    return { messages, goToFocusedStrategySessions, goToObjectionPage };
-  },
-});
+      // Handle right button click
+      function handleRightClick() {
+        trackingStore.addVisitedPage(currentPage); // Log the current page as visited
+        trackingStore.recordChoice(currentPage, 'right'); // Record right button choice
+        const nextPage = trackingStore.getNextPage(currentPage, 'right'); // Determine the next page dynamically
+        if (nextPage) router.push(nextPage); // Navigate to the next page
+      }
+
+      return { messages, handleLeftClick, handleRightClick };
+    },
+  });
 </script>
 
 <style scoped lang="scss">
-@import '/src/css/app.scss';
-@import '/src/css/shared-styles.scss';
+  @import '/src/css/app.scss';
+  @import '/src/css/shared-styles.scss';
 </style>

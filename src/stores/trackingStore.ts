@@ -41,6 +41,10 @@ export const useTrackingStore = defineStore('trackingStore', {
           left: '/focused-strategy-sessions',
           right: '/why-strategy-before-building',
         },
+        'our-process': {
+          left: '/talk-to-developer',
+          right: '/discovery', // Right button navigates to "Discovery"
+        },
         'focused-strategy-sessions': {
           left: '/complete-website-build',
           right: '/diy-comparison',
