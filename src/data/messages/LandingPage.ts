@@ -21,7 +21,7 @@ export const LandingPage: Message = {
   customerInnerVoiceSupportiveInfluentialChoice:
     'I feel that clarifying my vision could make a big impact. I`m curious about the next steps. How can I take a small step forward?',
   customerInnerVoiceDominantConscientiousObjection:
-    'Why should I spend $49 on strategy with a developer when I could use that time to start building on my own for free?', // 23 words
+    'What makes this option better than Wix or other do-it-yourself sites? How will this tailored approach deliver real, measurable results?', // 19 words
 };
 
 export default LandingPage;
