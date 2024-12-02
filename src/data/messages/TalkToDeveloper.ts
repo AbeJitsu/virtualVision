@@ -24,7 +24,7 @@ export const TalkToDeveloper: Message = {
   customerInnerVoiceSupportiveInfluentialChoice:
     'I see this is just the start. What other possibilities might there be with more collaboration, and how could that impact my vision?',
   customerInnerVoiceDominantConscientiousObjection:
-    'What kind of difference could I expect, spending the same amount of time on my own, versus working with a designer and developer?', // 20 words
+    'Even if I wind up going with a do-it-yourself option, what do I gain from spending an hour and $49 to strategize with a experienced developer?', // 19 words
 };
 
 export default TalkToDeveloper;
