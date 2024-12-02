@@ -29,10 +29,10 @@
       <!-- Supportive wrap-up and binary choice prompt below -->
       <div class="supportive-wrapup">
         <p class="supportive-wrapup-intro">
-          {{ messages.supportiveWrapUpIntro }}
+          {{ messages.supportiveSummaryIntro }}
         </p>
-        <p class="supportiveWrapUpMain">
-          {{ messages.supportiveWrapUpMain }}
+        <p class="supportiveSummaryMain">
+          {{ messages.supportiveSummaryMain }}
         </p>
       </div>
 

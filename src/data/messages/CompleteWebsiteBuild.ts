@@ -15,14 +15,14 @@ export const CompleteWebsiteBuild: Message = {
   conscientiousStatement:
     'Each interactive session preserves insights through detailed notes, ensuring smooth advancement toward a fully realized concept. Time allocations are fully adjustable to meet your priorities.', // 173 characters
 
-  supportiveWrapUp:
+  supportiveSummary:
     'With expert assistance, this phase concludes with a platform that embodies your objectives, and aspirations.', // 16 words
   influentialPrompt:
     'Are you ready to take this decisive step toward making your ideas a reality?', // 12 words
 
-  customerChoiceSupportiveInfluential:
+  customerInnerVoiceSupportiveInfluentialChoice:
     'I feel ready to begin with the $49 consultation. I like that future steps are at my pace. I`m excited to work with confidence and clarity.', // 22 words
-  customerObjectionDominantConscientious:
+  customerInnerVoiceDominantConscientiousObjection:
     'Is this a fully custom creation, or are templates involved? Do I own the result, and how flexible is the timeline?', // 22 words
 };
 

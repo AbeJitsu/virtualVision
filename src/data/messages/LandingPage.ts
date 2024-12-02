@@ -13,13 +13,14 @@ export const LandingPage: Message = {
   conscientiousStatement:
     'You have full control over priorities. Allocate hours to focus on features that matter most to your goals. Build a site that supports your long-term success with precision.', // 34 words
 
-  supportiveWrapUp:
+  supportiveSummary:
     'Let us handle the technical details while you focus on growing your business. Together, we’ll bring your vision to life.', // 20 words
   influentialPrompt:
     'Isn’t it time your website reflected your ambitions? Let’s start creating something extraordinary today.', // 14 words
-  customerChoiceSupportiveInfluential:
+
+  customerInnerVoiceSupportiveInfluentialChoice:
     'I feel that clarifying my vision could make a big impact. I`m curious about the next steps. How can I take a small step forward?',
-  customerObjectionDominantConscientious:
+  customerInnerVoiceDominantConscientiousObjection:
     'What makes this better than Wix or other do-it-yourself sites? How will this tailored approach deliver real, measurable results?', // 19 words
 };
 

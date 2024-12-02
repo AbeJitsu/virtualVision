@@ -23,8 +23,8 @@ export const TermsOfService: Message = {
   conscientiousMain:
     'We maintain transparency and adhere to best practices to provide you with security and clarity.',
 
-  supportiveWrapUpIntro: 'Your confidence is our priority.',
-  supportiveWrapUpMain:
+  supportiveSummaryIntro: 'Your confidence is our priority.',
+  supportiveSummaryMain:
     'Let’s establish a partnership built on mutual trust, respect, and clear expectations.',
 
   promptInfluential: 'Want to know more about how we operate?',

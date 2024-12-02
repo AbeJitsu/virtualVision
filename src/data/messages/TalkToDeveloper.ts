@@ -16,14 +16,14 @@ export const TalkToDeveloper: Message = {
   conscientiousStatement:
     'This session guarantees focus and progress, whether you move forward with more services or not. Every detail is captured so your next steps are actionable and well-planned.', // 26 words, // 26 words
 
-  supportiveWrapUp:
+  supportiveSummary:
     'Partner with a developer who listens and delivers. Leave with a focused plan built to support your success and next steps.', // 20 words
   influentialPrompt:
     'Are you ready to refine your vision today? Let’s get started on creating something extraordinary.', // 16 words
 
-  customerChoiceSupportiveInfluential:
+  customerInnerVoiceSupportiveInfluentialChoice:
     'I see this is just the start. What other possibilities might there be with more collaboration, and how could that impact my vision?',
-  customerObjectionDominantConscientious:
+  customerInnerVoiceDominantConscientiousObjection:
     'What kind of difference could I expect, spending the same amount of time on my own, versus working with a designer and developer?', // 20 words
 };
 

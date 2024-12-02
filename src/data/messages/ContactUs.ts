@@ -54,8 +54,8 @@ export const ContactUs: Message = {
   conscientiousMain:
     'We value clarity, accountability, and precision in every interaction, ensuring effective and dependable outcomes.', // 16 words
 
-  supportiveWrapUpIntro: 'Let’s connect and create solutions together today.', // 8 words
-  supportiveWrapUpMain:
+  supportiveSummaryIntro: 'Let’s connect and create solutions together today.', // 8 words
+  supportiveSummaryMain:
     'We’re prepared to offer insights, guidance, and actionable steps uniquely tailored to you.', // 14 words
 
   promptInfluential: 'Ready to take the next step?', // 5 words

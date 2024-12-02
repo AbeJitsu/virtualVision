@@ -8,10 +8,10 @@ const defaultMessage = {
   dominantStatement: '',
   influentialStatement: '',
   conscientiousStatement: '',
-  supportiveWrapUp: '',
+  supportiveSummary: '',
   influentialPrompt: '',
-  customerChoiceSupportiveInfluential: '',
-  customerObjectionDominantConscientious: '',
+  customerInnerVoiceSupportiveInfluentialChoice: '',
+  customerInnerVoiceDominantConscientiousObjection: '',
 };
 
 // Explicit type for Messages object

@@ -42,8 +42,9 @@ export const AboutUs: Message = {
   conscientiousMain:
     'We design comprehensive, thoughtful solutions that establish a strong foundation for sustainable growth.', // 116 chars (within limits)
 
-  supportiveWrapUpIntro: 'Our mission is to empower and support your business.', // 50 chars (within limits)
-  supportiveWrapUpMain:
+  supportiveSummaryIntro:
+    'Our mission is to empower and support your business.', // 50 chars (within limits)
+  supportiveSummaryMain:
     'Let’s craft a solution that reflects your values and sets the stage for long-term success.', // 117 chars (within limits)
 
   promptInfluential: 'Are you ready to see what we can build together?', // 43 chars (within limits)

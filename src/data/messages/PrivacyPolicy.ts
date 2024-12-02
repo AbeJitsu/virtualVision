@@ -23,8 +23,8 @@ export const PrivacyPolicy: Message = {
   conscientiousMain:
     'Our policies and processes ensure your data remains secure, private, and compliant with regulations.',
 
-  supportiveWrapUpIntro: 'Your trust is our most valuable asset.',
-  supportiveWrapUpMain:
+  supportiveSummaryIntro: 'Your trust is our most valuable asset.',
+  supportiveSummaryMain:
     'Let’s work together to build a secure, respectful, and transparent experience.',
 
   promptInfluential: 'Want to explore how we ensure your security?',

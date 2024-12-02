@@ -29,7 +29,7 @@
 
       <!-- Wrap-up and binary choice prompt -->
       <div class="supportive-wrapup">
-        <p>{{ messages.supportiveWrapUp }}</p>
+        <p>{{ messages.supportiveSummary }}</p>
       </div>
       <div class="binary-choice">
         <div class="choice-prompts">
@@ -37,12 +37,12 @@
         </div>
         <div class="action-buttons">
           <q-btn
-            :label="messages.customerChoiceSupportiveInfluential"
+            :label="messages.customerInnerVoiceSupportiveInfluentialChoice"
             @click="handleLeftClick"
             class="custom-btn"
           />
           <q-btn
-            :label="messages.customerObjectionDominantConscientious"
+            :label="messages.customerInnerVoiceDominantConscientiousObjection"
             @click="handleRightClick"
             class="custom-btn"
           />
@@ -67,10 +67,10 @@
           dominantStatement: string;
           influentialStatement: string;
           conscientiousStatement: string;
-          supportiveWrapUp: string;
+          supportiveSummary: string;
           influentialPrompt: string;
-          customerChoiceSupportiveInfluential: string;
-          customerObjectionDominantConscientious: string;
+          customerInnerVoiceSupportiveInfluentialChoice: string;
+          customerInnerVoiceDominantConscientiousObjection: string;
         }>,
         required: true,
       },

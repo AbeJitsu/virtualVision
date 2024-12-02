@@ -13,14 +13,14 @@ export const OurProcess = {
   conscientiousStatement:
     'Quick-start platforms may seem easy but limit customization and ownership. Our process ensures every detail is crafted for long-term success and tailored to your business.', // 29 words
 
-  supportiveWrapUp:
+  supportiveSummary:
     'Templates can only go so far. Our process ensures your website reflects your potential and grows alongside your vision.', // 22 words
   influentialPrompt:
     'Ready to see how our proven process can create something extraordinary for your business?', // 13 words
 
-  customerChoiceSupportiveInfluential:
+  customerInnerVoiceSupportiveInfluentialChoice:
     'Let’s explore the process and get started today.', // 8 words
-  customerObjectionDominantConscientious:
+  customerInnerVoiceDominantConscientiousObjection:
     'Why choose strategy over a fast and simple DIY option?', // 8 words
 };
 
