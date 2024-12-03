@@ -3,10 +3,9 @@
 import { Message } from './SalesStrategyMessages';
 
 export const FocusedStrategySessions: Message = {
-  dominantTagline:
-    'Fast-track your vision with expert guidance over five focused sessions', // 8 words
+  dominantTagline: 'Elevate your vision with precise strategic support', // 7 words
   influentialTagline:
-    'Transform your ideas into meaningful progress with expert guidance', // 8 words
+    'Transform your ideas into meaningful progress with expert help and guidance', // 8 words
 
   supportiveStatement:
     'Schedule your optional Focused Strategy Sessions, beginning the next day after your first session. These next four sessions, one per business day, build on your earlier progress and ensure clarity.', // 186 characters
