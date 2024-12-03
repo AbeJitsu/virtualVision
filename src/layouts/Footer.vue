@@ -1,4 +1,5 @@
 <template>
+  <!-- Footer only visible on larger screens -->
   <q-footer class="footer glossy" v-if="!isMobile">
     <div class="footer-content">
       <!-- Footer Links -->
@@ -42,13 +43,21 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref, onMounted, onUnmounted } from 'vue';
 
-  const isMobile = window.innerWidth < 600;
+  const isMobile = ref(window.innerWidth < 600);
 
-  // Optional: Add an event listener to handle dynamic resizing
-  window.addEventListener('resize', () => {
+  // Update `isMobile` dynamically on window resize
+  const updateIsMobile = () => {
     isMobile.value = window.innerWidth < 600;
+  };
+
+  onMounted(() => {
+    window.addEventListener('resize', updateIsMobile);
+  });
+
+  onUnmounted(() => {
+    window.removeEventListener('resize', updateIsMobile);
   });
 </script>
 

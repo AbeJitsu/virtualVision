@@ -183,17 +183,30 @@
       }
 
       .custom-btn {
-        width: auto;
-        text-align: justify;
-        padding: 1rem 3rem;
+        display: flex; /* Ensure proper flex behavior */
+        align-items: center; /* Vertically align text */
+        justify-content: center; /* Horizontally center text */
+        text-align: center; /* Center-align text */
+        white-space: normal; /* Allow text to wrap */
+        overflow-wrap: break-word; /* Prevent text from spilling outside */
+        width: auto; /* Allow width to fit text */
+        max-width: 100%; /* Prevent the button from exceeding container size */
+        height: auto; /* Let height adjust based on content */
+        line-height: 1.5; /* Increase vertical spacing for multiline text */
+        font-size: 1rem; /* Adjust font size */
+        border-radius: 8px; /* Maintain rounded corners */
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for contrast */
+        background-color: rgba(255, 255, 255, 0.5); /* Background styling */
+        transition: all 0.3s ease-in-out;
 
         @media (max-width: 599px) {
-          width: 100%;
+          width: 100%; /* Full-width button for mobile */
+          padding: 1rem 1rem;
         }
 
         &:hover {
-          background-color: $textWhite;
-          color: $blueDark;
+          background-color: rgba(255, 255, 255, 0.7); /* Subtle hover effect */
+          color: #0b2545; /* Darker text on hover */
         }
       }
     }
