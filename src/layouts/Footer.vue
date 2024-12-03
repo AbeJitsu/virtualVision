@@ -1,5 +1,5 @@
 <template>
-  <q-footer class="footer glossy">
+  <q-footer class="footer glossy" v-if="!isMobile">
     <div class="footer-content">
       <!-- Footer Links -->
       <div class="footer-links">
@@ -42,7 +42,14 @@
 </template>
 
 <script setup lang="ts">
-  // No longer need brandTitle and tagline props as they were removed from the footer.
+  import { ref } from 'vue';
+
+  const isMobile = window.innerWidth < 600;
+
+  // Optional: Add an event listener to handle dynamic resizing
+  window.addEventListener('resize', () => {
+    isMobile.value = window.innerWidth < 600;
+  });
 </script>
 
 <style scoped lang="scss">

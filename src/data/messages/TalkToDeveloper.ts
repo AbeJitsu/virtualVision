@@ -22,7 +22,7 @@ export const TalkToDeveloper: Message = {
     'Are you ready to refine your vision today? Let’s get started on creating something extraordinary.', // 16 words
 
   customerInnerVoiceSupportiveInfluentialChoice:
-    'I see this is just the start. What other possibilities might there be with more collaboration, and how could that impact my vision?',
+    'If this is just the first step in your 3-step process, what else could we achieve with more time, and how might that refine my vision?',
   customerInnerVoiceDominantConscientiousObjection:
     'Even if I wind up going with a do-it-yourself option, what do I gain from spending an hour and $49 to strategize with a experienced developer?', // 19 words
 };

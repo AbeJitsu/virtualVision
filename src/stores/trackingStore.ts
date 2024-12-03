@@ -50,8 +50,8 @@ export const useTrackingStore = defineStore('trackingStore', {
           right: '/diy-comparison',
         },
         'complete-website-build': {
-          left: '/complete-process-summary',
-          right: '/complete-process-summary', // Adjust as needed if different paths are intended
+          left: '/full-service-pricing-details', // Navigate to the Full Service Pricing Details page
+          right: '/complete-process-summary', // Navigate to the Complete Process Summary page
         },
         'complete-process-summary': {
           left: '/book-now', // Assuming booking starts here

@@ -29,6 +29,12 @@
       <div class="nav-links">
         <q-btn
           flat
+          label="Our Process"
+          :to="{ name: 'complete-process-summary' }"
+          class="nav-text"
+        />
+        <q-btn
+          flat
           :label="visionPlanningLabel"
           :to="{ name: 'talk-to-developer' }"
           class="nav-text"
@@ -44,6 +50,12 @@
           label="Complete Website Build"
           :to="{ name: 'complete-website-build' }"
           class="nav-text"
+        />
+        <q-btn
+        flat
+        label="Pricing Details"
+        :to="{ name: 'full-service-pricing-details' }"
+        class="nav-text"
         />
         <q-btn
           flat
@@ -231,21 +243,18 @@
   }
 
   .login-dropdown .login-label {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem; /* Adjust the gap as needed */
-}
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Adjust the gap as needed */
+  }
 
-.login-dropdown .login-text {
-  font-size: 1.1rem; /* Adjust the font size if necessary */
-  font-weight: 500;
-}
+  .login-dropdown .login-text {
+    font-size: 1.1rem; /* Adjust the font size if necessary */
+    font-weight: 500;
+  }
 
-.login-dropdown .icon-wrapper {
-  display: flex;
-  align-items: center;
-}
+  .login-dropdown .icon-wrapper {
+    display: flex;
+    align-items: center;
+  }
 </style>
-
-
-<!-- src/layouts/NavBar.vue -->
