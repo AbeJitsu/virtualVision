@@ -41,7 +41,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/DIYComparison.vue'),
       },
       {
-        path: 'our-process', // Adding the Our Process page route
+        path: 'our-process',
         name: 'our-process',
         component: () => import('pages/OurProcess.vue'),
       },
@@ -64,6 +64,16 @@ const routes: RouteRecordRaw[] = [
         path: 'contact',
         name: 'contact-us',
         component: () => import('pages/ContactUs.vue'),
+      },
+      {
+        path: 'complete-process-summary',
+        name: 'complete-process-summary',
+        component: () => import('pages/CompleteProcessSummary.vue'),
+      },
+      {
+        path: 'full-service-pricing-details',
+        name: 'full-service-pricing-details',
+        component: () => import('pages/FullServicePricingDetails.vue'),
       },
     ],
   },
