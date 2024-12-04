@@ -106,7 +106,13 @@
   @import '/src/css/shared-styles.scss';
 
   .content-container {
+    width: 100%;
+    max-width: 1000px;
     letter-spacing: -0.75px;
+    padding-top: calc(
+      var(--navbar-height, 4rem) + 2rem
+    ); // Navbar height + spacing
+    margin: 0 auto;
 
     @media (max-width: 599px) {
       padding-bottom: 1rem;
@@ -130,8 +136,8 @@
   }
 
   .tagline--influential {
-  margin-top: 1.5rem !important;
-}
+    margin-top: 1.5rem !important;
+  }
 
   .influentialTagline {
     margin-bottom: 2.5rem;
@@ -210,7 +216,7 @@
         justify-content: center; /* Horizontally center text */
         text-align: center; /* Center-align text */
         white-space: normal; /* Allow text to wrap */
-        overflow-wrap: break-word; /* Prevent text from spilling outside */
+        // overflow-wrap: break-word;
         width: auto; /* Allow width to fit text */
         max-width: 100%; /* Prevent the button from exceeding container size */
         height: auto; /* Let height adjust based on content */

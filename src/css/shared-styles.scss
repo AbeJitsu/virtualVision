@@ -8,13 +8,7 @@
   }
 }
 
-// Content Container for consistent layout
-.content-container {
-  width: 100%;
-  max-width: 1000px;
-  padding-top: calc(var(--navbar-height, 4rem) + 2rem); // Navbar height + spacing
-  margin: 0 auto;
-}
+
 
 // Tagline Base Class with modifiers for dominant and influential
 .tagline {

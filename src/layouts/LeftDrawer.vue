@@ -70,7 +70,7 @@
 
 .journey-drawer-item-section {
   max-width: 80% !important;
-  overflow: hidden;
+  // overflow: hidden;
   white-space: nowrap;
 }
 

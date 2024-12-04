@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" class="main-layout">
     <!-- NavBar for the header -->
     <NavBar
       :toolbarTitle="toolbarTitle"
@@ -70,6 +70,10 @@
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
+  .main-layout {
+    // overflow-x: hidden; /* Prevent horizontal scrolling at layout level */
+  }
+
   .q-layout,
   .q-header,
   .q-footer {
@@ -107,6 +111,11 @@
   .fade-leave-to {
     opacity: 0;
   }
+
+  .q-layout,
+.q-page {
+  // border: 5px dashed red !important;
+}
 </style>
 
 <!-- src/layouts/MainLayout.vue -->

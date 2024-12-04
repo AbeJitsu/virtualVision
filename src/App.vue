@@ -27,7 +27,7 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    
+    overflow-x: hidden;
     scrollbar-color: #c8c8c8 transparent; /* Thumb and track colors */
     scrollbar-width: thin;
   }
@@ -47,12 +47,19 @@
   }
 
   /* Fade transition for route changes */
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 0.2s ease-in-out; /* Smooth transition */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
   }
 
-  .fade-enter-from, .fade-leave-to {
+  .fade-enter-from,
+  .fade-leave-to {
     opacity: 0; /* Start and end states for fade */
+  }
+
+  .q-layout,
+  .q-page {
+    /* border: 5px dashed red !important; */
   }
 </style>
 
