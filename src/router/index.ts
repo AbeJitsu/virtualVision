@@ -36,9 +36,12 @@ export default route(function (/* { store, ssrContext } */) {
       if (savedPosition) {
         return savedPosition;
       } else {
-        // Smooth scroll is commented for testing simpler behavior
-        // return { top: 0, left: 0, behavior: 'smooth' };
-        return { top: 0, left: 0 };
+        // Scroll the body element explicitly
+        const body = document.querySelector('body');
+        if (body) {
+          body.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }
+        return { top: 0, left: 0 }; // Return default position
       }
     },
     routes, // Pass in routes from routes.ts
