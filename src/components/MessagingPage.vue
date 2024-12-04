@@ -110,10 +110,8 @@
 
     @media (max-width: 599px) {
       padding-bottom: 1rem;
-      padding: 0 3rem;
-      // padding-right: 2rem;
+      padding: 0 2.75rem;
       margin-top: 6rem;
-      // margin-bottom: 2rem;
     }
   }
 
@@ -130,6 +128,10 @@
       margin-bottom: 2rem;
     }
   }
+
+  .tagline--influential {
+  margin-top: 1.5rem !important;
+}
 
   .influentialTagline {
     margin-bottom: 2.5rem;
@@ -155,7 +157,7 @@
       padding: 0 1rem; /* Prevent content from touching edges on mobile */
       gap: 2rem;
       margin-bottom: 4rem;
-      // margin-bottom: 2rem;
+      margin-top: 2rem;
     }
   }
 
@@ -178,7 +180,7 @@
       margin: 2rem 1rem 2rem;
     }
   }
-  
+
   .binary-choice {
     // display: flex;
     // flex-direction: row;
