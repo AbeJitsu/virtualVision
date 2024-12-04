@@ -4,6 +4,16 @@
     elevated
   >
     <q-toolbar>
+      <q-btn
+        flat
+        dense
+        round
+        icon="menu"
+        aria-label="Menu"
+        class="menu-button"
+        @click="toggleLeftDrawer"
+      />
+
       <!-- Title (Vision2Virtual links to Landing Page) -->
       <q-toolbar-title class="toolbar-title">
         <router-link
@@ -15,8 +25,8 @@
         </router-link>
       </q-toolbar-title>
 
-      <!-- Desktop Navigation Links -->
-      <div class="nav-links desktop-only">
+      <!-- Navigation Links -->
+      <div class="nav-links">
         <q-btn
           flat
           label="Our Process"
@@ -42,10 +52,10 @@
           class="nav-text"
         />
         <q-btn
-          flat
-          label="Pricing Details"
-          :to="{ name: 'full-service-pricing-details' }"
-          class="nav-text"
+        flat
+        label="Pricing Details"
+        :to="{ name: 'full-service-pricing-details' }"
+        class="nav-text"
         />
         <q-btn
           flat
@@ -55,27 +65,6 @@
         />
       </div>
 
-      <!-- Mobile Navigation Dropdown -->
-      <q-btn-dropdown
-        flat
-        no-caps
-        icon="menu"
-        class="nav-dropdown mobile-only"
-        content-class="dropdown-content"
-      >
-        <q-list>
-          <q-item
-            v-for="(link, index) in navLinks"
-            :key="index"
-            clickable
-            v-close-popup
-            @click="navigateTo(link.to)"
-          >
-            <q-item-section>{{ link.label }}</q-item-section>
-          </q-item>
-        </q-list>
-      </q-btn-dropdown>
-
       <!-- Dropdown with Login -->
       <q-btn-dropdown
         flat
@@ -84,12 +73,16 @@
         no-caps
         @click="navigateToAuth"
       >
+        <!-- Custom Label with Spacing -->
         <template #label>
           <div class="login-label">
             <q-icon name="account_circle" />
             <span class="login-text">Login</span>
+            <span class="icon-wrapper">
+            </span>
           </div>
         </template>
+
         <q-list>
           <q-item
             clickable
@@ -107,6 +100,7 @@
               <q-item-label>Profile</q-item-label>
             </q-item-section>
           </q-item>
+
           <q-item
             clickable
             v-close-popup
@@ -123,6 +117,7 @@
               <q-item-label>Settings</q-item-label>
             </q-item-section>
           </q-item>
+
           <q-item
             clickable
             v-close-popup
@@ -151,50 +146,47 @@
 
   const router = useRouter();
 
-  // List of navigation links
-  const navLinks = [
-    { label: 'Our Process', to: { name: 'complete-process-summary' } },
-    { label: 'Talk to a Developer', to: { name: 'talk-to-developer' } },
-    {
-      label: 'Focused Strategy Sessions',
-      to: { path: '/focused-strategy-sessions' },
-    },
-    { label: 'Complete Website Build', to: { name: 'complete-website-build' } },
-    { label: 'Pricing Details', to: { name: 'full-service-pricing-details' } },
-    { label: 'Book Now', to: { path: '/book' } },
-  ];
+  // Function to handle navigation
+  function navigateTo(page: string) {
+    router.push({ name: page });
+  }
 
-  // Function to navigate to specific routes
-  const navigateTo = (route: object) => {
-    router.push(route);
-  };
-
-  // Function to navigate to auth page
-  const navigateToAuth = () => {
+  // Function to handle navigation to auth
+  function navigateToAuth() {
     router.push({ name: 'auth-page' });
-  };
+  }
 
   // Function to handle logout
-  const handleLogout = () => {
+  function handleLogout() {
     console.log('Logging out...');
     // Add logout logic here
-  };
+  }
 
   const props = defineProps({
-    toolbarTitle: { type: String, required: true },
-    visionPlanningLabel: { type: String, default: 'Talk to a Developer' },
-    fullVisionLabel: { type: String, default: 'Focused Strategy Sessions' },
+    toolbarTitle: {
+      type: String,
+      required: true,
+    },
+    visionPlanningLabel: {
+      type: String,
+      default: 'Talk to a Developer',
+    },
+    fullVisionLabel: {
+      type: String,
+      default: 'Focused Strategy Sessions',
+    },
   });
+
+  const emit = defineEmits(['toggleLeftDrawer']);
+
+  // Function to toggle the left drawer menu
+  function toggleLeftDrawer() {
+    emit('toggleLeftDrawer');
+  }
 </script>
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
-
-  .q-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 
   .custom-header {
     display: flex;
@@ -227,12 +219,6 @@
     color: $textWhite;
     padding: 0;
     margin: 0;
-    letter-spacing: -0.75px;
-
-    @media (max-width: 599px) {
-      font-size: 1.25rem;
-      letter-spacing: -0.35px;
-    }
   }
 
   .nav-links {
@@ -253,8 +239,7 @@
   .login-dropdown {
     color: $textWhite;
     font-weight: 600;
-    font-size: 1rem;
-    margin-left: auto;
+    font-size: 11.5em;
   }
 
   .login-dropdown .login-label {
@@ -271,26 +256,5 @@
   .login-dropdown .icon-wrapper {
     display: flex;
     align-items: center;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1rem;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
-  .nav-dropdown {
-    display: none;
-
-    @media (max-width: 768px) {
-      display: inline-flex;
-    }
-
-    @media (max-width: 768px) {
-      display: inline-flex;
-    }
   }
 </style>
