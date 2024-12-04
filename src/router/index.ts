@@ -31,7 +31,16 @@ export default route(function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> vueRouterMode
     // quasar.conf.js -> build -> publicPath
 
-    scrollBehavior: () => ({ left: 0, top: 0 }), // Reset scroll on route change
+    scrollBehavior(to, from, savedPosition) {
+      console.log('ScrollBehavior triggered', { to, from, savedPosition });
+      if (savedPosition) {
+        return savedPosition;
+      } else {
+        // Smooth scroll is commented for testing simpler behavior
+        // return { top: 0, left: 0, behavior: 'smooth' };
+        return { top: 0, left: 0 };
+      }
+    },
     routes, // Pass in routes from routes.ts
     history: createHistory(process.env.VUE_ROUTER_BASE || '/'), // Use default '/' if BASE is not set
   });
@@ -45,9 +54,15 @@ export default route(function (/* { store, ssrContext } */) {
       trackingStore.addVisitedPage(to.name as string);
     }
 
+    // Manually scroll to the top of the page for all transitions
+    console.log('Manually scrolling to top');
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
     // Log navigation for debugging
     console.log(`Navigated from ${String(from.name)} to ${String(to.name)}`);
   });
 
   return Router;
 });
+
+// src/router/index.ts

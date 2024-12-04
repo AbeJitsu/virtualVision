@@ -48,3 +48,5 @@ module.exports = configure(function (/* ctx */) {
     },
   };
 });
+
+// quasar.config.cjs

@@ -27,7 +27,7 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    
     scrollbar-color: #c8c8c8 transparent; /* Thumb and track colors */
     scrollbar-width: thin;
   }
