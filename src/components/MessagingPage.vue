@@ -109,10 +109,11 @@
     letter-spacing: -0.75px;
 
     @media (max-width: 599px) {
-      padding-bottom: 9rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      padding-top: 5rem;
+      padding-bottom: 1rem;
+      padding: 0 3rem;
+      // padding-right: 2rem;
+      margin-top: 6rem;
+      // margin-bottom: 2rem;
     }
   }
 
@@ -122,7 +123,7 @@
     margin-bottom: 1rem;
     color: $grayDark;
     text-align: center;
-    padding-top: 1rem;
+    padding-top: 11rem;
     letter-spacing: -1.25px;
 
     @media (max-width: 599px) {
@@ -151,7 +152,10 @@
 
     @media (max-width: 599px) {
       grid-template-columns: 1fr;
-      padding: 0 1.5rem; /* Prevent content from touching edges on mobile */
+      padding: 0 1rem; /* Prevent content from touching edges on mobile */
+      gap: 2rem;
+      margin-bottom: 4rem;
+      // margin-bottom: 2rem;
     }
   }
 
@@ -161,6 +165,20 @@
     letter-spacing: -0.75px;
   }
 
+  .supportive-wrapup {
+    text-align: center;
+    color: $grayVeryDark;
+    font-weight: 600;
+    font-size: x-large;
+    margin: 2rem 7rem 1.5rem;
+    padding-top: 0.1rem;
+    letter-spacing: -0.5px;
+
+    @media (max-width: 599px) {
+      margin: 2rem 1rem 2rem;
+    }
+  }
+  
   .binary-choice {
     // display: flex;
     // flex-direction: row;
@@ -169,7 +187,8 @@
     @media (max-width: 599px) {
       flex-direction: column;
       gap: 1.5rem;
-      padding: 0 2rem;
+      padding: 2rem 0rem 2rem 0rem;
+      margin-top: 1.5rem;
     }
 
     .action-buttons {
@@ -179,6 +198,7 @@
 
       @media (max-width: 599px) {
         flex-direction: column;
+        margin-top: 2rem;
         width: 100%;
       }
 
@@ -201,7 +221,7 @@
 
         @media (max-width: 599px) {
           width: 100%; /* Full-width button for mobile */
-          padding: 1rem 1rem;
+          padding: 2rem 2rem;
         }
 
         &:hover {
@@ -209,20 +229,6 @@
           color: #0b2545; /* Darker text on hover */
         }
       }
-    }
-  }
-
-  .supportive-wrapup {
-    text-align: center;
-    color: $grayVeryDark;
-    font-weight: 600;
-    font-size: x-large;
-    margin: 2rem 7rem 1.5rem;
-    padding-top: 0.1rem;
-    letter-spacing: -0.5px;
-
-    @media (max-width: 599px) {
-      margin: 2rem 1rem 1.5rem;
     }
   }
 </style>
