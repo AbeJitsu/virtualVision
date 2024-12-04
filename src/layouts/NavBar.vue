@@ -4,17 +4,7 @@
     elevated
   >
     <q-toolbar>
-      <q-btn
-        flat
-        dense
-        round
-        icon="menu"
-        aria-label="Menu"
-        class="menu-button"
-        @click="toggleLeftDrawer"
-      />
-
-      <!-- Title (Vision2Virtual links to Landing Page) -->
+      <!-- Title -->
       <q-toolbar-title class="toolbar-title">
         <router-link
           to="/"
@@ -25,47 +15,28 @@
         </router-link>
       </q-toolbar-title>
 
-      <!-- Navigation Links -->
-      <div class="nav-links">
-        <q-btn
-          flat
-          label="Our Process"
-          :to="{ name: 'complete-process-summary' }"
-          class="nav-text"
-        />
-        <q-btn
-          flat
-          :label="visionPlanningLabel"
-          :to="{ name: 'talk-to-developer' }"
-          class="nav-text"
-        />
-        <q-btn
-          flat
-          :label="fullVisionLabel"
-          to="/focused-strategy-sessions"
-          class="nav-text"
-        />
-        <q-btn
-          flat
-          label="Complete Website Build"
-          :to="{ name: 'complete-website-build' }"
-          class="nav-text"
-        />
-        <q-btn
+      <!-- Navigation Links Dropdown for Mobile -->
+      <q-btn-dropdown
         flat
-        label="Pricing Details"
-        :to="{ name: 'full-service-pricing-details' }"
-        class="nav-text"
-        />
-        <q-btn
-          flat
-          label="Book Now"
-          :to="{ path: '/book' }"
-          class="nav-text"
-        />
-      </div>
+        no-caps
+        icon="menu"
+        class="nav-dropdown"
+        content-class="dropdown-content"
+      >
+        <q-list style="max-height: 300px; overflow-y: auto">
+          <q-item
+            v-for="(link, index) in navLinks"
+            :key="index"
+            clickable
+            v-close-popup
+            @click="navigateTo(link.to)"
+          >
+            <q-item-section>{{ link.label }}</q-item-section>
+          </q-item>
+        </q-list>
+      </q-btn-dropdown>
 
-      <!-- Dropdown with Login -->
+      <!-- Login Dropdown -->
       <q-btn-dropdown
         flat
         split
@@ -73,16 +44,12 @@
         no-caps
         @click="navigateToAuth"
       >
-        <!-- Custom Label with Spacing -->
         <template #label>
           <div class="login-label">
             <q-icon name="account_circle" />
             <span class="login-text">Login</span>
-            <span class="icon-wrapper">
-            </span>
           </div>
         </template>
-
         <q-list>
           <q-item
             clickable
@@ -100,7 +67,6 @@
               <q-item-label>Profile</q-item-label>
             </q-item-section>
           </q-item>
-
           <q-item
             clickable
             v-close-popup
@@ -117,7 +83,6 @@
               <q-item-label>Settings</q-item-label>
             </q-item-section>
           </q-item>
-
           <q-item
             clickable
             v-close-popup
@@ -141,48 +106,42 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
   import { useRouter } from 'vue-router';
 
   const router = useRouter();
 
-  // Function to handle navigation
-  function navigateTo(page: string) {
-    router.push({ name: page });
-  }
+  // Navigation Links
+  const navLinks = [
+    { label: 'Our Process', to: { name: 'complete-process-summary' } },
+    { label: 'Talk to a Developer', to: { name: 'talk-to-developer' } },
+    {
+      label: 'Focused Strategy Sessions',
+      to: { path: '/focused-strategy-sessions' },
+    },
+    { label: 'Complete Website Build', to: { name: 'complete-website-build' } },
+    { label: 'Pricing Details', to: { name: 'full-service-pricing-details' } },
+    { label: 'Book Now', to: { path: '/book' } },
+  ];
 
-  // Function to handle navigation to auth
-  function navigateToAuth() {
+  // Function to navigate to specific routes
+  const navigateTo = (route: object) => {
+    router.push(route);
+  };
+
+  // Function to navigate to auth page
+  const navigateToAuth = () => {
     router.push({ name: 'auth-page' });
-  }
+  };
 
   // Function to handle logout
-  function handleLogout() {
+  const handleLogout = () => {
     console.log('Logging out...');
-    // Add logout logic here
-  }
+  };
 
+  // Props for toolbar title
   const props = defineProps({
-    toolbarTitle: {
-      type: String,
-      required: true,
-    },
-    visionPlanningLabel: {
-      type: String,
-      default: 'Talk to a Developer',
-    },
-    fullVisionLabel: {
-      type: String,
-      default: 'Focused Strategy Sessions',
-    },
+    toolbarTitle: { type: String, required: true },
   });
-
-  const emit = defineEmits(['toggleLeftDrawer']);
-
-  // Function to toggle the left drawer menu
-  function toggleLeftDrawer() {
-    emit('toggleLeftDrawer');
-  }
 </script>
 
 <style scoped lang="scss">
@@ -196,65 +155,57 @@
     z-index: 10;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0.98;
+    padding: 0.5rem 1rem;
     transition: background-color 0.3s ease-in-out;
-    padding: 1rem 1rem;
-    white-space: nowrap;
-  }
 
-  .menu-button {
-    margin-right: 1rem;
-
-    @media (min-width: 768px) {
-      margin-right: 2rem;
+    @media (max-width: 599px) {
+      padding: 0.25rem 0.5rem;
     }
   }
 
   .toolbar-title {
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex: none;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: $textWhite;
-    padding: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
     margin: 0;
+    letter-spacing: -0.75px;
+
+    @media (max-width: 599px) {
+      font-size: 1.2rem;
+    }
   }
 
-  .nav-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    flex: 1;
-    padding: 0;
+  .nav-dropdown {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: inline-flex;
+    }
   }
 
-  .nav-text {
-    color: $textWhite;
-    font-size: 1.1em;
-    font-weight: 600;
+  .dropdown-content {
+    min-width: 150px;
   }
 
   .login-dropdown {
-    color: $textWhite;
-    font-weight: 600;
-    font-size: 11.5em;
+    color: #fff;
+    font-size: 1rem;
   }
 
-  .login-dropdown .login-label {
+  .login-label {
     display: flex;
     align-items: center;
-    gap: 0.75rem; /* Adjust the gap as needed */
+    gap: 0.5rem;
   }
 
-  .login-dropdown .login-text {
-    font-size: 1.1rem; /* Adjust the font size if necessary */
+  .q-list {
+    max-height: 300px; /* Limit dropdown height */
+    overflow-y: auto; /* Enable scrolling */
+  }
+
+  .login-text {
+    font-size: 1rem;
     font-weight: 500;
-  }
-
-  .login-dropdown .icon-wrapper {
-    display: flex;
-    align-items: center;
+    letter-spacing: -0.25px;
   }
 </style>
