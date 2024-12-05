@@ -102,7 +102,7 @@
           <q-item
             clickable
             v-close-popup
-            @click="navigateTo('profile')"
+            @click="navigateTo({ name: 'profile' })"
           >
             <q-item-section avatar>
               <q-avatar
@@ -118,7 +118,7 @@
           <q-item
             clickable
             v-close-popup
-            @click="navigateTo('settings')"
+            @click="navigateTo({ name: 'settings' })"
           >
             <q-item-section avatar>
               <q-avatar
@@ -256,7 +256,7 @@
     flex: 1;
 
     @media (max-width: 768px) {
-      // margin: -2rem;
+      display: none;
     }
   }
 
@@ -264,6 +264,11 @@
     color: $textWhite;
     font-size: 1.1em;
     font-weight: 600;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: mix($textWhite, white, 20%);
+    }
   }
 
   .login-dropdown {
@@ -275,42 +280,68 @@
     @media (max-width: 768px) {
       margin-left: -15px; /* Pushes the dropdown to the left */
     }
-  }
 
-  .login-dropdown .login-label {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    .login-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
 
-    @media (max-width: 768px) {
+      @media (max-width: 768px) {
+        .login-text {
+          display: none;
+        }
+      }
+
       .login-text {
-        display: none;
+        font-size: 1.1rem;
+        font-weight: 500;
       }
     }
-  }
 
-  .login-dropdown .login-text {
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-
-  .login-dropdown .icon-wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-  .login-dropdown .q-icon {
-    margin-right: -9px;
+    .q-icon {
+      margin-right: -9px;
+    }
   }
 
   .q-icon {
     margin-right: -10px;
   }
 
-  .login-label {
-    display: flex;
-    align-items: center;
-    gap: -0.11rem;
+  .home-link {
+    color: $textWhite;
+    text-decoration: none;
+    margin-left: 5px;
+
+    &.active-link {
+      border-bottom: 2px solid $primary; /* Highlight active link */
+    }
+  }
+
+  .dropdown-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+
+    &.q-btn-dropdown__content--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .q-item {
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
   }
 
   .q-btn-dropdown {
@@ -328,9 +359,14 @@
     }
   }
 
-  .home-link {
-    color: $textWhite;
-    text-decoration: none;
-    margin-left: 5px;
+  .desktop-only {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  /* Focus States for Accessibility */
+  .q-btn:focus, .q-item:focus {
+    outline: 2px solid $primary;
   }
 </style>
