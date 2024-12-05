@@ -148,7 +148,7 @@
 
   /* Header styling */
   .card-header {
-    background-color: $blueMid;
+    background-color: $blueDark;
     // border-top-left-radius: 12px;
     // border-top-right-radius: 12px;
     // border-bottom-left-radius: 12px;
@@ -169,11 +169,13 @@
   .form-container {
     display: flex;
     flex-direction: column;
+    padding: 0rem;
+    margin: 1rem;
   }
 
   /* Input fields */
   .form-input {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 
     @media screen and (min-width: 768px) {
       margin-bottom: 0.5rem;
@@ -185,7 +187,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0rem 1rem;
+    padding: 0rem 1.5rem;
     flex-direction: row;
     flex-wrap: nowrap;
     min-width: 14rem;
@@ -200,7 +202,7 @@
   .action-btn {
     width: 50%;
     padding: 0.75rem;
-    background-color: $blueMid;
+    background-color: $blueDark;
     color: white;
     border-radius: 8px;
     transition: background-color 0.3s ease-in-out;
