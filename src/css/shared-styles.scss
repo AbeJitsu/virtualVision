@@ -68,7 +68,7 @@ h2 {
   font-size: medium;
 
   &--supportive {
-    background-color: rgba($blueVeryLight, 0.7); // Increased from 0.6 to 0.8
+    background-color: rgba($blueVeryLight, 0.8); // Increased from 0.6 to 0.8
     border: 1px solid $blueVeryLight;
     color: $grayVeryDark;
 
@@ -78,7 +78,7 @@ h2 {
   }
 
   &--dominant {
-    background-color: rgba($orangeVeryLight, 0.59); // Adjusted opacity
+    background-color: rgba($orangeVeryLight, 0.6); // Adjusted opacity
     border: 1px solid $orangeVeryLight;
     color: $grayVeryDark;
 
@@ -88,7 +88,7 @@ h2 {
   }
 
   &--influential {
-    background-color: rgba($yellowVeryLight, 0.5); // Adjusted opacity
+    background-color: rgba($yellowVeryLight, 0.7); // Adjusted opacity
     color: $grayVeryDark;
 
     &:hover {
@@ -97,7 +97,7 @@ h2 {
   }
 
   &--conscientious {
-    background-color: rgba($greenVeryLight, 0.45); // Adjusted opacity
+    background-color: rgba($greenVeryLight, 0.6); // Adjusted opacity
     border: 2px solid $greenVeryLight;
     color: $grayVeryDark;
 

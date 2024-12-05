@@ -1,22 +1,22 @@
 // Quasar Default Variable Overrides
 $primary: #08182d; // Dark Muted Blue
-$secondary: #5dbb63; // Dark Muted Green
-$accent: #FA8128; // Dark Muted Orange
-$dark: #1D1D1D; // Dark Gray
-$positive: #5dbb63; // Same as green for success indicators
-$negative: #680c07; // Dark Muted Red
-$info: #0b2545; // Blue for informational elements
-$warning: #FFAE1A; // Mid-tone Orange for warnings
+$secondary: #47536c; // Generated Secondary
+$accent: #b47620; // Generated Accent
+$dark: #000000; // Generated Dark
+$positive: #5c6883; // Generated Positive
+$negative: #b41120; // Generated Negative
+$info: #0611b7; // Generated Info
+$warning: #b47c25; // Generated Warning
 
 // Custom Color Definitions
 $textWhite: #ffffff;
 
 // Primary color variations (Blue)
-$blueVeryLight: #e6f0fa;
-$blueLight: #b3c7e0;
-$blueMid: #4c6bb0;
-$blueDark: #08182d;
-$blueVeryDark: #02080e;
+$blueVeryLight: #e6f0fa; // Lightened from primary
+$blueLight: #b3c7e0; // Lightened from primary
+$blueMid: #4c6bb0; // Mid-tone derived from primary
+$blueDark: #08182d; // Original primary
+$blueVeryDark: #02080e; // Darkened from primary
 
 // Highlight color variations (Green)
 $greenVeryLight: #d5f5dc;
@@ -26,34 +26,34 @@ $greenDark: #3e7e3c;
 $greenVeryDark: #1a3a1e;
 
 // Accent color variations (Orange)
-$orangeVeryLight: #ffebc4;
-$orangeLight: #ffb366;
-$orangeMid: #ffa500;
-$orangeDark: #c67c00;
-$orangeVeryDark: #5a3f00;
+$orangeVeryLight: #ffd8a8; // Lightened from accent
+$orangeLight: #f0b080; // Lightened from accent
+$orangeMid: #b47620; // Original accent
+$orangeDark: #8a5c16; // Darkened from accent
+$orangeVeryDark: #603e10; // Darkened from accent
 
-// Yellow color variations
+// Yellow color variations (For contrast purposes)
 $yellowVeryLight: #fffdd0;
 $yellowLight: #fff08a;
 $yellowMid: #ffd700;
 $yellowDark: #d4b300;
 $yellowVeryDark: #7a5f00;
 
-// Support color variations (Red)
-$redVeryLight: #f2c5cf;
-$redLight: #de4254;
-$redMid: #ac0020;
-$redDark: #7a0015;
-$redVeryDark: #4d000c;
+// Support color variations (Negative)
+$redVeryLight: #f3b9b0; // Lightened from negative
+$redLight: #e09791; // Lightened from negative
+$redMid: #b41120; // Original negative
+$redDark: #870d18; // Darkened from negative
+$redVeryDark: #5a0910; // Darkened from negative
 
 // Neutral grays
 $grayVeryLight: #f8f8f8;
 $grayLight: #e0e0e0;
 $grayMid: #777777;
-$grayDark: #1d1d1d;
+$grayDark: #1d1d1d; // From dark
 $grayVeryDark: #0a0a0a;
 
-// Purple variations for influential button
+// Purple variations for influential button (Example)
 $purpleVeryLight: #f3e9fa;
 $purpleLight: #b091d4;
 $purpleMid: #9171b9;

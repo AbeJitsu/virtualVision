@@ -20,6 +20,7 @@
     "@quasar/app-vite": "^1.9.0",
     "@quasar/extras": "^1.16.4",
     "axios": "^1.2.1",
+    "chroma-js": "^3.1.2",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
     "pinia": "^2.0.11",

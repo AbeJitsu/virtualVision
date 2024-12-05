@@ -65,7 +65,7 @@
   @import '/src/css/app.scss';
 
   .footer {
-    background-color: $blueDark;
+    background-color: $primary;
     color: $textWhite;
     padding: 0.5rem 1.5rem;
     text-align: center;
@@ -121,7 +121,7 @@
 
       &:hover {
         background-color: $textWhite;
-        color: $blueDark;
+        color: $primary;
       }
     }
   }
