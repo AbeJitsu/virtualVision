@@ -136,13 +136,20 @@
     justify-content: center;
     align-items: center;
     padding: 7em;
+    letter-spacing: -0.5px;
+    font-weight: 500;
   }
 
   .auth-card {
     width: 100%;
     padding: 0rem;
     border-radius: 1em;
-    background-color: #ffffff; /* White background for the card */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.9
+    ); /* White background for the card with reduced opacity */
     position: relative;
   }
 
@@ -187,29 +194,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0rem 1.5rem;
+    padding: 0rem 5rem;
     flex-direction: row;
     flex-wrap: nowrap;
     min-width: 14rem;
     margin-top: -2rem;
+
+    @media screen and (max-width: 768px) {
+      padding: 0rem 2em;
+    }
   }
 
   /* Action buttons */
   .actions-section {
-    padding: 1rem 0;
+    padding: 1rem;
     text-align: center;
   }
 
   .action-btn {
-    width: 50%;
-    padding: 0.75rem;
+    width: 40%;
+    // padding: 0.75rem;
     background-color: $blueDark;
     color: white;
     border-radius: 8px;
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
-      background-color: $blueDark;
+      background-color: $blueVeryDark;
     }
   }
 
