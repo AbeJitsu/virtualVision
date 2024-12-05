@@ -52,10 +52,10 @@
           class="nav-text"
         />
         <q-btn
-        flat
-        label="Pricing Details"
-        :to="{ name: 'full-service-pricing-details' }"
-        class="nav-text"
+          flat
+          label="Pricing Details"
+          :to="{ name: 'full-service-pricing-details' }"
+          class="nav-text"
         />
         <q-btn
           flat
@@ -78,8 +78,7 @@
           <div class="login-label">
             <q-icon name="account_circle" />
             <span class="login-text">Login</span>
-            <span class="icon-wrapper">
-            </span>
+            <span class="icon-wrapper"> </span>
           </div>
         </template>
 
@@ -245,7 +244,6 @@
   .login-dropdown .login-label {
     display: flex;
     align-items: center;
-    gap: 0.75rem; /* Adjust the gap as needed */
   }
 
   .login-dropdown .login-text {

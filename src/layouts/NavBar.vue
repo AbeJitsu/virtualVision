@@ -55,6 +55,14 @@
         />
       </div>
 
+      <!-- Mobile "Book Now" Button -->
+      <q-btn
+        flat
+        label="Book Now"
+        :to="{ path: '/book' }"
+        class="mobile-only nav-text"
+      />
+
       <!-- Mobile Navigation Dropdown -->
       <q-btn-dropdown
         flat
@@ -87,7 +95,7 @@
         <template #label>
           <div class="login-label">
             <q-icon name="account_circle" />
-            <span class="login-text">Login</span>
+            <span class="login-text desktop-only">Login</span>
           </div>
         </template>
         <q-list>
@@ -194,6 +202,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    letter-spacing: -0.5px;
+    @media (max-width: 768px) {
+      letter-spacing: -1px;
+    }
   }
 
   .custom-header {
@@ -254,17 +266,23 @@
     color: $textWhite;
     font-weight: 600;
     font-size: 1rem;
-    margin-left: auto;
+    margin-left: 0;
   }
 
   .login-dropdown .login-label {
     display: flex;
     align-items: center;
-    gap: 0.75rem; /* Adjust the gap as needed */
+    gap: 0.75rem;
+
+    @media (max-width: 768px) {
+      .login-text {
+        display: none;
+      }
+    }
   }
 
   .login-dropdown .login-text {
-    font-size: 1.1rem; /* Adjust the font size if necessary */
+    font-size: 1.1rem;
     font-weight: 500;
   }
 
@@ -288,9 +306,35 @@
     @media (max-width: 768px) {
       display: inline-flex;
     }
+  }
+
+  .mobile-only {
+    display: none;
 
     @media (max-width: 768px) {
       display: inline-flex;
     }
+  }
+
+  .login-dropdown {
+    margin-left: -10px;
+  }
+
+  .login-dropdown {
+    margin-left: -15px; /* Pushes the dropdown to the left */
+  }
+
+  .login-dropdown .q-icon {
+    margin-left: -0px; /* Fine-tune the arrow position */
+  }
+
+  .q-icon {
+    margin-right: -5px;
+  }
+
+  .login-label {
+    display: flex;
+    align-items: center;
+    gap: -0.11rem;
   }
 </style>
