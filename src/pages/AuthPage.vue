@@ -191,6 +191,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     min-width: 14rem;
+    margin-top: -2rem;
   }
 
   /* Action buttons */
