@@ -203,8 +203,10 @@
     justify-content: space-between;
     align-items: center;
     letter-spacing: -0.5px;
+
     @media (max-width: 768px) {
       letter-spacing: -1px;
+      margin-left: -5px;
     }
   }
 
@@ -217,15 +219,14 @@
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0.98;
     transition: background-color 0.3s ease-in-out;
-    padding: 1rem 1rem;
     white-space: nowrap;
   }
 
   .menu-button {
-    margin-right: 1rem;
+    margin-right: 2rem;
 
     @media (min-width: 768px) {
-      margin-right: 2rem;
+      margin-right: 1rem;
     }
   }
 
@@ -237,13 +238,13 @@
     font-size: 1.75rem;
     font-weight: 600;
     color: $textWhite;
-    padding: 0;
-    margin: 0;
+    margin-left: 2px;
     letter-spacing: -0.75px;
 
     @media (max-width: 599px) {
       font-size: 1.25rem;
       letter-spacing: -0.35px;
+      margin-right: -15px;
     }
   }
 
@@ -253,7 +254,10 @@
     align-items: center;
     gap: 1rem;
     flex: 1;
-    padding: 0;
+
+    @media (max-width: 768px) {
+      // margin: -2rem;
+    }
   }
 
   .nav-text {
@@ -266,7 +270,11 @@
     color: $textWhite;
     font-weight: 600;
     font-size: 1rem;
-    margin-left: 0;
+    margin-left: -10px;
+
+    @media (max-width: 768px) {
+      margin-left: -15px; /* Pushes the dropdown to the left */
+    }
   }
 
   .login-dropdown .login-label {
@@ -291,20 +299,23 @@
     align-items: center;
   }
 
-  .nav-links {
-    display: flex;
-    gap: 1rem;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
+  .login-dropdown .q-icon {
+    margin-right: -9px;
   }
 
-  .nav-dropdown {
-    display: none;
+  .q-icon {
+    margin-right: -10px;
+  }
 
+  .login-label {
+    display: flex;
+    align-items: center;
+    gap: -0.11rem;
+  }
+
+  .q-btn-dropdown {
     @media (max-width: 768px) {
-      display: inline-flex;
+      margin-right: -20px;
     }
   }
 
@@ -313,28 +324,13 @@
 
     @media (max-width: 768px) {
       display: inline-flex;
+      margin-right: -10px;
     }
   }
 
-  .login-dropdown {
-    margin-left: -10px;
-  }
-
-  .login-dropdown {
-    margin-left: -15px; /* Pushes the dropdown to the left */
-  }
-
-  .login-dropdown .q-icon {
-    margin-left: -0px; /* Fine-tune the arrow position */
-  }
-
-  .q-icon {
-    margin-right: -5px;
-  }
-
-  .login-label {
-    display: flex;
-    align-items: center;
-    gap: -0.11rem;
+  .home-link {
+    color: $textWhite;
+    text-decoration: none;
+    margin-left: 5px;
   }
 </style>
