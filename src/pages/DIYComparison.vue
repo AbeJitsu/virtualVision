@@ -96,3 +96,5 @@ const comparisonData = [
   }
 }
 </style>
+
+<!-- src/pages/DIYComparison.vue -->
