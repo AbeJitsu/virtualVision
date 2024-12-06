@@ -81,3 +81,6 @@
 }
 
 </style>
+
+
+<!-- src/pages/footer/AboutUs.vue -->
