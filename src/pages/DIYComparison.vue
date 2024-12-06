@@ -1,13 +1,20 @@
 <template>
-  <q-page class="diy-comparison-page">
-    <div class="container">
+  <q-page class="flex-column">
+    <MessagingPage
+      :messages="messages"
+      @left-button-click="handleLeftClick"
+      @right-button-click="handleRightClick"
+    />
+
+    <!-- Render the comparison table below the messaging structure -->
+    <div class="container q-pa-md">
       <q-card class="q-ma-md q-pa-md">
         <q-card-section>
           <div class="text-h5 text-center q-mb-md">
             DIY vs. Professional Development: What’s Best for You?
           </div>
           <p class="text-center">
-            Compare the benefits of building your website on your own versus working with an expert to achieve your vision.
+            Compare the benefits of building your website on your own versus working with an expert.
           </p>
         </q-card-section>
         <q-card-section>
@@ -35,53 +42,86 @@
   </q-page>
 </template>
 
-<script setup lang="ts">
-const columns = [
-  { name: 'benefit', label: 'Benefit', align: 'left', field: 'benefit' },
-  { name: 'diy', label: 'DIY Approach', align: 'left', field: 'diy' },
-  { name: 'professional', label: 'Professional Development', align: 'left', field: 'professional' },
-];
+<script lang="ts">
+import { defineComponent } from 'vue';
+import MessagingPage from '../components/MessagingPage.vue';
+import DIYComparison from '../data/messages/DIYComparison';
+import { useRouter, useRoute } from 'vue-router';
+import { useTrackingStore } from '../stores/trackingStore';
 
-const comparisonData = [
-  {
-    benefit: 'Custom Design',
-    diy: 'Limited to templates and design tools.',
-    professional: 'Tailored specifically to your unique vision.',
+export default defineComponent({
+  components: {
+    MessagingPage,
   },
-  {
-    benefit: 'Time Investment',
-    diy: 'Requires hours of trial and error.',
-    professional: 'Streamlined process with expert guidance.',
+  setup() {
+    const router = useRouter();
+    const route = useRoute();
+    const trackingStore = useTrackingStore();
+
+    const messages = DIYComparison; // Load messages from DIYComparison.ts
+    const currentPage = route.name as string;
+
+    function handleLeftClick() {
+      trackingStore.addVisitedPage(currentPage);
+      trackingStore.recordChoice(currentPage, 'left');
+      const nextPage = trackingStore.getNextPage(currentPage, 'left');
+      if (nextPage) router.push(nextPage);
+    }
+
+    function handleRightClick() {
+      trackingStore.addVisitedPage(currentPage);
+      trackingStore.recordChoice(currentPage, 'right');
+      const nextPage = trackingStore.getNextPage(currentPage, 'right');
+      if (nextPage) router.push(nextPage);
+    }
+
+    const columns = [
+      { name: 'benefit', label: 'Benefit', align: 'left', field: 'benefit' },
+      { name: 'diy', label: 'DIY Approach', align: 'left', field: 'diy' },
+      { name: 'professional', label: 'Professional Development', align: 'left', field: 'professional' },
+    ];
+
+    const comparisonData = [
+      {
+        benefit: 'Custom Design',
+        diy: 'Limited to templates and design tools.',
+        professional: 'Tailored specifically to your unique vision.',
+      },
+      {
+        benefit: 'Time Investment',
+        diy: 'Requires hours of trial and error.',
+        professional: 'Streamlined process with expert guidance.',
+      },
+      {
+        benefit: 'Scalability',
+        diy: 'Limited features as your business grows.',
+        professional: 'Built for long-term growth and scalability.',
+      },
+      {
+        benefit: 'Technical Expertise',
+        diy: 'You need to learn coding or settle for limitations.',
+        professional: 'Your developer handles all technical complexities.',
+      },
+      {
+        benefit: 'Support',
+        diy: 'Self-reliant with minimal or no assistance.',
+        professional: 'Dedicated support throughout the process.',
+      },
+    ];
+
+    return { messages, handleLeftClick, handleRightClick, columns, comparisonData };
   },
-  {
-    benefit: 'Scalability',
-    diy: 'Limited features as your business grows.',
-    professional: 'Built for long-term growth and scalability.',
-  },
-  {
-    benefit: 'Technical Expertise',
-    diy: 'You need to learn coding or settle for limitations.',
-    professional: 'Your developer handles all technical complexities.',
-  },
-  {
-    benefit: 'Support',
-    diy: 'Self-reliant with minimal or no assistance.',
-    professional: 'Dedicated support throughout the process.',
-  },
-];
+});
 </script>
 
 <style scoped lang="scss">
-.diy-comparison-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f8f9fa;
+  @import '/src/css/app.scss';
+  @import '/src/css/shared-styles.scss';
 
   .container {
     max-width: 800px;
     width: 100%;
+    margin: 0 auto;
   }
 
   .diy-comparison-table {
@@ -94,7 +134,6 @@ const comparisonData = [
       padding: 0.75rem;
     }
   }
-}
 </style>
 
 <!-- src/pages/DIYComparison.vue -->
