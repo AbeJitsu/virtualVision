@@ -7,7 +7,7 @@ type Choice = 'left' | 'right';
 export const useTrackingStore = defineStore('trackingStore', {
   state: () => ({
     visitedPages: [] as string[],
-    choiceHistory: {} as Record<string, Choice>,
+    choiceHistory: {} as Record<string, Choice>, // Keeps track of choices made on each page
   }),
 
   actions: {
@@ -24,26 +24,36 @@ export const useTrackingStore = defineStore('trackingStore', {
     },
 
     getNextPage(currentPage: string, choice: Choice): string | undefined {
-      // Determine which sequence to use based on the user's choice
-      const sequence =
-        choice === 'left' ? salesFunnelSequence : exploratorySequence;
-
-      // Find the current page's index in the chosen sequence
-      const currentIndex = sequence.indexOf(currentPage);
-      if (currentIndex === -1) {
-        // If the current page isn’t found, default to the starting point
-        return sequence.length > 0 ? `/${sequence[0]}` : '/book-now';
-      }
-
-      // Move forward in the sequence to the next pages until we find one not visited
-      for (let i = currentIndex + 1; i < sequence.length; i++) {
-        const nextCandidate = sequence[i];
-        if (!this.visitedPages.includes(nextCandidate)) {
-          return `/${nextCandidate}`; // Assuming routes match page names
+      // Handle Left Button (Sales Funnel Progression)
+      if (choice === 'left') {
+        for (const page of salesFunnelSequence) {
+          if (!this.visitedPages.includes(page)) {
+            return `/${page}`;
+          }
         }
+        // If all sales funnel pages are visited, fallback to book-now
+        return '/book-now';
       }
 
-      // If all subsequent pages have been visited or there is no next page, go to book-now
+      // Handle Right Button (Exploratory Sequence Progression)
+      if (choice === 'right') {
+        for (const page of exploratorySequence) {
+          if (!this.visitedPages.includes(page)) {
+            return `/${page}`;
+          }
+        }
+
+        // If all exploratory pages are visited, transition into the sales funnel
+        for (const page of salesFunnelSequence) {
+          if (!this.visitedPages.includes(page)) {
+            return `/${page}`;
+          }
+        }
+        // If all pages in both sequences are visited, fallback to book-now
+        return '/book-now';
+      }
+
+      // Fallback in case of unexpected behavior
       return '/book-now';
     },
   },
