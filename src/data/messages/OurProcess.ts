@@ -26,3 +26,5 @@ export const OurProcess: Message = {
 };
 
 export default OurProcess;
+
+// src/data/messages/OurProcess.ts
