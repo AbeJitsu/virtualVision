@@ -50,7 +50,7 @@
         <q-btn
           flat
           label="Book Now"
-          :to="{ path: '/book' }"
+          :to="{ path: '/book-now' }"
           class="nav-text"
         />
       </div>
@@ -59,7 +59,7 @@
       <q-btn
         flat
         label="Book Now"
-        :to="{ path: '/book' }"
+        :to="{ path: '/book-now' }"
         class="mobile-only nav-text"
       />
 
@@ -169,7 +169,7 @@
     },
     { label: 'Complete Website Build', to: { name: 'complete-website-build' } },
     { label: 'Pricing Details', to: { name: 'full-service-pricing-details' } },
-    { label: 'Book Now', to: { path: '/book' } },
+    { label: 'Book Now', to: { path: '/book-now' } },
   ];
 
   // Function to navigate to specific routes

@@ -1,84 +1,50 @@
+// src/stores/trackingStore.ts
 import { defineStore } from 'pinia';
+import { salesFunnelSequence, exploratorySequence } from '../data/PageConfig';
 
-// Define a type for page options
-type PageOptions = {
-  [key: string]: {
-    left: string;
-    right: string;
-  };
-};
+type Choice = 'left' | 'right';
 
 export const useTrackingStore = defineStore('trackingStore', {
   state: () => ({
-    visitedPages: [] as string[], // Tracks the order of visited pages
-    choiceHistory: {} as Record<string, 'left' | 'right'>, // Tracks choices per page
+    visitedPages: [] as string[],
+    choiceHistory: {} as Record<string, Choice>,
   }),
 
   actions: {
-    // Add the current page to the visited list
     addVisitedPage(pageName: string) {
       if (!this.visitedPages.includes(pageName)) {
         this.visitedPages.push(pageName);
       }
     },
 
-    // Record the user's choice for a page
-    recordChoice(pageName: string, choice: 'left' | 'right') {
-      console.log('Recording Choice:', { pageName, choice }); // Debug log
+    recordChoice(pageName: string, choice: Choice) {
       this.choiceHistory[pageName] = choice;
-      console.log('Updated Choice History:', this.choiceHistory); // Debug log
+      console.log('Recording Choice:', { pageName, choice });
+      console.log('Updated Choice History:', this.choiceHistory);
     },
 
-    // Get the next page dynamically based on history and choice
-    getNextPage(currentPage: string, choice: 'left' | 'right'): string {
-      // Use the defined type for page options
-      const pageOptions: PageOptions = {
-        'landing-page': {
-          left: '/talk-to-developer',
-          right: '/our-process',
-        },
-        'talk-to-developer': {
-          left: '/focused-strategy-sessions',
-          right: '/why-strategy-before-building',
-        },
-        'our-process': {
-          left: '/talk-to-developer',
-          right: '/discovery', // Right button navigates to "Discovery"
-        },
-        'focused-strategy-sessions': {
-          left: '/complete-website-build',
-          right: '/diy-comparison',
-        },
-        'complete-website-build': {
-          left: '/full-service-pricing-details', // Navigate to the Full Service Pricing Details page
-          right: '/complete-process-summary', // Navigate to the Complete Process Summary page
-        },
-        'complete-process-summary': {
-          left: '/book-now', // Assuming booking starts here
-          right: '/full-service-pricing-details', // Navigate to the detailed pricing page
-        },
-        'full-service-pricing-details': {
-          left: '/book-now', // Continue to booking or purchasing
-          right: '/complete-process-summary', // Go back to the process summary
-        },
-        // Add mappings for other pages as needed
-      };
+    getNextPage(currentPage: string, choice: Choice): string | undefined {
+      // Determine which sequence to use based on the user's choice
+      const sequence =
+        choice === 'left' ? salesFunnelSequence : exploratorySequence;
 
-      const nextPage = pageOptions[currentPage]?.[choice];
-
-      // Ensure the next page is unvisited
-      if (nextPage && !this.visitedPages.includes(nextPage)) {
-        return nextPage;
+      // Find the current page's index in the chosen sequence
+      const currentIndex = sequence.indexOf(currentPage);
+      if (currentIndex === -1) {
+        // If the current page isn’t found, default to starting point
+        return sequence[0];
       }
 
-      // Fallback: Find the first unvisited page from all options
-      for (const [page, choices] of Object.entries(pageOptions)) {
-        if (!this.visitedPages.includes(choices[choice])) {
-          return choices[choice];
+      // Move forward in the sequence to the next pages until we find one not visited
+      for (let i = currentIndex + 1; i < sequence.length; i++) {
+        const nextCandidate = sequence[i];
+        if (!this.visitedPages.includes(nextCandidate)) {
+          return `/${nextCandidate}`; // Assuming routes match page names
         }
       }
 
-      return '/'; // Default fallback to home
+      // If all subsequent pages have been visited or there is no next page, return undefined
+      return undefined;
     },
   },
 });

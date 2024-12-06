@@ -31,7 +31,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/CompleteWebsiteBuild.vue'),
       },
       {
-        path: 'book',
+        path: 'book-now',
         name: 'book-now',
         component: () => import('pages/BookNow.vue'),
       },
