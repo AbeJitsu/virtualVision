@@ -1,30 +1,31 @@
 import { Message } from './SalesStrategyMessages';
 
 export const LandingPage: Message = {
-  dominantTagline: 'Your business deserves a website that drives success', // 8 words
+  dominantTagline: 'Build a website that fuels your business success', // 8 words
   influentialTagline: 'Imagine a site tailored to grow with your vision', // 10 words
 
   supportiveStatement:
-    'Building a website should feel simple. Our step-by-step approach keeps your goals clear and actionable. Let us handle the tech so you can focus on what matters.', // 30 words
+    'Creating your website should be exciting and simple. With our step-by-step approach, your goals stay clear and actionable. Let us manage the tech while you focus on your dream.', // 30 words
   dominantStatement:
-    'Collaborate directly with a full-stack developer. Create a polished, scalable site tailored to your needs. Every decision is made to maximize results and efficiency.', // 30 words
+    'Work one-on-one with an expert developer to design a scalable, professional site. Every decision focuses on efficiency and achieving real results that accurately align with your goals.', // 27 words
   influentialStatement:
-    'Transform your ideas into reality with expert guidance and 21 hours of collaboration. Together, we’ll craft a site reflecting your ambitions. This is the website your business deserves.', // 31 words
+    'Turn your ideas into a reality with expert guidance and 21 hours of focused collaboration. Together, we`ll craft a website that truly reflects your ambitions and inspires success.', // 26 words
   conscientiousStatement:
-    'You have full control over priorities. Allocate hours to focus on features that matter most to your goals. Build a site that supports your long-term success with precision.', // 34 words
+    'You have full control over your site’s priorities. Allocate time to features that align with your goals. Build a website designed for precision and long-term success.', // 26 words
 
   supportiveSummary:
-    'Let us handle the technical details while you focus on growing your business. Together, we’ll bring your vision to life.', // 20 words
+    'Focus on growing your business while we handle the tech. Together, we’ll create a site that brings your vision to life.', // 20 words
   influentialPrompt:
-    'Isn’t it time your website reflected your ambitions? Let’s start creating something extraordinary today.', // 14 words
+    'Your website should reflect your ambitions. Let’s build something extraordinary together.', // 12 words
 
   customerInnerVoiceSupportiveInfluentialChoice:
-    'I feel that clarifying my vision could make a big impact. I`m curious about the next steps. How can I take a small step forward?',
+    'How would a structured process make building my site easier and more effective? What’s the first step to learning how this works?', // 19 words
   customerInnerVoiceDominantConscientiousObjection:
-    'What makes this option better than Wix or other do-it-yourself sites? How will this tailored approach deliver real, measurable results?', // 19 words
+    'Why is this approach better than Wix or other do-it-yourself platforms? How does working with an expert deliver measurable results?', // 15 words
 };
 
 export default LandingPage;
+
 
 
 // src/data/messages/LandingPage.ts
