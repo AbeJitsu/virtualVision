@@ -48,3 +48,5 @@ export const useTrackingStore = defineStore('trackingStore', {
     },
   },
 });
+
+// src/stores/trackingStore.ts

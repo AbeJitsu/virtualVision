@@ -20,7 +20,7 @@
         <q-btn
           flat
           label="Our Process"
-          :to="{ name: 'complete-process-summary' }"
+          :to="{ name: 'our-process' }"
           class="nav-text"
         />
         <q-btn
@@ -161,7 +161,7 @@
 
   // List of navigation links
   const navLinks = [
-    { label: 'Our Process', to: { name: 'complete-process-summary' } },
+    { label: 'Our Process', to: { name: 'our-process' } },
     { label: 'Talk to a Developer', to: { name: 'talk-to-developer' } },
     {
       label: 'Focused Strategy Sessions',
