@@ -13,7 +13,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'about-us',
         name: 'about-us',
-        component: () => import('pages/AboutUs.vue'),
+        component: () => import('pages/footer/AboutUs.vue'),
       },
       {
         path: 'talk-to-developer',
@@ -48,12 +48,12 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'privacy-policy',
         name: 'privacy-policy',
-        component: () => import('pages/PrivacyPolicy.vue'),
+        component: () => import('pages/footer/PrivacyPolicy.vue'),
       },
       {
         path: 'terms-of-service',
         name: 'terms-of-service',
-        component: () => import('pages/TermsOfService.vue'),
+        component: () => import('pages/footer/TermsOfService.vue'),
       },
       {
         path: '/auth',
@@ -80,7 +80,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/:catchAll(.*)*',
     name: 'error-not-found',
-    component: () => import('pages/ErrorNotFound.vue'),
+    component: () => import('pages/footer/ErrorNotFound.vue'),
   },
 ];
 
