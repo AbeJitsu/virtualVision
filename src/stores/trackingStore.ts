@@ -31,8 +31,8 @@ export const useTrackingStore = defineStore('trackingStore', {
       // Find the current page's index in the chosen sequence
       const currentIndex = sequence.indexOf(currentPage);
       if (currentIndex === -1) {
-        // If the current page isn’t found, default to starting point
-        return sequence[0];
+        // If the current page isn’t found, default to the starting point
+        return sequence.length > 0 ? `/${sequence[0]}` : '/book-now';
       }
 
       // Move forward in the sequence to the next pages until we find one not visited
@@ -43,8 +43,8 @@ export const useTrackingStore = defineStore('trackingStore', {
         }
       }
 
-      // If all subsequent pages have been visited or there is no next page, return undefined
-      return undefined;
+      // If all subsequent pages have been visited or there is no next page, go to book-now
+      return '/book-now';
     },
   },
 });
