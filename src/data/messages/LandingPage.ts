@@ -25,3 +25,6 @@ export const LandingPage: Message = {
 };
 
 export default LandingPage;
+
+
+// src/data/messages/LandingPage.ts

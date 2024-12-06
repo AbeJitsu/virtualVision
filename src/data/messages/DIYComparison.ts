@@ -1,32 +1,29 @@
 import { Message } from './SalesStrategyMessages';
 
 export const DIYComparison: Message = {
-  dominantTagline: 'Evaluate your path with clarity', // 5 words
-  influentialTagline: 'Empower your vision by understanding key differences', // 7 words
+  dominantTagline: 'Your website deserves a stronger foundation', // 7 words
+  influentialTagline: 'See how expert collaboration transforms results', // 7 words
 
   supportiveStatement:
-    'Exploring your options should feel reassuring. We’ll help you see exactly what sets a professional build apart.',
-  // Keep this concise and supportive.
+    'Choosing the right website builder should feel empowering. With us, your site is built to fit your unique vision and goals, saving you the hassle of complex technical tasks.', // 28 words, 176 characters
   dominantStatement:
-    'Choosing between a do-it-yourself approach and expert collaboration isn’t trivial. Our process focuses on results that truly matter, saving you time and frustration.',
+    'Do-it-yourself platforms require workarounds for basic features like booking or integrations. We handle everything for you, delivering a site that’s scalable, efficient, and easy to use.', // 28 words, 174 characters
   influentialStatement:
-    // Here we integrate the table conceptually:
-    // In practice, you might have to modify MessagingPage.vue to handle HTML or slot content.
-    // For now, we describe the table in the message, and later we can enhance MessagingPage.vue
-    // to accept slots for complex components.
-    'Compare key benefits side by side and see how a professional’s touch transforms your website. Below is a clear breakdown of what you gain, ensuring informed decisions. [TABLE_GOES_HERE]',
+    'Our process includes seamless booking, payments, and integrations tailored to your needs. With 21 hours of planning and 42 hours of customization, your site will work exactly how you envision.', // 29 words, 183 characters
   conscientiousStatement:
-    'Every feature, every customization—tailored to your goals. While DIY tools offer templates, true scalability and efficiency come from expert guidance. Your time is valuable; invest it wisely.',
+    'Unlike cookie-cutter platforms, you fully own your site. Host it anywhere, customize it however you want, and enjoy a professional-grade website built to grow with your business.', // 27 words, 175 characters
 
   supportiveSummary:
-    'With a clear comparison, you can choose confidently. Let’s illuminate the path that leads you forward.',
+    'Explore how our approach delivers a better product and experience. Let’s craft a site that grows with your vision.', // 21 words
   influentialPrompt:
-    'Ready to see how these differences shape your outcome? Let’s dive deeper into your options.',
+    'Ready to elevate your online presence? Let’s explore the next step together.', // 13 words
 
   customerInnerVoiceSupportiveInfluentialChoice:
-    'If clarity matters, how can I explore these differences further to refine my direction?',
+    'How can I gain a professional-grade site built for my goals while ensuring it works exactly the way I want?', // 23 words
   customerInnerVoiceDominantConscientiousObjection:
-    'If I invest hours on my own, can I match a professional’s results—or will I always lag behind?',
+    'How is this approach better and more reliable than trying to build a website myself using a platform like Wix or Squarespace?', // 23 words
 };
 
 export default DIYComparison;
+
+// src/data/messages/DIYComparison.ts

@@ -188,55 +188,44 @@
   }
 
   .binary-choice {
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
+  // display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 
     @media (max-width: 599px) {
       flex-direction: column;
-      gap: 1.5rem;
-      padding: 2rem 0rem 2rem 0rem;
-      margin-top: 1.5rem;
+      gap: 2rem; /* Add extra space for mobile buttons */
     }
 
-    .action-buttons {
-      // display: flex;
-      // flex-direction: row;
-      // gap: 1rem;
+    .custom-btn {
+      padding: 4rem 3rem; /* Increase vertical padding */
+      margin: 0; /* Avoid conflicting margins */
+      width: 80%; /* Adaptive button width */
+      max-width: 100%; /* Prevent overflow */
+      line-height: 1.5; /* Proper line spacing for multi-line text */
+      white-space: normal; /* Allow text to wrap */
+      text-align: center;
+      display: flex; /* Ensure content aligns properly */
+      align-items: center; /* Vertically align text inside the button */
+      justify-content: center; /* Center-align content */
+      flex-wrap: wrap; /* Wrap text if needed */
 
       @media (max-width: 599px) {
-        flex-direction: column;
-        margin-top: 2rem;
         width: 100%;
-      }
-
-      .custom-btn {
-        display: flex; /* Ensure proper flex behavior */
-        align-items: center; /* Vertically align text */
-        justify-content: center; /* Horizontally center text */
-        text-align: center; /* Center-align text */
-        white-space: normal; /* Allow text to wrap */
-        // overflow-wrap: break-word;
-        width: auto; /* Allow width to fit text */
-        max-width: 100%; /* Prevent the button from exceeding container size */
-        height: auto; /* Let height adjust based on content */
-        line-height: 1.5; /* Increase vertical spacing for multiline text */
-        font-size: 1rem; /* Adjust font size */
-        border-radius: 8px; /* Maintain rounded corners */
-        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for contrast */
-        background-color: rgba(255, 255, 255, 0.5); /* Background styling */
-        transition: all 0.3s ease-in-out;
-
-        @media (max-width: 599px) {
-          width: 100%; /* Full-width button for mobile */
-          padding: 2rem 2rem;
-        }
-
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.7); /* Subtle hover effect */
-          color: #0b2545; /* Darker text on hover */
-        }
+        margin-bottom: 1.5rem;
       }
     }
   }
+}
 </style>
