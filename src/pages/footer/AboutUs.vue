@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-  import { AboutUs } from '../data/messages/AboutUs'; // Correct relative path
+  import { AboutUs } from '../../data/messages/AboutUs'; // Correct relative path
   const messages = AboutUs; // Directly use the imported messages
 </script>
 

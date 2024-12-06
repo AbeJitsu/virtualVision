@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-  import { PrivacyPolicy } from '../data/messages/PrivacyPolicy'; // Correct relative path
+  import { PrivacyPolicy } from '../../data/messages/PrivacyPolicy'; // Correct relative path
   import { useRouter } from 'vue-router';
 
   const messages = PrivacyPolicy; // Use imported messages

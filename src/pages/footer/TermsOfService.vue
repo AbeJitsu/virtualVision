@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-  import { TermsOfService } from '../data/messages/TermsOfService'; // Correct relative path
+  import { TermsOfService } from '../../data/messages/TermsOfService'; // Correct relative path
   import { useRouter } from 'vue-router';
 
   const messages = TermsOfService; // Use imported messages
