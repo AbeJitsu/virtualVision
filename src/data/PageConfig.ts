@@ -10,7 +10,7 @@ export const salesFunnelSequence = [
 ];
 
 export const exploratorySequence = [
-  'landing-page',
+  'diy-comparison',
   'complete-process-summary',
   // Add more detail-oriented pages here if needed
 ];
