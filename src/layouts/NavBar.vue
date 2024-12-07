@@ -14,7 +14,7 @@
           <div class="title-logo-container">
             <span class="desktop-only">{{ toolbarTitle }}</span>
             <img
-              src="/icons/Cir_logo.png"
+              src="/icons/Logo_square_white_BG.png"
               alt="Vision2Virtual Logo"
               class="desktop-logo"
             />
@@ -379,14 +379,16 @@
   }
 
   .title-logo-container {
-  display: flex;
-  align-items: center; /* Align text and logo vertically */
-  gap: 1rem; /* Space between text and logo */
-  justify-content: center;
-}
+    display: flex;
+    align-items: center; /* Align text and logo vertically */
+    gap: 1rem; /* Space between text and logo */
+    justify-content: center;
+  }
 
-.desktop-logo {
-  max-width: 3.3rem;
-  margin-top: 0px; /* Remove top margin to prevent misalignment */
-}
+  .desktop-logo {
+    max-width: 3.3rem;
+    margin-top: 0px; /* Remove top margin to prevent misalignment */
+    border-radius: 75%;
+    border: 2px solid $primary;
+  }
 </style>
