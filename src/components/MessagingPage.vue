@@ -116,7 +116,7 @@
 
     @media (max-width: 599px) {
       padding-bottom: 1rem;
-      padding: 0 2.75rem;
+      padding: 0 1.75rem; /* Adjust padding for better mobile spacing */
       margin-top: 6rem;
     }
   }
@@ -132,6 +132,8 @@
 
     @media (max-width: 599px) {
       margin-bottom: 2rem;
+      font-size: large; /* Reduce font size on smaller screens */
+      padding-top: 6rem; /* Adjust padding for mobile */
     }
   }
 
@@ -147,23 +149,25 @@
 
     @media (max-width: 599px) {
       margin-bottom: 3rem;
+      font-size: medium; /* Adjust font size for better readability */
     }
   }
 
+  // SDICS Message Box Grid Layout
   .tone-message-grid {
-    // display: grid;
-    // gap: 2rem;
-
-    @media (min-width: 600px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 0rem auto;
+    padding-bottom: 0rem;
 
     @media (max-width: 599px) {
       grid-template-columns: 1fr;
       padding: 0 1rem; /* Prevent content from touching edges on mobile */
-      gap: 2rem;
-      margin-bottom: 4rem;
-      margin-top: 2rem;
+      gap: 1.5rem; /* Reduce gap for mobile */
+      margin-bottom: 3rem;
+      margin-top: 1.5rem;
     }
   }
 
@@ -171,6 +175,11 @@
     font-size: 1.25rem;
     font-weight: 400;
     letter-spacing: -0.75px;
+
+    @media (max-width: 599px) {
+      font-size: 1rem; /* Scale down font size for mobile */
+      padding: 2rem 2rem 1rem; /* Add padding for better spacing */
+    }
   }
 
   .supportive-wrapup {
@@ -184,48 +193,68 @@
 
     @media (max-width: 599px) {
       margin: 2rem 1rem 2rem;
+      font-size: large;
+      font-weight: 500;
     }
   }
 
+  // Binary Choice Buttons
   .binary-choice {
-  // display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
+    text-align: center;
 
-  @media (max-width: 599px) {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .action-buttons {
-    display: flex;
     flex-direction: row;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
 
     @media (max-width: 599px) {
       flex-direction: column;
-      gap: 2rem; /* Add extra space for mobile buttons */
+      gap: 1rem; /* Adjust gap for stacked buttons */
+      margin: 1em 3em 1em;
     }
 
-    .custom-btn {
-      padding: 4rem 3rem; /* Increase vertical padding */
-      margin: 0; /* Avoid conflicting margins */
-      width: 80%; /* Adaptive button width */
-      max-width: 100%; /* Prevent overflow */
-      line-height: 1.5; /* Proper line spacing for multi-line text */
-      white-space: normal; /* Allow text to wrap */
-      text-align: center;
-      display: flex; /* Ensure content aligns properly */
-      align-items: center; /* Vertically align text inside the button */
-      justify-content: center; /* Center-align content */
-      flex-wrap: wrap; /* Wrap text if needed */
+    .choice-prompts {
+      display: flex;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: $grayVeryDark;
+      margin-top: -1rem;
 
       @media (max-width: 599px) {
-        width: 100%;
-        margin-bottom: 1.5rem;
+        font-size: medium;
+        margin-top: -0.5rem;
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      @media (max-width: 599px) {
+        flex-direction: column;
+        gap: 1.5rem; /* Adjust button gap for smaller screens */
+      }
+
+      .custom-btn {
+        padding: 4rem 1.5rem; /* Adjust padding for mobile buttons */
+        margin: 0;
+        width: 100%; /* Full-width buttons on mobile */
+        max-width: 100%; /* Prevent overflow */
+        line-height: 1.4; /* Adjust line spacing */
+        white-space: normal; /* Allow text to wrap */
+        text-align: center;
+        display: flex; /* Ensure content aligns properly */
+        align-items: center;
+        justify-content: center; /* Center-align content */
+        flex-wrap: wrap; /* Wrap text if needed */
+        word-break: break-word; /* Handle long words */
+
+        @media (max-width: 599px) {
+          font-size: 0.9rem; /* Adjust font size for better fit */
+          line-height: 1.3;
+        }
       }
     }
   }
-}
 </style>

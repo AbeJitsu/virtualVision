@@ -48,15 +48,7 @@ h2 {
   margin: 0;
 }
 
-// SDICS Message Box Grid Layout
-.tone-message-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-  width: 100%;
-  margin-bottom: 0rem auto;
-  padding-bottom: 0rem;
-}
+
 
 // SDICS Message Box Styles
 .tone-message-box {
@@ -118,20 +110,7 @@ h2 {
   letter-spacing: -0.5px;
 }
 
-// Binary Choice Buttons
-.binary-choice {
-  text-align: center;
-  margin: 1em 3em 1em;
 
-  .choice-prompts {
-    display: flex;
-    justify-content: center;
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: $grayVeryDark;
-    margin-top: -1rem;
-  }
-}
 
 
 

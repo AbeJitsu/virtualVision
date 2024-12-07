@@ -21,7 +21,7 @@ export const LandingPage: Message = {
   customerInnerVoiceSupportiveInfluentialChoice:
     'How would a structured process simplify building my site and make it more effective? What’s the first step to explore this approach?', // 21 words
   customerInnerVoiceDominantConscientiousObjection:
-    'Why is this approach better than Wix or other do-it-yourself platforms? How does expert collaboration deliver tangible benefits?', // 15 words
+    'What makes this approach better than Wix or other DIY platforms? How does expert collaboration deliver tangible benefits?', // 15 words
 };
 
 export default LandingPage;
