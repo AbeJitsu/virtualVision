@@ -1,8 +1,8 @@
 {
-  "name": "virtualvision",
+  "name": "Vision2Virtual",
   "version": "0.0.1",
   "description": "A Quasar Project",
-  "productName": "virtualVision",
+  "productName": "Vision2Virtual | Web Dev",
   "author": "Abe Reyes <abe.raise@gmail.com>",
   "private": true,
   "type": "module",
