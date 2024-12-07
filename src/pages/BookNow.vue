@@ -87,19 +87,12 @@ function generateAvailableSlots() {
   firstSlot.setHours(9, 0, 0, 0);
   slots.push(formatSlot(firstSlot));
 
-  // Slot 2: Dynamic slot (23 hours 45 mins to 24 hours in the future)
+  // Slot 2: Dynamic slot (23 hours 45 mins to 24 hours in the future, rounded)
   const dynamicSlot = new Date(now);
-  dynamicSlot.setTime(now.getTime() + 23 * 60 * 60 * 1000 + 45 * 60 * 1000); // 23 hours 45 mins into the future
-  dynamicSlot.setMinutes(
-    Math.round(dynamicSlot.getMinutes() / 15) * 15,
-    0,
-    0
-  ); // Round to the nearest 15 minutes
+  dynamicSlot.setTime(now.getTime() + 23 * 60 * 60 * 1000 + 45 * 60 * 1000);
+  dynamicSlot.setMinutes(Math.round(dynamicSlot.getMinutes() / 15) * 15, 0, 0);
 
-  if (
-    dynamicSlot.getTime() >= now.getTime() + 23 * 60 * 60 * 1000 + 45 * 60 * 1000 &&
-    dynamicSlot.getTime() <= now.getTime() + 24 * 60 * 60 * 1000
-  ) {
+  if (dynamicSlot.getTime() <= now.getTime() + 24 * 60 * 60 * 1000) {
     slots.push(formatSlot(dynamicSlot));
   }
 
@@ -110,12 +103,8 @@ function generateAvailableSlots() {
 
   if (timeGap > intervalMinutes * 2 * 60 * 1000) {
     const middleSlot = new Date(firstSlot);
-    middleSlot.setTime(firstSlotTime + timeGap / 2); // Midpoint between the first and dynamic slots
-    middleSlot.setMinutes(
-      Math.round(middleSlot.getMinutes() / 15) * 15,
-      0,
-      0
-    ); // Round to the nearest 15 minutes
+    middleSlot.setTime(firstSlotTime + timeGap / 2); // Midpoint between first and dynamic slots
+    middleSlot.setMinutes(Math.round(middleSlot.getMinutes() / 15) * 15, 0, 0);
 
     if (
       middleSlot.getTime() - firstSlotTime >= intervalMinutes * 60 * 1000 &&
@@ -125,15 +114,29 @@ function generateAvailableSlots() {
     }
   }
 
-  // Ensure exactly 3 unique and valid slots
+  // Ensure exactly 3 slots by adding fallback if needed
+  while (slots.length < 3) {
+    const fallbackSlot = new Date(slots[slots.length - 1]?.dateTime || firstSlot);
+    fallbackSlot.setMinutes(fallbackSlot.getMinutes() + intervalMinutes);
+    fallbackSlot.setMinutes(Math.round(fallbackSlot.getMinutes() / 15) * 15, 0, 0);
+
+    if (
+      fallbackSlot.getTime() > firstSlot.getTime() &&
+      fallbackSlot.getTime() < dynamicSlot.getTime()
+    ) {
+      slots.push(formatSlot(fallbackSlot));
+    } else {
+      break;
+    }
+  }
+
+  // Ensure unique and sorted slots
   return slots
     .filter(
       (slot, index, self) =>
         index === self.findIndex((s) => s.dateTime === slot.dateTime)
     )
-    .sort(
-      (a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()
-    );
+    .sort((a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime());
 }
 
 function formatSlot(date) {
