@@ -1,30 +1,28 @@
 import { Message } from './SalesStrategyMessages';
 
 export const OurProcess: Message = {
-  dominantTagline: 'Transform your ideas into a polished, scalable website.', // 9 words
+  dominantTagline: 'A step-by-step process for building your ideal website.', // 10 words
   influentialTagline:
-    'Empower your vision with expert collaboration and tailored development.', // 9 words
+    'Collaboration and strategy first, so execution is seamless.', // 8 words
 
   supportiveStatement:
-    'Our process is simple and flexible, designed to fit your schedule. With 21 one-hour live collaboration sessions, you’ll work at your own pace, progressing one step at a time.', // 27 words
+    'Every journey starts with a scheduled one-hour consultation. We’ll explore your ideas, clarify your objectives, and ensure we’re aligned to move forward with confidence.', // 29 words
   dominantStatement:
-    'This isn’t starting from scratch. We provide a fully functional website as your foundation, adding customizations that align with your vision. Every decision is built for growth.', // 27 words
+    'Next, we’ll dive into four focused strategy sessions. These sessions refine your site’s vision and style, ensuring every detail is aligned and thoughtfully prepared before execution.', // 28 words
   influentialStatement:
-    'Imagine 42 development hours where your ideas come to life alongside an experienced full-stack developer. Together, we’ll create a website that’s tailored and built to thrive.', // 27 words
+    'After five hours of strategy, we expand with 16 additional hours of live collaboration and 42 hours of tailored execution, ensuring every element reflects your unique vision.', // 27 words
   conscientiousStatement:
-    'You’ll assign up to two development hours per day to focus on features that matter most. This ensures your site meets your goals with precision and care. Every step is thoughtfully crafted.', // 27 words
+    'With a solid foundation, the build phase transforms your vision into a professional-grade platform, tailored to meet your unique needs with precision and care.', // 26 words
 
   supportiveSummary:
-    'With flexibility and collaboration, our process ensures your website is more than just functional—it’s a platform for success.', // 20 words
+    'With flexibility and collaboration, our process ensures your website is more than just functional, it’s a platform for success.', // 20 words
   influentialPrompt:
-    'Ready to see how our proven process can bring your vision to life? Let’s create something extraordinary.', // 17 words
+    'Take the next step in creating a platform that reflects your vision. Let’s start your consultation today.', // 15 words
 
   customerInnerVoiceSupportiveInfluentialChoice:
-    'I’m ready to explore how this flexible process can fit my schedule while delivering a website that reflects my goals.', // 20 words
+    'How does a one-on-one approach refine my ideas and bring clarity? What’s the next step in creating something aligned with my vision?', // 20 words
   customerInnerVoiceDominantConscientiousObjection:
-    'If I dedicated 21 hours to strategy and 42 hours to perfecting the technical details, my site could be amazing without you. Why expert help?', // 20 words
+    'Would learning the technical details be a better use of my time? Why prioritize planning instead of jumping straight into execution?', // 20 words
 };
 
 export default OurProcess;
-
-// src/data/messages/OurProcess.ts

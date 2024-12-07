@@ -7,21 +7,21 @@ export const LandingPage: Message = {
   supportiveStatement:
     'Creating your website should be exciting and simple. With our step-by-step approach, your goals stay clear and actionable. Let us manage the tech while you focus on your dream.', // 30 words
   dominantStatement:
-    'Work one-on-one with an expert developer to design a scalable, professional site. Every decision focuses on efficiency and achieving real results that accurately align with your goals.', // 27 words
+    'Work one-on-one with an expert to design a scalable, professional site. Every decision is tailored to maximize efficiency and achieve real results aligned with your goals.', // 28 words
   influentialStatement:
-    'Turn your ideas into a reality with expert guidance and 21 hours of focused collaboration. Together, we`ll craft a website that truly reflects your ambitions and inspires success.', // 26 words
+    'Turn your ideas into a reality with expert guidance and 21 hours of focused collaboration. Together, we’ll craft a site that accurately reflects your ambitions and drives success.', // 27 words
   conscientiousStatement:
-    'You have full control over your site’s priorities. Allocate time to features that align with your goals. Build a website designed for precision and long-term success.', // 26 words
+    'This isn’t about doing the work yourself, it’s about leading the vision. You provide the ideas, and we handle the execution, ensuring a site built to your exact specifications.', // 27 words
 
   supportiveSummary:
-    'Focus on growing your business while we handle the tech. Together, we’ll create a site that brings your vision to life.', // 20 words
+    'Focus on growing your business while we handle the technical details. Together, we’ll create a platform that empowers your vision.', // 20 words
   influentialPrompt:
-    'Your website should reflect your ambitions. Let’s build something extraordinary together.', // 12 words
+    'Let’s start building something exceptional. It all begins with a small but mighty step forward.', // 15 words
 
   customerInnerVoiceSupportiveInfluentialChoice:
-    'How would a structured process make building my site easier and more effective? What’s the first step to learning how this works?', // 19 words
+    'How would a structured process simplify building my site and make it more effective? What’s the first step to explore this approach?', // 21 words
   customerInnerVoiceDominantConscientiousObjection:
-    'Why is this approach better than Wix or other do-it-yourself platforms? How does working with an expert deliver measurable results?', // 15 words
+    'Why is this approach better than Wix or other do-it-yourself platforms? How does expert collaboration deliver tangible benefits?', // 15 words
 };
 
 export default LandingPage;
