@@ -375,20 +375,20 @@
   /* Focus States for Accessibility */
   .q-btn:focus,
   .q-item:focus {
-    outline: 2px solid $primary;
+    outline: 3px solid $primary;
   }
 
   .title-logo-container {
     display: flex;
     align-items: center; /* Align text and logo vertically */
-    gap: 1rem; /* Space between text and logo */
+    gap:  1rem; /* Space between text and logo */
     justify-content: center;
   }
 
   .desktop-logo {
-    max-width: 3.3rem;
+    max-width: 3rem;
     margin-top: 0px; /* Remove top margin to prevent misalignment */
     border-radius: 75%;
-    border: 2px solid $primary;
+    border: 3px solid $primary;
   }
 </style>
