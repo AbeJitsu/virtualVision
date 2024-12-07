@@ -55,7 +55,7 @@
   });
 
   // Toolbar title and tagline
-  const toolbarTitle = 'Vision 2 Virtual';
+  const toolbarTitle = 'Vision2Virtual';
   const dominantTagline = 'Bringing Your Vision to Life';
 
   // Route management

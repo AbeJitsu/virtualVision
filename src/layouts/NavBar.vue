@@ -11,7 +11,14 @@
           class="home-link"
           active-class="active-link"
         >
-          {{ toolbarTitle }}
+          <div class="title-logo-container">
+            <span class="desktop-only">{{ toolbarTitle }}</span>
+            <img
+              src="/icons/Cir_logo.png"
+              alt="Vision2Virtual Logo"
+              class="desktop-logo"
+            />
+          </div>
         </router-link>
       </q-toolbar-title>
 
@@ -366,7 +373,20 @@
   }
 
   /* Focus States for Accessibility */
-  .q-btn:focus, .q-item:focus {
+  .q-btn:focus,
+  .q-item:focus {
     outline: 2px solid $primary;
   }
+
+  .title-logo-container {
+  display: flex;
+  align-items: center; /* Align text and logo vertically */
+  gap: 1rem; /* Space between text and logo */
+  justify-content: center;
+}
+
+.desktop-logo {
+  max-width: 3.3rem;
+  margin-top: 0px; /* Remove top margin to prevent misalignment */
+}
 </style>
