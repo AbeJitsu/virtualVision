@@ -87,12 +87,15 @@ function generateAvailableSlots() {
   firstSlot.setHours(9, 0, 0, 0);
   slots.push(formatSlot(firstSlot));
 
-  // Slot 2: Dynamic slot (23 hours 45 mins to 24 hours in the future, rounded)
+  // Slot 2: Dynamic slot (23 hours 30 mins to 23 hours 45 mins in the future, rounded)
   const dynamicSlot = new Date(now);
-  dynamicSlot.setTime(now.getTime() + 23 * 60 * 60 * 1000 + 45 * 60 * 1000);
+  dynamicSlot.setTime(now.getTime() + 23 * 60 * 60 * 1000 + 30 * 60 * 1000);
   dynamicSlot.setMinutes(Math.round(dynamicSlot.getMinutes() / 15) * 15, 0, 0);
 
-  if (dynamicSlot.getTime() <= now.getTime() + 24 * 60 * 60 * 1000) {
+  if (
+    dynamicSlot.getTime() >= now.getTime() + 23 * 60 * 60 * 1000 + 30 * 60 * 1000 &&
+    dynamicSlot.getTime() <= now.getTime() + 24 * 60 * 60 * 1000
+  ) {
     slots.push(formatSlot(dynamicSlot));
   }
 
