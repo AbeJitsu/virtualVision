@@ -74,46 +74,58 @@ const operationalHours = {
   end: 19, // 7:00 PM
 };
 
-const minWaitHours = 6; // Minimum wait time of 6 hours
 const intervalMinutes = 165; // 2 hours and 45 minutes
+const minWaitHours = 6; // Minimum wait time of 6 hours
 
 function generateAvailableSlots() {
   const slots = [];
   const now = new Date();
 
   // Slot 1: Always 9:00 AM the next day
-  const tomorrowMorning = new Date(now);
-  tomorrowMorning.setDate(now.getDate() + 1);
-  tomorrowMorning.setHours(9, 0, 0, 0);
-  slots.push(formatSlot(tomorrowMorning));
+  const firstSlot = new Date(now);
+  firstSlot.setDate(now.getDate() + 1);
+  firstSlot.setHours(9, 0, 0, 0);
+  slots.push(formatSlot(firstSlot));
 
-  // Slot 2: 6:45 PM slot
-  const eveningSlot = new Date(now);
-  eveningSlot.setHours(18, 45, 0, 0); // Set to 6:45 PM
-  if (eveningSlot.getTime() - now.getTime() >= minWaitHours * 60 * 60 * 1000) {
-    // If valid for today, add it
-    slots.push(formatSlot(eveningSlot));
-  } else {
-    // Otherwise, move it to tomorrow
-    eveningSlot.setDate(eveningSlot.getDate() + 1);
-    slots.push(formatSlot(eveningSlot));
+  // Slot 2: Dynamic slot (23 hours 45 mins to 24 hours in the future)
+  const dynamicSlot = new Date(now);
+  dynamicSlot.setTime(now.getTime() + 23 * 60 * 60 * 1000 + 45 * 60 * 1000); // 23 hours 45 mins into the future
+  dynamicSlot.setMinutes(
+    Math.round(dynamicSlot.getMinutes() / 15) * 15,
+    0,
+    0
+  ); // Round to the nearest 15 minutes
+
+  if (
+    dynamicSlot.getTime() >= now.getTime() + 23 * 60 * 60 * 1000 + 45 * 60 * 1000 &&
+    dynamicSlot.getTime() <= now.getTime() + 24 * 60 * 60 * 1000
+  ) {
+    slots.push(formatSlot(dynamicSlot));
   }
 
-  // Slot 3: Dynamic slot between 9:00 AM and 6:45 PM
-  const dynamicSlot = new Date(tomorrowMorning);
-  dynamicSlot.setMinutes(dynamicSlot.getMinutes() + intervalMinutes); // Add 2 hours and 45 minutes to 9:00 AM
-  if (dynamicSlot.getTime() < eveningSlot.getTime()) {
-    slots.push(formatSlot(dynamicSlot));
-  } else {
-    // If dynamic slot cannot fit between, try earlier slot (2 hours and 45 minutes before 6:45 PM)
-    const earlierSlot = new Date(eveningSlot);
-    earlierSlot.setMinutes(earlierSlot.getMinutes() - intervalMinutes);
-    if (earlierSlot.getTime() > tomorrowMorning.getTime()) {
-      slots.push(formatSlot(earlierSlot));
+  // Slot 3: Middle slot between first and dynamic slots
+  const firstSlotTime = firstSlot.getTime();
+  const dynamicSlotTime = dynamicSlot.getTime();
+  const timeGap = dynamicSlotTime - firstSlotTime;
+
+  if (timeGap > intervalMinutes * 2 * 60 * 1000) {
+    const middleSlot = new Date(firstSlot);
+    middleSlot.setTime(firstSlotTime + timeGap / 2); // Midpoint between the first and dynamic slots
+    middleSlot.setMinutes(
+      Math.round(middleSlot.getMinutes() / 15) * 15,
+      0,
+      0
+    ); // Round to the nearest 15 minutes
+
+    if (
+      middleSlot.getTime() - firstSlotTime >= intervalMinutes * 60 * 1000 &&
+      dynamicSlotTime - middleSlot.getTime() >= intervalMinutes * 60 * 1000
+    ) {
+      slots.push(formatSlot(middleSlot));
     }
   }
 
-  // Ensure slots are unique and sorted chronologically
+  // Ensure exactly 3 unique and valid slots
   return slots
     .filter(
       (slot, index, self) =>
