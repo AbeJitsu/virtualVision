@@ -3,10 +3,10 @@
     <div class="container">
       <q-card class="card">
         <q-card-section>
-          <div class="title">Book Your First Session</div>
+          <div class="title">Request Your First Session</div>
           <p class="description">
-            Start your journey with a $49 session. Choose a convenient time to
-            discuss your vision with an expert developer.
+            Begin with a $49 session designed to refine your ideas and align your vision with expert guidance.
+            Request a time that suits your schedule, and rest assured—you won't be charged until your session is confirmed.
           </p>
         </q-card-section>
         <q-card-section>
@@ -46,7 +46,7 @@
               class="input-field"
             />
             <q-btn
-              label="Confirm Booking"
+              label="Request Session"
               type="submit"
               class="submit-button glossy"
             />
@@ -199,41 +199,37 @@
   .card {
     margin: 1em;
     padding: 1em;
-    // background-color: $grayVeryLight;
     opacity: 0.9;
-    color: $grayDark; // White text for contrast
-    border-radius: 8px; // Rounded corners for modern appearance
+    color: $grayDark;
+    border-radius: 8px;
   }
 
   .title {
     font-size: 1.5em;
     text-align: center;
     margin-bottom: 1em;
-    color: $grayVeryDark; // Ensuring title is readable on dark background
+    color: $grayVeryDark;
   }
 
   .description {
     text-align: center;
     margin-bottom: 1.5em;
-    color: $grayDark; // Softer gray for descriptive text
+    color: $grayDark;
   }
 
   .input-field {
     margin-bottom: 1.5em;
-    background-color: $grayVeryLight; // Light blue for inputs
+    background-color: $grayVeryLight;
     border-radius: 5px;
   }
 
   .submit-button {
     width: 100%;
-
     margin-top: 1.5em;
     background-color: $primary;
-    color: $textWhite; // White text
+    color: $textWhite;
     font-weight: bold;
-    @extend .shared-hover; // Hover effect
-    // @media (min-width: 768px) {
-    //   width: auto;
+    @extend .shared-hover;
   }
 </style>
 
