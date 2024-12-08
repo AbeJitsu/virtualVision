@@ -8,7 +8,7 @@ export const FocusedStrategySessions: Message = {
     'Transform your ideas into meaningful progress with expert help and guidance', // 8 words
 
   supportiveStatement:
-    'Schedule your optional Focused Strategy Sessions, beginning the next day after your first session. These next four sessions, one per business day, build on your earlier progress and ensure clarity.', // 186 characters
+    'These optional Focused Strategy Sessions can start as soon as the next day after your first one-hour session. Four sessions, one per business day, build on earlier progress to ensure clarity.', // 174 characters
   dominantStatement:
     'Over five business days, these sessions focus on clarifying your vision. By the end, you’ll have a clear roadmap, free from technical distractions, to guide your next steps, independently or with us.', // 186 characters
   influentialStatement:
@@ -24,7 +24,7 @@ export const FocusedStrategySessions: Message = {
     'How do these sessions set me up for success? What makes them critical for my complete website? It seems like it will align my priorities.', // 19 words
 
   customerInnerVoiceDominantConscientiousObjection:
-    'Why spend five hours clarifying my vision when I could use that time building my site, even if it means less clarity?', // 19 words
+    'Why spend five focused hours clarifying my vision when I could use that time building my site, even if it means accepting less clarity and direction?', // 23 words
 };
 
 export default FocusedStrategySessions;

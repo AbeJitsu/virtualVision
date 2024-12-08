@@ -7,23 +7,23 @@ export const FullServicePricingDetails: Message = {
   influentialTagline: 'Understand the costs and benefits upfront.', // 7 words
 
   supportiveStatement:
-    'This overview provides complete clarity on pricing for each step of the process. See how your investment delivers tangible results at every stage.', // 163 characters
+    'Our services grow with your vision, offering clarity, collaboration, and results. Each phase builds on the last, but every step remains independent and tailored to your goals.', // 29 words
   dominantStatement:
-    'With detailed pricing and transparent costs, you can make informed decisions. Every dollar contributes to achieving your vision with precision and quality.', // 158 characters
+    'Your investment powers expert development and tailored solutions. Sessions are flexible, scheduled at your convenience, and there’s no obligation to proceed to the next phase.', // 26 words
   influentialStatement:
-    'Knowing the costs upfront gives you control and confidence. Learn how each investment leads to a polished and tailored result for your goals.', // 155 characters
+    'Begin with a $49 Talk to a Developer session to refine your vision, expand with four strategy sessions for $449, and build a high-performance custom site for $4,499, all at your pace.', // 35 words
   conscientiousStatement:
-    'Our pricing is straightforward, ensuring no surprises. See how we allocate resources effectively to deliver value at every stage of your project.', // 143 characters
+    'This process combines 21 hours of live collaboration and 42 flexible coding hours. Sessions don’t expire, giving you the freedom to prioritize and build your platform on your terms.', // 26 words
 
   supportiveSummary:
-    'See the investment needed to create your vision. Our pricing is clear, empowering you to make confident decisions.', // 20 words
+    'It all starts with a single session, with no pressure to continue. Each step is optional, empowering you to build at your own pace.', // 20 words
   influentialPrompt:
-    'Ready to understand the investment required for your success?', // 10 words
+    'Take the first step toward a website that reflects your vision. Book your initial session today to begin.', // 16 words
 
   customerInnerVoiceSupportiveInfluentialChoice:
-    'What makes this pricing structure transparent and fair? How does each step’s cost reflect its value to my project?', // 20 words
+    'I understand I can start with my first session to explore possibilities without obligation. How do I check availability to book now and move forward confidently?', // 27 words
   customerInnerVoiceDominantConscientiousObjection:
-    'Can I start small before committing to the full cost? How flexible is this structure for my specific needs?', // 20 words
+    'Is the process flexible enough to adapt if my priorities shift? Can I adjust as needed without affecting the final outcome or results?', // 25 words
 };
 
 export default FullServicePricingDetails;

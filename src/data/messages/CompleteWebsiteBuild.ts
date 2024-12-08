@@ -8,9 +8,9 @@ export const CompleteWebsiteBuild: Message = {
     'Create a platform that reflects your goals and creativity.', // 8 words
 
   supportiveStatement:
-    'This optional phase transforms your concepts into a unique, fully functional website. Building on prior sessions, it leverages expert development to make your ideas a reality.', // 190 characters
+    'This optional phase builds on the five strategy sessions to transform your concepts into a unique, fully functional website, leveraging expert development to bring your ideas to life.', // 190 characters
   dominantStatement:
-    'With 16 live sessions and 42 flexible hours of coding, every detail is meticulously tailored to your needs. This phase ensures your site aligns perfectly and stands out with precision.', // 186 characters
+    'With 16 additional live sessions and 42 flexible coding hours, scheduled at your pace, this phase offers unmatched customization. Every detail is tailored to meet your unique goals and vision.',
   influentialStatement:
     'For $4,499, this comprehensive package empowers you to establish a polished online presence that’s uniquely yours. Collaborate directly with a developer to make your website exceptional.', // 186 characters
   conscientiousStatement:
@@ -22,9 +22,9 @@ export const CompleteWebsiteBuild: Message = {
     'Are you ready to turn your ideas into a powerful digital presence?', // 12 words
 
   customerInnerVoiceSupportiveInfluentialChoice:
-    'How does this complete package bring everything together? What makes this a good choice for me? What if I have a lot of ideas?', // 19 words
+    'How does this complete package bring everything together? What makes this a strong choice for me? How might it handle my creative ideas and evolving goals?', // 19 words
   customerInnerVoiceDominantConscientiousObjection:
-    'Is this a fully custom build, or are templates used? Do I own the code and results, and how flexible is the timeline?', // 22 words
+    'Is this a fully custom build, or are templates used? Do I own the code and results, and how flexible and adaptable is the overall timeline?', // 22 words
 };
 
 export default CompleteWebsiteBuild;
