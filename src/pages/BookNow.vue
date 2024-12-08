@@ -1,12 +1,10 @@
 <template>
   <q-page class="book-now-page">
     <div class="container">
-      <q-card class="q-ma-md q-pa-md">
+      <q-card class="card">
         <q-card-section>
-          <div class="text-h5 text-center q-mb-md">
-            Book Your First Session
-          </div>
-          <p class="text-center">
+          <div class="title">Book Your First Session</div>
+          <p class="description">
             Start your journey with a $49 session. Choose a convenient time to discuss your vision with an expert developer.
           </p>
         </q-card-section>
@@ -18,7 +16,7 @@
               label="Your Name"
               hint="Enter your full name"
               :rules="[val => !!val || 'Name is required']"
-              class="q-mb-md"
+              class="input-field"
             />
             <q-input
               filled
@@ -27,7 +25,7 @@
               label="Email Address"
               hint="Enter your email for confirmation"
               :rules="[val => !!val || 'Email is required']"
-              class="q-mb-md"
+              class="input-field"
             />
             <q-input
               filled
@@ -35,7 +33,7 @@
               type="tel"
               label="Phone Number"
               hint="Optional but helpful"
-              class="q-mb-md"
+              class="input-field"
             />
             <q-select
               filled
@@ -44,13 +42,13 @@
               label="Select a Date and Time"
               hint="Choose your session"
               :rules="[val => !!val || 'Selection is required']"
-              class="q-mb-md"
+              class="input-field"
             />
             <q-btn
               label="Confirm Booking"
               type="submit"
               color="primary"
-              class="full-width q-mt-md"
+              class="submit-button"
             />
           </q-form>
         </q-card-section>
@@ -170,12 +168,38 @@ function submitBooking() {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4em;
+  padding: 3.25em 1em;
 
-  .container {
-    max-width: 600px;
-    width: 100%;
-  }
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+}
+
+.card {
+  margin: 1em;
+  padding: 1em;
+}
+
+.title {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.input-field {
+  margin-bottom: 1.5em;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 1.5em;
 }
 </style>
 
