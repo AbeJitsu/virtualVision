@@ -75,7 +75,7 @@ const operationalHours = {
 };
 
 const intervalMinutes = 165; // 2 hours and 45 minutes
-const minWaitHours = 15; // Minimum wait time of 15 hours for appointments
+const minWaitHours = 15; // Minimum wait time of 15 hours
 
 function generateAvailableSlots() {
   const slots = [];
@@ -84,11 +84,7 @@ function generateAvailableSlots() {
   // Slot 1: Dynamically calculated slot
   const firstSlot = new Date(now);
   firstSlot.setTime(now.getTime() + 23.5 * 60 * 60 * 1000); // 23 hours 30 minutes
-  firstSlot.setMinutes(
-    Math.round(firstSlot.getMinutes() / 15) * 15,
-    0,
-    0
-  ); // Round to nearest 15 minutes
+  firstSlot.setMinutes(Math.round(firstSlot.getMinutes() / 15) * 15, 0, 0); // Round to nearest 15 minutes
   if (firstSlot.getHours() < operationalHours.start) firstSlot.setHours(operationalHours.start, 0, 0, 0);
   if (firstSlot.getHours() >= operationalHours.end) firstSlot.setHours(operationalHours.end - 1, 45, 0, 0);
   slots.push(formatSlot(firstSlot));
@@ -102,8 +98,7 @@ function generateAvailableSlots() {
   ) {
     slots.push(formatSlot(secondSlot));
   } else {
-    // Try 2 hours and 45 minutes after
-    secondSlot.setTime(firstSlot.getTime() + intervalMinutes * 60 * 1000);
+    secondSlot.setTime(firstSlot.getTime() + intervalMinutes * 60 * 1000); // 2 hours 45 minutes later
     if (
       secondSlot.getHours() < operationalHours.end &&
       secondSlot.getTime() >= now.getTime() + minWaitHours * 60 * 60 * 1000
@@ -112,7 +107,7 @@ function generateAvailableSlots() {
     }
   }
 
-  // Slot 3: Always on the day after tomorrow if two slots are on the same day
+  // Slot 3: Always the next day if two slots are on the same day
   if (slots.length === 2 && slots.every((slot) => slot.dateTime.includes(firstSlot.toISOString().split('T')[0]))) {
     const thirdSlot = new Date(firstSlot);
     thirdSlot.setDate(firstSlot.getDate() + 1); // Day after tomorrow
