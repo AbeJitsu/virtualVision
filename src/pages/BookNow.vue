@@ -71,66 +71,66 @@ const formData = ref({
 
 const operationalHours = {
   start: 9, // 9:00 AM
-  end: 19, // 7:00 PM
+  end: 19, // 7:00 PM (6:45 PM is the last start time)
 };
 
 const intervalMinutes = 165; // 2 hours and 45 minutes
-const minWaitHours = 6; // Minimum wait time of 6 hours
+const minWaitHours = 15; // Minimum wait time of 15 hours for appointments
 
 function generateAvailableSlots() {
   const slots = [];
   const now = new Date();
 
-  // Slot 1: Always 9:00 AM the next day
+  // Slot 1: Dynamically calculated slot
   const firstSlot = new Date(now);
-  firstSlot.setDate(now.getDate() + 1);
-  firstSlot.setHours(9, 0, 0, 0);
+  firstSlot.setTime(now.getTime() + 23.5 * 60 * 60 * 1000); // 23 hours 30 minutes
+  firstSlot.setMinutes(
+    Math.round(firstSlot.getMinutes() / 15) * 15,
+    0,
+    0
+  ); // Round to nearest 15 minutes
+  if (firstSlot.getHours() < operationalHours.start) firstSlot.setHours(operationalHours.start, 0, 0, 0);
+  if (firstSlot.getHours() >= operationalHours.end) firstSlot.setHours(operationalHours.end - 1, 45, 0, 0);
   slots.push(formatSlot(firstSlot));
 
-  // Slot 2: Dynamic slot (23 hours 30 mins to 23 hours 45 mins in the future, rounded)
-  const dynamicSlot = new Date(now);
-  dynamicSlot.setTime(now.getTime() + 23 * 60 * 60 * 1000 + 30 * 60 * 1000);
-  dynamicSlot.setMinutes(Math.round(dynamicSlot.getMinutes() / 15) * 15, 0, 0);
-
+  // Slot 2: Check 2 hours and 45 minutes prior or after
+  const secondSlot = new Date(firstSlot);
+  secondSlot.setMinutes(secondSlot.getMinutes() - intervalMinutes);
   if (
-    dynamicSlot.getTime() >= now.getTime() + 23 * 60 * 60 * 1000 + 30 * 60 * 1000 &&
-    dynamicSlot.getTime() <= now.getTime() + 24 * 60 * 60 * 1000
+    secondSlot.getHours() >= operationalHours.start &&
+    secondSlot.getTime() >= now.getTime() + minWaitHours * 60 * 60 * 1000
   ) {
-    slots.push(formatSlot(dynamicSlot));
-  }
-
-  // Slot 3: Middle slot between first and dynamic slots
-  const firstSlotTime = firstSlot.getTime();
-  const dynamicSlotTime = dynamicSlot.getTime();
-  const timeGap = dynamicSlotTime - firstSlotTime;
-
-  if (timeGap > intervalMinutes * 2 * 60 * 1000) {
-    const middleSlot = new Date(firstSlot);
-    middleSlot.setTime(firstSlotTime + timeGap / 2); // Midpoint between first and dynamic slots
-    middleSlot.setMinutes(Math.round(middleSlot.getMinutes() / 15) * 15, 0, 0);
-
+    slots.push(formatSlot(secondSlot));
+  } else {
+    // Try 2 hours and 45 minutes after
+    secondSlot.setTime(firstSlot.getTime() + intervalMinutes * 60 * 1000);
     if (
-      middleSlot.getTime() - firstSlotTime >= intervalMinutes * 60 * 1000 &&
-      dynamicSlotTime - middleSlot.getTime() >= intervalMinutes * 60 * 1000
+      secondSlot.getHours() < operationalHours.end &&
+      secondSlot.getTime() >= now.getTime() + minWaitHours * 60 * 60 * 1000
     ) {
-      slots.push(formatSlot(middleSlot));
+      slots.push(formatSlot(secondSlot));
     }
   }
 
-  // Ensure exactly 3 slots by adding fallback if needed
-  while (slots.length < 3) {
-    const fallbackSlot = new Date(slots[slots.length - 1]?.dateTime || firstSlot);
-    fallbackSlot.setMinutes(fallbackSlot.getMinutes() + intervalMinutes);
-    fallbackSlot.setMinutes(Math.round(fallbackSlot.getMinutes() / 15) * 15, 0, 0);
-
-    if (
-      fallbackSlot.getTime() > firstSlot.getTime() &&
-      fallbackSlot.getTime() < dynamicSlot.getTime()
-    ) {
-      slots.push(formatSlot(fallbackSlot));
+  // Slot 3: Always on the day after tomorrow if two slots are on the same day
+  if (slots.length === 2 && slots.every((slot) => slot.dateTime.includes(firstSlot.toISOString().split('T')[0]))) {
+    const thirdSlot = new Date(firstSlot);
+    thirdSlot.setDate(firstSlot.getDate() + 1); // Day after tomorrow
+    if (slots[1].dateTime.includes('AM')) {
+      thirdSlot.setHours(18, 45, 0, 0); // 6:45 PM
     } else {
-      break;
+      thirdSlot.setHours(9, 0, 0, 0); // 9:00 AM
     }
+    slots.push(formatSlot(thirdSlot));
+  } else {
+    // Otherwise, follow the same day logic for the third slot
+    const thirdSlot = new Date(firstSlot);
+    if (slots[1] && slots[1].dateTime.includes('AM')) {
+      thirdSlot.setHours(18, 45, 0, 0); // 6:45 PM
+    } else {
+      thirdSlot.setHours(9, 0, 0, 0); // 9:00 AM
+    }
+    slots.push(formatSlot(thirdSlot));
   }
 
   // Ensure unique and sorted slots
