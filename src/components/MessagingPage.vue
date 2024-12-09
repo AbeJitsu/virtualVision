@@ -108,7 +108,7 @@
   .content-container {
     width: 100%;
     max-width: 1000px;
-    letter-spacing: -0.75px;
+    letter-spacing: -1px;
     padding-top: calc(
       var(--navbar-height, 4rem) + 2rem
     ); // Navbar height + spacing
@@ -121,21 +121,39 @@
     }
   }
 
-  .dominantTagline {
+
+  // Tagline Base Class with modifiers for dominant and influential
+.tagline {
+  text-align: center;
+  font-weight: 600;
+  padding: 0rem;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($textWhite, 0.25);
+    z-index: -1;
+  }
+
+  &--dominant {
     font-size: xx-large;
     font-weight: 600;
     margin-bottom: 1rem;
     color: $grayDark;
-    text-align: center;
-    padding-top: 11rem;
-    letter-spacing: -1.25px;
-
-    @media (max-width: 599px) {
-      margin-bottom: 2rem;
-      font-size: large; /* Reduce font size on smaller screens */
-      padding-top: 6rem; /* Adjust padding for mobile */
-    }
+    padding-top: 1rem;
   }
+
+  &--influential {
+    font-size: x-large;
+    margin-bottom: 2.5rem;
+    color: $grayDark;
+  }
+}
+
 
   .tagline--influential {
     margin-top: 1.5rem !important;
@@ -153,32 +171,57 @@
     }
   }
 
-  // SDICS Message Box Grid Layout
+  // Stacked Tone Message Layout
   .tone-message-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    width: 100%;
-    margin-bottom: 0rem auto;
-    padding-bottom: 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 50%;
+    margin: 2rem auto;
 
     @media (max-width: 599px) {
-      grid-template-columns: 1fr;
-      padding: 0 1rem; /* Prevent content from touching edges on mobile */
-      gap: 1.5rem; /* Reduce gap for mobile */
-      margin-bottom: 3rem;
-      margin-top: 1.5rem;
+      padding: 0 0rem; /* Adjust padding for mobile */
+      gap: 2rem; /* Slightly reduce gap for smaller screens */
+      width: 80%;
     }
   }
 
   .tone-message-box {
     font-size: 1.25rem;
     font-weight: 400;
-    letter-spacing: -0.75px;
+    letter-spacing: -0.55px;
+    text-align: center;
+    padding: 2rem 4rem 1rem;
+    border-radius: 8px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+
+    // Keep the predefined color styles
+    &--supportive {
+      background-color: rgba($blueVeryLight, 0.8); /* Existing style */
+      border: 1px solid $blueVeryLight;
+      color: $grayVeryDark;
+    }
+
+    &--dominant {
+      background-color: rgba($orangeVeryLight, 0.6); /* Existing style */
+      border: 1px solid $orangeVeryLight;
+      color: $grayVeryDark;
+    }
+
+    &--influential {
+      background-color: rgba($yellowVeryLight, 0.7); /* Existing style */
+      color: $grayVeryDark;
+    }
+
+    &--conscientious {
+      background-color: rgba($greenVeryLight, 0.6); /* Existing style */
+      border: 2px solid $greenVeryLight;
+      color: $grayVeryDark;
+    }
 
     @media (max-width: 599px) {
       font-size: 1rem; /* Scale down font size for mobile */
-      padding: 2rem 2rem 1rem; /* Add padding for better spacing */
+      padding: 2rem 2.5rem 1rem; /* Add padding for better spacing */
     }
   }
 
@@ -187,12 +230,12 @@
     color: $grayVeryDark;
     font-weight: 600;
     font-size: x-large;
-    margin: 2rem 7rem 1.5rem;
+    margin: 4rem 8rem 4rem;
     padding-top: 0.1rem;
     letter-spacing: -0.5px;
 
     @media (max-width: 599px) {
-      margin: 2rem 1rem 2rem;
+      margin: 4rem 2em 3rem;
       font-size: large;
       font-weight: 500;
     }
@@ -205,10 +248,11 @@
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
+    margin: 5rem 3rem 2rem;
 
     @media (max-width: 599px) {
       flex-direction: column;
-      gap: 1rem; /* Adjust gap for stacked buttons */
+      gap: 1rem;
       margin: 1em 3em 1em;
     }
 
@@ -218,8 +262,7 @@
       font-size: 1.3rem;
       font-weight: 500;
       color: $grayVeryDark;
-      margin-top: -1rem;
-
+      margin-top: -2rem;
       @media (max-width: 599px) {
         font-size: medium;
         margin-top: -0.5rem;
@@ -229,15 +272,17 @@
     .action-buttons {
       display: flex;
       flex-direction: row;
-      gap: 1rem;
+      margin-top: 3rem;
+      gap: 2rem;
 
       @media (max-width: 599px) {
         flex-direction: column;
         gap: 1.5rem; /* Adjust button gap for smaller screens */
+        margin-top: 2rem;
       }
 
       .custom-btn {
-        padding: 4rem 1.5rem; /* Adjust padding for mobile buttons */
+        padding: 4rem 1.5rem;
         margin: 0;
         width: 100%; /* Full-width buttons on mobile */
         max-width: 100%; /* Prevent overflow */
@@ -253,8 +298,10 @@
         @media (max-width: 599px) {
           font-size: 0.9rem; /* Adjust font size for better fit */
           line-height: 1.3;
+          margin-top: -1rem;
         }
       }
     }
   }
+
 </style>

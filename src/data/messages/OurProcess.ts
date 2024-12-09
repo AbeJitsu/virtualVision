@@ -8,7 +8,7 @@ export const OurProcess: Message = {
   supportiveStatement:
     'Every journey starts with a scheduled one-hour consultation. We’ll explore your ideas, clarify your objectives, and ensure we’re aligned to move forward with confidence.', // 29 words
   dominantStatement:
-    'Next, we’ll dive into four focused strategy sessions. These sessions refine your site’s vision and style, ensuring every detail is aligned and thoughtfully prepared before execution.', // 28 words
+    'Next, we’ll dive into four focused strategy sessions to refine your site’s vision and style, ensuring every detail aligns perfectly before moving forward with precision.', // 28 words
   influentialStatement:
     'After five hours of strategy, we expand with 16 additional hours of live collaboration and 42 hours of tailored execution, ensuring every element reflects your unique vision.', // 27 words
   conscientiousStatement:
