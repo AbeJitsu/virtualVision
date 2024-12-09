@@ -4,391 +4,261 @@
     elevated
   >
     <q-toolbar>
-      <!-- Title (Vision2Virtual links to Landing Page) -->
-      <q-toolbar-title class="toolbar-title">
+      <!-- Logo and Title Section -->
+      <div class="logo-section">
         <router-link
           to="/"
-          class="home-link"
+          class="home-link no-link-style"
           active-class="active-link"
         >
           <div class="title-logo-container">
-            <span class="desktop-only">{{ toolbarTitle }}</span>
             <img
               src="/icons/Logo_square_white_BG.png"
               alt="Vision2Virtual Logo"
               class="desktop-logo"
             />
+            <span class="toolbar-title desktop-only">{{ toolbarTitle }}</span>
           </div>
         </router-link>
-      </q-toolbar-title>
+      </div>
 
-      <!-- Desktop Navigation Links -->
+      <!-- Desktop Navigation Section -->
       <div class="nav-links desktop-only">
         <q-btn
           flat
-          label="Our Process"
+          label="OUR PROCESS"
           :to="{ name: 'our-process' }"
           class="nav-text"
         />
         <q-btn
           flat
-          :label="visionPlanningLabel"
-          :to="{ name: 'talk-to-developer' }"
-          class="nav-text"
-        />
-        <q-btn
-          flat
-          :label="fullVisionLabel"
-          to="/focused-strategy-sessions"
-          class="nav-text"
-        />
-        <q-btn
-          flat
-          label="Complete Website Build"
-          :to="{ name: 'complete-website-build' }"
-          class="nav-text"
-        />
-        <q-btn
-          flat
-          label="Pricing Details"
-          :to="{ name: 'full-service-pricing-details' }"
-          class="nav-text"
-        />
-        <q-btn
-          flat
-          label="Book Now"
+          label="BOOK NOW"
           :to="{ path: '/book-now' }"
-          class="nav-text"
+          class="nav-text highlight-cta"
         />
+        <q-btn-dropdown
+          flat
+          no-caps
+          label="More"
+          class="nav-text nav-dropdown"
+          content-class="dropdown-content"
+        >
+          <q-list>
+            <q-item
+              v-for="(link, index) in navLinks"
+              :key="index"
+              clickable
+              v-close-popup
+              @click="navigateTo(link.to)"
+            >
+              <q-item-section>{{ link.label }}</q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
       </div>
 
-      <!-- Mobile "Book Now" Button -->
-      <q-btn
-        flat
-        label="Book Now"
-        :to="{ path: '/book-now' }"
-        class="mobile-only nav-text"
-      />
+      <!-- Login Section -->
+      <div class="login-section">
+        <q-btn
+          flat
+          no-caps
+          class="login-btn"
+          @click="navigateTo({ name: 'auth-page' })"
+        >
+          <q-avatar
+            icon="person"
+            color="primary"
+            text-color="white"
+            size="md"
+          />
+        </q-btn>
+      </div>
 
-      <!-- Mobile Navigation Dropdown -->
-      <q-btn-dropdown
-        flat
-        no-caps
-        icon="menu"
-        class="nav-dropdown mobile-only"
-        content-class="dropdown-content"
-      >
-        <q-list>
-          <q-item
-            v-for="(link, index) in navLinks"
-            :key="index"
-            clickable
-            v-close-popup
-            @click="navigateTo(link.to)"
-          >
-            <q-item-section>{{ link.label }}</q-item-section>
-          </q-item>
-        </q-list>
-      </q-btn-dropdown>
-
-      <!-- Dropdown with Login -->
-      <q-btn-dropdown
-        flat
-        split
-        class="login-dropdown"
-        no-caps
-        @click="navigateToAuth"
-      >
-        <template #label>
-          <div class="login-label">
-            <q-icon name="account_circle" />
-            <span class="login-text desktop-only">Login</span>
-          </div>
-        </template>
-        <q-list>
-          <q-item
-            clickable
-            v-close-popup
-            @click="navigateTo({ name: 'profile' })"
-          >
-            <q-item-section avatar>
-              <q-avatar
-                icon="person"
-                color="primary"
-                text-color="white"
-              />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Profile</q-item-label>
-            </q-item-section>
-          </q-item>
-          <q-item
-            clickable
-            v-close-popup
-            @click="navigateTo({ name: 'settings' })"
-          >
-            <q-item-section avatar>
-              <q-avatar
-                icon="settings"
-                color="secondary"
-                text-color="white"
-              />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Settings</q-item-label>
-            </q-item-section>
-          </q-item>
-          <q-item
-            clickable
-            v-close-popup
-            @click="handleLogout"
-          >
-            <q-item-section avatar>
-              <q-avatar
-                icon="logout"
-                color="negative"
-                text-color="white"
-              />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>Logout</q-item-label>
-            </q-item-section>
-          </q-item>
-        </q-list>
-      </q-btn-dropdown>
+      <!-- Mobile Navigation Section -->
+      <div class="mobile-nav">
+        <q-btn
+          flat
+          label="OUR PROCESS"
+          :to="{ name: 'our-process' }"
+          class="mobile-only nav-text"
+        />
+        <q-btn-dropdown
+          flat
+          no-caps
+          icon="menu"
+          class="nav-dropdown mobile-only"
+          content-class="dropdown-content"
+        >
+          <q-list>
+            <q-item
+              v-for="(link, index) in mobileLinks"
+              :key="index"
+              clickable
+              v-close-popup
+              @click="navigateTo(link.to)"
+            >
+              <q-item-section>{{ link.label }}</q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+      </div>
     </q-toolbar>
   </q-header>
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
   import { useRouter } from 'vue-router';
 
   const router = useRouter();
 
-  // List of navigation links
+  // Navigation links for desktop and mobile views
   const navLinks = [
-    { label: 'Our Process', to: { name: 'our-process' } },
     { label: 'Talk to a Developer', to: { name: 'talk-to-developer' } },
     {
       label: 'Focused Strategy Sessions',
-      to: { path: '/focused-strategy-sessions' },
+      to: { name: 'focused-strategy-sessions' },
     },
     { label: 'Complete Website Build', to: { name: 'complete-website-build' } },
     { label: 'Pricing Details', to: { name: 'full-service-pricing-details' } },
-    { label: 'Book Now', to: { path: '/book-now' } },
   ];
 
-  // Function to navigate to specific routes
+  // Mobile-only links
+  const mobileLinks = [
+    { label: 'BOOK NOW', to: { path: '/book-now' } },
+    ...navLinks,
+  ];
+
+  // Navigation function
   const navigateTo = (route: object) => {
     router.push(route);
   };
 
-  // Function to navigate to auth page
-  const navigateToAuth = () => {
-    router.push({ name: 'auth-page' });
-  };
-
-  // Function to handle logout
-  const handleLogout = () => {
-    console.log('Logging out...');
-    // Add logout logic here
-  };
-
   const props = defineProps({
     toolbarTitle: { type: String, required: true },
-    visionPlanningLabel: { type: String, default: 'Talk to a Developer' },
-    fullVisionLabel: { type: String, default: 'Focused Strategy Sessions' },
   });
 </script>
 
 <style scoped lang="scss">
-  @import '/src/css/app.scss';
-
-  .q-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    letter-spacing: -0.5px;
-
-    @media (max-width: 768px) {
-      letter-spacing: -1px;
-      margin-left: -5px;
-    }
-  }
-
   .custom-header {
+    background-color: #001f3f;
+    height: 4.5rem;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 4rem;
-    z-index: 10;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0.98;
-    transition: background-color 0.3s ease-in-out;
-    white-space: nowrap;
   }
 
-  .menu-button {
-    margin-right: 2rem;
-
-    @media (min-width: 768px) {
-      margin-right: 1rem;
-    }
-  }
-
-  .toolbar-title {
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex: none;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: $textWhite;
-    margin-left: 2px;
-    letter-spacing: -0.75px;
-
-    @media (max-width: 599px) {
-      font-size: 1.25rem;
-      letter-spacing: -0.35px;
-      margin-right: -15px;
-    }
-  }
-
-  .nav-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  .logo-section {
     flex: 1;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
-  .nav-text {
-    color: $textWhite;
-    font-size: 1.1em;
-    font-weight: 600;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: mix($textWhite, white, 20%);
-    }
-  }
-
-  .login-dropdown {
-    color: $textWhite;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-left: -10px;
-
-    @media (max-width: 768px) {
-      margin-left: -15px; /* Pushes the dropdown to the left */
-    }
-
-    .login-label {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-
-      @media (max-width: 768px) {
-        .login-text {
-          display: none;
-        }
-      }
-
-      .login-text {
-        font-size: 1.1rem;
-        font-weight: 500;
-      }
-    }
-
-    .q-icon {
-      margin-right: -9px;
-    }
-  }
-
-  .q-icon {
-    margin-right: -10px;
-  }
-
-  .home-link {
-    color: $textWhite;
-    text-decoration: none;
-    margin-left: 5px;
-
-    &.active-link {
-      border-bottom: 2px solid $primary; /* Highlight active link */
-    }
-  }
-
-  .dropdown-content {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    min-width: 200px;
-    padding: 1rem;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(-10px);
-
-    &.q-btn-dropdown__content--visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .q-item {
-    transition: background-color 0.2s ease;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-  }
-
-  .q-btn-dropdown {
-    @media (max-width: 768px) {
-      margin-right: -20px;
-    }
-  }
-
-  .mobile-only {
-    display: none;
-
-    @media (max-width: 768px) {
-      display: inline-flex;
-      margin-right: -10px;
-    }
-  }
-
-  .desktop-only {
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
-  /* Focus States for Accessibility */
-  .q-btn:focus,
-  .q-item:focus {
-    outline: 3px solid $primary;
+    display: flex;
+    align-items: center;
   }
 
   .title-logo-container {
     display: flex;
-    align-items: center; /* Align text and logo vertically */
-    gap:  1rem; /* Space between text and logo */
-    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .desktop-logo {
     max-width: 3rem;
-    margin-top: 0px; /* Remove top margin to prevent misalignment */
     border-radius: 75%;
-    border: 3px solid $primary;
+    border: 3px solid #001f3f; /* Dark blue color */
+  }
+
+  .toolbar-title {
+    font-size: 1.5rem; /* Adjusted size for better visibility */
+    font-weight: bold; /* Matches the navbar text font weight */
+    color: white; /* Ensure consistency */
+    margin: 0; /* Prevent extra spacing */
+  }
+
+  .home-link {
+    text-decoration: none; /* Prevent underlines */
+    color: inherit; /* Ensure it doesn't inherit unwanted colors */
+  }
+
+  .home-link:hover,
+  .home-link:focus,
+  .home-link.active-link {
+    color: inherit; /* Prevent hover or active state from changing colors */
+  }
+
+  .no-link-style {
+    text-decoration: none; /* Remove text underline */
+    color: inherit; /* Ensure color stays consistent */
+  }
+
+  .nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-text {
+    color: white;
+    font-size: 1.2rem; /* Standardized font size */
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .nav-text:hover,
+  .nav-text:focus {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .nav-text.highlight-cta {
+    font-weight: bold;
+  }
+
+  .login-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .login-btn {
+    padding: 0.5rem;
+    font-size: 1.2rem; /* Ensure consistent size with nav-text */
+    color: white;
+  }
+
+  .login-btn:hover,
+  .login-btn:focus {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .desktop-only {
+      display: none;
+    }
+
+    .mobile-only {
+      display: inline-flex;
+    }
+
+    .mobile-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .toolbar-title {
+      font-size: 1.3rem; /* Slightly smaller for mobile */
+    }
+
+    .nav-text {
+      font-size: 1.1rem; /* Adjusted for mobile consistency */
+    }
   }
 </style>
