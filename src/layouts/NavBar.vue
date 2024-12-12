@@ -24,9 +24,7 @@
           flat
           label="OUR PROCESS"
           :to="{ name: 'our-process' }"
-
           class="nav-text"
-
         />
 
         <!-- Dropdown Menu -->
@@ -82,15 +80,13 @@
                 alt="Vision2Virtual Logo"
                 class="desktop-logo"
               />
-              <!-- <span class="toolbar-title desktop-only">{{ toolbarTitle }}</span> -->
               <span class="toolbar-title">{{ toolbarTitle }}</span>
             </div>
           </router-link>
         </div>
 
-        <!-- <div class="nav-links desktop-only"> -->
-        <div class="nav-links">
-
+        <!-- Grouped Navigation Section -->
+        <div class="nav-group">
           <q-btn
             flat
             label="OUR PROCESS"
@@ -123,8 +119,7 @@
           </q-btn-dropdown>
         </div>
 
-        <!-- <div class="login-section desktop-only"> -->
-          <div class="login-section">
+        <div class="login-section">
           <q-btn
             flat
             no-caps
@@ -189,18 +184,25 @@
   }
 
   .desktop-nav {
-    display: flex; /* Visible by default */
+    display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
   }
 
   .mobile-nav {
-    display: none; /* Hidden by default */
+    display: none;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 0 1rem;
+  }
+
+  .nav-group {
+    display: flex;
+    align-items: center;
+    gap: 0rem; /* Spacing between the items */
+    margin-right: 9.75rem;
   }
 
   .desktop-logo {
@@ -256,23 +258,21 @@
 
   @media (max-width: 768px) {
     .desktop-nav {
-      display: none; /* Hide desktop navigation */
+      display: none;
     }
 
     .mobile-nav {
-      display: flex; /* Show mobile navigation */
+      display: flex;
     }
   }
 
   @media (min-width: 769px) {
     .mobile-nav {
-      display: none; /* Hide mobile navigation */
+      display: none;
     }
 
     .desktop-nav {
-      display: flex; /* Show desktop navigation */
+      display: flex;
     }
   }
-
-
 </style>
