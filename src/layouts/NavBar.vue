@@ -227,7 +227,8 @@
     font-weight: 700;
     color: white;
     margin: 0;
-    text-decoration: none; /* No underline */
+    text-decoration: none;
+    margin-top: 0.175rem;
   }
 
   .home-link {
@@ -244,11 +245,13 @@
   .nav-text {
     font-size: 1rem;
     white-space: nowrap;
+    margin-top: 0.175rem;
   }
 
   .login-btn {
     font-size: 1.2rem;
     padding: 0.5rem;
+    margin-top: 0.175rem;
   }
 
   @media (max-width: 768px) {
