@@ -1,57 +1,32 @@
-// src/data/messages/AboutUs.ts
 import { Message } from './AboutUs';
 
 export const AboutUs: Message = {
-  // Validation Guidelines:
-  // 1. Tone-Driven Messaging (Supportive Intro to Conscientious Main):
-  //    - Min: 87 chars (98% of the shortest sentence)
-  //    - Max: 123 chars (102% of the longest sentence)
-  // 2. Supportive Wrap-Ups:
-  //    - Wrap-Up Intro:
-  //      - Min: 52 chars (98% of the shortest sentence)
-  //      - Max: 54 chars (102% of the longest sentence)
-  //    - Wrap-Up Main:
-  //      - Min: 116 chars (98% of the shortest sentence)
-  //      - Max: 123 chars (102% of the longest sentence)
-  // 3. Prompts:
-  //    - Min: 43 chars (98% of the shortest sentence)
-  //    - Max: 48 chars (102% of the longest sentence)
-  // 4. Binary Choice Buttons:
-  //    - Min: 49 chars (98% of the shortest sentence)
-  //    - Max: 51 chars (102% of the longest sentence)
+  dominantTagline: 'Redefining web development with heart and precision.',
+  influentialTagline: 'Your vision deserves a partner who truly listens.',
 
-  dominantTagline: 'Empower Your Digital Journey with Strategic Solutions', // 52 chars (within limits)
+  supportiveStatement:
+    'Based in Orlando, Florida, where I’ve lived for nearly 25 years, I am happily married and committed to making every client feel supported and heard. My journey in customer service, sales, and now web development has shaped my client-first philosophy.',
 
-  supportiveIntro:
-    'Every journey begins with shared values, clear goals, and a vision for meaningful impact.', // 112 chars (within limits)
-  supportiveMain:
-    'We listen, collaborate, and craft strategic solutions to transform your ideas into impactful results.', // 121 chars (within limits)
+  dominantStatement:
+    'As an Army Veteran and former Combat Medic, I understand the importance of trust, reliability, and delivering under pressure. I focus on providing impactful, scalable solutions that align with your business goals.',
 
-  dominantSupportiveIntro:
-    'Your business ideas deserve a partner who transforms concepts into measurable, sustainable outcomes.', // 119 chars (within limits)
-  dominantMain:
-    'We build scalable platforms tailored to your needs, empowering your success through practical innovation.', // 119 chars (within limits)
+  influentialStatement:
+    'Outside of work, I’m a Purple Belt in Brazilian Jiu-Jitsu and a lifelong chess player. These passions teach me creativity, strategy, and discipline, qualities I bring to every project to craft dynamic, standout solutions.',
 
-  influentialSupportiveIntro:
-    'Your story has the power to inspire trust, foster loyalty, and drive meaningful connections with your audience.', // 123 chars (max limit)
-  influentialMain:
-    'Together, we’ll craft dynamic solutions that leave a lasting impression and inspire confidence in your brand.', // 122 chars (within limits)
+  conscientiousStatement:
+    'With a comprehensive three-step process, I ensure each solution is carefully aligned with your business’s unique needs and long-term vision. From discovery to delivery, precision and thoughtfulness drive every step.',
 
-  conscientiousSupportiveIntro:
-    'Precision in every step ensures alignment with your business’s vision and long-term objectives.', // 112 chars (min limit)
-  conscientiousMain:
-    'We design comprehensive, thoughtful solutions that establish a strong foundation for sustainable growth.', // 116 chars (within limits)
+  supportiveSummary:
+    'At Vision2Virtual, I strive to empower businesses by combining technical expertise with heartfelt collaboration. Let’s create a solution that reflects your values and sets the stage for lasting success.',
 
-  supportiveSummaryIntro:
-    'Our mission is to empower and support your business.', // 50 chars (within limits)
-  supportiveSummaryMain:
-    'Let’s craft a solution that reflects your values and sets the stage for long-term success.', // 117 chars (within limits)
+  influentialPrompt:
+    'Are you ready to collaborate with someone who truly cares about your vision? Let’s take that first step together.',
 
-  promptInfluential: 'Are you ready to see what we can build together?', // 43 chars (within limits)
-  promptSupportive: 'Let’s take the first step toward your success.', // 43 chars (within limits)
+  customerInnerVoiceSupportiveInfluentialChoice:
+    'What makes Vision2Virtual the right partner for my project? How could I start working with someone truly committed to my goals?',
 
-  binaryChoiceReadySupportiveInfluential:
-    'This feels perfect. How do we begin together today?', // 49 chars (within limits)
-  binaryChoiceExploreSupportiveConscientious:
-    'Can you explain before we take the next step?', // 49 chars (within limits)
+  customerInnerVoiceDominantConscientiousObjection:
+    'How does this structured process ensure better results than using a DIY website builder or other alternatives?',
 };
+
+export default AboutUs;

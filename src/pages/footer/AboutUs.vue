@@ -1,85 +1,51 @@
 <template>
-  <q-page class="flex-column">
-    <div class="content-container">
-      <!-- Tagline for the page or section -->
-      <div class="dominantTagline">
-        <div>{{ messages.dominantTagline }}</div>
-      </div>
-
-      <!-- Tone message choices in a 2x2 grid layout -->
-      <div class="tone-message-grid">
-        <div class="tone-supportive tone-message-box">
-          <p>{{ messages.supportiveIntro }}</p>
-          <p>{{ messages.supportiveMain }}</p>
-        </div>
-        <div class="tone-dominant tone-message-box">
-          <p>{{ messages.dominantSupportiveIntro }}</p>
-          <p>{{ messages.dominantMain }}</p>
-        </div>
-        <div class="tone-influential tone-message-box">
-          <p>{{ messages.influentialSupportiveIntro }}</p>
-          <p>{{ messages.influentialMain }}</p>
-        </div>
-        <div class="tone-conscientious tone-message-box">
-          <p>{{ messages.conscientiousSupportiveIntro }}</p>
-          <p>{{ messages.conscientiousMain }}</p>
-        </div>
-      </div>
-
-      <!-- Supportive wrap-up and binary choice prompt below -->
-      <div class="supportive-wrapup">
-        <p class="supportive-wrapup-intro">
-          {{ messages.supportiveSummaryIntro }}
-        </p>
-        <p class="supportiveSummaryMain">
-          {{ messages.supportiveSummaryMain }}
-        </p>
-      </div>
-
-      <div class="binary-choice">
-        <div class="choice-prompts">
-          <p>{{ messages.promptInfluential }}</p>
-          <p>{{ messages.promptSupportive }}</p>
-        </div>
-        <div class="action-buttons">
-          <q-btn
-            :label="messages.binaryChoiceReadySupportiveInfluential"
-            to="/talk-to-developer"
-            class="choice-btn q-mb-md enhanced-btn"
-          />
-          <q-btn
-            :label="messages.binaryChoiceExploreSupportiveConscientious"
-            to="/focused-strategy-sessions"
-            class="choice-btn q-mb-md enhanced-btn"
-          />
-        </div>
-      </div>
-    </div>
-  </q-page>
+  <MessagingPage
+    :messages="messages"
+    @left-button-click="handleLeftClick"
+    @right-button-click="handleRightClick"
+  />
 </template>
 
-<script setup lang="ts">
-  import { AboutUs } from '../../data/messages/AboutUs'; // Correct relative path
-  const messages = AboutUs; // Directly use the imported messages
+<script lang="ts">
+  import { defineComponent } from 'vue';
+  import MessagingPage from '../../components/MessagingPage.vue';
+  import { AboutUs } from '../../data/messages/AboutUs'; // Import the updated AboutUs messages
+  import { useRouter, useRoute } from 'vue-router';
+  import { useTrackingStore } from '../../stores/trackingStore';
+
+  export default defineComponent({
+    components: {
+      MessagingPage,
+    },
+    setup() {
+      const router = useRouter();
+      const route = useRoute();
+      const trackingStore = useTrackingStore();
+
+      const messages = AboutUs; // Load the AboutUs messages
+      const currentPage = route.name as string;
+
+      function handleLeftClick() {
+        trackingStore.addVisitedPage(currentPage); // Log the current page as visited
+        trackingStore.recordChoice(currentPage, 'left'); // Record the left button choice
+        const nextPage = trackingStore.getNextPage(currentPage, 'left'); // Get the next page dynamically
+        if (nextPage) router.push(nextPage); // Navigate to the next page
+      }
+
+      function handleRightClick() {
+        trackingStore.addVisitedPage(currentPage); // Log the current page as visited
+        trackingStore.recordChoice(currentPage, 'right'); // Record the right button choice
+        const nextPage = trackingStore.getNextPage(currentPage, 'right'); // Get the next page dynamically
+        if (nextPage) router.push(nextPage); // Navigate to the next page
+      }
+
+      return { messages, handleLeftClick, handleRightClick };
+    },
+  });
 </script>
 
 <style scoped lang="scss">
-  @import '/src/css/app.scss';
+  @import '../../css/app.scss';
 
-
-// ============================================================
-// About Us Page Styles
-// ============================================================
-.about-us-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
+  /* Add any additional styles if necessary */
 </style>
-
-
-<!-- src/pages/footer/AboutUs.vue -->

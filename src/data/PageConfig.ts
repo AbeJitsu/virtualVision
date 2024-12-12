@@ -12,6 +12,7 @@ export const salesFunnelSequence = [
 export const exploratorySequence = [
   'diy-comparison',
   'our-process',
+  'about-us',
   'complete-process-summary',
   // Add more detail-oriented pages here if needed
 ];
