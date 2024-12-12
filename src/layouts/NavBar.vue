@@ -38,7 +38,6 @@
         />
         <q-btn-dropdown
           flat
-          no-caps
           label="More"
           class="nav-text nav-dropdown"
           content-class="dropdown-content"
