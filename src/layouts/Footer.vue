@@ -1,41 +1,46 @@
 <template>
-  <!-- Footer only visible on larger screens -->
-  <q-footer class="footer glossy" v-if="!isMobile">
-    <div class="footer-content">
-      <!-- Footer Links -->
+  <q-footer class="custom-footer glossy">
+    <div class="footer-container">
+      <!-- Footer Logo Section -->
+      <div class="footer-logo">
+        <router-link
+          to="/"
+          class="home-link no-link-style"
+        >
+          <img
+            src="/icons/Logo_square_white_BG.png"
+            alt="Vision2Virtual Logo"
+            class="footer-logo-img"
+          />
+        </router-link>
+      </div>
+
+      <!-- Footer Links Section -->
       <div class="footer-links">
         <q-btn
           flat
           label="About Us"
-          to="/about-us"
-          class="footer-link"
-          aria-label="About Us"
+          :to="{ name: 'about-us' }"
+          class="nav-text footer-btn"
         />
         <q-btn
           flat
           label="Privacy Policy"
-          to="/privacy-policy"
-          class="footer-link"
-          aria-label="Privacy Policy"
+          :to="{ name: 'privacy-policy' }"
+          class="nav-text footer-btn"
         />
         <q-btn
           flat
           label="Terms of Service"
-          to="/terms-of-service"
-          class="footer-link"
-          aria-label="Terms of Service"
+          :to="{ name: 'terms-of-service' }"
+          class="nav-text footer-btn"
         />
-      </div>
-
-      <!-- Contact Button -->
-      <div class="footer-contact">
         <q-btn
           flat
           icon="email"
           label="Contact Us"
-          to="/contact"
-          class="contact-link"
-          aria-label="Contact Us"
+          :to="{ name: 'contact-us' }"
+          class="nav-text footer-btn"
         />
       </div>
     </div>
@@ -43,86 +48,70 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted, onUnmounted } from 'vue';
-
-  const isMobile = ref(window.innerWidth < 600);
-
-  // Update `isMobile` dynamically on window resize
-  const updateIsMobile = () => {
-    isMobile.value = window.innerWidth < 600;
-  };
-
-  onMounted(() => {
-    window.addEventListener('resize', updateIsMobile);
-  });
-
-  onUnmounted(() => {
-    window.removeEventListener('resize', updateIsMobile);
-  });
+  // No additional logic required; purely styling-focused component
 </script>
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
 
-  .footer {
-    background-color: $primary;
+  .custom-footer {
+    background-color: $blueDark;
     color: $textWhite;
-    padding: 0.5rem 1.5rem;
+    padding: 1rem 2rem;
     text-align: center;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-    opacity: 0.98;
-    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .footer-content {
+  .footer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1.25rem 0.5rem 2rem;
+    }
+  }
+
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .footer-logo-img {
+      max-width: 1.8rem;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid $textWhite;
     }
   }
 
   .footer-links {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
 
-    @media (min-width: 600px) {
-      flex-direction: row;
-    }
-  }
-
-  .footer-link {
-    color: $textWhite;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .footer-contact {
-    .contact-link {
+    .footer-btn {
+      font-size: 1rem;
+      white-space: nowrap;
+      text-transform: none;
       color: $textWhite;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: 1px solid transparent;
-      box-shadow: 0em 0em 0.1em rgba(255, 255, 255, 0.43); /* Adds a subtle glow */
-      border-radius: 0.5rem;
-      padding: 0.5rem 1rem;
-      transition: all 0.3s ease-in-out;
+      transition: color 0.3s ease-in-out;
 
       &:hover {
-        background-color: $textWhite;
-        color: $primary;
+        color: rgba(255, 255, 255, 0.8);
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>

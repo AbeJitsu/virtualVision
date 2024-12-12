@@ -30,7 +30,7 @@
     </q-page-container>
 
     <!-- Footer for the layout -->
-    <!-- <Footer class="no-padding no-margin" /> -->
+    <Footer class="no-padding no-margin" /> 
   </q-layout>
 </template>
 

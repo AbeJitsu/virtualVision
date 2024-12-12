@@ -76,5 +76,4 @@
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
-  @import '/src/css/shared-styles.scss';
 </style>

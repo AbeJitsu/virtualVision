@@ -128,8 +128,6 @@
 
 <style scoped lang="scss">
   @import '/src/css/app.scss';
-  @import '/src/css/shared-styles.scss';
-
   /* Container styling */
   .auth-page {
     display: flex;
