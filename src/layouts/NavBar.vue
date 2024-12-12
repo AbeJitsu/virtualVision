@@ -57,8 +57,7 @@
         </q-btn-dropdown>
       </div>
 
-      <!-- Login Section -->
-      <div class="login-section">
+      <div class="login-section desktop-only">
         <q-btn
           flat
           no-caps
@@ -101,6 +100,21 @@
             </q-item>
           </q-list>
         </q-btn-dropdown>
+        <div class="login-section">
+          <q-btn
+            flat
+            no-caps
+            class="login-btn"
+            @click="navigateTo({ name: 'auth-page' })"
+          >
+            <q-avatar
+              icon="person"
+              color="primary"
+              text-color="white"
+              size="md"
+            />
+          </q-btn>
+        </div>
       </div>
     </q-toolbar>
   </q-header>
@@ -139,9 +153,10 @@
 </script>
 
 <style scoped lang="scss">
+  @import '/src/css/app.scss';
   .custom-header {
     background-color: #001f3f;
-    height: 4.5rem;
+    height: 3.25rem;
     padding: 0 1rem;
     display: flex;
     align-items: center;
@@ -152,25 +167,27 @@
     flex: 1;
     display: flex;
     align-items: center;
+    padding-left: 0.1rem;
   }
 
   .title-logo-container {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.25rem;
   }
 
   .desktop-logo {
-    max-width: 3rem;
+    max-width: 2rem;
     border-radius: 75%;
     border: 3px solid #001f3f; /* Dark blue color */
   }
 
   .toolbar-title {
-    font-size: 1.5rem; /* Adjusted size for better visibility */
-    font-weight: bold; /* Matches the navbar text font weight */
+    font-size: x-large; /* Adjusted size for better visibility */
+    font-weight: 400; /* Matches the navbar text font weight */
     color: white; /* Ensure consistency */
     margin: 0; /* Prevent extra spacing */
+    letter-spacing: -1px;
   }
 
   .home-link {
@@ -199,9 +216,10 @@
 
   .nav-text {
     color: white;
-    font-size: 1.2rem; /* Standardized font size */
-    font-weight: 600;
+    font-size: large;
+    font-weight: 500;
     transition: color 0.3s ease;
+    letter-spacing: -0.5px;
   }
 
   .nav-text:hover,
@@ -210,7 +228,7 @@
   }
 
   .nav-text.highlight-cta {
-    font-weight: bold;
+    font-weight: 501;
   }
 
   .login-section {
@@ -220,9 +238,9 @@
   }
 
   .login-btn {
-    padding: 0.5rem;
+    padding-right: 0.5rem;
     font-size: 1.2rem; /* Ensure consistent size with nav-text */
-    color: white;
+    color: $textWhite;
   }
 
   .login-btn:hover,

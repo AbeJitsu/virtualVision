@@ -36,6 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
     "autoprefixer": "^10.4.2",
+    "chromatic": "^11.20.2",
     "dependency-cruiser": "^16.6.0",
     "eslint-plugin-vue": "^9.30.0",
     "globals": "^15.12.0",
