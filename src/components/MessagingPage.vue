@@ -121,39 +121,37 @@
     }
   }
 
-
   // Tagline Base Class with modifiers for dominant and influential
-.tagline {
-  text-align: center;
-  font-weight: 600;
-  padding: 0rem;
-
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba($textWhite, 0.25);
-    z-index: -1;
-  }
-
-  &--dominant {
-    font-size: xx-large;
+  .tagline {
+    text-align: center;
     font-weight: 600;
-    margin-bottom: 1rem;
-    color: $grayDark;
-    padding-top: 1rem;
-  }
+    padding: 0rem;
 
-  &--influential {
-    font-size: x-large;
-    margin-bottom: 2.5rem;
-    color: $grayDark;
-  }
-}
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($textWhite, 0.25);
+      z-index: -1;
+    }
 
+    &--dominant {
+      font-size: xx-large;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: $grayDark;
+      padding-top: 1rem;
+    }
+
+    &--influential {
+      font-size: x-large;
+      margin-bottom: 2.5rem;
+      color: $grayDark;
+    }
+  }
 
   .tagline--influential {
     margin-top: 1.5rem !important;
@@ -274,6 +272,7 @@
       flex-direction: row;
       margin-top: 3rem;
       gap: 2rem;
+      justify-content: center;
 
       @media (max-width: 599px) {
         flex-direction: column;
@@ -281,8 +280,68 @@
         margin-top: 2rem;
       }
 
+      // Shared Button Styles - Consolidated
       .custom-btn {
-        padding: 4rem 1.5rem;
+        width: 45%;
+        /* Default width */
+        height: 6rem;
+        /* Default height */
+        background-color: rgba(255, 255, 255, 0.5);
+        /* Default background */
+        color: $grayDark;
+        /* Default text color */
+        font-size: 1.1rem;
+        /* Text size */
+        font-weight: 600;
+        /* Bold text */
+        border-radius: 8px;
+        /* Rounded corners */
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow */
+        transition: all 0.3s ease-in-out;
+        /* Smooth transitions */
+        text-align: justify;
+        /* Aligns text */
+        padding: 0.8rem 1.35rem 0.6rem;
+        /* Default padding */
+        line-height: 1.25;
+        /* Vertical spacing */
+        letter-spacing: -0.75px;
+        /* Character spacing */
+        text-transform: none;
+        /* Prevents uppercase transformation */
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.6);
+          /* Hover background color */
+          box-shadow: 2px 4px 8px rgba($grayVeryDark, 0.5);
+          /* Enhanced shadow on hover */
+        }
+      }
+
+      // Responsive Styling for Buttons
+      @media (max-width: var(--q-size-sm)) {
+        .custom-btn {
+          width: 100%;
+          /* Full width for small screens */
+          height: 5rem;
+          /* Reduced height */
+          padding: 1rem 2rem;
+          /* Adjusted padding */
+        }
+      }
+
+      // Responsive Styling
+      @media (max-width: var(--q-size-sm)) {
+        .custom-btn {
+          width: 100%;
+          height: 5rem;
+          padding: 1rem 2rem;
+        }
+      }
+
+      .custom-btn {
+        padding: 6rem 1.5rem;
         margin: 0;
         width: 100%; /* Full-width buttons on mobile */
         max-width: 100%; /* Prevent overflow */
@@ -296,12 +355,17 @@
         word-break: break-word; /* Handle long words */
 
         @media (max-width: 599px) {
-          font-size: 0.9rem; /* Adjust font size for better fit */
+          font-size: large; /* Adjust font size for better fit */
           line-height: 1.3;
-          margin-top: -1rem;
+          white-space: normal; /* Allow text to wrap */
+        text-align: center;
+        display: flex; /* Ensure content aligns properly */
+        align-items: center;
+        justify-content: center; /* Center-align content */
+        flex-wrap: wrap; /* Wrap text if needed */
+        word-break: break-word; /* Handle long words */
         }
       }
     }
   }
-
 </style>

@@ -15,7 +15,7 @@
           <img
             src="/icons/Logo_square_white_BG.png"
             alt="Vision2Virtual Logo"
-            class="desktop-logo"
+            class="mobile-logo"
           />
         </router-link>
 
@@ -24,7 +24,9 @@
           flat
           label="OUR PROCESS"
           :to="{ name: 'our-process' }"
-          class="mobile-only nav-text"
+
+          class="nav-text"
+
         />
 
         <!-- Dropdown Menu -->
@@ -32,7 +34,7 @@
           flat
           no-caps
           icon="menu"
-          class="nav-dropdown mobile-only"
+          class="nav-dropdown"
           content-class="dropdown-content"
         >
           <q-list>
@@ -80,12 +82,15 @@
                 alt="Vision2Virtual Logo"
                 class="desktop-logo"
               />
-              <span class="toolbar-title desktop-only">{{ toolbarTitle }}</span>
+              <!-- <span class="toolbar-title desktop-only">{{ toolbarTitle }}</span> -->
+              <span class="toolbar-title">{{ toolbarTitle }}</span>
             </div>
           </router-link>
         </div>
 
-        <div class="nav-links desktop-only">
+        <!-- <div class="nav-links desktop-only"> -->
+        <div class="nav-links">
+
           <q-btn
             flat
             label="OUR PROCESS"
@@ -118,7 +123,8 @@
           </q-btn-dropdown>
         </div>
 
-        <div class="login-section desktop-only">
+        <!-- <div class="login-section desktop-only"> -->
+          <div class="login-section">
           <q-btn
             flat
             no-caps
@@ -182,15 +188,32 @@
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .mobile-nav {
-    display: none;
+  .desktop-nav {
+    display: flex; /* Visible by default */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
-  .desktop-nav {
-    display: flex;
+  .mobile-nav {
+    display: none; /* Hidden by default */
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
+    padding: 0 1rem;
+  }
+
+  .desktop-logo {
+    max-width: 1.95rem;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid $blueDark;
+  }
+
+  .mobile-logo {
+    max-width: 1.8rem;
+    height: auto;
+    border-radius: 50%;
   }
 
   .title-logo-container {
@@ -199,96 +222,54 @@
     gap: 0.5rem;
   }
 
-  .desktop-logo {
-    max-width: 1.95rem; /* Size of the logo */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Rounded corners */
-    border: 3px solid $blueDark; /* Border for styling */
-  }
-
-  .home-link {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Ensures it inherits the desired text color */
-  }
-
-  .home-link:hover,
-  .home-link:focus,
-  .home-link:active {
-    text-decoration: none; /* Prevents underline on hover, focus, or active states */
-  }
-
   .toolbar-title {
     font-size: x-large;
     font-weight: 700;
     color: white;
     margin: 0;
-    letter-spacing: -0.5px;
-    padding-top: 0.2rem;
+    text-decoration: none; /* No underline */
   }
 
-  .nav-links {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
+  .home-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .home-link:hover,
+  .home-link:focus,
+  .home-link:active {
+    text-decoration: none; /* Prevent underline in all states */
   }
 
   .nav-text {
-    color: white;
-    font-size: large;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    letter-spacing: -0.5px;
-  }
-
-  .nav-text:hover,
-  .nav-text:focus {
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  .login-section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0;
+    font-size: 1rem;
+    white-space: nowrap;
   }
 
   .login-btn {
     font-size: 1.2rem;
-    color: $textWhite;
-  }
-
-  .login-btn:hover,
-  .login-btn:focus {
-    color: rgba(255, 255, 255, 0.85);
+    padding: 0.5rem;
   }
 
   @media (max-width: 768px) {
     .desktop-nav {
-      display: none; /* Hide desktop navigation on mobile */
+      display: none; /* Hide desktop navigation */
     }
 
     .mobile-nav {
       display: flex; /* Show mobile navigation */
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding-left: 0.7rem;
-    }
-
-    .desktop-logo {
-      max-width: 1.95rem; /* Adjust logo size for mobile */
-      height: auto;
-    }
-
-    .nav-text {
-      font-size: 1rem;
-      white-space: nowrap;
-    }
-
-    .login-btn {
-      font-size: 1.1rem;
     }
   }
+
+  @media (min-width: 769px) {
+    .mobile-nav {
+      display: none; /* Hide mobile navigation */
+    }
+
+    .desktop-nav {
+      display: flex; /* Show desktop navigation */
+    }
+  }
+
+
 </style>
