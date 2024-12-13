@@ -82,18 +82,36 @@
 
       function handleLeftClick() {
         const currentPage = route.name as string;
+        console.log('Left Click Triggered:', { currentPage });
+
         trackingStore.addVisitedPage(currentPage);
         trackingStore.recordChoice(currentPage, 'left');
+
         const nextPage = trackingStore.getNextPage(currentPage, 'left');
-        if (nextPage) router.push(nextPage);
+        console.log('Next Page for Left Choice:', nextPage);
+
+        if (nextPage) {
+          router.push(nextPage);
+        } else {
+          console.error('No next page determined for left choice.');
+        }
       }
 
       function handleRightClick() {
         const currentPage = route.name as string;
+        console.log('Right Click Triggered:', { currentPage });
+
         trackingStore.addVisitedPage(currentPage);
         trackingStore.recordChoice(currentPage, 'right');
+
         const nextPage = trackingStore.getNextPage(currentPage, 'right');
-        if (nextPage) router.push(nextPage);
+        console.log('Next Page for Right Choice:', nextPage);
+
+        if (nextPage) {
+          router.push(nextPage);
+        } else {
+          console.error('No next page determined for right choice.');
+        }
       }
 
       return { handleLeftClick, handleRightClick };

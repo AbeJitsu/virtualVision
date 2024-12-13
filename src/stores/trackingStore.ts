@@ -65,10 +65,12 @@ export const useTrackingStore = defineStore('trackingStore', {
       const route = useRoute();
       const currentPage = route.name as string;
 
+      console.log('initializeFromRoute called for page:', currentPage);
+
       if (currentPage && !this.visitedPages.includes(currentPage)) {
         this.addVisitedPage(currentPage);
         console.log(
-          `Initialized visitedPages with current page: ${currentPage}`
+          `Added ${currentPage} to visitedPages in initializeFromRoute.`
         );
       }
     },
