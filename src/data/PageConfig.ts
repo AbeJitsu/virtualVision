@@ -1,6 +1,5 @@
 // src/data/PageConfig.ts
 export const salesFunnelSequence = [
-  'landing-page',
   'our-process',
   'talk-to-developer',
   'focused-strategy-sessions',

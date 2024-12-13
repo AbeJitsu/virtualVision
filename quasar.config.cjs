@@ -22,6 +22,7 @@ module.exports = configure(function (/* ctx */) {
 
     devServer: {
       open: true,
+      historyApiFallback: true,
     },
 
     framework: {
@@ -38,9 +39,7 @@ module.exports = configure(function (/* ctx */) {
 
     pwa: {
       workboxMode: 'generateSW',
-      injectPwaMetaTags: true,
-      swFilename: 'sw.js',
-      manifestFilename: 'manifest.json',
+      injectPwaMetaTags: false,
     },
 
     capacitor: {

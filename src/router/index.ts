@@ -36,16 +36,38 @@ export default route(function (/* { store, ssrContext } */) {
       if (savedPosition) {
         return savedPosition;
       } else {
-        // Scroll the body element explicitly
         const body = document.querySelector('body');
         if (body) {
           body.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         }
-        return { top: 0, left: 0 }; // Return default position
+        return { top: 0, left: 0 }; // Default position
       }
     },
     routes, // Pass in routes from routes.ts
-    history: createHistory(process.env.VUE_ROUTER_BASE || '/'), // Use default '/' if BASE is not set
+    history: createHistory(process.env.VUE_ROUTER_BASE || '/'),
+  });
+
+  // Add global beforeEach navigation guard
+  Router.beforeEach((to, from, next) => {
+    const trackingStore = useTrackingStore();
+
+    // Ensure the current route is initialized in the store
+    if (to.name && !trackingStore.visitedPages.includes(to.name as string)) {
+      trackingStore.addVisitedPage(to.name as string);
+      console.log(
+        `Added ${
+          to.name ? String(to.name) : '(unknown)'
+        } to visitedPages in beforeEach guard.`
+      );
+    }
+
+    // Log navigation details for debugging
+    console.log(
+      `Before navigating from ${String(from.name)} to ${String(to.name)}`
+    );
+
+    // Proceed to the next route
+    next();
   });
 
   // Add global afterEach navigation hook

@@ -56,7 +56,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/footer/TermsOfService.vue'),
       },
       {
-        path: '/auth',
+        path: 'auth',
         name: 'auth-page',
         component: () => import('pages/AuthPage.vue'),
       },
