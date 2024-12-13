@@ -9,6 +9,7 @@ const routes: RouteRecordRaw[] = [
         path: '',
         name: 'landing-page',
         component: () => import('pages/LandingPage.vue'),
+        alias: ['/landing-page', '/'], // Alias for the root route
       },
       {
         path: 'about-us',

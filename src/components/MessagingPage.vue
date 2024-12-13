@@ -82,15 +82,14 @@
 
       function handleLeftClick() {
         const currentPage = route.name as string;
-        console.log('Left Click Triggered:', { currentPage });
-
         trackingStore.addVisitedPage(currentPage);
         trackingStore.recordChoice(currentPage, 'left');
 
         const nextPage = trackingStore.getNextPage(currentPage, 'left');
-        console.log('Next Page for Left Choice:', nextPage);
-
-        if (nextPage) {
+        if (nextPage === '/landing-page') {
+          // Force navigation to use the root `/` instead of `/landing-page`
+          router.push('/');
+        } else if (nextPage) {
           router.push(nextPage);
         } else {
           console.error('No next page determined for left choice.');
