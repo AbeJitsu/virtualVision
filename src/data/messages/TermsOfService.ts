@@ -1,36 +1,27 @@
 import { Message } from './SalesStrategyMessages';
 
 export const TermsOfService: Message = {
-  dominantTagline: 'Clear, Fair, and Transparent Terms for Your Confidence',
+  dominantTagline: 'Building Confidence Through Clear, Fair Terms', // 6 words
+  influentialTagline: 'Collaborate with trust and transparency in every step', // 9 words
 
-  supportiveIntro:
-    'We aim to build a partnership based on understanding and mutual respect.',
-  supportiveMain:
-    'Our terms are designed to protect your interests while fostering trust and collaboration.',
+  supportiveStatement:
+    'We believe every great partnership starts with understanding and mutual respect. Our terms are thoughtfully designed to protect your interests while encouraging collaboration.', // 28 words
+  dominantStatement:
+    'Clarity and fairness are essential to success. We provide clear guidelines to ensure accountability and create a seamless working relationship built on trust.', // 25 words
+  influentialStatement:
+    'A shared vision thrives on trust. Our terms foster confidence, respect, and a transparent foundation for achieving meaningful collaboration.', // 21 words
+  conscientiousStatement:
+    'Every detail of our terms is crafted to align with your goals. We prioritize transparency, adhering to best practices for security and clarity in every interaction.', // 25 words
 
-  dominantSupportiveIntro:
-    'A successful partnership requires clarity and fairness in all agreements.',
-  dominantMain:
-    'We establish clear guidelines to ensure accountability and a seamless working relationship.',
+  supportiveSummary:
+    'Our terms prioritize trust, respect, and transparency. Let’s build a partnership where clear expectations lead to lasting success.', // 19 words
+  influentialPrompt:
+    'Ready to explore how we create secure and transparent working relationships?', // 11 words
 
-  influentialSupportiveIntro:
-    'Trust and understanding are the foundation of a meaningful collaboration.',
-  influentialMain:
-    'Our terms inspire confidence, ensuring a transparent and respectful partnership.',
-
-  conscientiousSupportiveIntro:
-    'Every detail of our terms is thoughtfully designed to align with your needs.',
-  conscientiousMain:
-    'We maintain transparency and adhere to best practices to provide you with security and clarity.',
-
-  supportiveSummaryIntro: 'Your confidence is our priority.',
-  supportiveSummaryMain:
-    'Let’s establish a partnership built on mutual trust, respect, and clear expectations.',
-
-  promptInfluential: 'Want to know more about how we operate?',
-  promptSupportive: 'Let’s discuss how our terms support you.',
-
-  binaryChoiceReadySupportiveInfluential: 'Sounds good. How do we start?',
-  binaryChoiceExploreSupportiveConscientious:
-    'Can you explain your terms in more detail?',
+  customerInnerVoiceSupportiveInfluentialChoice:
+    'How can these terms simplify collaboration while protecting my interests? What’s the next step in getting started?', // 20 words
+  customerInnerVoiceDominantConscientiousObjection:
+    'How do your terms ensure accountability and fairness? Can you explain their impact on a successful partnership?', // 17 words
 };
+
+export default TermsOfService;
