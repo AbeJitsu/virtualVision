@@ -1,37 +1,27 @@
 import { Message } from './SalesStrategyMessages';
 
 export const PrivacyPolicy: Message = {
-  dominantTagline: 'Your Privacy Matters: Transparent, Secure, Reliable',
+  dominantTagline: 'Protecting Your Privacy with Transparency and Care', // 6 words
+  influentialTagline: 'Trust is built on clear and secure data practices', // 9 words
 
-  supportiveIntro:
-    'We value the trust you place in us and take your privacy seriously.',
-  supportiveMain:
-    'Our policies are designed to protect your information while fostering confidence and security.',
+  supportiveStatement:
+    'We value your trust and take your privacy seriously. Our policies are crafted to protect your information and ensure confidence in every interaction.', // 25 words
+  dominantStatement:
+    'Your data deserves secure, transparent handling. We prioritize accountability and clarity to safeguard your privacy and meet the highest standards.', // 22 words
+  influentialStatement:
+    'Our approach to privacy fosters trust and empowers your engagement. We ensure respectful and seamless experiences that prioritize your peace of mind.', // 23 words
+  conscientiousStatement:
+    'We adhere to stringent privacy standards and best practices. Every policy ensures your data remains compliant, secure, and handled with the utmost care.', // 21 words
 
-  dominantSupportiveIntro:
-    'Privacy is the foundation of trust in any partnership.',
-  dominantMain:
-    'We ensure transparency and accountability in how your data is handled and protected.',
+  supportiveSummary:
+    'Privacy isn’t just a promise; it’s our commitment. Let’s build a secure, transparent partnership together.', // 18 words
+  influentialPrompt:
+    'Want to learn more about how we handle your data responsibly?', // 11 words
 
-  influentialSupportiveIntro:
-    'Your data should be respected, empowering you to engage with confidence.',
-  influentialMain:
-    'We are committed to creating an experience that inspires trust and ensures your peace of mind.',
-
-  conscientiousSupportiveIntro:
-    'Meticulous care is taken to align with privacy standards and best practices.',
-  conscientiousMain:
-    'Our policies and processes ensure your data remains secure, private, and compliant with regulations.',
-
-  supportiveSummaryIntro: 'Your trust is our most valuable asset.',
-  supportiveSummaryMain:
-    'Let’s work together to build a secure, respectful, and transparent experience.',
-
-  promptInfluential: 'Want to explore how we ensure your security?',
-  promptSupportive: 'Let’s discuss your privacy concerns together.',
-
-  binaryChoiceReadySupportiveInfluential:
-    'Sounds great. How can I talk to someone?',
-  binaryChoiceExploreSupportiveConscientious:
-    'Can you explain your privacy policy in detail?',
+  customerInnerVoiceSupportiveInfluentialChoice:
+    'How do you ensure my information is protected while keeping things user-friendly? What’s your first step to safeguard privacy?', // 21 words
+  customerInnerVoiceDominantConscientiousObjection:
+    'Can you explain how your privacy standards are compliant and transparent? What practices ensure my data is secure?', // 19 words
 };
+
+export default PrivacyPolicy;
