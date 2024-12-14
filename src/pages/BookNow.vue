@@ -95,133 +95,135 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+  import { ref } from 'vue';
 
-const formData = ref({
-  name: '',
-  email: '',
-  phone: '',
-  datetime: '',
-});
+  const formData = ref({
+    name: '',
+    email: '',
+    phone: '',
+    datetime: '',
+  });
 
-const operationalHours = {
-  start: 9, // 9:00 AM
-  end: 19, // 7:00 PM
-};
-
-const messages = {
-  supportiveStatement:
-    'It all starts with a single session to explore your ideas and clarify your vision.',
-  dominantStatement:
-    'This first step is entirely in your control, you decide the direction, and we’ll guide you with focus and clarity.',
-  influentialStatement:
-    'For just $49, you will gain expert insights and personalized strategies in a one-hour consultation.',
-  conscientiousStatement:
-    'Beyond this session, future steps are scheduled collaboratively, with each phase requiring mutual agreement before moving forward.',
-  supportiveSummary:
-    'Choose the best date and time for your first session, and we’ll confirm your request within a few hours.',
-  buttonText: 'Request Your First Session',
-};
-
-const availableSlots = ref(generateAvailableSlots());
-
-function generateAvailableSlots() {
-  const slots = [];
-  const now = new Date();
-
-  // Round current time up to the nearest 15 minutes
-  now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15, 0, 0);
-
-  // Slot 1: Same rounded time on the next day
-  const firstSlot = new Date(now);
-  firstSlot.setDate(firstSlot.getDate() + 1); // Move to the next day
-  adjustToOperationalHours(firstSlot); // Ensure within business hours
-  slots.push(formatSlot(firstSlot));
-
-  // Slot 2: 2 hours and 45 minutes after the first slot, or next valid time
-  const secondSlot = new Date(firstSlot);
-  secondSlot.setMinutes(secondSlot.getMinutes() + 165); // Add 2 hours and 45 minutes
-  if (!isWithinOperationalHours(secondSlot)) {
-    secondSlot.setDate(secondSlot.getDate() + 1); // Move to the day after
-    secondSlot.setHours(9, 0, 0, 0); // Set to start of business hours
-  }
-  slots.push(formatSlot(secondSlot));
-
-  // Slot 3: Always 6:45 PM on the same day as the second slot
-  const thirdSlot = new Date(secondSlot);
-  thirdSlot.setHours(18, 45, 0, 0); // Default to 6:45 PM
-  if (!isWithinOperationalHours(thirdSlot)) {
-    thirdSlot.setDate(thirdSlot.getDate() + 1); // Move to the next valid day
-    thirdSlot.setHours(9, 0, 0, 0); // Start of business day as fallback
-  }
-  slots.push(formatSlot(thirdSlot));
-
-  // Ensure unique and sorted slots
-  return slots
-    .filter(
-      (slot, index, self) =>
-        index === self.findIndex((s) => s.dateTime === slot.dateTime)
-    )
-    .sort(
-      (a, b) =>
-        new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()
-    );
-}
-
-// Helper to check if a time is within operational hours
-function isWithinOperationalHours(date) {
-  return date.getHours() >= operationalHours.start && date.getHours() < operationalHours.end;
-}
-
-// Helper to adjust times within operational hours
-function adjustToOperationalHours(date) {
-  if (date.getHours() < operationalHours.start) {
-    date.setHours(operationalHours.start, 0, 0, 0); // Start of business day
-  } else if (date.getHours() >= operationalHours.end) {
-    date.setDate(date.getDate() + 1); // Move to next day
-    date.setHours(operationalHours.start, 0, 0, 0); // Start of business day
-  }
-}
-
-// Formatting function remains unchanged
-function formatSlot(date) {
-  const formattedTime = formatTimeTo12Hour(
-    date.getHours(),
-    date.getMinutes()
-  );
-  return {
-    label: `${date.toISOString().split('T')[0]}, ${formattedTime} EST`,
-    dateTime: date.toISOString(),
+  const operationalHours = {
+    start: 9, // 9:00 AM
+    end: 19, // 7:00 PM
   };
-}
 
-function formatTimeTo12Hour(hours, minutes) {
-  const period = hours >= 12 ? 'PM' : 'AM';
-  const hour12 = hours % 12 || 12;
-  const minuteString = minutes.toString().padStart(2, '0');
-  return `${hour12}:${minuteString} ${period}`;
-}
+  const messages = {
+    supportiveStatement:
+      'It all starts with a single session to explore your ideas and clarify your vision.',
+    dominantStatement:
+      'This first step is entirely in your control, you decide the direction, and we’ll guide you with focus and clarity.',
+    influentialStatement:
+      'For just $49, you will gain expert insights and personalized strategies in a one-hour consultation.',
+    conscientiousStatement:
+      'Beyond this session, future steps are scheduled collaboratively, with each phase requiring mutual agreement before moving forward.',
+    supportiveSummary:
+      'Choose the best date and time for your first session, and we’ll confirm your request within a few hours.',
+    buttonText: 'Request Your First Session',
+  };
 
+  const availableSlots = ref(generateAvailableSlots());
 
+  function generateAvailableSlots() {
+    const slots = [];
+    const now = new Date();
 
+    // Round current time up to the nearest 15 minutes
+    now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15, 0, 0);
 
-function submitBooking() {
-  if (
-    !formData.value.name ||
-    !formData.value.email ||
-    !formData.value.datetime
-  ) {
-    console.log('Please fill out all required fields.');
-    return;
+    // Slot 1: Same rounded time on the next day
+    const firstSlot = new Date(now);
+    firstSlot.setDate(firstSlot.getDate() + 1); // Move to the next day
+    adjustToOperationalHours(firstSlot); // Ensure within business hours
+    slots.push(formatSlot(firstSlot));
+
+    // Slot 2: 2 hours and 45 minutes after the first slot, or next valid time
+    const secondSlot = new Date(firstSlot);
+    secondSlot.setMinutes(secondSlot.getMinutes() + 165); // Add 2 hours and 45 minutes
+    if (!isWithinOperationalHours(secondSlot)) {
+      secondSlot.setDate(secondSlot.getDate() + 1); // Move to the day after
+      secondSlot.setHours(9, 0, 0, 0); // Set to start of business hours
+    }
+    slots.push(formatSlot(secondSlot));
+
+    // Slot 3: Always 6:45 PM on the same day as the second slot
+    const thirdSlot = new Date(secondSlot);
+    thirdSlot.setHours(18, 45, 0, 0); // Default to 6:45 PM
+    if (!isWithinOperationalHours(thirdSlot)) {
+      thirdSlot.setDate(thirdSlot.getDate() + 1); // Move to the next valid day
+      thirdSlot.setHours(9, 0, 0, 0); // Start of business day as fallback
+    }
+    slots.push(formatSlot(thirdSlot));
+
+    // Ensure unique and sorted slots
+    return slots
+      .filter(
+        (slot, index, self) =>
+          index === self.findIndex((s) => s.dateTime === slot.dateTime)
+      )
+      .sort(
+        (a, b) =>
+          new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()
+      );
   }
 
-  console.log('Booking Confirmed:', formData.value);
-  alert(
-    `Thank you, ${formData.value.name}! Your session is booked for ${formData.value.datetime}.`
-  );
-}
-</script>
+  // Helper to check if a time is within operational hours
+  function isWithinOperationalHours(date) {
+    return (
+      date.getHours() >= operationalHours.start &&
+      date.getHours() < operationalHours.end
+    );
+  }
 
+  // Helper to adjust times within operational hours
+  function adjustToOperationalHours(date) {
+    if (date.getHours() < operationalHours.start) {
+      date.setHours(operationalHours.start, 0, 0, 0); // Start of business day
+    } else if (date.getHours() >= operationalHours.end) {
+      date.setDate(date.getDate() + 1); // Move to next day
+      date.setHours(operationalHours.start, 0, 0, 0); // Start of business day
+    }
+  }
+
+  // Formatting function updated to ensure EST conversion
+  function formatSlot(date) {
+    const estDate = new Date(
+      date.toLocaleString('en-US', { timeZone: 'America/New_York' })
+    );
+    const formattedTime = formatTimeTo12Hour(
+      estDate.getHours(),
+      estDate.getMinutes()
+    );
+    return {
+      label: `${estDate.toISOString().split('T')[0]}, ${formattedTime} EST`,
+      dateTime: estDate.toISOString(),
+    };
+  }
+
+  function formatTimeTo12Hour(hours, minutes) {
+    const period = hours >= 12 ? 'PM' : 'AM';
+    const hour12 = hours % 12 || 12;
+    const minuteString = minutes.toString().padStart(2, '0');
+    return `${hour12}:${minuteString} ${period}`;
+  }
+
+  function submitBooking() {
+    if (
+      !formData.value.name ||
+      !formData.value.email ||
+      !formData.value.datetime
+    ) {
+      console.log('Please fill out all required fields.');
+      return;
+    }
+
+    console.log('Booking Confirmed:', formData.value);
+    alert(
+      `Thank you, ${formData.value.name}! Your session is booked for ${formData.value.datetime}.`
+    );
+  }
+</script>
 
 <style scoped lang="scss">
   @import 'src/css/shared-styles.scss';
