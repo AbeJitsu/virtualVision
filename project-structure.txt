@@ -1,0 +1,124 @@
+.
+├── .editorconfig
+├── .eslintignore
+├── .gitignore
+├── .npmrc
+├── .prettierrc
+├── .vscode
+│   ├── extensions.json
+│   └── settings.json
+├── README.md
+├── booknow_diffs.txt
+├── dependency-graph.png
+├── eslint.config.mjs
+├── index.html
+├── package.json
+├── postcss.config.cjs
+├── project-structure.txt
+├── public
+│   ├── favicon.ico
+│   └── icons
+│       ├── .storybook
+│       │   ├── main.js
+│       │   └── preview.js
+│       ├── Cir_logo.png
+│       ├── Logo_square_white_BG.png
+│       ├── android-chrome-192x192.png
+│       ├── android-chrome-512x512.png
+│       ├── apple-touch-icon.png
+│       ├── chromatic.config.json
+│       ├── package.json
+│       ├── public
+│       │   └── icons
+│       │       └── stories
+│       │           └── assets
+│       └── stories
+│           ├── Button.stories.js
+│           ├── Button.vue
+│           ├── Configure.mdx
+│           ├── NavBar.stories.js
+│           ├── assets
+│           │   ├── accessibility.svg
+│           │   ├── avif-test-image.avif
+│           │   ├── discord.svg
+│           │   ├── github.svg
+│           │   ├── tutorials.svg
+│           │   └── youtube.svg
+│           └── button.css
+├── quasar.config.cjs
+├── src
+│   ├── App.vue
+│   ├── assets
+│   │   ├── conscientious_bottom_left.webp
+│   │   ├── dominant_top_right.webp
+│   │   ├── influential_bottom_left.webp
+│   │   └── supportive_top_left.webp
+│   ├── boot
+│   │   ├── .gitkeep
+│   │   └── axios.ts
+│   ├── components
+│   │   ├── BackgroundImages.vue
+│   │   ├── GoogleSignInButton.vue
+│   │   ├── LineDrawingExample.vue
+│   │   └── MessagingPage.vue
+│   ├── css
+│   │   ├── app.scss
+│   │   ├── quasar.variables.scss
+│   │   └── shared-styles.scss
+│   ├── data
+│   │   ├── PageConfig.ts
+│   │   └── messages
+│   │       ├── AboutUs.ts
+│   │       ├── CompleteProcessSummary.ts
+│   │       ├── CompleteWebsiteBuild.ts
+│   │       ├── ContactUs.ts
+│   │       ├── DIYComparison.ts
+│   │       ├── FocusedStrategySessions.ts
+│   │       ├── FullServicePricingDetails.ts
+│   │       ├── LandingPage.ts
+│   │       ├── OurProcess.ts
+│   │       ├── PrivacyPolicy.ts
+│   │       ├── SalesStrategyMessages.ts
+│   │       ├── TalkToDeveloper.ts
+│   │       └── TermsOfService.ts
+│   ├── env.d.ts
+│   ├── helpers
+│   │   ├── generateThemeColors.js
+│   │   └── lineDrawingAnimation.js
+│   ├── layouts
+│   │   ├── Footer.vue
+│   │   ├── LeftDrawer.vue
+│   │   ├── MainLayout.vue
+│   │   └── NavBar.vue
+│   ├── pages
+│   │   ├── AuthPage.vue
+│   │   ├── BookNow.vue
+│   │   ├── CompleteProcessSummary.vue
+│   │   ├── CompleteWebsiteBuild.vue
+│   │   ├── ContactUs.vue
+│   │   ├── DIYComparison.vue
+│   │   ├── FocusedStrategySessions.vue
+│   │   ├── FullServicePricingDetails.vue
+│   │   ├── LandingPage.vue
+│   │   ├── OurProcess.vue
+│   │   ├── TalkToDeveloper.vue
+│   │   └── footer
+│   │       ├── AboutUs.vue
+│   │       ├── ErrorNotFound.vue
+│   │       ├── PrivacyPolicy.vue
+│   │       └── TermsOfService.vue
+│   ├── quasar.d.ts
+│   ├── router
+│   │   ├── index.ts
+│   │   └── routes.ts
+│   ├── scripts
+│   ├── shims-vue.d.ts
+│   └── stores
+│       ├── index.ts
+│       ├── store-flag.d.ts
+│       └── trackingStore.ts
+├── staged_changes.txt
+├── touch
+├── tsconfig.json
+├── tsconfig.vue-tsc.json
+└── vercel.json
