@@ -28,66 +28,39 @@
             {{ messages.supportiveSummary }}
           </p>
         </q-card-section>
+
         <q-card-section>
-          <q-form
-            v-if="availableSlots.length > 0"
-            @submit.prevent="submitBooking"
-          >
-            <!-- Select Date and Time -->
+          <q-form @submit.prevent="submitSessionRequest">
+            <!-- Select Day -->
             <q-select
               filled
-              v-model="formData.datetime"
-              :options="availableSlots"
-              label="Select a Date and Time"
-              hint="Choose your session"
-              :rules="[(val) => !!val || 'Selection is required']"
+              v-model="formData.day"
+              :options="dayOptions"
+              label="Select a Day"
+              hint="Choose Tomorrow or Day After"
+              :rules="[(val) => !!val || 'Day selection is required']"
               class="input-field"
             />
-            <!-- Name (shows after Date and Time is selected) -->
-            <q-input
-              v-if="formData.datetime"
+
+            <!-- Select Time of Day -->
+            <q-select
               filled
-              v-model="formData.name"
-              label="Your Name"
-              hint="Enter your full name"
-              :rules="[(val) => !!val || 'Name is required']"
+              v-model="formData.timeOfDay"
+              :options="timeOfDayOptions"
+              label="Select a Time of Day"
+              hint="Choose Morning, Afternoon, or Evening"
+              :rules="[(val) => !!val || 'Time selection is required']"
               class="input-field"
             />
-            <!-- Email Address (shows after Name is filled) -->
-            <q-input
-              v-if="formData.name"
-              filled
-              v-model="formData.email"
-              type="email"
-              label="Email Address"
-              hint="Enter your email for confirmation"
-              :rules="[(val) => !!val || 'Email is required']"
-              class="input-field"
-            />
-            <!-- Phone Number (shows after Email Address is filled) -->
-            <q-input
-              v-if="formData.email"
-              filled
-              v-model="formData.phone"
-              type="tel"
-              label="Phone Number"
-              hint="Optional but helpful"
-              class="input-field"
-            />
-            <!-- Submit Button (enabled only when all required fields are filled) -->
+
+            <!-- Submit Button -->
             <q-btn
               :label="messages.buttonText"
               type="submit"
               class="submit-button glossy"
-              :disable="!formData.datetime || !formData.name || !formData.email"
+              :disable="!formData.day || !formData.timeOfDay"
             />
           </q-form>
-          <div
-            v-else
-            class="loading-message"
-          >
-            Loading available slots...
-          </div>
         </q-card-section>
       </q-card>
     </div>
@@ -98,16 +71,12 @@
   import { ref } from 'vue';
 
   const formData = ref({
-    name: '',
+    day: '', // Day selection (Tomorrow, Day After Tomorrow)
+    timeOfDay: '', // Time of day (Morning, Afternoon, Evening)
+    name: '', // Optional user details
     email: '',
     phone: '',
-    datetime: '',
   });
-
-  const operationalHours = {
-    start: 9, // 9:00 AM
-    end: 19, // 7:00 PM
-  };
 
   const messages = {
     supportiveStatement:
@@ -119,109 +88,43 @@
     conscientiousStatement:
       'Beyond this session, future steps are scheduled collaboratively, with each phase requiring mutual agreement before moving forward.',
     supportiveSummary:
-      'Choose the best date and time for your first session, and we’ll confirm your request within a few hours.',
-    buttonText: 'Request Your First Session',
+      'Choose the best day and time for your session, and we’ll confirm your request within a few hours.',
+    buttonText: 'Request Your Session',
   };
 
-  const availableSlots = ref(generateAvailableSlots());
+  const dayOptions = [
+    { label: `Tomorrow (${getFormattedDate(1)})`, value: 'tomorrow' },
+    { label: `Day After Tomorrow (${getFormattedDate(2)})`, value: 'dayAfter' },
+  ];
 
-  function generateAvailableSlots() {
-    const slots = [];
-    const now = new Date();
+  const timeOfDayOptions = [
+    { label: 'Morning (9 AM–12 PM)', value: 'morning' },
+    { label: 'Afternoon (12 PM–4 PM)', value: 'afternoon' },
+    { label: 'Evening (4 PM–7 PM)', value: 'evening' },
+  ];
 
-    // Round current time up to the nearest 15 minutes
-    now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15, 0, 0);
+  function submitSessionRequest() {
+    console.log('Session Request Submitted:', formData.value);
 
-    // Slot 1: Same rounded time on the next day
-    const firstSlot = new Date(now);
-    firstSlot.setDate(firstSlot.getDate() + 1); // Move to the next day
-    adjustToOperationalHours(firstSlot); // Ensure within business hours
-    slots.push(formatSlot(firstSlot));
-
-    // Slot 2: 2 hours and 45 minutes after the first slot, or next valid time
-    const secondSlot = new Date(firstSlot);
-    secondSlot.setMinutes(secondSlot.getMinutes() + 165); // Add 2 hours and 45 minutes
-    if (!isWithinOperationalHours(secondSlot)) {
-      secondSlot.setDate(secondSlot.getDate() + 1); // Move to the day after
-      secondSlot.setHours(9, 0, 0, 0); // Set to start of business hours
-    }
-    slots.push(formatSlot(secondSlot));
-
-    // Slot 3: Always 6:45 PM on the same day as the second slot
-    const thirdSlot = new Date(secondSlot);
-    thirdSlot.setHours(18, 45, 0, 0); // Default to 6:45 PM
-    if (!isWithinOperationalHours(thirdSlot)) {
-      thirdSlot.setDate(thirdSlot.getDate() + 1); // Move to the next valid day
-      thirdSlot.setHours(9, 0, 0, 0); // Start of business day as fallback
-    }
-    slots.push(formatSlot(thirdSlot));
-
-    // Ensure unique and sorted slots
-    return slots
-      .filter(
-        (slot, index, self) =>
-          index === self.findIndex((s) => s.dateTime === slot.dateTime)
-      )
-      .sort(
-        (a, b) =>
-          new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()
-      );
-  }
-
-  // Helper to check if a time is within operational hours
-  function isWithinOperationalHours(date) {
-    return (
-      date.getHours() >= operationalHours.start &&
-      date.getHours() < operationalHours.end
-    );
-  }
-
-  // Helper to adjust times within operational hours
-  function adjustToOperationalHours(date) {
-    if (date.getHours() < operationalHours.start) {
-      date.setHours(operationalHours.start, 0, 0, 0); // Start of business day
-    } else if (date.getHours() >= operationalHours.end) {
-      date.setDate(date.getDate() + 1); // Move to next day
-      date.setHours(operationalHours.start, 0, 0, 0); // Start of business day
-    }
-  }
-
-  // Formatting function updated to ensure EST conversion
-  function formatSlot(date) {
-    const estDate = new Date(
-      date.toLocaleString('en-US', { timeZone: 'America/New_York' })
-    );
-    const formattedTime = formatTimeTo12Hour(
-      estDate.getHours(),
-      estDate.getMinutes()
-    );
-    return {
-      label: `${estDate.toISOString().split('T')[0]}, ${formattedTime} EST`,
-      dateTime: estDate.toISOString(),
-    };
-  }
-
-  function formatTimeTo12Hour(hours, minutes) {
-    const period = hours >= 12 ? 'PM' : 'AM';
-    const hour12 = hours % 12 || 12;
-    const minuteString = minutes.toString().padStart(2, '0');
-    return `${hour12}:${minuteString} ${period}`;
-  }
-
-  function submitBooking() {
-    if (
-      !formData.value.name ||
-      !formData.value.email ||
-      !formData.value.datetime
-    ) {
-      console.log('Please fill out all required fields.');
-      return;
-    }
-
-    console.log('Booking Confirmed:', formData.value);
     alert(
-      `Thank you, ${formData.value.name}! Your session is booked for ${formData.value.datetime}.`
+      `Thank you for your request! You selected ${
+        dayOptions.find((d) => d.value === formData.value.day)?.label
+      } during the ${
+        timeOfDayOptions.find((t) => t.value === formData.value.timeOfDay)
+          ?.label
+      } window. We will confirm your session soon.`
     );
+  }
+
+  // Helper function to format future dates
+  function getFormattedDate(offset) {
+    const date = new Date();
+    date.setDate(date.getDate() + offset);
+    return date.toLocaleDateString('en-US', {
+      weekday: 'long',
+      month: 'short',
+      day: 'numeric',
+    });
   }
 </script>
 
