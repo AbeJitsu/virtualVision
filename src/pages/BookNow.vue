@@ -29,7 +29,7 @@
           </p>
         </q-card-section>
         <q-card-section>
-          <q-form @submit.prevent="submitBooking">
+          <q-form v-if="availableSlots.length > 0" @submit.prevent="submitBooking">
             <!-- Select Date and Time -->
             <q-select
               filled
@@ -79,6 +79,7 @@
               :disable="!formData.datetime || !formData.name || !formData.email"
             />
           </q-form>
+          <div v-else class="loading-message">Loading available slots...</div>
         </q-card-section>
       </q-card>
     </div>
