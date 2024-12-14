@@ -25,6 +25,7 @@
           label="OUR PROCESS"
           :to="{ name: 'our-process' }"
           class="nav-text"
+          :class="{ 'active-link': route.name === 'our-process' }"
         />
 
         <!-- Dropdown Menu -->
@@ -42,6 +43,7 @@
               clickable
               v-close-popup
               @click="navigateTo(link.to)"
+              :class="{ 'active-link': route.path === link.to.path }"
             >
               <q-item-section>{{ link.label }}</q-item-section>
             </q-item>
@@ -92,12 +94,14 @@
             label="OUR PROCESS"
             :to="{ name: 'our-process' }"
             class="nav-text"
+            :class="{ 'active-link': route.name === 'our-process' }"
           />
           <q-btn
             flat
             label="BOOK NOW"
             :to="{ path: '/book-now' }"
             class="nav-text highlight-cta"
+            :class="{ 'active-link': route.path === '/book-now' }"
           />
           <q-btn-dropdown
             flat
@@ -112,6 +116,7 @@
                 clickable
                 v-close-popup
                 @click="navigateTo(link.to)"
+                :class="{ 'active-link': route.path === link.to.path }"
               >
                 <q-item-section>{{ link.label }}</q-item-section>
               </q-item>
@@ -140,9 +145,10 @@
 </template>
 
 <script setup lang="ts">
-  import { useRouter } from 'vue-router';
+  import { useRouter, useRoute } from 'vue-router';
 
   const router = useRouter();
+  const route = useRoute(); // Access the current route
 
   // Navigation links for desktop and mobile views
   const navLinks = [
@@ -201,7 +207,7 @@
   .nav-group {
     display: flex;
     align-items: center;
-    gap: 0rem; /* Spacing between the items */
+    gap: 0rem;
     margin-right: 9.75rem;
   }
 
@@ -241,19 +247,30 @@
   .home-link:hover,
   .home-link:focus,
   .home-link:active {
-    text-decoration: none; /* Prevent underline in all states */
+    text-decoration: none;
   }
 
   .nav-text {
     font-size: 1rem;
     white-space: nowrap;
     margin-top: 0.175rem;
+    position: relative;
   }
 
   .login-btn {
     font-size: 1.2rem;
     padding: 0.5rem;
     margin-top: 0.175rem;
+  }
+
+  .active-link {
+    font-weight: bold;
+    color: $yellowMid;
+    text-decoration: none;
+    background-color: rgba($grayVeryLight, 0.1); /* Balanced opacity */
+    padding: 0.25rem 1.5rem 0rem; /* Adjusted top, sides, bottom */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   @media (max-width: 768px) {

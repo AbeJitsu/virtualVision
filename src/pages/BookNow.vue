@@ -3,39 +3,34 @@
     <div class="container">
       <q-card class="card">
         <q-card-section>
-          <div class="title">Request Your First Session</div>
-          <p class="description">
-            Begin with a $49 session designed to refine your ideas and align your vision with expert guidance.
-            Request a time that suits your schedule, and rest assured—you won't be charged until your session is confirmed.
+          <!-- Supportive Statement -->
+          <p class="message tone-message-box tone-message-box--supportive">
+            {{ messages.supportiveStatement }}
+          </p>
+
+          <!-- Dominant Statement -->
+          <p class="message tone-message-box tone-message-box--dominant">
+            {{ messages.dominantStatement }}
+          </p>
+
+          <!-- Influential Statement -->
+          <p class="message tone-message-box tone-message-box--influential">
+            {{ messages.influentialStatement }}
+          </p>
+
+          <!-- Conscientious Statement -->
+          <p class="message tone-message-box tone-message-box--conscientious">
+            {{ messages.conscientiousStatement }}
+          </p>
+
+          <!-- Supportive Summary -->
+          <p class="message supportive-wrapup">
+            {{ messages.supportiveSummary }}
           </p>
         </q-card-section>
         <q-card-section>
           <q-form @submit.prevent="submitBooking">
-            <q-input
-              filled
-              v-model="formData.name"
-              label="Your Name"
-              hint="Enter your full name"
-              :rules="[(val) => !!val || 'Name is required']"
-              class="input-field"
-            />
-            <q-input
-              filled
-              v-model="formData.email"
-              type="email"
-              label="Email Address"
-              hint="Enter your email for confirmation"
-              :rules="[(val) => !!val || 'Email is required']"
-              class="input-field"
-            />
-            <q-input
-              filled
-              v-model="formData.phone"
-              type="tel"
-              label="Phone Number"
-              hint="Optional but helpful"
-              class="input-field"
-            />
+            <!-- Select Date and Time -->
             <q-select
               filled
               v-model="formData.datetime"
@@ -45,10 +40,43 @@
               :rules="[(val) => !!val || 'Selection is required']"
               class="input-field"
             />
+            <!-- Name (shows after Date and Time is selected) -->
+            <q-input
+              v-if="formData.datetime"
+              filled
+              v-model="formData.name"
+              label="Your Name"
+              hint="Enter your full name"
+              :rules="[(val) => !!val || 'Name is required']"
+              class="input-field"
+            />
+            <!-- Email Address (shows after Name is filled) -->
+            <q-input
+              v-if="formData.name"
+              filled
+              v-model="formData.email"
+              type="email"
+              label="Email Address"
+              hint="Enter your email for confirmation"
+              :rules="[(val) => !!val || 'Email is required']"
+              class="input-field"
+            />
+            <!-- Phone Number (shows after Email Address is filled) -->
+            <q-input
+              v-if="formData.email"
+              filled
+              v-model="formData.phone"
+              type="tel"
+              label="Phone Number"
+              hint="Optional but helpful"
+              class="input-field"
+            />
+            <!-- Submit Button (enabled only when all required fields are filled) -->
             <q-btn
-              label="Request Session"
+              :label="messages.buttonText"
               type="submit"
               class="submit-button glossy"
+              :disable="!formData.datetime || !formData.name || !formData.email"
             />
           </q-form>
         </q-card-section>
@@ -68,16 +96,34 @@
   });
 
   const operationalHours = {
-    start: 9, // 9:00 AM
-    end: 19, // 7:00 PM (6:45 PM is the last start time)
+    start: 9,
+    end: 19,
   };
 
-  const intervalMinutes = 165; // 2 hours and 45 minutes
-  const minWaitHours = 15; // Minimum wait time of 15 hours
+  const intervalMinutes = 165;
+  const minWaitHours = 15;
+
+  const messages = {
+    supportiveStatement:
+      'It all starts with a single session to explore your ideas and clarify your vision.',
+    dominantStatement:
+      'This first step is entirely in your control, you decide the direction, and we’ll guide you with focus and clarity.',
+    influentialStatement:
+      'For just $49, you will gain expert insights and personalized strategies in a one-hour consultation.',
+    conscientiousStatement:
+      'Beyond this session, future steps are scheduled collaboratively, with each phase requiring mutual agreement before moving forward.',
+    supportiveSummary:
+      'Choose the best date and time for your first session, and we’ll confirm your request within a few hours.',
+    buttonText: 'Request Your First Session',
+  };
+
+  const availableSlots = ref(generateAvailableSlots());
 
   function generateAvailableSlots() {
     const slots = [];
     const now = new Date();
+    const intervalMinutes = 165;
+    const minWaitHours = 15;
 
     // Slot 1: Dynamically calculated slot
     const firstSlot = new Date(now);
@@ -163,8 +209,6 @@
     return `${hour12}:${minuteString} ${period}`;
   }
 
-  const availableSlots = ref(generateAvailableSlots());
-
   function submitBooking() {
     if (
       !formData.value.name ||
@@ -183,12 +227,26 @@
 </script>
 
 <style scoped lang="scss">
-  @import 'src/css/app.scss';
+  @import 'src/css/shared-styles.scss';
+
+  .book-now-page .tone-message-box {
+    margin-bottom: 1rem !important;
+    padding: 1rem 1.5rem !important;
+    opacity: 0.9;
+  }
+
+  .tone-message-box {
+    margin: 1rem 2rem !important;
+  }
+
   .book-now-page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 3.25em 1em;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
   }
 
   .container {
@@ -197,28 +255,32 @@
   }
 
   .card {
-    margin: 1em;
-    padding: 1em;
+    margin: 2em;
+    padding: 1.5em;
     opacity: 0.9;
     color: $grayDark;
     border-radius: 8px;
+    opacity: 0.95;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
 
-  .title {
-    font-size: 1.5em;
+  .message {
     text-align: center;
-    margin-bottom: 1em;
-    color: $grayVeryDark;
+    color: $grayDark; /* Use consistent dark gray */
+    font-size: medium; /* Adjust font size */
+    margin: -0.5rem 3em;
+    font-weight: 600;
   }
 
-  .description {
-    text-align: center;
-    margin-bottom: 1.5em;
+  .supportive-wrapup {
+    margin: 2rem 4rem 0rem !important; /* Ensure final message aligns well */
     color: $grayDark;
+    font-size: large; /* Adjust font size */
+    font-weight: 600;
   }
 
   .input-field {
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
     background-color: $grayVeryLight;
     border-radius: 5px;
   }
