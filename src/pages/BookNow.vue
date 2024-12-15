@@ -41,21 +41,35 @@
                 class="day-button"
                 outline
                 :color="formData.day === day.value ? 'primary' : 'secondary'"
-                @click="formData.day = day.value"
+                @click="selectDay(day.value)"
               />
             </div>
 
-            <!-- Time Range Selection -->
+            <!-- Time of Day Selection -->
             <div class="time-selection" v-if="formData.day">
-              <p>Select a Time Range:</p>
+              <p>Select a Time Range (One-Hour Session):</p>
               <q-btn
-                v-for="time in timeRangeOptions"
+                v-for="time in timeOfDayOptions"
                 :key="time.value"
                 :label="time.label"
                 class="time-button"
                 outline
-                :color="formData.time === time.value ? 'primary' : 'secondary'"
-                @click="formData.time = time.value"
+                :color="formData.timeOfDay === time.value ? 'primary' : 'secondary'"
+                @click="selectTimeOfDay(time.value)"
+              />
+            </div>
+
+            <!-- Specific Time Options -->
+            <div class="specific-time-selection" v-if="formData.timeOfDay">
+              <p>Select a Specific Time:</p>
+              <q-btn
+                v-for="time in specificTimeOptions"
+                :key="time.value"
+                :label="time.label"
+                class="specific-time-button"
+                outline
+                :color="formData.specificTime === time.value ? 'primary' : 'secondary'"
+                @click="formData.specificTime = time.value"
               />
             </div>
 
@@ -64,7 +78,7 @@
               :label="messages.buttonText"
               type="submit"
               class="submit-button glossy"
-              :disable="!formData.day || !formData.time"
+              :disable="!formData.day || !formData.timeOfDay || !formData.specificTime"
             />
           </q-form>
         </q-card-section>
@@ -77,8 +91,9 @@
 import { ref } from 'vue';
 
 const formData = ref({
-  day: '', // Selected day (e.g., "tomorrow" or "dayAfter")
-  time: '', // Selected time range (e.g., "morning")
+  day: '',
+  timeOfDay: '',
+  specificTime: '',
 });
 
 const messages = {
@@ -91,7 +106,7 @@ const messages = {
   conscientiousStatement:
     'Beyond this session, future steps are scheduled collaboratively, with each phase requiring mutual agreement before moving forward.',
   supportiveSummary:
-    'Choose the best day and time range for your session, and we’ll confirm your request within a few hours.',
+    'Choose the best day, time range, and specific hour for your session, and we’ll confirm your request within a few hours.',
   buttonText: 'Request Your Session',
 };
 
@@ -99,17 +114,37 @@ const messages = {
 const dayOptions = [
   { label: `Tomorrow (${getFormattedDate(1)})`, value: 'tomorrow' },
   { label: `Day After Tomorrow (${getFormattedDate(2)})`, value: 'dayAfter' },
+  { label: `Three Days From Now (${getFormattedDate(3)})`, value: 'threeDays' },
 ];
 
-// Time range options
-const timeRangeOptions = [
+// Time of day options
+const timeOfDayOptions = [
   { label: 'Morning (9:00 AM – 12:00 PM)', value: 'morning' },
-  { label: 'Early Afternoon (12:00 PM – 3:00 PM)', value: 'earlyAfternoon' },
-  { label: 'Late Afternoon (3:00 PM – 5:00 PM)', value: 'lateAfternoon' },
-  { label: 'Early Evening (5:00 PM – 7:00 PM)', value: 'earlyEvening' },
+  { label: 'Early PM (12:00 PM – 3:30 PM)', value: 'earlyAfternoon' },
+  { label: 'Late PM (3:30 PM – 6:45 PM)', value: 'lateAfternoon' },
 ];
 
-// Helper function to format future dates
+// Specific time options based on time of day
+const specificTimeMap = {
+  morning: [
+    { label: '9:00 AM', value: '9:00' },
+    { label: '10:15 AM', value: '10:15' },
+    { label: '11:30 AM', value: '11:30' },
+  ],
+  earlyAfternoon: [
+    { label: '12:00 PM', value: '12:00' },
+    { label: '1:45 PM', value: '1:45' },
+    { label: '3:15 PM', value: '3:15' },
+  ],
+  lateAfternoon: [
+    { label: '3:30 PM', value: '3:30' },
+    { label: '5:00 PM', value: '5:00' },
+    { label: '6:45 PM', value: '6:45' },
+  ],
+};
+
+const specificTimeOptions = ref([]);
+
 function getFormattedDate(offset) {
   const date = new Date();
   date.setDate(date.getDate() + offset);
@@ -120,15 +155,30 @@ function getFormattedDate(offset) {
   });
 }
 
+function selectDay(day) {
+  formData.value.day = day;
+  formData.value.timeOfDay = '';
+  formData.value.specificTime = '';
+  specificTimeOptions.value = [];
+}
+
+function selectTimeOfDay(timeOfDay) {
+  formData.value.timeOfDay = timeOfDay;
+  formData.value.specificTime = '';
+  specificTimeOptions.value = specificTimeMap[timeOfDay];
+}
+
 function submitSessionRequest() {
   console.log('Session Request Submitted:', formData.value);
 
   alert(
     `Thank you for your request! Your session is set for ${
-      formData.value.day === 'tomorrow' ? 'Tomorrow' : 'Day After Tomorrow'
+      dayOptions.find((d) => d.value === formData.value.day)?.label
     } during the ${
-      timeRangeOptions.find((t) => t.value === formData.value.time)?.label
-    } range. We will confirm your session soon.`
+      timeOfDayOptions.find((t) => t.value === formData.value.timeOfDay)?.label
+    }, specifically at ${
+      specificTimeOptions.value.find((t) => t.value === formData.value.specificTime)?.label
+    }. We will confirm your session soon.`
   );
 }
 </script>
@@ -175,7 +225,7 @@ function submitSessionRequest() {
   font-weight: 600;
 }
 
-.day-button, .time-button {
+.day-button, .time-button, .specific-time-button {
   margin: 0.5rem;
   width: 100%;
 }
