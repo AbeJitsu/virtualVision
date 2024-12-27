@@ -22,8 +22,8 @@
       const trackingStore = useTrackingStore();
 
       const messages = {
-  dominantTagline: 'Build a website that grows your business.',
-  influentialTagline: 'Bring your vision to life with expert help.',
+  dominantTagline: 'Empower your business with a custom site that drives growth.',
+  influentialTagline: 'Turn your ideas into a site that inspires and connects.',
 
   supportiveStatement:
     'Your website should work as hard as you do. We’ll help you create a site that’s simple for visitors to use and focused on achieving your goals.',
