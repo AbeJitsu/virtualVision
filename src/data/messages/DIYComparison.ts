@@ -18,9 +18,9 @@ export const DIYComparison: Message = {
   influentialPrompt:
     'Ready to elevate your online presence? Let’s explore the next step together.', // 13 words
 
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'How can I gain a professional-grade site built for my goals while ensuring it works exactly the way I want?', // 23 words
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'How is this approach better and more reliable than trying to build a website myself using a platform like Wix or Squarespace?', // 23 words
 };
 

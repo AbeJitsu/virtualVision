@@ -20,10 +20,10 @@ export const FocusedStrategySessions: Message = {
     'Over five days, these thoughtfully paced sessions provide the clarity and direction to set your project on a successful path.', // 19 words
   influentialPrompt:
     'Ready to gain the clarity and confidence to take the next step?', // 11 words
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'How do these sessions set me up for success? What makes them critical for my complete website? It seems like it will align my priorities.', // 19 words
 
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'Why spend five focused hours clarifying my vision when I could use that time building my site, even if it means accepting less clarity and direction?', // 23 words
 };
 

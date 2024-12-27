@@ -21,9 +21,9 @@ export const CompleteWebsiteBuild: Message = {
   influentialPrompt:
     'Are you ready to turn your ideas into a powerful digital presence?', // 12 words
 
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'How does this complete package bring everything together? What makes this a strong choice for me? How might it handle my creative ideas and evolving goals?', // 19 words
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'Is this a fully custom build, or are templates used? Do I own the code and results, and how flexible and adaptable is the overall timeline?', // 22 words
 };
 

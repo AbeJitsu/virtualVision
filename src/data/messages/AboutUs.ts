@@ -22,10 +22,10 @@ export const AboutUs: Message = {
   influentialPrompt:
     'Are you ready to collaborate with someone who truly cares about your vision? Let’s take that first step together.',
 
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'What makes Vision2Virtual the right partner for my project? How could I start working with someone truly committed to my goals?',
 
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'How does this structured process ensure better results than using a DIY website builder or other alternatives?',
 };
 

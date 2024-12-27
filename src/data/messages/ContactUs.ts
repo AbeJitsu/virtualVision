@@ -18,9 +18,9 @@ export const ContactUs: Message = {
   influentialPrompt:
     'Taking the first step is simple, and it opens doors to success.', // 13 words
 
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'How can an expert’s guidance help clarify my goals and make progress easier? What’s the first step in working together?', // 22 words
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'How do I know this process will deliver reliable results? What makes expert support essential for achieving success?', // 19 words
 };
 

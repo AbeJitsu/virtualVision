@@ -37,12 +37,12 @@
         </div>
         <div class="action-buttons">
           <q-btn
-            :label="messages.customerInnerVoiceSupportiveInfluentialChoice"
+            :label="messages.leftButtonText"
             @click="handleLeftClick"
             class="custom-btn"
           />
           <q-btn
-            :label="messages.customerInnerVoiceDominantConscientiousObjection"
+            :label="messages.rightButtonText"
             @click="handleRightClick"
             class="custom-btn"
           />
@@ -69,8 +69,8 @@
           conscientiousStatement: string;
           supportiveSummary: string;
           influentialPrompt: string;
-          customerInnerVoiceSupportiveInfluentialChoice: string;
-          customerInnerVoiceDominantConscientiousObjection: string;
+          leftButtonText: string;
+          rightButtonText: string;
         }>,
         required: true,
       },

@@ -20,9 +20,9 @@ export const FullServicePricingDetails: Message = {
   influentialPrompt:
     'Take the first step toward a website that reflects your vision. Book your initial session today to begin.', // 16 words
 
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'I understand I can start with my first session to explore possibilities without obligation. How do I check availability to book now and move forward confidently?', // 27 words
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'Is the process flexible enough to adapt if my priorities shift? Can I adjust as needed without affecting the final outcome or results?', // 25 words
 };
 

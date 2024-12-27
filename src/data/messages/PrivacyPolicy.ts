@@ -18,9 +18,9 @@ export const PrivacyPolicy: Message = {
   influentialPrompt:
     'Want to learn more about how we handle your data responsibly?', // 11 words
 
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'How do you ensure my information is protected while keeping things user-friendly? What’s your first step to safeguard privacy?', // 21 words
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'Can you explain how your privacy standards are compliant and transparent? What practices ensure my data is secure?', // 19 words
 };
 

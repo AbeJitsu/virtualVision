@@ -40,9 +40,9 @@ export default defineComponent({
       influentialPrompt:
         'Take the first step toward a website built to grow with you.',
 
-      customerInnerVoiceSupportiveInfluentialChoice:
+      leftButtonText:
         'How could custom development elevate my online presence? What’s the first step to create a site that truly fits my business?',
-      customerInnerVoiceDominantConscientiousObjection:
+      rightButtonText:
         'Why should I choose custom development over a website builder? What tangible benefits does expert collaboration provide?',
     };
 

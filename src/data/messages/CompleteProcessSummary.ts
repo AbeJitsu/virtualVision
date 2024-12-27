@@ -19,9 +19,9 @@ export const CompleteProcessSummary: Message = {
     'Gain clarity on how we work together to create something extraordinary. See each step clearly outlined for your understanding.', // 23 words
   influentialPrompt: 'Ready to learn how this process works for your goals?', // 10 words
 
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'How does understanding the process help me? What makes it so effective for achieving successful results?', // 17 words
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'Can I explore this process in depth before committing to anything? How adaptable is this approach to my needs?', // 19 words
 };
 

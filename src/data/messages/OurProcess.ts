@@ -19,9 +19,9 @@ export const OurProcess: Message = {
   influentialPrompt:
     'Take the next step in creating a platform that reflects your vision. Let’s start your consultation today.', // 15 words
 
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'How does a one-on-one approach refine my ideas and bring clarity? What’s the next step in creating something aligned with my vision?', // 20 words
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'Would learning the technical details be a better use of my time? Why prioritize planning instead of jumping straight into execution?', // 20 words
 };
 

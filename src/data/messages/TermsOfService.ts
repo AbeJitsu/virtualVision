@@ -18,9 +18,9 @@ export const TermsOfService: Message = {
   influentialPrompt:
     'Ready to explore how we create secure and transparent working relationships?', // 11 words
 
-  customerInnerVoiceSupportiveInfluentialChoice:
+  leftButtonText:
     'How can these terms simplify collaboration while protecting my interests? What’s the next step in getting started?', // 20 words
-  customerInnerVoiceDominantConscientiousObjection:
+  rightButtonText:
     'How do your terms ensure accountability and fairness? Can you explain their impact on a successful partnership?', // 17 words
 };
 
