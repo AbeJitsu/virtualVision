@@ -1,5 +1,3 @@
-import { Message } from './SalesStrategyMessages';
-
 export const TalkToDeveloper: Message = {
   dominantTagline:
     'Collaborate directly with the expert who’ll build your vision', // 9 words
