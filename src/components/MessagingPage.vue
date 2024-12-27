@@ -263,7 +263,7 @@ export default defineComponent({
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
-    margin: 5rem 3rem 2rem;
+    margin: 5rem 2rem;
 
     @media (max-width: 599px) {
       flex-direction: column;
