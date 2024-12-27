@@ -37,12 +37,12 @@
         </div>
         <div class="action-buttons">
           <q-btn
-            :label="messages.leftButtonText"
+            :label="leftButtonLabel"
             @click="handleLeftClick"
             class="custom-btn"
           />
           <q-btn
-            :label="messages.rightButtonText"
+            :label="rightButtonLabel"
             @click="handleRightClick"
             class="custom-btn"
           />
@@ -53,69 +53,70 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, PropType } from 'vue';
-  import { useRoute, useRouter } from 'vue-router';
-  import { useTrackingStore } from '../stores/trackingStore';
+import { defineComponent, PropType } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useTrackingStore } from '../stores/trackingStore';
 
-  export default defineComponent({
-    props: {
-      messages: {
-        type: Object as PropType<{
-          dominantTagline: string;
-          influentialTagline: string;
-          supportiveStatement: string;
-          dominantStatement: string;
-          influentialStatement: string;
-          conscientiousStatement: string;
-          supportiveSummary: string;
-          influentialPrompt: string;
-          leftButtonText: string;
-          rightButtonText: string;
-        }>,
-        required: true,
-      },
+export default defineComponent({
+  props: {
+    messages: {
+      type: Object as PropType<{
+        dominantTagline: string;
+        influentialTagline: string;
+        supportiveStatement: string;
+        dominantStatement: string;
+        influentialStatement: string;
+        conscientiousStatement: string;
+        supportiveSummary: string;
+        influentialPrompt: string;
+      }>,
+      required: true,
     },
-    setup() {
-      const route = useRoute(); // Access current route
-      const router = useRouter(); // Access router instance
-      const trackingStore = useTrackingStore(); // Access Pinia store
-
-      function handleLeftClick() {
-        const currentPage = route.name as string;
-        trackingStore.addVisitedPage(currentPage);
-        trackingStore.recordChoice(currentPage, 'left');
-
-        const nextPage = trackingStore.getNextPage(currentPage, 'left');
-        if (nextPage === '/landing-page') {
-          // Force navigation to use the root `/` instead of `/landing-page`
-          router.push('/');
-        } else if (nextPage) {
-          router.push(nextPage);
-        } else {
-          console.error('No next page determined for left choice.');
-        }
-      }
-
-      function handleRightClick() {
-        const currentPage = route.name as string;
-        console.log('Right Click Triggered:', { currentPage });
-
-        trackingStore.addVisitedPage(currentPage);
-        trackingStore.recordChoice(currentPage, 'right');
-
-        const nextPage = trackingStore.getNextPage(currentPage, 'right');
-        console.log('Next Page for Right Choice:', nextPage);
-
-        if (nextPage) {
-          router.push(nextPage);
-        } else {
-          console.error('No next page determined for right choice.');
-        }
-      }
-
-      return { handleLeftClick, handleRightClick };
+    leftButtonLabel: {
+      type: String,
+      default: 'Discover the possibilities, and see how it works.',
     },
-  });
+    rightButtonLabel: {
+      type: String,
+      default: 'Learn why it works, and understand the benefits.',
+    },
+  },
+  setup(props) {
+    const route = useRoute();
+    const router = useRouter();
+    const trackingStore = useTrackingStore();
+
+    function handleLeftClick() {
+      const currentPage = route.name as string;
+      trackingStore.addVisitedPage(currentPage);
+      trackingStore.recordChoice(currentPage, 'left');
+
+      const nextPage = trackingStore.getNextPage(currentPage, 'left');
+      if (nextPage === '/landing-page') {
+        router.push('/');
+      } else if (nextPage) {
+        router.push(nextPage);
+      } else {
+        console.error('No next page determined for left choice.');
+      }
+    }
+
+    function handleRightClick() {
+      const currentPage = route.name as string;
+      trackingStore.addVisitedPage(currentPage);
+      trackingStore.recordChoice(currentPage, 'right');
+
+      const nextPage = trackingStore.getNextPage(currentPage, 'right');
+      if (nextPage) {
+        router.push(nextPage);
+      } else {
+        console.error('No next page determined for right choice.');
+      }
+    }
+
+    return { handleLeftClick, handleRightClick, props };
+  },
+});
 </script>
 
 <style scoped lang="scss">
@@ -335,5 +336,3 @@
     }
   }
 </style>
-
-<!-- src/components/MessagingPage.vue -->
