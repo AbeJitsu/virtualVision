@@ -11,7 +11,7 @@ export const FullServicePricingDetails: Message = {
   dominantStatement:
     'Your investment powers expert development and tailored solutions. Sessions are flexible, scheduled at your convenience, and there’s no obligation to proceed to the next phase.', // 26 words
   influentialStatement:
-    'Begin with a $49 Talk to a Developer session to refine your vision, expand with four strategy sessions for $449, and build a high-performance custom site for $4,499, all at your pace.', // 35 words
+    'Begin with a $49 Talk to an Expert Developer session to refine your vision, expand with four strategy sessions for $449, and build a high-performance custom site for $4,499, all at your pace.', // 35 words
   conscientiousStatement:
     'This process combines 21 hours of live collaboration and 42 flexible coding hours. Sessions don’t expire, giving you the freedom to prioritize and build your platform on your terms.', // 26 words
 

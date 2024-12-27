@@ -152,7 +152,7 @@
 
   // Navigation links for desktop and mobile views
   const navLinks = [
-    { label: 'Talk to a Developer', to: { name: 'talk-to-developer' } },
+    { label: 'Talk to an Expert Developer', to: { name: 'talk-to-developer' } },
     {
       label: 'Focused Strategy Sessions',
       to: { name: 'focused-strategy-sessions' },
