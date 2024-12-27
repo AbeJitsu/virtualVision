@@ -22,25 +22,23 @@
       const trackingStore = useTrackingStore();
 
       const messages = {
-        dominantTagline:
-          'Get a custom-built website tailored for your business success.',
-        influentialTagline:
-          'Partner with an expert to create a site built for growth.',
+  dominantTagline: 'Build a website that grows your business.',
+  influentialTagline: 'Bring your vision to life with expert help.',
 
-        supportiveStatement:
-          'Building your website should feel simple and exciting. We make the process approachable by focusing on your vision and taking care of the technical details.',
-        dominantStatement:
-          'Our custom web development includes a responsive design, a robust backend, and seamless database integration—everything your business needs to thrive online.',
-        influentialStatement:
-          'This isn’t just a website; it’s a platform to grow your business. We’ll work together to craft something that reflects your brand and drives results.',
-        conscientiousStatement:
-          'Unlike cookie-cutter solutions, we build custom websites from scratch. With expert development and a proven process, you’ll get a site designed to meet your exact needs.',
+  supportiveStatement:
+    'Your website should work as hard as you do. We’ll help you create a site that’s simple for visitors to use and focused on achieving your goals.',
+  dominantStatement:
+    'Your site will attract and engage visitors, keep everything running smoothly, and connect to the tools your business needs to succeed.',
+  influentialStatement:
+    'Imagine a site that looks professional, is easy for customers to navigate, and saves you time by handling routine tasks automatically.',
+  conscientiousStatement:
+    'Every site we build is customized to fit your goals, ensuring it works exactly as you need it to. No templates or shortcuts—just a solution built for you.',
 
-        supportiveSummary:
-          'Let us handle the tech while you focus on your vision. Together, we’ll build a site that empowers your business.',
-        influentialPrompt:
-          'Take the first step toward a website built to grow with you.',
-      };
+  supportiveSummary:
+    'We’ll handle the details so you can focus on what you do best. Together, we’ll build a website that supports your vision.',
+  influentialPrompt:
+    'Take the first step to create a website that saves time, looks great, and grows with your business.',
+};
 
       const currentPage = route.name as string;
 
