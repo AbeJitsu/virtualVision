@@ -319,7 +319,7 @@ export default defineComponent({
         word-break: break-word;
         white-space: normal;
         text-transform: none;
-        margin-bottom: 2.75rem;
+        margin-bottom: 0;
 
         &:hover {
           background-color: rgba(255, 255, 255, 0.6);
