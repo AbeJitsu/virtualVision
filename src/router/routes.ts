@@ -17,19 +17,19 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/footer/AboutUs.vue'),
       },
       {
-        path: 'talk-to-developer',
-        name: 'talk-to-developer',
+        path: 'quick-start-plan',
+        name: 'quick-start-plan',
         component: () => import('pages/TalkToDeveloper.vue'),
       },
       {
-        path: 'focused-strategy-sessions',
-        name: 'focused-strategy-sessions',
-        component: () => import('pages/FocusedStrategySessions.vue'),
+        path: 'strategic-design-path',
+        name: 'strategic-design-path',
+        component: () => import('pages/StrategicDesignPath.vue'),
       },
       {
-        path: 'complete-website-build',
-        name: 'complete-website-build',
-        component: () => import('pages/CompleteWebsiteBuild.vue'),
+        path: 'premium-vision-build',
+        name: 'premium-vision-build',
+        component: () => import('pages/PremiumVisionBuild.vue'),
       },
       {
         path: 'book-now',

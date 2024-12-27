@@ -152,12 +152,12 @@
 
   // Navigation links for desktop and mobile views
   const navLinks = [
-    { label: 'Talk to an Expert Developer', to: { name: 'talk-to-developer' } },
+    { label: 'Quick Start Plan', to: { name: 'quick-start-plan' } },
     {
-      label: 'Focused Strategy Sessions',
-      to: { name: 'focused-strategy-sessions' },
+      label: 'Strategic Design Path',
+      to: { name: 'strategic-design-path' },
     },
-    { label: 'Complete Website Build', to: { name: 'complete-website-build' } },
+    { label: 'Premium Vision Build', to: { name: 'premium-vision-build' } },
     { label: 'Pricing Details', to: { name: 'full-service-pricing-details' } },
   ];
 

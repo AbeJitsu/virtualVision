@@ -9,7 +9,7 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import MessagingPage from '../components/MessagingPage.vue'; // Import MessagingPage component
-  import { CompleteWebsiteBuild } from '../data/messages/CompleteWebsiteBuild'; // Import messages for Complete Website Build
+  import { PremiumVisionBuild } from '../data/messages/PremiumVisionBuild'; // Import messages for Premium Vision Build
   import { useRouter, useRoute } from 'vue-router';
   import { useTrackingStore } from '../stores/trackingStore';
 
@@ -22,7 +22,7 @@
       const route = useRoute();
       const trackingStore = useTrackingStore();
 
-      const messages = CompleteWebsiteBuild; // Load messages for Complete Website Build
+      const messages = PremiumVisionBuild; // Load messages for Complete Website Build
       const currentPage = route.name as string;
 
       // Handle left button click

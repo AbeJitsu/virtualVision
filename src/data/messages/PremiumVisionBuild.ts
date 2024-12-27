@@ -1,8 +1,8 @@
-// src/data/messages/CompleteWebsiteBuild.ts
+// src/data/messages/PremiumVisionBuild.ts
 
 import { Message } from './SalesStrategyMessages';
 
-export const CompleteWebsiteBuild: Message = {
+export const PremiumVisionBuild: Message = {
   dominantTagline: 'Shape Your Vision Into a Powerful Digital Reality', // 8 words
   influentialTagline:
     'Create a platform that reflects your goals and creativity.', // 8 words
@@ -27,4 +27,4 @@ export const CompleteWebsiteBuild: Message = {
     'Is this a fully custom build, or are templates used? Do I own the code and results, and how flexible and adaptable is the overall timeline?', // 22 words
 };
 
-export default CompleteWebsiteBuild;
+export default PremiumVisionBuild;

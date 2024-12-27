@@ -1,8 +1,8 @@
-// src/data/messages/FocusedStrategySessions.ts
+// src/data/messages/StrategicDesignPath.ts
 
 import { Message } from './SalesStrategyMessages';
 
-export const FocusedStrategySessions: Message = {
+export const StrategicDesignPath: Message = {
   dominantTagline: 'Elevate your vision with precise strategic support', // 7 words
   influentialTagline:
     'Transform your ideas into meaningful progress with expert help and guidance', // 8 words
@@ -27,4 +27,4 @@ export const FocusedStrategySessions: Message = {
     'Why spend five focused hours clarifying my vision when I could use that time building my site, even if it means accepting less clarity and direction?', // 23 words
 };
 
-export default FocusedStrategySessions;
+export default StrategicDesignPath;

@@ -9,7 +9,7 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import MessagingPage from '../components/MessagingPage.vue';
-  import { FocusedStrategySessions } from '../data/messages/FocusedStrategySessions';
+  import { StrategicDesignPath } from '../data/messages/StrategicDesignPath';
   import { useRouter, useRoute } from 'vue-router';
   import { useTrackingStore } from '../stores/trackingStore';
 
@@ -18,7 +18,7 @@
       MessagingPage,
     },
     setup() {
-      const messages = FocusedStrategySessions;
+      const messages = StrategicDesignPath;
       const router = useRouter();
       const route = useRoute();
       const trackingStore = useTrackingStore();
