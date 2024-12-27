@@ -1,894 +1,925 @@
 diff --git a/diff.txt b/diff.txt
-index dadef2b..e69de29 100644
+index c3324cc..e69de29 100644
 --- a/diff.txt
 +++ b/diff.txt
-@@ -1,650 +0,0 @@
+@@ -1,894 +0,0 @@
 -diff --git a/diff.txt b/diff.txt
--index e1df49c..e69de29 100644
+-index dadef2b..e69de29 100644
 ---- a/diff.txt
 -+++ b/diff.txt
--@@ -1,498 +0,0 @@
+-@@ -1,650 +0,0 @@
 --diff --git a/diff.txt b/diff.txt
---new file mode 100644
---index 0000000..e69de29
---diff --git a/src/data/messages/FullServicePricingDetails.ts b/src/data/messages/FullServicePricingDetails.ts
---index 91f27e1..ad0ce93 100644
------ a/src/data/messages/FullServicePricingDetails.ts
---+++ b/src/data/messages/FullServicePricingDetails.ts
---@@ -11,7 +11,7 @@ export const FullServicePricingDetails: Message = {
---   dominantStatement:
---     'Your investment powers expert development and tailored solutions. Sessions are flexible, scheduled at your convenience, and there’s no obligation to proceed to the next phase.', // 26 words
---   influentialStatement:
----    'Begin with a $49 Talk to a Developer session to refine your vision, expand with four strategy sessions for $449, and build a high-performance custom site for $4,499, all at your pace.', // 35 words
---+    'Begin with a $49 Talk to an Expert Developer session to refine your vision, expand with four strategy sessions for $449, and build a high-performance custom site for $4,499, all at your pace.', // 35 words
---   conscientiousStatement:
---     'This process combines 21 hours of live collaboration and 42 flexible coding hours. Sessions don’t expire, giving you the freedom to prioritize and build your platform on your terms.', // 26 words
--- 
---diff --git a/src/layouts/NavBar.vue b/src/layouts/NavBar.vue
---index ba49f24..e0e1721 100644
------ a/src/layouts/NavBar.vue
---+++ b/src/layouts/NavBar.vue
---@@ -152,7 +152,7 @@
--- 
---   // Navigation links for desktop and mobile views
---   const navLinks = [
----    { label: 'Talk to a Developer', to: { name: 'talk-to-developer' } },
---+    { label: 'Talk to an Expert Developer', to: { name: 'talk-to-developer' } },
---     {
---       label: 'Focused Strategy Sessions',
---       to: { name: 'focused-strategy-sessions' },
---diff --git a/src/pages/BookNow.vue b/src/pages/BookNow.vue
---index afd2455..40db80b 100644
------ a/src/pages/BookNow.vue
---+++ b/src/pages/BookNow.vue
---@@ -1,33 +1,35 @@
--- <template>
---   <q-page class="book-now-page">
---     <div class="container">
---+      <!-- 1) Place the four message boxes outside the card -->
---+      <section class="message-section">
---+        <!-- Supportive Statement -->
---+        <p class="message tone-message-box tone-message-box--supportive">
---+          {{ messages.supportiveStatement }}
---+        </p>
---+
---+        <!-- Dominant Statement -->
---+        <p class="message tone-message-box tone-message-box--dominant">
---+          {{ messages.dominantStatement }}
---+        </p>
---+
---+        <!-- Influential Statement -->
---+        <p class="message tone-message-box tone-message-box--influential">
---+          {{ messages.influentialStatement }}
---+        </p>
---+
---+        <!-- Conscientious Statement -->
---+        <p class="message tone-message-box tone-message-box--conscientious">
---+          {{ messages.conscientiousStatement }}
---+        </p>
---+      </section>
---+
---+      <!-- 2) White card now only wraps the scheduling form -->
---       <q-card class="card">
----        <q-card-section>
----          <!-- Supportive Statement -->
----          <p class="message tone-message-box tone-message-box--supportive">
----            {{ messages.supportiveStatement }}
----          </p>
+--index e1df49c..e69de29 100644
+----- a/diff.txt
+--+++ b/diff.txt
+--@@ -1,498 +0,0 @@
+---diff --git a/diff.txt b/diff.txt
+---new file mode 100644
+---index 0000000..e69de29
+---diff --git a/src/data/messages/FullServicePricingDetails.ts b/src/data/messages/FullServicePricingDetails.ts
+---index 91f27e1..ad0ce93 100644
+------ a/src/data/messages/FullServicePricingDetails.ts
+---+++ b/src/data/messages/FullServicePricingDetails.ts
+---@@ -11,7 +11,7 @@ export const FullServicePricingDetails: Message = {
+---   dominantStatement:
+---     'Your investment powers expert development and tailored solutions. Sessions are flexible, scheduled at your convenience, and there’s no obligation to proceed to the next phase.', // 26 words
+---   influentialStatement:
+----    'Begin with a $49 Talk to a Developer session to refine your vision, expand with four strategy sessions for $449, and build a high-performance custom site for $4,499, all at your pace.', // 35 words
+---+    'Begin with a $49 Talk to an Expert Developer session to refine your vision, expand with four strategy sessions for $449, and build a high-performance custom site for $4,499, all at your pace.', // 35 words
+---   conscientiousStatement:
+---     'This process combines 21 hours of live collaboration and 42 flexible coding hours. Sessions don’t expire, giving you the freedom to prioritize and build your platform on your terms.', // 26 words
+--- 
+---diff --git a/src/layouts/NavBar.vue b/src/layouts/NavBar.vue
+---index ba49f24..e0e1721 100644
+------ a/src/layouts/NavBar.vue
+---+++ b/src/layouts/NavBar.vue
+---@@ -152,7 +152,7 @@
+--- 
+---   // Navigation links for desktop and mobile views
+---   const navLinks = [
+----    { label: 'Talk to a Developer', to: { name: 'talk-to-developer' } },
+---+    { label: 'Talk to an Expert Developer', to: { name: 'talk-to-developer' } },
+---     {
+---       label: 'Focused Strategy Sessions',
+---       to: { name: 'focused-strategy-sessions' },
+---diff --git a/src/pages/BookNow.vue b/src/pages/BookNow.vue
+---index afd2455..40db80b 100644
+------ a/src/pages/BookNow.vue
+---+++ b/src/pages/BookNow.vue
+---@@ -1,33 +1,35 @@
+--- <template>
+---   <q-page class="book-now-page">
+---     <div class="container">
+---+      <!-- 1) Place the four message boxes outside the card -->
+---+      <section class="message-section">
+---+        <!-- Supportive Statement -->
+---+        <p class="message tone-message-box tone-message-box--supportive">
+---+          {{ messages.supportiveStatement }}
+---+        </p>
+---+
+---+        <!-- Dominant Statement -->
+---+        <p class="message tone-message-box tone-message-box--dominant">
+---+          {{ messages.dominantStatement }}
+---+        </p>
+---+
+---+        <!-- Influential Statement -->
+---+        <p class="message tone-message-box tone-message-box--influential">
+---+          {{ messages.influentialStatement }}
+---+        </p>
+---+
+---+        <!-- Conscientious Statement -->
+---+        <p class="message tone-message-box tone-message-box--conscientious">
+---+          {{ messages.conscientiousStatement }}
+---+        </p>
+---+      </section>
+---+
+---+      <!-- 2) White card now only wraps the scheduling form -->
+---       <q-card class="card">
+----        <q-card-section>
+----          <!-- Supportive Statement -->
+----          <p class="message tone-message-box tone-message-box--supportive">
+----            {{ messages.supportiveStatement }}
+----          </p>
+----
+----          <!-- Dominant Statement -->
+----          <p class="message tone-message-box tone-message-box--dominant">
+----            {{ messages.dominantStatement }}
+----          </p>
+----
+----          <!-- Influential Statement -->
+----          <p class="message tone-message-box tone-message-box--influential">
+----            {{ messages.influentialStatement }}
+----          </p>
+----
+----          <!-- Conscientious Statement -->
+----          <p class="message tone-message-box tone-message-box--conscientious">
+----            {{ messages.conscientiousStatement }}
+----          </p>
+----
+----          <!-- Supportive Summary -->
+----          <p class="message supportive-wrapup">
+----            {{ messages.supportiveSummary }}
+----          </p>
+----        </q-card-section>
+---+        <!-- Supportive Summary -->
+---+        <p class="message supportive-wrapup">
+---+          {{ messages.supportiveSummary }}
+---+        </p>
+--- 
+---         <q-card-section>
+---           <q-form @submit.prevent="submitSessionRequest">
+---@@ -46,7 +48,10 @@
+---             </div>
+--- 
+---             <!-- Time of Day Selection -->
+----            <div class="time-selection" v-if="formData.day">
+---+            <div
+---+              class="time-selection"
+---+              v-if="formData.day"
+---+            >
+---               <p>Select a Time Range (One-Hour Session):</p>
+---               <q-btn
+---                 v-for="time in timeOfDayOptions"
+---@@ -54,13 +59,18 @@
+---                 :label="time.label"
+---                 class="time-button"
+---                 outline
+----                :color="formData.timeOfDay === time.value ? 'primary' : 'secondary'"
+---+                :color="
+---+                  formData.timeOfDay === time.value ? 'primary' : 'secondary'
+---+                "
+---                 @click="selectTimeOfDay(time.value)"
+---               />
+---             </div>
+--- 
+---             <!-- Specific Time Options -->
+----            <div class="specific-time-selection" v-if="formData.timeOfDay">
+---+            <div
+---+              class="specific-time-selection"
+---+              v-if="formData.timeOfDay"
+---+            >
+---               <p>Select a Specific Time:</p>
+---               <q-btn
+---                 v-for="time in specificTimeOptions"
+---@@ -68,7 +78,9 @@
+---                 :label="time.label"
+---                 class="specific-time-button"
+---                 outline
+----                :color="formData.specificTime === time.value ? 'primary' : 'secondary'"
+---+                :color="
+---+                  formData.specificTime === time.value ? 'primary' : 'secondary'
+---+                "
+---                 @click="formData.specificTime = time.value"
+---               />
+---             </div>
+---@@ -78,7 +90,9 @@
+---               :label="messages.buttonText"
+---               type="submit"
+---               class="submit-button glossy"
+----              :disable="!formData.day || !formData.timeOfDay || !formData.specificTime"
+---+              :disable="
+---+                !formData.day || !formData.timeOfDay || !formData.specificTime
+---+              "
+---             />
+---           </q-form>
+---         </q-card-section>
+---@@ -88,154 +102,201 @@
+--- </template>
+--- 
+--- <script setup lang="ts">
+----import { ref } from 'vue';
+----
+----const formData = ref({
+----  day: '',
+----  timeOfDay: '',
+----  specificTime: '',
+----});
+----
+----const messages = {
+----  supportiveStatement:
+----    'It all starts with a single session to explore your ideas and clarify your vision.',
+----  dominantStatement:
+----    'This first step is entirely in your control, you decide the direction, and we’ll guide you with focus and clarity.',
+----  influentialStatement:
+----    'For just $49, you will gain expert insights and personalized strategies in a one-hour consultation.',
+----  conscientiousStatement:
+----    'Beyond this session, future steps are scheduled collaboratively, with each phase requiring mutual agreement before moving forward.',
+----  supportiveSummary:
+----    'Choose the best day, time range, and specific hour for your session, and we’ll confirm your request within a few hours.',
+----  buttonText: 'Request Your Session',
+----};
+----
+----// Day options
+----const dayOptions = [
+----  { label: `Tomorrow (${getFormattedDate(1)})`, value: 'tomorrow' },
+----  { label: `Day After Tomorrow (${getFormattedDate(2)})`, value: 'dayAfter' },
+----  { label: `Three Days From Now (${getFormattedDate(3)})`, value: 'threeDays' },
+----];
+----
+----// Time of day options
+----const timeOfDayOptions = [
+----  { label: 'Morning (9:00 AM – 12:00 PM)', value: 'morning' },
+----  { label: 'Early PM (12:00 PM – 3:30 PM)', value: 'earlyAfternoon' },
+----  { label: 'Late PM (3:30 PM – 6:45 PM)', value: 'lateAfternoon' },
+----];
+----
+----// Specific time options based on time of day
+----const specificTimeMap = {
+----  morning: [
+----    { label: '9:00 AM', value: '9:00' },
+----    { label: '10:15 AM', value: '10:15' },
+----    { label: '11:30 AM', value: '11:30' },
+----  ],
+----  earlyAfternoon: [
+----    { label: '12:00 PM', value: '12:00' },
+----    { label: '1:45 PM', value: '1:45' },
+----    { label: '3:15 PM', value: '3:15' },
+----  ],
+----  lateAfternoon: [
+----    { label: '3:30 PM', value: '3:30' },
+----    { label: '5:00 PM', value: '5:00' },
+----    { label: '6:45 PM', value: '6:45' },
+----  ],
+----};
+----
+----const specificTimeOptions = ref([]);
+----
+----function getFormattedDate(offset) {
+----  const date = new Date();
+----  date.setDate(date.getDate() + offset);
+----  return date.toLocaleDateString('en-US', {
+----    weekday: 'long',
+----    month: 'short',
+----    day: 'numeric',
+---+  import { ref } from 'vue';
+---+
+---+  const formData = ref({
+---+    day: '',
+---+    timeOfDay: '',
+---+    specificTime: '',
+---   });
+----}
+----
+----function selectDay(day) {
+----  formData.value.day = day;
+----  formData.value.timeOfDay = '';
+----  formData.value.specificTime = '';
+----  specificTimeOptions.value = [];
+----}
+----
+----function selectTimeOfDay(timeOfDay) {
+----  formData.value.timeOfDay = timeOfDay;
+----  formData.value.specificTime = '';
+----  specificTimeOptions.value = specificTimeMap[timeOfDay];
+----}
+----
+----function submitSessionRequest() {
+----  console.log('Session Request Submitted:', formData.value);
+----
+----  alert(
+----    `Thank you for your request! Your session is set for ${
+----      dayOptions.find((d) => d.value === formData.value.day)?.label
+----    } during the ${
+----      timeOfDayOptions.find((t) => t.value === formData.value.timeOfDay)?.label
+----    }, specifically at ${
+----      specificTimeOptions.value.find((t) => t.value === formData.value.specificTime)?.label
+----    }. We will confirm your session soon.`
+----  );
+----}
+---+
+---+  const messages = {
+---+    supportiveStatement:
+---+      'It all starts with a single session to explore your ideas and clarify your vision.',
+---+    dominantStatement:
+---+      'This first step is entirely in your control, you decide the direction, and we’ll guide you with focus and clarity.',
+---+    influentialStatement:
+---+      'For just $49, you will gain expert insights and personalized strategies in a one-hour consultation.',
+---+    conscientiousStatement:
+---+      'Beyond this session, future steps are scheduled collaboratively, with each phase requiring mutual agreement before moving forward.',
+---+    supportiveSummary:
+---+      'Choose the best day, time range, and specific hour for your session, and we’ll confirm your request within a few hours.',
+---+    buttonText: 'Request Your Session',
+---+  };
+---+
+---+  // Day options
+---+  const dayOptions = [
+---+    { label: `Tomorrow (${getFormattedDate(1)})`, value: 'tomorrow' },
+---+    { label: `Day After Tomorrow (${getFormattedDate(2)})`, value: 'dayAfter' },
+---+    {
+---+      label: `Three Days From Now (${getFormattedDate(3)})`,
+---+      value: 'threeDays',
+---+    },
+---+  ];
+---+
+---+  // Time of day options
+---+  const timeOfDayOptions = [
+---+    { label: 'Morning (9:00 AM – 12:00 PM)', value: 'morning' },
+---+    { label: 'Early PM (12:00 PM – 3:30 PM)', value: 'earlyAfternoon' },
+---+    { label: 'Late PM (3:30 PM – 6:45 PM)', value: 'lateAfternoon' },
+---+  ];
+---+
+---+  // Specific time options based on time of day
+---+  const specificTimeMap: Record<string, { label: string; value: string }[]> = {
+---+    morning: [
+---+      { label: '9:00 AM', value: '9:00' },
+---+      { label: '10:15 AM', value: '10:15' },
+---+      { label: '11:30 AM', value: '11:30' },
+---+    ],
+---+    earlyAfternoon: [
+---+      { label: '12:00 PM', value: '12:00' },
+---+      { label: '1:45 PM', value: '1:45' },
+---+      { label: '3:15 PM', value: '3:15' },
+---+    ],
+---+    lateAfternoon: [
+---+      { label: '3:30 PM', value: '3:30' },
+---+      { label: '5:00 PM', value: '5:00' },
+---+      { label: '6:45 PM', value: '6:45' },
+---+    ],
+---+  };
+---+
+---+  const specificTimeOptions = ref<{ label: string; value: string }[]>([]);
+---+
+---+  function getFormattedDate(offset: number) {
+---+    const date = new Date();
+---+    date.setDate(date.getDate() + offset);
+---+    return date.toLocaleDateString('en-US', {
+---+      weekday: 'long',
+---+      month: 'short',
+---+      day: 'numeric',
+---+    });
+---+  }
+---+
+---+  function selectDay(day: string) {
+---+    formData.value.day = day;
+---+    formData.value.timeOfDay = '';
+---+    formData.value.specificTime = '';
+---+    specificTimeOptions.value = [];
+---+  }
+---+
+---+  function selectTimeOfDay(timeOfDay: string) {
+---+    formData.value.timeOfDay = timeOfDay;
+---+    formData.value.specificTime = '';
+---+    specificTimeOptions.value = specificTimeMap[timeOfDay];
+---+  }
+---+
+---+  function submitSessionRequest() {
+---+    console.log('Session Request Submitted:', formData.value);
+---+
+---+    alert(
+---+      `Thank you for your request! Your session is set for ${
+---+        dayOptions.find((d) => d.value === formData.value.day)?.label
+---+      } during the ${
+---+        timeOfDayOptions.find((t) => t.value === formData.value.timeOfDay)
+---+          ?.label
+---+      }, specifically at ${
+---+        specificTimeOptions.value.find(
+---+          (t) => t.value === formData.value.specificTime
+---+        )?.label
+---+      }. We will confirm your session soon.`
+---+    );
+---+  }
+--- </script>
+--- 
+--- <style scoped lang="scss">
+----@import 'src/css/shared-styles.scss';
+----
+----.book-now-page {
+----  display: flex;
+----  flex-direction: column;
+----  justify-content: center;
+----  align-items: center;
+----  padding: 3.25em 1em;
+----  box-sizing: border-box;
+----  margin-top: 0.5rem;
+----}
+----
+----.container {
+----  max-width: 600px;
+----  width: 100%;
+----}
+----
+----.card {
+----  margin: 2em;
+----  padding: 1.5em;
+----  opacity: 0.95;
+----  color: $grayDark;
+----  border-radius: 8px;
+----  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+----}
+----
+----.message {
+----  text-align: center;
+----  color: $grayDark;
+----  font-size: medium;
+----  margin: -0.5rem 3em;
+----  font-weight: 600;
+----}
+----
+----.supportive-wrapup {
+----  margin: 2rem 4rem 0rem !important;
+----  color: $grayDark;
+----  font-size: large;
+----  font-weight: 600;
+----}
+----
+----.day-button, .time-button, .specific-time-button {
+----  margin: 0.5rem;
+----  width: 100%;
+----}
+----
+----.submit-button {
+----  width: 100%;
+----  margin-top: 1.5em;
+----  background-color: $primary;
+----  color: $textWhite;
+----  font-weight: bold;
+----  @extend .shared-hover;
+----}
+---+  @import 'src/css/shared-styles.scss';
+---+
+---+  .book-now-page {
+---+    display: flex;
+---+    flex-direction: column;
+---+    justify-content: center;
+---+    align-items: center;
+---+    padding: 3.25em 1em;
+---+    box-sizing: border-box;
+---+    margin-top: 0.5rem;
+---+  }
+---+
+---+  .container {
+---+    max-width: 600px;
+---+    width: 100%;
+---+  }
+---+
+---+  .message-section {
+---+    margin: 2em;
+---+  }
+---+
+---+  /* Tone-message backgrounds with *no* forced opacity */
+---+  .tone-message-box--supportive {
+---+    background-color: #e8f0ff; /* Light bluish */
+---+    border-radius: 4px;
+---+    padding: 1.5rem;
+---+    margin: 1rem 0;
+---+  }
+---+
+---+  .tone-message-box--dominant {
+---+    background-color: #fff0e0; /* Light peach/orange */
+---+    border-radius: 4px;
+---+    padding: 1rem;
+---+
+---+    margin: 1rem 0;
+---+  }
+---+
+---+  .tone-message-box--influential {
+---+    background-color: #ffffcc; /* Light yellow */
+---+    border-radius: 4px;
+---+    padding: 1rem;
+---+    margin: 1rem 0;
+---+  }
+---+
+---+  .tone-message-box--conscientious {
+---+    background-color: #e6ffe6; /* Light green */
+---+    border-radius: 4px;
+---+    padding: 1rem;
+---+    margin: 1rem 0;
+---+  }
+---+
+---+  /* The card still has 0.95 opacity */
+---+  .card {
+---+    margin: 2em;
+---+    padding: 1.5em;
+---+    opacity: 0.95;
+---+    color: $grayDark;
+---+    border-radius: 8px;
+---+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+---+  }
+---+
+---+  /* Same .message spacing & styling as before */
+---+  .message {
+---+    text-align: center;
+---+    color: $grayDark;
+---+    font-size: medium;
+---+    margin: 1rem 3em;
+---+    font-weight: 600;
+---+  }
+---+
+---+  /* The final summary paragraph */
+---+  .supportive-wrapup {
+---+    margin: 2rem 4rem 0rem !important;
+---+    color: $grayDark;
+---+    font-size: large;
+---+    font-weight: 600;
+---+  }
+---+
+---+  /* Buttons */
+---+  .day-button,
+---+  .time-button,
+---+  .specific-time-button {
+---+    margin: 0.5rem;
+---+    width: 100%;
+---+  }
+---+
+---+  /* Submit Button */
+---+  .submit-button {
+---+    width: 100%;
+---+    margin-top: 1.5em;
+---+    background-color: $primary;
+---+    color: $textWhite;
+---+    font-weight: bold;
+---+    @extend .shared-hover;
+---+  }
+--- </style>
+--diff --git a/src/data/messages/LandingPage.ts b/src/data/messages/LandingPage.ts
+--index daba64d..e69de29 100644
+----- a/src/data/messages/LandingPage.ts
+--+++ b/src/data/messages/LandingPage.ts
+--@@ -1,31 +0,0 @@
+---import { Message } from './SalesStrategyMessages';
 ---
----          <!-- Dominant Statement -->
----          <p class="message tone-message-box tone-message-box--dominant">
----            {{ messages.dominantStatement }}
----          </p>
+---export const LandingPage: Message = {
+---  dominantTagline: 'Build a website that fuels your business success', // 8 words
+---  influentialTagline: 'Imagine a site tailored to grow with your vision', // 10 words
 ---
----          <!-- Influential Statement -->
----          <p class="message tone-message-box tone-message-box--influential">
----            {{ messages.influentialStatement }}
----          </p>
+---  supportiveStatement:
+---    'Creating your website should be exciting and simple. With our step-by-step approach, your goals stay clear and actionable. Let us manage the tech while you focus on your dream.', // 30 words
+---  dominantStatement:
+---    'Work one-on-one with an expert to design a scalable, professional site. Every decision is tailored to maximize efficiency and achieve real results aligned with your goals.', // 28 words
+---  influentialStatement:
+---    'Turn your ideas into a reality with expert guidance and 21 hours of focused collaboration. Together, we’ll craft a site that accurately reflects your ambitions and drives success.', // 27 words
+---  conscientiousStatement:
+---    'This isn’t about doing the work yourself, it’s about leading the vision. You provide the ideas, and we handle the execution, ensuring a site built to your exact specifications.', // 27 words
 ---
----          <!-- Conscientious Statement -->
----          <p class="message tone-message-box tone-message-box--conscientious">
----            {{ messages.conscientiousStatement }}
----          </p>
+---  supportiveSummary:
+---    'Focus on growing your business while we handle the technical details. Together, we’ll create a platform that empowers your vision.', // 20 words
+---  influentialPrompt:
+---    'Let’s start building something exceptional. It all begins with a small but mighty step forward.', // 15 words
 ---
----          <!-- Supportive Summary -->
----          <p class="message supportive-wrapup">
----            {{ messages.supportiveSummary }}
----          </p>
----        </q-card-section>
---+        <!-- Supportive Summary -->
---+        <p class="message supportive-wrapup">
---+          {{ messages.supportiveSummary }}
---+        </p>
--- 
---         <q-card-section>
---           <q-form @submit.prevent="submitSessionRequest">
---@@ -46,7 +48,10 @@
---             </div>
--- 
---             <!-- Time of Day Selection -->
----            <div class="time-selection" v-if="formData.day">
---+            <div
---+              class="time-selection"
---+              v-if="formData.day"
---+            >
---               <p>Select a Time Range (One-Hour Session):</p>
---               <q-btn
---                 v-for="time in timeOfDayOptions"
---@@ -54,13 +59,18 @@
---                 :label="time.label"
---                 class="time-button"
---                 outline
----                :color="formData.timeOfDay === time.value ? 'primary' : 'secondary'"
---+                :color="
---+                  formData.timeOfDay === time.value ? 'primary' : 'secondary'
---+                "
---                 @click="selectTimeOfDay(time.value)"
---               />
---             </div>
--- 
---             <!-- Specific Time Options -->
----            <div class="specific-time-selection" v-if="formData.timeOfDay">
---+            <div
---+              class="specific-time-selection"
---+              v-if="formData.timeOfDay"
---+            >
---               <p>Select a Specific Time:</p>
---               <q-btn
---                 v-for="time in specificTimeOptions"
---@@ -68,7 +78,9 @@
---                 :label="time.label"
---                 class="specific-time-button"
---                 outline
----                :color="formData.specificTime === time.value ? 'primary' : 'secondary'"
---+                :color="
---+                  formData.specificTime === time.value ? 'primary' : 'secondary'
---+                "
---                 @click="formData.specificTime = time.value"
---               />
---             </div>
---@@ -78,7 +90,9 @@
---               :label="messages.buttonText"
---               type="submit"
---               class="submit-button glossy"
----              :disable="!formData.day || !formData.timeOfDay || !formData.specificTime"
---+              :disable="
---+                !formData.day || !formData.timeOfDay || !formData.specificTime
---+              "
---             />
---           </q-form>
---         </q-card-section>
---@@ -88,154 +102,201 @@
+---  customerInnerVoiceSupportiveInfluentialChoice:
+---    'How would a structured process simplify building my site and make it more effective? What’s the first step to explore this approach?', // 21 words
+---  customerInnerVoiceDominantConscientiousObjection:
+---    'What makes this approach better than Wix or other DIY platforms? How does expert collaboration deliver tangible benefits?', // 15 words
+---};
+---
+---export default LandingPage;
+---
+---
+---
+---// src/data/messages/LandingPage.ts
+--diff --git a/src/pages/LandingPage.vue b/src/pages/LandingPage.vue
+--index 4862433..54f1ccd 100644
+----- a/src/pages/LandingPage.vue
+--+++ b/src/pages/LandingPage.vue
+--@@ -7,43 +7,68 @@
 -- </template>
 -- 
--- <script setup lang="ts">
----import { ref } from 'vue';
+-- <script lang="ts">
+---  import { defineComponent } from 'vue';
+---  import MessagingPage from '../components/MessagingPage.vue';
+---  import LandingPage from '../data/messages/LandingPage';
+---  import { useRouter, useRoute } from 'vue-router';
+---  import { useTrackingStore } from '../stores/trackingStore';
 ---
----const formData = ref({
----  day: '',
----  timeOfDay: '',
----  specificTime: '',
----});
+---  export default defineComponent({
+---    components: {
+---      MessagingPage,
+---    },
+---    setup() {
+---      const router = useRouter();
+---      const route = useRoute();
+---      const trackingStore = useTrackingStore();
 ---
----const messages = {
----  supportiveStatement:
----    'It all starts with a single session to explore your ideas and clarify your vision.',
----  dominantStatement:
----    'This first step is entirely in your control, you decide the direction, and we’ll guide you with focus and clarity.',
----  influentialStatement:
----    'For just $49, you will gain expert insights and personalized strategies in a one-hour consultation.',
----  conscientiousStatement:
----    'Beyond this session, future steps are scheduled collaboratively, with each phase requiring mutual agreement before moving forward.',
----  supportiveSummary:
----    'Choose the best day, time range, and specific hour for your session, and we’ll confirm your request within a few hours.',
----  buttonText: 'Request Your Session',
----};
+---      const messages = LandingPage; // Load messages from LandingPage
+---      const currentPage = route.name as string;
 ---
----// Day options
----const dayOptions = [
----  { label: `Tomorrow (${getFormattedDate(1)})`, value: 'tomorrow' },
----  { label: `Day After Tomorrow (${getFormattedDate(2)})`, value: 'dayAfter' },
----  { label: `Three Days From Now (${getFormattedDate(3)})`, value: 'threeDays' },
----];
+---      // Handle left button click
+---      function handleLeftClick() {
+---        trackingStore.addVisitedPage(currentPage); // Log the current page as visited
+---        trackingStore.recordChoice(currentPage, 'left'); // Record the left button choice
+---        const nextPage = trackingStore.getNextPage(currentPage, 'left'); // Get the next page dynamically
+---        if (nextPage) router.push(nextPage); // Navigate to the next page
+---      }
 ---
----// Time of day options
----const timeOfDayOptions = [
----  { label: 'Morning (9:00 AM – 12:00 PM)', value: 'morning' },
----  { label: 'Early PM (12:00 PM – 3:30 PM)', value: 'earlyAfternoon' },
----  { label: 'Late PM (3:30 PM – 6:45 PM)', value: 'lateAfternoon' },
----];
+---      // Handle right button click
+---      function handleRightClick() {
+---        trackingStore.addVisitedPage(currentPage); // Log the current page as visited
+---        trackingStore.recordChoice(currentPage, 'right'); // Record the right button choice
+---        const nextPage = trackingStore.getNextPage(currentPage, 'right'); // Get the next page dynamically
+---        if (nextPage) router.push(nextPage); // Navigate to the next page
+---      }
 ---
----// Specific time options based on time of day
----const specificTimeMap = {
----  morning: [
----    { label: '9:00 AM', value: '9:00' },
----    { label: '10:15 AM', value: '10:15' },
----    { label: '11:30 AM', value: '11:30' },
----  ],
----  earlyAfternoon: [
----    { label: '12:00 PM', value: '12:00' },
----    { label: '1:45 PM', value: '1:45' },
----    { label: '3:15 PM', value: '3:15' },
----  ],
----  lateAfternoon: [
----    { label: '3:30 PM', value: '3:30' },
----    { label: '5:00 PM', value: '5:00' },
----    { label: '6:45 PM', value: '6:45' },
----  ],
----};
----
----const specificTimeOptions = ref([]);
----
----function getFormattedDate(offset) {
----  const date = new Date();
----  date.setDate(date.getDate() + offset);
----  return date.toLocaleDateString('en-US', {
----    weekday: 'long',
----    month: 'short',
----    day: 'numeric',
---+  import { ref } from 'vue';
+---      return { messages, handleLeftClick, handleRightClick };
+---    },
+---  });
+--+import { defineComponent } from 'vue';
+--+import MessagingPage from '../components/MessagingPage.vue';
+--+import { useRouter, useRoute } from 'vue-router';
+--+import { useTrackingStore } from '../stores/trackingStore';
 --+
---+  const formData = ref({
---+    day: '',
---+    timeOfDay: '',
---+    specificTime: '',
---   });
----}
----
----function selectDay(day) {
----  formData.value.day = day;
----  formData.value.timeOfDay = '';
----  formData.value.specificTime = '';
----  specificTimeOptions.value = [];
----}
----
----function selectTimeOfDay(timeOfDay) {
----  formData.value.timeOfDay = timeOfDay;
----  formData.value.specificTime = '';
----  specificTimeOptions.value = specificTimeMap[timeOfDay];
----}
----
----function submitSessionRequest() {
----  console.log('Session Request Submitted:', formData.value);
----
----  alert(
----    `Thank you for your request! Your session is set for ${
----      dayOptions.find((d) => d.value === formData.value.day)?.label
----    } during the ${
----      timeOfDayOptions.find((t) => t.value === formData.value.timeOfDay)?.label
----    }, specifically at ${
----      specificTimeOptions.value.find((t) => t.value === formData.value.specificTime)?.label
----    }. We will confirm your session soon.`
----  );
----}
+--+export default defineComponent({
+--+  components: {
+--+    MessagingPage,
+--+  },
+--+  setup() {
+--+    const router = useRouter();
+--+    const route = useRoute();
+--+    const trackingStore = useTrackingStore();
 --+
---+  const messages = {
---+    supportiveStatement:
---+      'It all starts with a single session to explore your ideas and clarify your vision.',
---+    dominantStatement:
---+      'This first step is entirely in your control, you decide the direction, and we’ll guide you with focus and clarity.',
---+    influentialStatement:
---+      'For just $49, you will gain expert insights and personalized strategies in a one-hour consultation.',
---+    conscientiousStatement:
---+      'Beyond this session, future steps are scheduled collaboratively, with each phase requiring mutual agreement before moving forward.',
---+    supportiveSummary:
---+      'Choose the best day, time range, and specific hour for your session, and we’ll confirm your request within a few hours.',
---+    buttonText: 'Request Your Session',
---+  };
+--+    // Local messages object (from LandingPage.ts)
+--+    const messages = {
+--+      dominantTagline: 'Get a custom-built website tailored for your business success.',
+--+      influentialTagline: 'Partner with an expert to create a site built for growth.',
 --+
---+  // Day options
---+  const dayOptions = [
---+    { label: `Tomorrow (${getFormattedDate(1)})`, value: 'tomorrow' },
---+    { label: `Day After Tomorrow (${getFormattedDate(2)})`, value: 'dayAfter' },
---+    {
---+      label: `Three Days From Now (${getFormattedDate(3)})`,
---+      value: 'threeDays',
---+    },
---+  ];
+--+      supportiveStatement:
+--+        'Building your website should feel simple and exciting. We make the process approachable by focusing on your vision and taking care of the technical details.',
+--+      dominantStatement:
+--+        'Our custom web development includes a responsive design, a robust backend, and seamless database integration—everything your business needs to thrive online.',
+--+      influentialStatement:
+--+        'This isn’t just a website; it’s a platform to grow your business. We’ll work together to craft something that reflects your brand and drives results.',
+--+      conscientiousStatement:
+--+        'Unlike cookie-cutter solutions, we build custom websites from scratch. With expert development and a proven process, you’ll get a site designed to meet your exact needs.',
 --+
---+  // Time of day options
---+  const timeOfDayOptions = [
---+    { label: 'Morning (9:00 AM – 12:00 PM)', value: 'morning' },
---+    { label: 'Early PM (12:00 PM – 3:30 PM)', value: 'earlyAfternoon' },
---+    { label: 'Late PM (3:30 PM – 6:45 PM)', value: 'lateAfternoon' },
---+  ];
+--+      supportiveSummary:
+--+        'Let us handle the tech while you focus on your vision. Together, we’ll build a site that empowers your business.',
+--+      influentialPrompt:
+--+        'Take the first step toward a website built to grow with you.',
 --+
---+  // Specific time options based on time of day
---+  const specificTimeMap: Record<string, { label: string; value: string }[]> = {
---+    morning: [
---+      { label: '9:00 AM', value: '9:00' },
---+      { label: '10:15 AM', value: '10:15' },
---+      { label: '11:30 AM', value: '11:30' },
---+    ],
---+    earlyAfternoon: [
---+      { label: '12:00 PM', value: '12:00' },
---+      { label: '1:45 PM', value: '1:45' },
---+      { label: '3:15 PM', value: '3:15' },
---+    ],
---+    lateAfternoon: [
---+      { label: '3:30 PM', value: '3:30' },
---+      { label: '5:00 PM', value: '5:00' },
---+      { label: '6:45 PM', value: '6:45' },
---+    ],
---+  };
+--+      customerInnerVoiceSupportiveInfluentialChoice:
+--+        'How could custom development elevate my online presence? What’s the first step to create a site that truly fits my business?',
+--+      customerInnerVoiceDominantConscientiousObjection:
+--+        'Why should I choose custom development over a website builder? What tangible benefits does expert collaboration provide?',
+--+    };
 --+
---+  const specificTimeOptions = ref<{ label: string; value: string }[]>([]);
+--+    const currentPage = route.name as string;
 --+
---+  function getFormattedDate(offset: number) {
---+    const date = new Date();
---+    date.setDate(date.getDate() + offset);
---+    return date.toLocaleDateString('en-US', {
---+      weekday: 'long',
---+      month: 'short',
---+      day: 'numeric',
---+    });
---+  }
+--+    // Handle left button click
+--+    function handleLeftClick() {
+--+      trackingStore.addVisitedPage(currentPage); // Log the current page as visited
+--+      trackingStore.recordChoice(currentPage, 'left'); // Record the left button choice
+--+      const nextPage = trackingStore.getNextPage(currentPage, 'left'); // Get the next page dynamically
+--+      if (nextPage) router.push(nextPage); // Navigate to the next page
+--+    }
 --+
---+  function selectDay(day: string) {
---+    formData.value.day = day;
---+    formData.value.timeOfDay = '';
---+    formData.value.specificTime = '';
---+    specificTimeOptions.value = [];
---+  }
+--+    // Handle right button click
+--+    function handleRightClick() {
+--+      trackingStore.addVisitedPage(currentPage); // Log the current page as visited
+--+      trackingStore.recordChoice(currentPage, 'right'); // Record the right button choice
+--+      const nextPage = trackingStore.getNextPage(currentPage, 'right'); // Get the next page dynamically
+--+      if (nextPage) router.push(nextPage); // Navigate to the next page
+--+    }
 --+
---+  function selectTimeOfDay(timeOfDay: string) {
---+    formData.value.timeOfDay = timeOfDay;
---+    formData.value.specificTime = '';
---+    specificTimeOptions.value = specificTimeMap[timeOfDay];
---+  }
---+
---+  function submitSessionRequest() {
---+    console.log('Session Request Submitted:', formData.value);
---+
---+    alert(
---+      `Thank you for your request! Your session is set for ${
---+        dayOptions.find((d) => d.value === formData.value.day)?.label
---+      } during the ${
---+        timeOfDayOptions.find((t) => t.value === formData.value.timeOfDay)
---+          ?.label
---+      }, specifically at ${
---+        specificTimeOptions.value.find(
---+          (t) => t.value === formData.value.specificTime
---+        )?.label
---+      }. We will confirm your session soon.`
---+    );
---+  }
+--+    return { messages, handleLeftClick, handleRightClick };
+--+  },
+--+});
 -- </script>
 -- 
--- <style scoped lang="scss">
----@import 'src/css/shared-styles.scss';
----
----.book-now-page {
----  display: flex;
----  flex-direction: column;
----  justify-content: center;
----  align-items: center;
----  padding: 3.25em 1em;
----  box-sizing: border-box;
----  margin-top: 0.5rem;
----}
----
----.container {
----  max-width: 600px;
----  width: 100%;
----}
----
----.card {
----  margin: 2em;
----  padding: 1.5em;
----  opacity: 0.95;
----  color: $grayDark;
----  border-radius: 8px;
----  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
----}
----
----.message {
----  text-align: center;
----  color: $grayDark;
----  font-size: medium;
----  margin: -0.5rem 3em;
----  font-weight: 600;
----}
----
----.supportive-wrapup {
----  margin: 2rem 4rem 0rem !important;
----  color: $grayDark;
----  font-size: large;
----  font-weight: 600;
----}
----
----.day-button, .time-button, .specific-time-button {
----  margin: 0.5rem;
----  width: 100%;
----}
----
----.submit-button {
----  width: 100%;
----  margin-top: 1.5em;
----  background-color: $primary;
----  color: $textWhite;
----  font-weight: bold;
----  @extend .shared-hover;
----}
---+  @import 'src/css/shared-styles.scss';
---+
---+  .book-now-page {
---+    display: flex;
---+    flex-direction: column;
---+    justify-content: center;
---+    align-items: center;
---+    padding: 3.25em 1em;
---+    box-sizing: border-box;
---+    margin-top: 0.5rem;
---+  }
---+
---+  .container {
---+    max-width: 600px;
---+    width: 100%;
---+  }
---+
---+  .message-section {
---+    margin: 2em;
---+  }
---+
---+  /* Tone-message backgrounds with *no* forced opacity */
---+  .tone-message-box--supportive {
---+    background-color: #e8f0ff; /* Light bluish */
---+    border-radius: 4px;
---+    padding: 1.5rem;
---+    margin: 1rem 0;
---+  }
---+
---+  .tone-message-box--dominant {
---+    background-color: #fff0e0; /* Light peach/orange */
---+    border-radius: 4px;
---+    padding: 1rem;
---+
---+    margin: 1rem 0;
---+  }
---+
---+  .tone-message-box--influential {
---+    background-color: #ffffcc; /* Light yellow */
---+    border-radius: 4px;
---+    padding: 1rem;
---+    margin: 1rem 0;
---+  }
---+
---+  .tone-message-box--conscientious {
---+    background-color: #e6ffe6; /* Light green */
---+    border-radius: 4px;
---+    padding: 1rem;
---+    margin: 1rem 0;
---+  }
---+
---+  /* The card still has 0.95 opacity */
---+  .card {
---+    margin: 2em;
---+    padding: 1.5em;
---+    opacity: 0.95;
---+    color: $grayDark;
---+    border-radius: 8px;
---+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
---+  }
---+
---+  /* Same .message spacing & styling as before */
---+  .message {
---+    text-align: center;
---+    color: $grayDark;
---+    font-size: medium;
---+    margin: 1rem 3em;
---+    font-weight: 600;
---+  }
---+
---+  /* The final summary paragraph */
---+  .supportive-wrapup {
---+    margin: 2rem 4rem 0rem !important;
---+    color: $grayDark;
---+    font-size: large;
---+    font-weight: 600;
---+  }
---+
---+  /* Buttons */
---+  .day-button,
---+  .time-button,
---+  .specific-time-button {
---+    margin: 0.5rem;
---+    width: 100%;
---+  }
---+
---+  /* Submit Button */
---+  .submit-button {
---+    width: 100%;
---+    margin-top: 1.5em;
---+    background-color: $primary;
---+    color: $textWhite;
---+    font-weight: bold;
---+    @extend .shared-hover;
---+  }
--- </style>
--diff --git a/src/data/messages/LandingPage.ts b/src/data/messages/LandingPage.ts
--index daba64d..e69de29 100644
----- a/src/data/messages/LandingPage.ts
--+++ b/src/data/messages/LandingPage.ts
--@@ -1,31 +0,0 @@
---import { Message } from './SalesStrategyMessages';
---
---export const LandingPage: Message = {
---  dominantTagline: 'Build a website that fuels your business success', // 8 words
---  influentialTagline: 'Imagine a site tailored to grow with your vision', // 10 words
---
---  supportiveStatement:
---    'Creating your website should be exciting and simple. With our step-by-step approach, your goals stay clear and actionable. Let us manage the tech while you focus on your dream.', // 30 words
---  dominantStatement:
---    'Work one-on-one with an expert to design a scalable, professional site. Every decision is tailored to maximize efficiency and achieve real results aligned with your goals.', // 28 words
---  influentialStatement:
---    'Turn your ideas into a reality with expert guidance and 21 hours of focused collaboration. Together, we’ll craft a site that accurately reflects your ambitions and drives success.', // 27 words
---  conscientiousStatement:
---    'This isn’t about doing the work yourself, it’s about leading the vision. You provide the ideas, and we handle the execution, ensuring a site built to your exact specifications.', // 27 words
---
---  supportiveSummary:
---    'Focus on growing your business while we handle the technical details. Together, we’ll create a platform that empowers your vision.', // 20 words
---  influentialPrompt:
---    'Let’s start building something exceptional. It all begins with a small but mighty step forward.', // 15 words
---
+---<!-- src/pages/LandingPage.vue -->
+--+<style scoped lang="scss">
+--+/* Your existing SCSS styles for the Landing Page */
+--+</style>
+-diff --git a/src/components/MessagingPage.vue b/src/components/MessagingPage.vue
+-index 9baa571..d3ab1cf 100644
+---- a/src/components/MessagingPage.vue
+-+++ b/src/components/MessagingPage.vue
+-@@ -37,12 +37,12 @@
+-         </div>
+-         <div class="action-buttons">
+-           <q-btn
+--            :label="messages.customerInnerVoiceSupportiveInfluentialChoice"
+-+            :label="messages.leftButtonText"
+-             @click="handleLeftClick"
+-             class="custom-btn"
+-           />
+-           <q-btn
+--            :label="messages.customerInnerVoiceDominantConscientiousObjection"
+-+            :label="messages.rightButtonText"
+-             @click="handleRightClick"
+-             class="custom-btn"
+-           />
+-@@ -69,8 +69,8 @@
+-           conscientiousStatement: string;
+-           supportiveSummary: string;
+-           influentialPrompt: string;
+--          customerInnerVoiceSupportiveInfluentialChoice: string;
+--          customerInnerVoiceDominantConscientiousObjection: string;
+-+          leftButtonText: string;
+-+          rightButtonText: string;
+-         }>,
+-         required: true,
+-       },
+-diff --git a/src/data/messages/AboutUs.ts b/src/data/messages/AboutUs.ts
+-index 26a2d12..5c970f0 100644
+---- a/src/data/messages/AboutUs.ts
+-+++ b/src/data/messages/AboutUs.ts
+-@@ -22,10 +22,10 @@ export const AboutUs: Message = {
+-   influentialPrompt:
+-     'Are you ready to collaborate with someone who truly cares about your vision? Let’s take that first step together.',
+- 
 --  customerInnerVoiceSupportiveInfluentialChoice:
---    'How would a structured process simplify building my site and make it more effective? What’s the first step to explore this approach?', // 21 words
+-+  leftButtonText:
+-     'What makes Vision2Virtual the right partner for my project? How could I start working with someone truly committed to my goals?',
+- 
 --  customerInnerVoiceDominantConscientiousObjection:
---    'What makes this approach better than Wix or other DIY platforms? How does expert collaboration deliver tangible benefits?', // 15 words
---};
---
---export default LandingPage;
---
---
---
---// src/data/messages/LandingPage.ts
+-+  rightButtonText:
+-     'How does this structured process ensure better results than using a DIY website builder or other alternatives?',
+- };
+- 
+-diff --git a/src/data/messages/CompleteProcessSummary.ts b/src/data/messages/CompleteProcessSummary.ts
+-index cb20291..bb95f88 100644
+---- a/src/data/messages/CompleteProcessSummary.ts
+-+++ b/src/data/messages/CompleteProcessSummary.ts
+-@@ -19,9 +19,9 @@ export const CompleteProcessSummary: Message = {
+-     'Gain clarity on how we work together to create something extraordinary. See each step clearly outlined for your understanding.', // 23 words
+-   influentialPrompt: 'Ready to learn how this process works for your goals?', // 10 words
+- 
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'How does understanding the process help me? What makes it so effective for achieving successful results?', // 17 words
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'Can I explore this process in depth before committing to anything? How adaptable is this approach to my needs?', // 19 words
+- };
+- 
+-diff --git a/src/data/messages/CompleteWebsiteBuild.ts b/src/data/messages/CompleteWebsiteBuild.ts
+-index 5d4a1a2..f3182cb 100644
+---- a/src/data/messages/CompleteWebsiteBuild.ts
+-+++ b/src/data/messages/CompleteWebsiteBuild.ts
+-@@ -21,9 +21,9 @@ export const CompleteWebsiteBuild: Message = {
+-   influentialPrompt:
+-     'Are you ready to turn your ideas into a powerful digital presence?', // 12 words
+- 
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'How does this complete package bring everything together? What makes this a strong choice for me? How might it handle my creative ideas and evolving goals?', // 19 words
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'Is this a fully custom build, or are templates used? Do I own the code and results, and how flexible and adaptable is the overall timeline?', // 22 words
+- };
+- 
+-diff --git a/src/data/messages/ContactUs.ts b/src/data/messages/ContactUs.ts
+-index f0ac40d..0d36349 100644
+---- a/src/data/messages/ContactUs.ts
+-+++ b/src/data/messages/ContactUs.ts
+-@@ -18,9 +18,9 @@ export const ContactUs: Message = {
+-   influentialPrompt:
+-     'Taking the first step is simple, and it opens doors to success.', // 13 words
+- 
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'How can an expert’s guidance help clarify my goals and make progress easier? What’s the first step in working together?', // 22 words
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'How do I know this process will deliver reliable results? What makes expert support essential for achieving success?', // 19 words
+- };
+- 
+-diff --git a/src/data/messages/DIYComparison.ts b/src/data/messages/DIYComparison.ts
+-index 17fd67d..ad23a42 100644
+---- a/src/data/messages/DIYComparison.ts
+-+++ b/src/data/messages/DIYComparison.ts
+-@@ -18,9 +18,9 @@ export const DIYComparison: Message = {
+-   influentialPrompt:
+-     'Ready to elevate your online presence? Let’s explore the next step together.', // 13 words
+- 
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'How can I gain a professional-grade site built for my goals while ensuring it works exactly the way I want?', // 23 words
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'How is this approach better and more reliable than trying to build a website myself using a platform like Wix or Squarespace?', // 23 words
+- };
+- 
+-diff --git a/src/data/messages/FocusedStrategySessions.ts b/src/data/messages/FocusedStrategySessions.ts
+-index 17fe751..cced224 100644
+---- a/src/data/messages/FocusedStrategySessions.ts
+-+++ b/src/data/messages/FocusedStrategySessions.ts
+-@@ -20,10 +20,10 @@ export const FocusedStrategySessions: Message = {
+-     'Over five days, these thoughtfully paced sessions provide the clarity and direction to set your project on a successful path.', // 19 words
+-   influentialPrompt:
+-     'Ready to gain the clarity and confidence to take the next step?', // 11 words
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'How do these sessions set me up for success? What makes them critical for my complete website? It seems like it will align my priorities.', // 19 words
+- 
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'Why spend five focused hours clarifying my vision when I could use that time building my site, even if it means accepting less clarity and direction?', // 23 words
+- };
+- 
+-diff --git a/src/data/messages/FullServicePricingDetails.ts b/src/data/messages/FullServicePricingDetails.ts
+-index ad0ce93..f65bda5 100644
+---- a/src/data/messages/FullServicePricingDetails.ts
+-+++ b/src/data/messages/FullServicePricingDetails.ts
+-@@ -20,9 +20,9 @@ export const FullServicePricingDetails: Message = {
+-   influentialPrompt:
+-     'Take the first step toward a website that reflects your vision. Book your initial session today to begin.', // 16 words
+- 
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'I understand I can start with my first session to explore possibilities without obligation. How do I check availability to book now and move forward confidently?', // 27 words
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'Is the process flexible enough to adapt if my priorities shift? Can I adjust as needed without affecting the final outcome or results?', // 25 words
+- };
+- 
+-diff --git a/src/data/messages/OurProcess.ts b/src/data/messages/OurProcess.ts
+-index a33b4e6..29e931f 100644
+---- a/src/data/messages/OurProcess.ts
+-+++ b/src/data/messages/OurProcess.ts
+-@@ -19,9 +19,9 @@ export const OurProcess: Message = {
+-   influentialPrompt:
+-     'Take the next step in creating a platform that reflects your vision. Let’s start your consultation today.', // 15 words
+- 
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'How does a one-on-one approach refine my ideas and bring clarity? What’s the next step in creating something aligned with my vision?', // 20 words
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'Would learning the technical details be a better use of my time? Why prioritize planning instead of jumping straight into execution?', // 20 words
+- };
+- 
+-diff --git a/src/data/messages/PrivacyPolicy.ts b/src/data/messages/PrivacyPolicy.ts
+-index 22d6804..7310d1b 100644
+---- a/src/data/messages/PrivacyPolicy.ts
+-+++ b/src/data/messages/PrivacyPolicy.ts
+-@@ -18,9 +18,9 @@ export const PrivacyPolicy: Message = {
+-   influentialPrompt:
+-     'Want to learn more about how we handle your data responsibly?', // 11 words
+- 
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'How do you ensure my information is protected while keeping things user-friendly? What’s your first step to safeguard privacy?', // 21 words
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'Can you explain how your privacy standards are compliant and transparent? What practices ensure my data is secure?', // 19 words
+- };
+- 
+-diff --git a/src/data/messages/SalesStrategyMessages.ts b/src/data/messages/SalesStrategyMessages.ts
+-index c277791..6d25208 100644
+---- a/src/data/messages/SalesStrategyMessages.ts
+-+++ b/src/data/messages/SalesStrategyMessages.ts
+-@@ -10,8 +10,8 @@ const defaultMessage = {
+-   conscientiousStatement: '',
+-   supportiveSummary: '',
+-   influentialPrompt: '',
+--  customerInnerVoiceSupportiveInfluentialChoice: '',
+--  customerInnerVoiceDominantConscientiousObjection: '',
+-+  leftButtonText: '',
+-+  rightButtonText: '',
+- };
+- 
+- // Explicit type for Messages object
+-diff --git a/src/data/messages/TalkToDeveloper.ts b/src/data/messages/TalkToDeveloper.ts
+-index c642fce..5231ab4 100644
+---- a/src/data/messages/TalkToDeveloper.ts
+-+++ b/src/data/messages/TalkToDeveloper.ts
+-@@ -21,9 +21,9 @@ export const TalkToDeveloper: Message = {
+-   influentialPrompt:
+-     'Are you ready to refine your vision today? Let’s get started on creating something extraordinary.', // 16 words
+- 
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'If this is just the first step in your 3-step process, what else could we achieve with more time, and how might that refine my vision?',
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'Even if I wind up going with a do-it-yourself option, what do I gain from spending an hour and $49 to strategize with a experienced developer?', // 19 words
+- };
+- 
+-diff --git a/src/data/messages/TermsOfService.ts b/src/data/messages/TermsOfService.ts
+-index 4eafa0f..673eee4 100644
+---- a/src/data/messages/TermsOfService.ts
+-+++ b/src/data/messages/TermsOfService.ts
+-@@ -18,9 +18,9 @@ export const TermsOfService: Message = {
+-   influentialPrompt:
+-     'Ready to explore how we create secure and transparent working relationships?', // 11 words
+- 
+--  customerInnerVoiceSupportiveInfluentialChoice:
+-+  leftButtonText:
+-     'How can these terms simplify collaboration while protecting my interests? What’s the next step in getting started?', // 20 words
+--  customerInnerVoiceDominantConscientiousObjection:
+-+  rightButtonText:
+-     'How do your terms ensure accountability and fairness? Can you explain their impact on a successful partnership?', // 17 words
+- };
+- 
 -diff --git a/src/pages/LandingPage.vue b/src/pages/LandingPage.vue
--index 4862433..54f1ccd 100644
+-index 54f1ccd..beedd88 100644
 ---- a/src/pages/LandingPage.vue
 -+++ b/src/pages/LandingPage.vue
--@@ -7,43 +7,68 @@
-- </template>
+-@@ -40,9 +40,9 @@ export default defineComponent({
+-       influentialPrompt:
+-         'Take the first step toward a website built to grow with you.',
 - 
-- <script lang="ts">
---  import { defineComponent } from 'vue';
---  import MessagingPage from '../components/MessagingPage.vue';
---  import LandingPage from '../data/messages/LandingPage';
---  import { useRouter, useRoute } from 'vue-router';
---  import { useTrackingStore } from '../stores/trackingStore';
---
---  export default defineComponent({
---    components: {
---      MessagingPage,
---    },
---    setup() {
---      const router = useRouter();
---      const route = useRoute();
---      const trackingStore = useTrackingStore();
---
---      const messages = LandingPage; // Load messages from LandingPage
---      const currentPage = route.name as string;
---
---      // Handle left button click
---      function handleLeftClick() {
---        trackingStore.addVisitedPage(currentPage); // Log the current page as visited
---        trackingStore.recordChoice(currentPage, 'left'); // Record the left button choice
---        const nextPage = trackingStore.getNextPage(currentPage, 'left'); // Get the next page dynamically
---        if (nextPage) router.push(nextPage); // Navigate to the next page
---      }
---
---      // Handle right button click
---      function handleRightClick() {
---        trackingStore.addVisitedPage(currentPage); // Log the current page as visited
---        trackingStore.recordChoice(currentPage, 'right'); // Record the right button choice
---        const nextPage = trackingStore.getNextPage(currentPage, 'right'); // Get the next page dynamically
---        if (nextPage) router.push(nextPage); // Navigate to the next page
---      }
---
---      return { messages, handleLeftClick, handleRightClick };
---    },
---  });
--+import { defineComponent } from 'vue';
--+import MessagingPage from '../components/MessagingPage.vue';
--+import { useRouter, useRoute } from 'vue-router';
--+import { useTrackingStore } from '../stores/trackingStore';
--+
--+export default defineComponent({
--+  components: {
--+    MessagingPage,
--+  },
--+  setup() {
--+    const router = useRouter();
--+    const route = useRoute();
--+    const trackingStore = useTrackingStore();
--+
--+    // Local messages object (from LandingPage.ts)
--+    const messages = {
--+      dominantTagline: 'Get a custom-built website tailored for your business success.',
--+      influentialTagline: 'Partner with an expert to create a site built for growth.',
--+
--+      supportiveStatement:
--+        'Building your website should feel simple and exciting. We make the process approachable by focusing on your vision and taking care of the technical details.',
--+      dominantStatement:
--+        'Our custom web development includes a responsive design, a robust backend, and seamless database integration—everything your business needs to thrive online.',
--+      influentialStatement:
--+        'This isn’t just a website; it’s a platform to grow your business. We’ll work together to craft something that reflects your brand and drives results.',
--+      conscientiousStatement:
--+        'Unlike cookie-cutter solutions, we build custom websites from scratch. With expert development and a proven process, you’ll get a site designed to meet your exact needs.',
--+
--+      supportiveSummary:
--+        'Let us handle the tech while you focus on your vision. Together, we’ll build a site that empowers your business.',
--+      influentialPrompt:
--+        'Take the first step toward a website built to grow with you.',
--+
--+      customerInnerVoiceSupportiveInfluentialChoice:
--+        'How could custom development elevate my online presence? What’s the first step to create a site that truly fits my business?',
--+      customerInnerVoiceDominantConscientiousObjection:
--+        'Why should I choose custom development over a website builder? What tangible benefits does expert collaboration provide?',
--+    };
--+
--+    const currentPage = route.name as string;
--+
--+    // Handle left button click
--+    function handleLeftClick() {
--+      trackingStore.addVisitedPage(currentPage); // Log the current page as visited
--+      trackingStore.recordChoice(currentPage, 'left'); // Record the left button choice
--+      const nextPage = trackingStore.getNextPage(currentPage, 'left'); // Get the next page dynamically
--+      if (nextPage) router.push(nextPage); // Navigate to the next page
--+    }
--+
--+    // Handle right button click
--+    function handleRightClick() {
--+      trackingStore.addVisitedPage(currentPage); // Log the current page as visited
--+      trackingStore.recordChoice(currentPage, 'right'); // Record the right button choice
--+      const nextPage = trackingStore.getNextPage(currentPage, 'right'); // Get the next page dynamically
--+      if (nextPage) router.push(nextPage); // Navigate to the next page
--+    }
--+
--+    return { messages, handleLeftClick, handleRightClick };
--+  },
--+});
-- </script>
+--      customerInnerVoiceSupportiveInfluentialChoice:
+-+      leftButtonText:
+-         'How could custom development elevate my online presence? What’s the first step to create a site that truly fits my business?',
+--      customerInnerVoiceDominantConscientiousObjection:
+-+      rightButtonText:
+-         'Why should I choose custom development over a website builder? What tangible benefits does expert collaboration provide?',
+-     };
 - 
---<!-- src/pages/LandingPage.vue -->
--+<style scoped lang="scss">
--+/* Your existing SCSS styles for the Landing Page */
--+</style>
-diff --git a/src/components/MessagingPage.vue b/src/components/MessagingPage.vue
-index 9baa571..d3ab1cf 100644
---- a/src/components/MessagingPage.vue
-+++ b/src/components/MessagingPage.vue
-@@ -37,12 +37,12 @@
-         </div>
-         <div class="action-buttons">
-           <q-btn
--            :label="messages.customerInnerVoiceSupportiveInfluentialChoice"
-+            :label="messages.leftButtonText"
-             @click="handleLeftClick"
-             class="custom-btn"
-           />
-           <q-btn
--            :label="messages.customerInnerVoiceDominantConscientiousObjection"
-+            :label="messages.rightButtonText"
-             @click="handleRightClick"
-             class="custom-btn"
-           />
-@@ -69,8 +69,8 @@
-           conscientiousStatement: string;
-           supportiveSummary: string;
-           influentialPrompt: string;
--          customerInnerVoiceSupportiveInfluentialChoice: string;
--          customerInnerVoiceDominantConscientiousObjection: string;
-+          leftButtonText: string;
-+          rightButtonText: string;
-         }>,
-         required: true,
-       },
-diff --git a/src/data/messages/AboutUs.ts b/src/data/messages/AboutUs.ts
-index 26a2d12..5c970f0 100644
---- a/src/data/messages/AboutUs.ts
-+++ b/src/data/messages/AboutUs.ts
-@@ -22,10 +22,10 @@ export const AboutUs: Message = {
-   influentialPrompt:
-     'Are you ready to collaborate with someone who truly cares about your vision? Let’s take that first step together.',
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'What makes Vision2Virtual the right partner for my project? How could I start working with someone truly committed to my goals?',
- 
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'How does this structured process ensure better results than using a DIY website builder or other alternatives?',
- };
- 
-diff --git a/src/data/messages/CompleteProcessSummary.ts b/src/data/messages/CompleteProcessSummary.ts
-index cb20291..bb95f88 100644
---- a/src/data/messages/CompleteProcessSummary.ts
-+++ b/src/data/messages/CompleteProcessSummary.ts
-@@ -19,9 +19,9 @@ export const CompleteProcessSummary: Message = {
-     'Gain clarity on how we work together to create something extraordinary. See each step clearly outlined for your understanding.', // 23 words
-   influentialPrompt: 'Ready to learn how this process works for your goals?', // 10 words
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'How does understanding the process help me? What makes it so effective for achieving successful results?', // 17 words
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'Can I explore this process in depth before committing to anything? How adaptable is this approach to my needs?', // 19 words
- };
- 
-diff --git a/src/data/messages/CompleteWebsiteBuild.ts b/src/data/messages/CompleteWebsiteBuild.ts
-index 5d4a1a2..f3182cb 100644
---- a/src/data/messages/CompleteWebsiteBuild.ts
-+++ b/src/data/messages/CompleteWebsiteBuild.ts
-@@ -21,9 +21,9 @@ export const CompleteWebsiteBuild: Message = {
-   influentialPrompt:
-     'Are you ready to turn your ideas into a powerful digital presence?', // 12 words
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'How does this complete package bring everything together? What makes this a strong choice for me? How might it handle my creative ideas and evolving goals?', // 19 words
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'Is this a fully custom build, or are templates used? Do I own the code and results, and how flexible and adaptable is the overall timeline?', // 22 words
- };
- 
-diff --git a/src/data/messages/ContactUs.ts b/src/data/messages/ContactUs.ts
-index f0ac40d..0d36349 100644
---- a/src/data/messages/ContactUs.ts
-+++ b/src/data/messages/ContactUs.ts
-@@ -18,9 +18,9 @@ export const ContactUs: Message = {
-   influentialPrompt:
-     'Taking the first step is simple, and it opens doors to success.', // 13 words
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'How can an expert’s guidance help clarify my goals and make progress easier? What’s the first step in working together?', // 22 words
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'How do I know this process will deliver reliable results? What makes expert support essential for achieving success?', // 19 words
- };
- 
-diff --git a/src/data/messages/DIYComparison.ts b/src/data/messages/DIYComparison.ts
-index 17fd67d..ad23a42 100644
---- a/src/data/messages/DIYComparison.ts
-+++ b/src/data/messages/DIYComparison.ts
-@@ -18,9 +18,9 @@ export const DIYComparison: Message = {
-   influentialPrompt:
-     'Ready to elevate your online presence? Let’s explore the next step together.', // 13 words
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'How can I gain a professional-grade site built for my goals while ensuring it works exactly the way I want?', // 23 words
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'How is this approach better and more reliable than trying to build a website myself using a platform like Wix or Squarespace?', // 23 words
- };
- 
-diff --git a/src/data/messages/FocusedStrategySessions.ts b/src/data/messages/FocusedStrategySessions.ts
-index 17fe751..cced224 100644
---- a/src/data/messages/FocusedStrategySessions.ts
-+++ b/src/data/messages/FocusedStrategySessions.ts
-@@ -20,10 +20,10 @@ export const FocusedStrategySessions: Message = {
-     'Over five days, these thoughtfully paced sessions provide the clarity and direction to set your project on a successful path.', // 19 words
-   influentialPrompt:
-     'Ready to gain the clarity and confidence to take the next step?', // 11 words
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'How do these sessions set me up for success? What makes them critical for my complete website? It seems like it will align my priorities.', // 19 words
- 
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'Why spend five focused hours clarifying my vision when I could use that time building my site, even if it means accepting less clarity and direction?', // 23 words
- };
- 
-diff --git a/src/data/messages/FullServicePricingDetails.ts b/src/data/messages/FullServicePricingDetails.ts
-index ad0ce93..f65bda5 100644
---- a/src/data/messages/FullServicePricingDetails.ts
-+++ b/src/data/messages/FullServicePricingDetails.ts
-@@ -20,9 +20,9 @@ export const FullServicePricingDetails: Message = {
-   influentialPrompt:
-     'Take the first step toward a website that reflects your vision. Book your initial session today to begin.', // 16 words
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'I understand I can start with my first session to explore possibilities without obligation. How do I check availability to book now and move forward confidently?', // 27 words
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'Is the process flexible enough to adapt if my priorities shift? Can I adjust as needed without affecting the final outcome or results?', // 25 words
- };
- 
-diff --git a/src/data/messages/OurProcess.ts b/src/data/messages/OurProcess.ts
-index a33b4e6..29e931f 100644
---- a/src/data/messages/OurProcess.ts
-+++ b/src/data/messages/OurProcess.ts
-@@ -19,9 +19,9 @@ export const OurProcess: Message = {
-   influentialPrompt:
-     'Take the next step in creating a platform that reflects your vision. Let’s start your consultation today.', // 15 words
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'How does a one-on-one approach refine my ideas and bring clarity? What’s the next step in creating something aligned with my vision?', // 20 words
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'Would learning the technical details be a better use of my time? Why prioritize planning instead of jumping straight into execution?', // 20 words
- };
- 
-diff --git a/src/data/messages/PrivacyPolicy.ts b/src/data/messages/PrivacyPolicy.ts
-index 22d6804..7310d1b 100644
---- a/src/data/messages/PrivacyPolicy.ts
-+++ b/src/data/messages/PrivacyPolicy.ts
-@@ -18,9 +18,9 @@ export const PrivacyPolicy: Message = {
-   influentialPrompt:
-     'Want to learn more about how we handle your data responsibly?', // 11 words
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'How do you ensure my information is protected while keeping things user-friendly? What’s your first step to safeguard privacy?', // 21 words
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'Can you explain how your privacy standards are compliant and transparent? What practices ensure my data is secure?', // 19 words
- };
- 
-diff --git a/src/data/messages/SalesStrategyMessages.ts b/src/data/messages/SalesStrategyMessages.ts
-index c277791..6d25208 100644
---- a/src/data/messages/SalesStrategyMessages.ts
-+++ b/src/data/messages/SalesStrategyMessages.ts
-@@ -10,8 +10,8 @@ const defaultMessage = {
-   conscientiousStatement: '',
-   supportiveSummary: '',
-   influentialPrompt: '',
--  customerInnerVoiceSupportiveInfluentialChoice: '',
--  customerInnerVoiceDominantConscientiousObjection: '',
-+  leftButtonText: '',
-+  rightButtonText: '',
- };
- 
- // Explicit type for Messages object
-diff --git a/src/data/messages/TalkToDeveloper.ts b/src/data/messages/TalkToDeveloper.ts
-index c642fce..5231ab4 100644
---- a/src/data/messages/TalkToDeveloper.ts
-+++ b/src/data/messages/TalkToDeveloper.ts
-@@ -21,9 +21,9 @@ export const TalkToDeveloper: Message = {
-   influentialPrompt:
-     'Are you ready to refine your vision today? Let’s get started on creating something extraordinary.', // 16 words
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'If this is just the first step in your 3-step process, what else could we achieve with more time, and how might that refine my vision?',
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'Even if I wind up going with a do-it-yourself option, what do I gain from spending an hour and $49 to strategize with a experienced developer?', // 19 words
- };
- 
-diff --git a/src/data/messages/TermsOfService.ts b/src/data/messages/TermsOfService.ts
-index 4eafa0f..673eee4 100644
---- a/src/data/messages/TermsOfService.ts
-+++ b/src/data/messages/TermsOfService.ts
-@@ -18,9 +18,9 @@ export const TermsOfService: Message = {
-   influentialPrompt:
-     'Ready to explore how we create secure and transparent working relationships?', // 11 words
- 
--  customerInnerVoiceSupportiveInfluentialChoice:
-+  leftButtonText:
-     'How can these terms simplify collaboration while protecting my interests? What’s the next step in getting started?', // 20 words
--  customerInnerVoiceDominantConscientiousObjection:
-+  rightButtonText:
-     'How do your terms ensure accountability and fairness? Can you explain their impact on a successful partnership?', // 17 words
- };
- 
 diff --git a/src/pages/LandingPage.vue b/src/pages/LandingPage.vue
-index 54f1ccd..beedd88 100644
+index beedd88..24aaa13 100644
 --- a/src/pages/LandingPage.vue
 +++ b/src/pages/LandingPage.vue
-@@ -40,9 +40,9 @@ export default defineComponent({
+@@ -21,7 +21,7 @@ export default defineComponent({
+     const route = useRoute();
+     const trackingStore = useTrackingStore();
+ 
+-    // Local messages object (from LandingPage.ts)
++    // Local messages object with simplified button text
+     const messages = {
+       dominantTagline: 'Get a custom-built website tailored for your business success.',
+       influentialTagline: 'Partner with an expert to create a site built for growth.',
+@@ -40,10 +40,8 @@ export default defineComponent({
        influentialPrompt:
          'Take the first step toward a website built to grow with you.',
  
--      customerInnerVoiceSupportiveInfluentialChoice:
-+      leftButtonText:
-         'How could custom development elevate my online presence? What’s the first step to create a site that truly fits my business?',
--      customerInnerVoiceDominantConscientiousObjection:
-+      rightButtonText:
-         'Why should I choose custom development over a website builder? What tangible benefits does expert collaboration provide?',
+-      leftButtonText:
+-        'How could custom development elevate my online presence? What’s the first step to create a site that truly fits my business?',
+-      rightButtonText:
+-        'Why should I choose custom development over a website builder? What tangible benefits does expert collaboration provide?',
++      leftButtonText: 'Discover more about our process, and see how it can inspire your vision.',
++      rightButtonText: 'Learn why it works, and understand how it benefits you.',
      };
  
+     const currentPage = route.name as string;

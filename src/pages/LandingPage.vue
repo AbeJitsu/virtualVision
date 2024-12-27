@@ -21,7 +21,7 @@ export default defineComponent({
     const route = useRoute();
     const trackingStore = useTrackingStore();
 
-    // Local messages object (from LandingPage.ts)
+    // Local messages object with simplified button text
     const messages = {
       dominantTagline: 'Get a custom-built website tailored for your business success.',
       influentialTagline: 'Partner with an expert to create a site built for growth.',
@@ -40,10 +40,8 @@ export default defineComponent({
       influentialPrompt:
         'Take the first step toward a website built to grow with you.',
 
-      leftButtonText:
-        'How could custom development elevate my online presence? What’s the first step to create a site that truly fits my business?',
-      rightButtonText:
-        'Why should I choose custom development over a website builder? What tangible benefits does expert collaboration provide?',
+      leftButtonText: 'Discover more about our process, and see how it can inspire your vision.',
+      rightButtonText: 'Learn why it works, and understand how it benefits you.',
     };
 
     const currentPage = route.name as string;
