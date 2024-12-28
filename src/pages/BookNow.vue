@@ -204,7 +204,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import 'src/css/shared-styles.scss';
+  @import 'src/css/app.scss';
 
   .book-now-page {
     display: flex;
