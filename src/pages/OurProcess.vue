@@ -7,60 +7,62 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import MessagingPage from '../components/MessagingPage.vue';
-import { useRouter, useRoute } from 'vue-router';
-import { useTrackingStore } from '../stores/trackingStore';
+  import { defineComponent } from 'vue';
+  import MessagingPage from '../components/MessagingPage.vue';
+  import { useRouter, useRoute } from 'vue-router';
+  import { useTrackingStore } from '../stores/trackingStore';
 
-export default defineComponent({
-  components: {
-    MessagingPage,
-  },
-  setup() {
-    const router = useRouter();
-    const route = useRoute();
-    const trackingStore = useTrackingStore();
+  export default defineComponent({
+    components: {
+      MessagingPage,
+    },
+    setup() {
+      const router = useRouter();
+      const route = useRoute();
+      const trackingStore = useTrackingStore();
 
-    const messages = {
-      dominantTagline: 'A step-by-step process for building your ideal website.',
-      influentialTagline: 'Collaboration and strategy first, so execution is seamless.',
+      const messages = {
+        dominantTagline:
+          'A step-by-step process for building your ideal website.',
+        influentialTagline:
+          'Collaboration and strategy first, so execution is seamless.',
 
-      supportiveStatement:
-        'Every journey starts with the Essentials package, where we refine your ideas and clarify your objectives.',
-      dominantStatement:
-        'In the Professional package, we dive deeper with five focused strategy sessions, ensuring every detail aligns perfectly before moving forward.',
-      influentialStatement:
-        'The Premium package combines tailored strategy and collaboration, transforming your vision into a fully realized, professional-grade platform.',
-      conscientiousStatement:
-        'Each package is designed to meet your unique needs, balancing collaboration and execution to achieve the best possible results.',
+        supportiveStatement:
+          'Every plan starts with collaboration to ensure we’re aligned on your goals. The QuickStart Plan includes 30 minutes of focused collaboration, giving you the space to explain your vision and priorities.',
+        dominantStatement:
+          'Following our discussion, I’ll spend up to one hour of development creating your requested solution, which will be delivered within 24 hours, along with a detailed report.',
+        influentialStatement:
+          'The Strategic Design Path deepens this process with two days of collaboration and development, refining your vision through two 30-minute sessions and five hours of dedicated work. Your deliverables will be ready by day three.',
+        conscientiousStatement:
+          'For larger projects, the Premium Vision Build offers up to five collaboration sessions and 25 hours of development over a week, ensuring every detail is thoughtfully executed and delivered by day seven.',
 
-      supportiveSummary:
-        'With Essentials, Professional, and Premium, our process ensures your website isn’t just functional—it’s a platform for success.',
-      influentialPrompt:
-        'Take the first step with Essentials, or explore what Professional and Premium can offer. Let’s bring your vision to life.',
-    };
+        supportiveSummary:
+          'No matter which path you choose—QuickStart, Strategic Design Path, or Premium Vision Build—you’ll experience a collaborative process that brings your vision to life.',
+        influentialPrompt:
+          'Start with the QuickStart Plan to get clarity and momentum, then continue with the Strategic Design Path or upgrade to the Premium Vision Build as your goals evolve.',
+      };
 
-    const currentPage = route.name as string;
+      const currentPage = route.name as string;
 
-    function handleLeftClick() {
-      trackingStore.addVisitedPage(currentPage);
-      trackingStore.recordChoice(currentPage, 'left');
-      const nextPage = trackingStore.getNextPage(currentPage, 'left');
-      if (nextPage) router.push(nextPage);
-    }
+      function handleLeftClick() {
+        trackingStore.addVisitedPage(currentPage);
+        trackingStore.recordChoice(currentPage, 'left');
+        const nextPage = trackingStore.getNextPage(currentPage, 'left');
+        if (nextPage) router.push(nextPage);
+      }
 
-    function handleRightClick() {
-      trackingStore.addVisitedPage(currentPage);
-      trackingStore.recordChoice(currentPage, 'right');
-      const nextPage = trackingStore.getNextPage(currentPage, 'right');
-      if (nextPage) router.push(nextPage);
-    }
+      function handleRightClick() {
+        trackingStore.addVisitedPage(currentPage);
+        trackingStore.recordChoice(currentPage, 'right');
+        const nextPage = trackingStore.getNextPage(currentPage, 'right');
+        if (nextPage) router.push(nextPage);
+      }
 
-    return { messages, handleLeftClick, handleRightClick };
-  },
-});
+      return { messages, handleLeftClick, handleRightClick };
+    },
+  });
 </script>
 
 <style scoped lang="scss">
-/* No additional styles needed since all are moved to app.scss */
+  /* No additional styles needed since all are moved to app.scss */
 </style>
