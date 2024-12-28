@@ -1,4 +1,4 @@
-export const TalkToDeveloper: Message = {
+export const QuickStartPhase: Message = {
   dominantTagline:
     'Collaborate directly with the expert who’ll build your vision', // 9 words
   influentialTagline:
@@ -25,4 +25,4 @@ export const TalkToDeveloper: Message = {
     'Even if I wind up going with a do-it-yourself option, what do I gain from spending an hour and $49 to strategize with a experienced developer?', // 19 words
 };
 
-export default TalkToDeveloper;
+export default QuickStartPhase;

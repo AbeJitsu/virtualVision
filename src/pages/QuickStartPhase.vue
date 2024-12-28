@@ -9,7 +9,7 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import MessagingPage from '../components/MessagingPage.vue';
-  import { TalkToDeveloper } from '../data/messages/TalkToDeveloper';
+  import { QuickStartPhase } from '../data/messages/QuickStartPhase';
   import { useRoute, useRouter } from 'vue-router';
   import { useTrackingStore } from '../stores/trackingStore';
 
@@ -22,7 +22,7 @@
       const route = useRoute();
       const trackingStore = useTrackingStore();
 
-      const messages = TalkToDeveloper; // Load the message set
+      const messages = QuickStartPhase; // Load the message set
       const currentPage = route.name as string;
 
       // Handle left button click
@@ -50,4 +50,4 @@
   @import '/src/css/app.scss';
 </style>
 
-<!-- src/pages/TalkToDeveloper.vue -->
+<!-- src/pages/QuickStartPhase.vue -->

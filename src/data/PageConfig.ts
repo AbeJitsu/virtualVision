@@ -2,7 +2,7 @@
 export const salesFunnelSequence = [
   'landing-page',
   'our-process',
-  'quick-start-plan',
+  'quick-start-phase',
   'strategic-design-path',
   'premium-vision-build',
   'full-service-pricing-details',

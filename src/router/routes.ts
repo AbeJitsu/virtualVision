@@ -17,9 +17,9 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/footer/AboutUs.vue'),
       },
       {
-        path: 'quick-start-plan',
-        name: 'quick-start-plan',
-        component: () => import('pages/TalkToDeveloper.vue'),
+        path: 'quick-start-phase',
+        name: 'quick-start-phase',
+        component: () => import('pages/QuickStartPhase.vue'),
       },
       {
         path: 'strategic-design-path',

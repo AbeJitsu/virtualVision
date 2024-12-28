@@ -28,7 +28,7 @@
           'Collaboration and strategy first, so execution is seamless.',
 
         supportiveStatement:
-          'Every plan starts with collaboration to ensure we’re aligned on your goals. The QuickStart Plan includes 30 minutes of focused collaboration, giving you the space to explain your vision and priorities.',
+          'Every plan starts with collaboration to ensure we’re aligned on your goals. The Quick Start Phase includes 30 minutes of focused collaboration, giving you the space to explain your vision and priorities.',
         dominantStatement:
           'Following our discussion, I’ll spend up to one hour of development creating your requested solution, which will be delivered within 24 hours, along with a detailed report.',
         influentialStatement:
@@ -39,7 +39,7 @@
         supportiveSummary:
           'No matter which path you choose—QuickStart, Strategic Design Path, or Premium Vision Build—you’ll experience a collaborative process that brings your vision to life.',
         influentialPrompt:
-          'Start with the QuickStart Plan to get clarity and momentum, then continue with the Strategic Design Path or upgrade to the Premium Vision Build as your goals evolve.',
+          'Start with the Quick Start Phase to get clarity and momentum, then continue with the Strategic Design Path or upgrade to the Premium Vision Build as your goals evolve.',
       };
 
       const currentPage = route.name as string;

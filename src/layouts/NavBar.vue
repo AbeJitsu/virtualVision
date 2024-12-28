@@ -152,7 +152,7 @@
 
   // Navigation links for desktop and mobile views
   const navLinks = [
-    { label: 'Quick Start Plan', to: { name: 'quick-start-plan' } },
+    { label: 'Quick Start Phase', to: { name: 'quick-start-phase' } },
     {
       label: 'Strategic Design Path',
       to: { name: 'strategic-design-path' },
