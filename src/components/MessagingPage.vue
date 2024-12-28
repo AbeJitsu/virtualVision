@@ -303,7 +303,7 @@ export default defineComponent({
         height: auto;
         background-color: rgba(255, 255, 255, 0.66);
         color: $grayDark;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         font-weight: 600;
         border-radius: 8px;
         box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
