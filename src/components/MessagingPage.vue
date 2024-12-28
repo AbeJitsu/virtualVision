@@ -125,7 +125,7 @@ export default defineComponent({
   .content-container {
     width: 100%;
     max-width: 1000px;
-    letter-spacing: -1px;
+    letter-spacing: -1.1px;
     padding-top: calc(
       var(--navbar-height, 4rem) + 2rem
     ); // Navbar height + spacing
@@ -151,7 +151,7 @@ export default defineComponent({
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba($textWhite, 0.25);
+      background-color: rgba($textWhite, 0.35);
       z-index: -1;
     }
 
@@ -166,7 +166,9 @@ export default defineComponent({
     &--influential {
       font-size: x-large;
       margin-bottom: 2.5rem;
+      font-weight: 500;
       color: $grayDark;
+      letter-spacing: -1px;
     }
   }
 
@@ -175,7 +177,6 @@ export default defineComponent({
   }
 
   .influentialTagline {
-    margin-bottom: 2.5rem;
     color: $grayDark;
     text-align: center;
     letter-spacing: -1px;
@@ -192,96 +193,41 @@ export default defineComponent({
     flex-direction: column;
     gap: 2rem;
     width: 50%;
-    margin: 2rem auto;
+    margin: 0rem auto;
 
     @media (max-width: 599px) {
       padding: 0 0rem; /* Adjust padding for mobile */
-      gap: 2rem; /* Slightly reduce gap for smaller screens */
+      gap: 1.75rem; /* Slightly reduce gap for smaller screens */
       width: 80%;
     }
   }
 
-  .tone-message-box {
-    font-size: 1.25rem;
-    font-weight: 400;
-    letter-spacing: -0.55px;
-    text-align: center;
-    padding: 2rem 4rem 1rem;
-    border-radius: 8px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-
-    // Keep the predefined color styles
-    &--supportive {
-      background-color: rgba($blueVeryLight, 0.8); /* Existing style */
-      border: 1px solid $blueVeryLight;
-      color: $grayVeryDark;
-    }
-
-    &--dominant {
-      background-color: rgba($orangeVeryLight, 0.6); /* Existing style */
-      border: 1px solid $orangeVeryLight;
-      color: $grayVeryDark;
-    }
-
-    &--influential {
-      background-color: rgba($yellowVeryLight, 0.7); /* Existing style */
-      color: $grayVeryDark;
-    }
-
-    &--conscientious {
-      background-color: rgba($greenVeryLight, 0.6); /* Existing style */
-      border: 2px solid $greenVeryLight;
-      color: $grayVeryDark;
-    }
-
-    @media (max-width: 599px) {
-      font-size: 1rem; /* Scale down font size for mobile */
-      padding: 2rem 2.5rem 1rem; /* Add padding for better spacing */
-    }
-  }
-
-  .supportive-wrapup {
-    text-align: center;
-    color: $grayVeryDark;
-    font-weight: 600;
-    font-size: x-large;
-    margin: 4rem 8rem 4rem;
-    padding-top: 0.1rem;
-    letter-spacing: -0.5px;
-
-    @media (max-width: 599px) {
-      margin: 4rem 2em 3rem;
-      font-size: large;
+  .choice-prompts {
+      display: flex;
+      justify-content: center;
+      font-size: 1.4rem;
       font-weight: 500;
+      color: $grayVeryDark;
+      margin-top: -2rem;
+      letter-spacing: -0.55px;
+      @media (max-width: 599px) {
+        font-size: medium;
+        margin-top: -0.5rem;
+      }
     }
-  }
 
-  // Binary Choice Buttons
+    // Binary Choice Buttons
   .binary-choice {
     text-align: center;
-
     flex-direction: row;
     justify-content: center;
-    gap: 2rem;
-    margin: 5rem 2rem;
+
+    margin: 5rem 8rem;
 
     @media (max-width: 599px) {
       flex-direction: column;
       gap: 1rem;
       margin: 1em 3em 1em;
-    }
-
-    .choice-prompts {
-      display: flex;
-      justify-content: center;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: $grayVeryDark;
-      margin-top: -2rem;
-      @media (max-width: 599px) {
-        font-size: medium;
-        margin-top: -0.5rem;
-      }
     }
 
     .action-buttons {
