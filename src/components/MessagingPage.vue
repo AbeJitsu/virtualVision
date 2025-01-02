@@ -73,13 +73,13 @@ export default defineComponent({
       required: true,
     },
     leftButtonLabel: {
-      type: String,
-      default: 'Discover the possibilities, and see how it works.',
-    },
-    rightButtonLabel: {
-      type: String,
-      default: 'Learn more about how this process works.',
-    },
+  type: String,
+  default: 'Discover how we can bring your vision to life.',
+},
+rightButtonLabel: {
+  type: String,
+  default: 'Dive into the details of our approach.',
+},
   },
   setup(props) {
     const route = useRoute();
