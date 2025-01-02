@@ -22,25 +22,25 @@
       const trackingStore = useTrackingStore();
 
       const messages = {
-        dominantTagline:
-          'A step-by-step process for building your ideal website.',
-        influentialTagline:
-          'Collaboration and strategy first, so execution is seamless.',
+  dominantTagline:
+    'A collaborative approach tailored to your evolving goals.',
+  influentialTagline:
+    'We build as you go, refining your vision step by step.',
 
-        supportiveStatement:
-          'Every plan starts with collaboration to ensure we’re aligned on your goals. The Quick Start Phase includes 30 minutes of focused collaboration, giving you the space to explain your vision and priorities.',
-        dominantStatement:
-          'Following our discussion, I’ll spend up to one hour of development creating your requested solution, which will be delivered within 24 hours, along with a detailed report.',
-        influentialStatement:
-          'The Strategic Design Path deepens this process with two days of collaboration and development, refining your vision through two 30-minute sessions and five hours of dedicated work. Your deliverables will be ready by day three.',
-        conscientiousStatement:
-          'For larger projects, the Premium Vision Build offers up to five collaboration sessions and 25 hours of development over a week, ensuring every detail is thoughtfully executed and delivered by day seven.',
+  supportiveStatement:
+    'Every project starts with the Quick Start Phase, designed to clarify your vision. This includes one hour of live collaboration to ensure we understand the who, what, when, where, why, and how of your goals.',
+  dominantStatement:
+    'The Quick Start Phase provides two hours of focused development based on this discussion, ensuring your vision is clear and ready for the next steps.',
+  influentialStatement:
+    'The Strategic Design Path introduces a structured 1:5 ratio—two live collaboration sessions and 10 hours of dedicated development—focused on refining and executing your vision.',
+  conscientiousStatement:
+    'The Premium Vision Build offers 10 hours of live collaboration and 50 hours of dedicated development, following the same 1:5 structure. Each phase is guided by your input to ensure every detail resonates with your goals.',
 
-        supportiveSummary:
-          'No matter which path you choose—QuickStart, Strategic Design Path, or Premium Vision Build—you’ll experience a collaborative process that brings your vision to life.',
-        influentialPrompt:
-          'Start with the Quick Start Phase to get clarity and momentum, then continue with the Strategic Design Path or upgrade to the Premium Vision Build as your goals evolve.',
-      };
+  supportiveSummary:
+    'No matter the package—QuickStart, Strategic Design Path, or Premium Vision Build—you’ll experience a collaborative process that keeps your vision at the center.',
+  influentialPrompt:
+    'Start with the Quick Start Phase to establish a solid foundation, then expand with the Strategic Design Path or Premium Vision Build for greater results.',
+};
 
       const currentPage = route.name as string;
 
