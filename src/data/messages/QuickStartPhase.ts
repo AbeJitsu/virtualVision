@@ -16,7 +16,7 @@ export const QuickStartPhase: Message = {
 
   supportiveSummary:
     'Partner with a developer who listens and delivers. Leave with a focused plan built to support your success and next steps.', // 20 words
-  influentialPrompt:
+  influentialSummary:
     'Are you ready to refine your vision today? Let’s get started on creating something extraordinary.', // 16 words
 
   leftButtonText:

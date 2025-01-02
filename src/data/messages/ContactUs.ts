@@ -15,7 +15,7 @@ export const ContactUs: Message = {
 
   supportiveSummary:
     'Let’s connect and create solutions that align with your vision. Together, we can make progress and bring clarity to your goals.', // 21 words
-  influentialPrompt:
+  influentialSummary:
     'Taking the first step is simple, and it opens doors to success.', // 13 words
 
   leftButtonText:

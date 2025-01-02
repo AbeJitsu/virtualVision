@@ -23,23 +23,23 @@
 
       const messages = {
   dominantTagline:
-    'A collaborative approach tailored to your evolving goals.',
+    'Your vision, crafted into a powerful online presence.',
   influentialTagline:
-    'We build as you go, refining your vision step by step.',
+    'Together, we’ll build tools that grow with your business.',
 
   supportiveStatement:
-    'Every project starts with the Quick Start Phase, designed to clarify your vision. This includes one hour of live collaboration to ensure we understand the who, what, when, where, why, and how of your goals.',
+    'Every project begins with a conversation. Through live collaboration, we’ll clarify your goals and identify how your website can reflect your unique vision and passion.',
   dominantStatement:
-    'The Quick Start Phase provides two hours of focused development based on this discussion, ensuring your vision is clear and ready for the next steps.',
+    'Our approach is iterative and flexible, ensuring every step aligns with your priorities. You’ll see your ideas take shape as we focus on the areas that matter most to you.',
   influentialStatement:
-    'The Strategic Design Path introduces a structured 1:5 ratio—two live collaboration sessions and 10 hours of dedicated development—focused on refining and executing your vision.',
+    'Imagine a website that not only looks great but also simplifies your work—connecting with your customers, organizing data, and automating repetitive tasks to save you time and energy.',
   conscientiousStatement:
-    'The Premium Vision Build offers 10 hours of live collaboration and 50 hours of dedicated development, following the same 1:5 structure. Each phase is guided by your input to ensure every detail resonates with your goals.',
+    'Our ultimate goal is to create a full-stack solution: a polished front-end for users, a reliable back-end for functionality, and a database to store and manage information. Along the way, we’ll integrate the tools and systems you need to succeed.',
 
   supportiveSummary:
-    'No matter the package—QuickStart, Strategic Design Path, or Premium Vision Build—you’ll experience a collaborative process that keeps your vision at the center.',
-  influentialPrompt:
-    'Start with the Quick Start Phase to establish a solid foundation, then expand with the Strategic Design Path or Premium Vision Build for greater results.',
+    'This journey is about bringing your ideas to life, one step at a time, with a flexible process that adapts to your needs.',
+  influentialSummary:
+    'Let’s start the conversation and create something meaningful for your business.',
 };
 
       const currentPage = route.name as string;

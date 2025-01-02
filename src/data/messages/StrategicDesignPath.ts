@@ -18,7 +18,7 @@ export const StrategicDesignPath: Message = {
 
   supportiveSummary:
     'Over five days, these thoughtfully paced sessions provide the clarity and direction to set your project on a successful path.', // 19 words
-  influentialPrompt:
+  influentialSummary:
     'Ready to gain the clarity and confidence to take the next step?', // 11 words
   leftButtonText:
     'How do these sessions set me up for success? What makes them critical for my complete website? It seems like it will align my priorities.', // 19 words

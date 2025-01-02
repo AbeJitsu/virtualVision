@@ -36,7 +36,7 @@
 
   supportiveSummary:
     'We’ll handle the details so you can focus on what you do best. Together, we’ll build a website that supports your vision.',
-  influentialPrompt:
+  influentialSummary:
     'Take the first step to create a website that saves time, looks great, and grows with your business.',
 };
 

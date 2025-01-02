@@ -18,7 +18,7 @@ export const PremiumVisionBuild: Message = {
 
   supportiveSummary:
     'By the end of this phase, your fully realized platform will reflect your goals and aspirations, empowering you to grow with confidence.', // 21 words
-  influentialPrompt:
+  influentialSummary:
     'Are you ready to turn your ideas into a powerful digital presence?', // 12 words
 
   leftButtonText:

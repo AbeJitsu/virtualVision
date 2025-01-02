@@ -1,3 +1,5 @@
+<!-- MessagingPage.vue -->
+
 <template>
   <q-page class="flex-column">
     <div class="content-container">
@@ -33,7 +35,7 @@
       </div>
       <div class="binary-choice">
         <div class="choice-prompts">
-          <p>{{ messages.influentialPrompt }}</p>
+          <p>{{ messages.influentialSummary }}</p>
         </div>
         <div class="action-buttons">
           <q-btn
@@ -68,7 +70,7 @@ export default defineComponent({
         influentialStatement: string;
         conscientiousStatement: string;
         supportiveSummary: string;
-        influentialPrompt: string;
+        influentialSummary: string;
       }>,
       required: true,
     },

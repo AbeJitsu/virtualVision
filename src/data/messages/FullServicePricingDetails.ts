@@ -17,7 +17,7 @@ export const FullServicePricingDetails: Message = {
 
   supportiveSummary:
     'It all starts with a single session, with no pressure to continue. Each step is optional, empowering you to build at your own pace.', // 20 words
-  influentialPrompt:
+  influentialSummary:
     'Take the first step toward a website that reflects your vision. Book your initial session today to begin.', // 16 words
 
   leftButtonText:

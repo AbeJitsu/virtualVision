@@ -36,7 +36,7 @@
 
   supportiveSummary:
     'The QuickStart Phase ensures your vision is fully understood and aligned with your goals. It lays the groundwork for building something meaningful and effective.',
-  influentialPrompt:
+  influentialSummary:
     'Take the next step toward realizing your vision. Start today with expert guidance and a clear path forward.',
 };
 

@@ -19,7 +19,7 @@ export const AboutUs: Message = {
   supportiveSummary:
     'At Vision2Virtual, I strive to empower businesses by combining technical expertise with heartfelt collaboration. Let’s create a solution that reflects your values and sets the stage for lasting success.',
 
-  influentialPrompt:
+  influentialSummary:
     'Are you ready to collaborate with someone who truly cares about your vision? Let’s take that first step together.',
 
   leftButtonText:

@@ -15,7 +15,7 @@ export const TermsOfService: Message = {
 
   supportiveSummary:
     'Our terms prioritize trust, respect, and transparency. Let’s build a partnership where clear expectations lead to lasting success.', // 19 words
-  influentialPrompt:
+  influentialSummary:
     'Ready to explore how we create secure and transparent working relationships?', // 11 words
 
   leftButtonText:

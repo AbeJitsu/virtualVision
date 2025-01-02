@@ -15,7 +15,7 @@ export const PrivacyPolicy: Message = {
 
   supportiveSummary:
     'Privacy isn’t just a promise; it’s our commitment. Let’s build a secure, transparent partnership together.', // 18 words
-  influentialPrompt:
+  influentialSummary:
     'Want to learn more about how we handle your data responsibly?', // 11 words
 
   leftButtonText:

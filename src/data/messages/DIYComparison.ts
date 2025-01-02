@@ -15,7 +15,7 @@ export const DIYComparison: Message = {
 
   supportiveSummary:
     'Explore how our approach delivers a better product and experience. Let’s craft a site that grows with your vision.', // 21 words
-  influentialPrompt:
+  influentialSummary:
     'Ready to elevate your online presence? Let’s explore the next step together.', // 13 words
 
   leftButtonText:
