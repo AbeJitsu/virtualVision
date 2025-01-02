@@ -202,6 +202,65 @@ export default defineComponent({
     }
   }
 
+  // ============================================================
+// Tone Message Box Styles
+// ============================================================
+.tone-message-box {
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 2rem 4rem 1rem;
+  font-weight: 500;
+  font-size: large;
+  letter-spacing: -0.55px;
+  color: $grayDark; // Default color for text
+
+  &--supportive {
+    background-color: rgba($blueVeryLight, 0.8);
+    border: 1px solid rgba($blueLight, 0.65);
+    color: $grayVeryDark;
+
+    &:hover {
+      background-color: rgba($blueVeryLight, 0.9);
+    }
+  }
+
+  &--dominant {
+    background-color: rgba($orangeVeryLight, 0.6);
+    border: 1px solid rgba($orangeLight, 0.55); // Slightly darker
+    color: $grayVeryDark;
+
+    &:hover {
+      background-color: rgba($orangeVeryLight, 0.7);
+    }
+  }
+
+  &--influential {
+    background-color: rgba($yellowVeryLight, 0.7);
+    border: 1px solid $yellowLight;
+    color: $grayVeryDark;
+
+    &:hover {
+      background-color: rgba($yellowVeryLight, 0.8);
+    }
+  }
+
+  &--conscientious {
+    background-color: rgba($greenVeryLight, 0.6);
+    border: 1px solid $greenLight;
+    color: $grayVeryDark;
+
+    &:hover {
+      background-color: rgba($greenVeryLight, 0.7);
+    }
+  }
+
+  @media (max-width: 599px) {
+    font-size: 1rem;
+    padding: 2rem 2.5rem 1rem;
+  }
+}
+
   .supportive-wrapup {
   text-align: center;
   color: $grayDark;
