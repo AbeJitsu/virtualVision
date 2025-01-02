@@ -43,11 +43,6 @@ body {
 // ============================================================
 // Links
 // ============================================================
-
-// src/css/app.scss
-
-
-// Shared transition and hover effects
 .shared-hover {
   transition: all 0.3s ease-in-out, transform 0.3s, box-shadow 0.3s, font-size 0.3s;
 
@@ -57,34 +52,17 @@ body {
   }
 }
 
-
-
-
-
-// Heading Styles
-h2 {
-  padding: 0;
-  margin: 0;
+// ============================================================
+// Button Styles
+// ============================================================
+.choice-btn {
+  @extend .shared-hover;
+  margin-bottom: 0 !important;
 }
 
-.dominantTagline {
-  font-size: xx-large;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: $grayDark;
-  text-align: center;
-  padding-top: 11rem;
-  letter-spacing: -1.25px;
-
-  @media (max-width: 599px) {
-    margin-bottom: 2rem;
-    font-size: large;
-    /* Reduce font size on smaller screens */
-    // padding-top: 6rem; /* Adjust padding for mobile */
-  }
-}
-
-// SDICS Message Box Styles
+// ============================================================
+// Tone Message Box Styles
+// ============================================================
 .tone-message-box {
   border-radius: 8px;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
@@ -141,21 +119,10 @@ h2 {
   }
 }
 
-// Supportive Wrap-Up Styling
-.supportive-wrapup {
-  text-align: center;
-  color: $grayDark;
-  font-weight: 600;
-  font-size: x-large;
-  margin: 4rem 8rem 0rem;
-  letter-spacing: -0.75px;
+// ============================================================
+// Layout Adjustments
+// ============================================================
 
-  @media (max-width: 599px) {
-    margin: 4rem 2rem 3rem;
-    font-size: large;
-    font-weight: 500;
-  }
-}
 
 // Focus Helper Override
 .q-btn:hover .q-focus-helper {

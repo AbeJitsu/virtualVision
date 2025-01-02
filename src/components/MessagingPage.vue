@@ -39,12 +39,12 @@
           <q-btn
             :label="leftButtonLabel"
             @click="handleLeftClick"
-            class="custom-btn"
+            class="custom-btn choice-btn"
           />
           <q-btn
             :label="rightButtonLabel"
             @click="handleRightClick"
-            class="custom-btn"
+            class="custom-btn choice-btn"
           />
         </div>
       </div>
@@ -201,6 +201,21 @@ export default defineComponent({
       width: 80%;
     }
   }
+
+  .supportive-wrapup {
+  text-align: center;
+  color: $grayDark;
+  font-weight: 600;
+  font-size: x-large;
+  margin: 4rem 8rem 0rem;
+  letter-spacing: -0.75px;
+
+  @media (max-width: 599px) {
+    margin: 4rem 2rem 3rem;
+    font-size: large;
+    font-weight: 500;
+  }
+}
 
   .choice-prompts {
       display: flex;
