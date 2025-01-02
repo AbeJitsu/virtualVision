@@ -9,8 +9,7 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import MessagingPage from '../components/MessagingPage.vue';
-  import { QuickStartPhase } from '../data/messages/QuickStartPhase';
-  import { useRoute, useRouter } from 'vue-router';
+  import { useRouter, useRoute } from 'vue-router';
   import { useTrackingStore } from '../stores/trackingStore';
 
   export default defineComponent({
@@ -22,10 +21,27 @@
       const route = useRoute();
       const trackingStore = useTrackingStore();
 
-      const messages = QuickStartPhase; // Load the message set
+      const messages = {
+        dominantTagline: 'Collaborate directly with the expert who’ll build your vision.',
+        influentialTagline: 'Turn your first ideas into a clear, actionable plan.',
+
+        supportiveStatement:
+          'Start with a live session to refine your vision. Together, we’ll shape your ideas into a focused roadmap that aligns with your goals.',
+        dominantStatement:
+          'Gain clarity and confidence with a structured session that prioritizes your needs, ensuring your project starts strong and stays on track.',
+        influentialStatement:
+          'Imagine gaining expert insights to refine your ideas, address challenges, and leave with a clear direction forward.',
+        conscientiousStatement:
+          'This session captures every detail, whether you choose additional services or not. Your next steps will be clear and actionable.',
+
+        supportiveSummary:
+          'This is the first step to building something extraordinary. Partner with a developer who listens, guides, and delivers.',
+        influentialPrompt:
+          'Start refining your vision today. Let’s turn your goals into a concrete plan for success.',
+      };
+
       const currentPage = route.name as string;
 
-      // Handle left button click
       function handleLeftClick() {
         trackingStore.addVisitedPage(currentPage);
         trackingStore.recordChoice(currentPage, 'left');
@@ -33,7 +49,6 @@
         if (nextPage) router.push(nextPage);
       }
 
-      // Handle right button click
       function handleRightClick() {
         trackingStore.addVisitedPage(currentPage);
         trackingStore.recordChoice(currentPage, 'right');
