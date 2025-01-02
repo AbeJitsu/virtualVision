@@ -22,23 +22,23 @@
       const trackingStore = useTrackingStore();
 
       const messages = {
-        dominantTagline: 'Collaborate directly with the expert who’ll build your vision.',
-        influentialTagline: 'Turn your first ideas into a clear, actionable plan.',
+  dominantTagline: 'Your first step to clarity and alignment.',
+  influentialTagline: 'Collaborate, define, and start building with purpose.',
 
-        supportiveStatement:
-          'Start with a live session to refine your vision. Together, we’ll shape your ideas into a focused roadmap that aligns with your goals.',
-        dominantStatement:
-          'Gain clarity and confidence with a structured session that prioritizes your needs, ensuring your project starts strong and stays on track.',
-        influentialStatement:
-          'Imagine gaining expert insights to refine your ideas, address challenges, and leave with a clear direction forward.',
-        conscientiousStatement:
-          'This session captures every detail, whether you choose additional services or not. Your next steps will be clear and actionable.',
+  supportiveStatement:
+    'Begin with one hour of live collaboration to clarify your vision. Together, we’ll define the "who, what, when, where, why, and how" of your goals.',
+  dominantStatement:
+    'Following this session, I’ll dedicate two hours to developing a tangible starting point, ensuring we’re aligned on your priorities.',
+  influentialStatement:
+    'Picture leaving this phase with a clear vision, expert insights, and an actionable foundation that aligns with your goals.',
+  conscientiousStatement:
+    'This phase captures every detail to guide the next steps, whether you continue with additional services or implement the plan independently.',
 
-        supportiveSummary:
-          'This is the first step to building something extraordinary. Partner with a developer who listens, guides, and delivers.',
-        influentialPrompt:
-          'Start refining your vision today. Let’s turn your goals into a concrete plan for success.',
-      };
+  supportiveSummary:
+    'The QuickStart Phase ensures your vision is fully understood and aligned with your goals. It lays the groundwork for building something meaningful and effective.',
+  influentialPrompt:
+    'Take the next step toward realizing your vision. Start today with expert guidance and a clear path forward.',
+};
 
       const currentPage = route.name as string;
 

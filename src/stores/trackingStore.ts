@@ -1,7 +1,27 @@
 // src/stores/trackingStore.ts
 import { defineStore } from 'pinia';
-import { salesFunnelSequence, exploratorySequence } from '../data/PageConfig';
+
 import { useRoute } from 'vue-router';
+
+
+export const salesFunnelSequence = [
+  'landing-page',
+  'our-process',
+  'quick-start-phase',
+  'strategic-design-path',
+  'premium-vision-build',
+  'full-service-pricing-details',
+  'book-now',
+];
+
+export const exploratorySequence = [
+  'diy-comparison',
+  'our-process',
+  'about-us',
+  'complete-process-summary',
+  // Add more detail-oriented pages here if needed
+];
+
 
 type Choice = 'left' | 'right';
 

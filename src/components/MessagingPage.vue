@@ -78,7 +78,7 @@ export default defineComponent({
     },
     rightButtonLabel: {
       type: String,
-      default: 'Learn why it works, and understand the benefits.',
+      default: 'Learn more about how this process works.',
     },
   },
   setup(props) {
