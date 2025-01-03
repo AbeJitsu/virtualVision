@@ -23,23 +23,23 @@
 
       const messages = {
   dominantTagline:
-    'Your vision, crafted into a powerful online presence.',
+    'Your vision, brought to life with clarity and purpose.',
   influentialTagline:
-    'Together, we’ll build tools that grow with your business.',
+    'Together, we’ll craft solutions that elevate your business.',
 
   supportiveStatement:
-    'Every project begins with a conversation. Through live collaboration, we’ll clarify your goals and identify how your website can reflect your unique vision and passion.',
+    'Every journey starts with a clear understanding. Through live collaboration, we’ll explore what truly matters to your business and how to reflect that in your website.',
   dominantStatement:
-    'Our approach is iterative and flexible, ensuring every step aligns with your priorities. You’ll see your ideas take shape as we focus on the areas that matter most to you.',
+    'Our process adapts to your goals, ensuring each step adds value. You’ll see your ideas come to life in ways that are both meaningful and effective.',
   influentialStatement:
-    'Imagine a website that not only looks great but also simplifies your work—connecting with your customers, organizing data, and automating repetitive tasks to save you time and energy.',
+    'Imagine a website that not only looks great but also saves you time—streamlining tasks, connecting with customers, and helping your business grow effortlessly.',
   conscientiousStatement:
-    'Our ultimate goal is to create a full-stack solution: a polished front-end for users, a reliable back-end for functionality, and a database to store and manage information. Along the way, we’ll integrate the tools and systems you need to succeed.',
+    'We focus on creating a seamless experience: a user-friendly interface, reliable functionality, and tools tailored to your needs. Every detail is designed to align with your goals.',
 
   supportiveSummary:
-    'This journey is about bringing your ideas to life, one step at a time, with a flexible process that adapts to your needs.',
+    'This is more than building a website—it’s about building a foundation for your business to thrive. Step by step, we bring your vision into reality.',
   influentialSummary:
-    'Let’s start the conversation and create something meaningful for your business.',
+    'Let’s work together to create something impactful. Your business deserves a site that works as hard as you do.',
 };
 
       const currentPage = route.name as string;
