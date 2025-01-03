@@ -30,7 +30,7 @@
   dominantStatement:
     'Your investment drives expert collaboration and development. With no obligation to move forward, each step ensures progress that aligns with your vision.',
   influentialStatement:
-    'Start with the QuickStart Phase for $199, continue with the Strategic Design Path for $649, and achieve your goals with the Premium Vision Build for $2999. Each phase is tailored to your success.',
+    'Start with the QuickStart Phase for $199, continue with the Strategic Design Path for $649, and achieve your goals with the Premium Vision Build for $2,999. Each phase is tailored to your success.',
   conscientiousStatement:
     'When combining all phases, the process includes 13 hours of live collaboration and 62 development hours. Together, these ensure a custom platform aligned with your long-term vision.',
 
