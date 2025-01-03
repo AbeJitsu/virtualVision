@@ -22,22 +22,22 @@
       const trackingStore = useTrackingStore();
 
       const messages = {
-  dominantTagline: 'Your first step to clarity and alignment.',
-  influentialTagline: 'Collaborate, define, and start building with purpose.',
+  dominantTagline: 'Start strong with clarity and confidence.',
+  influentialTagline: 'Together, we’ll build the foundation for success.',
 
   supportiveStatement:
-    'Begin with one hour of live collaboration to clarify your vision. Together, we’ll define the "who, what, when, where, why, and how" of your goals.',
+    'This phase begins with one hour of live collaboration to clarify your goals. We’ll explore the key elements of your vision and ensure it aligns with your business needs.',
   dominantStatement:
-    'Following this session, I’ll dedicate two hours to developing a tangible starting point, ensuring we’re aligned on your priorities.',
+    'After our session, I’ll dedicate two hours to crafting a tangible starting point, tailored to your priorities and designed to set your project in motion.',
   influentialStatement:
-    'Picture leaving this phase with a clear vision, expert insights, and an actionable foundation that aligns with your goals.',
+    'Imagine leaving this phase with actionable insights and a clear direction, ready to take meaningful steps toward your goals.',
   conscientiousStatement:
-    'This phase captures every detail to guide the next steps, whether you continue with additional services or implement the plan independently.',
+    'Every detail from this phase is documented to guide your next steps, whether you continue with our services or implement the plan independently.',
 
   supportiveSummary:
-    'The QuickStart Phase ensures your vision is fully understood and aligned with your goals. It lays the groundwork for building something meaningful and effective.',
+    'The QuickStart Phase ensures your goals are understood and translated into a clear plan, forming the foundation for success.',
   influentialSummary:
-    'Take the next step toward realizing your vision. Start today with expert guidance and a clear path forward.',
+    'Take your first step toward realizing your vision, and experience how clarity and collaboration can propel your vision forward.',
 };
 
       const currentPage = route.name as string;
