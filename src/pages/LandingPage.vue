@@ -4,63 +4,89 @@
     @left-button-click="handleLeftClick"
     @right-button-click="handleRightClick"
   />
+
+  <!-- Nav Buttons -->
+  <NavButtons
+    :currentPage="currentPage"
+    :leftButtonLabel="leftButtonLabel"
+    :rightButtonLabel="rightButtonLabel"
+    @left-click="handleLeftClick"
+    @right-click="handleRightClick"
+  />
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
-  import MessagingPage from '../components/MessagingPage.vue';
-  import { useRouter, useRoute } from 'vue-router';
-  import { useTrackingStore } from '../stores/trackingStore';
+import { defineComponent } from 'vue';
+import MessagingPage from '../components/MessagingPage.vue';
+import NavButtons from '../components/NavButtons.vue';
+import { useRouter, useRoute } from 'vue-router';
+import { useTrackingStore } from '../stores/trackingStore';
 
-  export default defineComponent({
-    components: {
-      MessagingPage,
-    },
-    setup() {
-      const router = useRouter();
-      const route = useRoute();
-      const trackingStore = useTrackingStore();
+export default defineComponent({
+  components: {
+    MessagingPage,
+    NavButtons,
+  },
+  setup() {
+    const router = useRouter();
+    const route = useRoute();
+    const trackingStore = useTrackingStore();
 
-      const messages = {
-  dominantTagline: 'Empower your business with a custom site that drives growth.',
-  influentialTagline: 'Turn your ideas into a site that inspires and connects.',
+    const currentPage = route.name as string;
 
-  supportiveStatement:
-    'Your website should work as hard as you do. We’ll help you create a site that’s simple for visitors to use and focused on achieving your goals.',
-  dominantStatement:
-    'Your site will attract and engage visitors, keep everything running smoothly, and connect to the tools your business needs to succeed.',
-  influentialStatement:
-    'Imagine a site that looks professional, is easy for customers to navigate, and saves you time by handling routine tasks automatically.',
-  conscientiousStatement:
-    'Every site we build is customized to fit your goals, ensuring it works exactly as you need it to. No templates or shortcuts—just a solution built for you.',
+    // Messages for MessagingPage
+    const messages = {
+      dominantTagline: 'Empower your business with a custom site that drives growth.',
+      influentialTagline: 'Turn your ideas into a site that inspires and connects.',
+      supportiveStatement:
+        'Your website should work as hard as you do. We’ll help you create a site that’s simple for visitors to use and focused on achieving your goals.',
+      dominantStatement:
+        'Your site will attract and engage visitors, keep everything running smoothly, and connect to the tools your business needs to succeed.',
+      influentialStatement:
+        'Imagine a site that looks professional, is easy for customers to navigate, and saves you time by handling routine tasks automatically.',
+      conscientiousStatement:
+        'Every site we build is customized to fit your goals, ensuring it works exactly as you need it to. No templates or shortcuts—just a solution built for you.',
+      supportiveSummary:
+        'We’ll handle the details so you can focus on what you do best. Together, we’ll build a website that supports your vision.',
+      influentialSummary:
+        'Take the first step to create a website that saves time, looks great, and grows with your business.',
+    };
 
-  supportiveSummary:
-    'We’ll handle the details so you can focus on what you do best. Together, we’ll build a website that supports your vision.',
-  influentialSummary:
-    'Take the first step to create a website that saves time, looks great, and grows with your business.',
-};
+    // Determine next pages and their labels
+    const leftNextPage = trackingStore.getNextPage(currentPage, 'left');
+    const rightNextPage = trackingStore.getNextPage(currentPage, 'right');
 
-      const currentPage = route.name as string;
+    const leftButtonLabel = leftNextPage?.label || 'Explore More Options';
+    const rightButtonLabel = rightNextPage?.label || 'Continue Your Journey';
 
-      function handleLeftClick() {
+    function handleLeftClick() {
+      if (leftNextPage) {
         trackingStore.addVisitedPage(currentPage);
         trackingStore.recordChoice(currentPage, 'left');
-        const nextPage = trackingStore.getNextPage(currentPage, 'left');
-        if (nextPage) router.push(nextPage);
+        router.push(leftNextPage.route);
       }
+    }
 
-      function handleRightClick() {
+    function handleRightClick() {
+      if (rightNextPage) {
         trackingStore.addVisitedPage(currentPage);
         trackingStore.recordChoice(currentPage, 'right');
-        const nextPage = trackingStore.getNextPage(currentPage, 'right');
-        if (nextPage) router.push(nextPage);
+        router.push(rightNextPage.route);
       }
+    }
 
-      return { messages, handleLeftClick, handleRightClick };
-    },
-  });
+    return {
+      messages,
+      currentPage,
+      leftButtonLabel,
+      rightButtonLabel,
+      handleLeftClick,
+      handleRightClick,
+    };
+  },
+});
 </script>
 
 <style scoped lang="scss">
-  /* Your existing SCSS styles for the Landing Page */
+/* Your existing SCSS styles for the Landing Page */
 </style>

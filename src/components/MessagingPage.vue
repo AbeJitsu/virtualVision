@@ -1,5 +1,3 @@
-<!-- MessagingPage.vue -->
-
 <template>
   <q-page class="flex-column">
     <div class="content-container">
@@ -29,35 +27,24 @@
         </div>
       </div>
 
-      <!-- Wrap-up and binary choice prompt -->
+      <!-- Wrap-up -->
       <div class="supportive-wrapup">
         <p>{{ messages.supportiveSummary }}</p>
+
       </div>
-      <div class="binary-choice">
-        <div class="choice-prompts">
-          <p>{{ messages.influentialSummary }}</p>
-        </div>
-        <div class="action-buttons">
-          <q-btn
-            :label="leftButtonLabel"
-            @click="handleLeftClick"
-            class="custom-btn choice-btn"
-          />
-          <q-btn
-            :label="rightButtonLabel"
-            @click="handleRightClick"
-            class="custom-btn choice-btn"
-          />
-        </div>
+      <div>
+        <p class="influential-summary">{{ messages.influentialSummary }}</p>
       </div>
+
+
     </div>
   </q-page>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-import { useTrackingStore } from '../stores/trackingStore';
+import { useRoute } from 'vue-router';
+import NavigationButtons from '../components/NavButtons.vue';
 
 export default defineComponent({
   props: {
@@ -74,49 +61,13 @@ export default defineComponent({
       }>,
       required: true,
     },
-    leftButtonLabel: {
-  type: String,
-  default: 'Discover how we can bring your vision to life.',
-},
-rightButtonLabel: {
-  type: String,
-  default: 'Dive into the details of our approach.',
-},
   },
-  setup(props) {
+  setup() {
     const route = useRoute();
-    const router = useRouter();
-    const trackingStore = useTrackingStore();
 
-    function handleLeftClick() {
-      const currentPage = route.name as string;
-      trackingStore.addVisitedPage(currentPage);
-      trackingStore.recordChoice(currentPage, 'left');
-
-      const nextPage = trackingStore.getNextPage(currentPage, 'left');
-      if (nextPage === '/landing-page') {
-        router.push('/');
-      } else if (nextPage) {
-        router.push(nextPage);
-      } else {
-        console.error('No next page determined for left choice.');
-      }
-    }
-
-    function handleRightClick() {
-      const currentPage = route.name as string;
-      trackingStore.addVisitedPage(currentPage);
-      trackingStore.recordChoice(currentPage, 'right');
-
-      const nextPage = trackingStore.getNextPage(currentPage, 'right');
-      if (nextPage) {
-        router.push(nextPage);
-      } else {
-        console.error('No next page determined for right choice.');
-      }
-    }
-
-    return { handleLeftClick, handleRightClick, props };
+    return {
+      route,
+    };
   },
 });
 </script>
@@ -278,17 +229,18 @@ rightButtonLabel: {
   }
 }
 
-  .choice-prompts {
+  .influential-summary {
       display: flex;
       justify-content: center;
-      font-size: 1.4rem;
+      font-size: x-large;
       font-weight: 500;
       color: $grayVeryDark;
-      margin-top: -2rem;
-      letter-spacing: -0.55px;
+      padding: 2rem 5rem;
+      letter-spacing: -0.75px;
+    text-align: center; // Added to center the text
       @media (max-width: 599px) {
         font-size: medium;
-        margin-top: -0.5rem;
+        // margin-top: -0.5rem;
       }
     }
 
